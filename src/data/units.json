@@ -1,0 +1,308 @@
+[
+  {
+    "id": "u001",
+    "parentId": null,
+    "name": "Trường Đại học Sư phạm Hà Nội 2",
+    "code": "HPU2",
+    "type": "university",
+    "managerId": "u001",
+    "status": "active"
+  },
+  {
+    "id": "u101",
+    "parentId": "u001",
+    "name": "Phòng Đào tạo",
+    "code": "PDT",
+    "type": "office",
+    "managerId": "u001",
+    "status": "active"
+  },
+  {
+    "id": "u102",
+    "parentId": "u001",
+    "name": "Phòng Khoa học Công nghệ và Hợp tác Quốc tế",
+    "code": "PKHCNHTQT",
+    "type": "office",
+    "managerId": "u001",
+    "status": "active"
+  },
+  {
+    "id": "u103",
+    "parentId": "u001",
+    "name": "Phòng Tổ chức - Hành chính",
+    "code": "PTCHC",
+    "type": "office",
+    "managerId": "u001",
+    "status": "active"
+  },
+  {
+    "id": "u104",
+    "parentId": "u001",
+    "name": "Phòng Kế hoạch - Tài chính",
+    "code": "PKHTC",
+    "type": "office",
+    "managerId": "u001",
+    "status": "active"
+  },
+  {
+    "id": "u105",
+    "parentId": "u001",
+    "name": "Phòng Quản lý Cơ sở vật chất",
+    "code": "PQLCSVC",
+    "type": "office",
+    "managerId": "u001",
+    "status": "active"
+  },
+  {
+    "id": "u106",
+    "parentId": "u001",
+    "name": "Phòng Công tác Chính trị - Học sinh Sinh viên",
+    "code": "PCTCTHSSV",
+    "type": "office",
+    "managerId": "u001",
+    "status": "active"
+  },
+  {
+    "id": "u107",
+    "parentId": "u001",
+    "name": "Khoa Toán",
+    "code": "KTOAN",
+    "type": "faculty",
+    "managerId": "u001",
+    "status": "active"
+  },
+  {
+    "id": "u108",
+    "parentId": "u001",
+    "name": "Khoa Ngữ văn",
+    "code": "KNGUVAN",
+    "type": "faculty",
+    "managerId": "u001",
+    "status": "active"
+  },
+  {
+    "id": "u109",
+    "parentId": "u001",
+    "name": "Khoa Lịch sử",
+    "code": "KLS",
+    "type": "faculty",
+    "managerId": "u001",
+    "status": "active"
+  },
+  {
+    "id": "u110",
+    "parentId": "u001",
+    "name": "Khoa Sinh học",
+    "code": "KSH",
+    "type": "faculty",
+    "managerId": "u001",
+    "status": "active"
+  },
+  {
+    "id": "u111",
+    "parentId": "u001",
+    "name": "Khoa Vật lý",
+    "code": "KVL",
+    "type": "faculty",
+    "managerId": "u001",
+    "status": "active"
+  },
+  {
+    "id": "u112",
+    "parentId": "u001",
+    "name": "Khoa Hóa học",
+    "code": "KHH",
+    "type": "faculty",
+    "managerId": "u001",
+    "status": "active"
+  },
+  {
+    "id": "u113",
+    "parentId": "u001",
+    "name": "Khoa Giáo dục Chính trị",
+    "code": "KGDCT",
+    "type": "faculty",
+    "managerId": "u001",
+    "status": "active"
+  },
+  {
+    "id": "u114",
+    "parentId": "u001",
+    "name": "Khoa Tiếng Anh",
+    "code": "KTA",
+    "type": "faculty",
+    "managerId": "u001",
+    "status": "active"
+  },
+  {
+    "id": "u115",
+    "parentId": "u001",
+    "name": "Khoa Tiếng Trung Quốc",
+    "code": "KTTQ",
+    "type": "faculty",
+    "managerId": "u001",
+    "status": "active"
+  },
+  {
+    "id": "u116",
+    "parentId": "u001",
+    "name": "Khoa Giáo dục Tiểu học",
+    "code": "KGDTH",
+    "type": "faculty",
+    "managerId": "u001",
+    "status": "active"
+  },
+  {
+    "id": "u117",
+    "parentId": "u001",
+    "name": "Khoa Giáo dục Mầm non",
+    "code": "KGDMN",
+    "type": "faculty",
+    "managerId": "u001",
+    "status": "active"
+  },
+  {
+    "id": "u118",
+    "parentId": "u001",
+    "name": "Khoa Khoa học Thể dục thể thao",
+    "code": "KKHTDTT",
+    "type": "faculty",
+    "managerId": "u001",
+    "status": "active"
+  },
+  {
+    "id": "u119",
+    "parentId": "u001",
+    "name": "Khoa Tâm lý - Giáo dục",
+    "code": "KTLGD",
+    "type": "faculty",
+    "managerId": "u001",
+    "status": "active"
+  },
+  {
+    "id": "u120",
+    "parentId": "u001",
+    "name": "Viện Nghiên cứu Sư phạm",
+    "code": "VNCSP",
+    "type": "institute",
+    "managerId": "u001",
+    "status": "active"
+  },
+  {
+    "id": "u121",
+    "parentId": "u001",
+    "name": "Viện Nghiên cứu Khoa học và Ứng dụng",
+    "code": "VNCKHUD",
+    "type": "institute",
+    "managerId": "u001",
+    "status": "active"
+  },
+  {
+    "id": "u122",
+    "parentId": "u001",
+    "name": "Viện Công nghệ Thông tin",
+    "code": "VCNTT",
+    "type": "institute",
+    "managerId": "u001",
+    "status": "active"
+  },
+  {
+    "id": "u123",
+    "parentId": "u001",
+    "name": "Trung tâm Khảo thí và Đảm bảo chất lượng giáo dục",
+    "code": "TTKTD BCL",
+    "type": "center",
+    "managerId": "u001",
+    "status": "active"
+  },
+  {
+    "id": "u124",
+    "parentId": "u001",
+    "name": "Trung tâm Học liệu và Truyền thông",
+    "code": "TTHLTT",
+    "type": "center",
+    "managerId": "u001",
+    "status": "active"
+  },
+  {
+    "id": "u125",
+    "parentId": "u001",
+    "name": "Trung tâm Giáo dục Quốc phòng và An ninh",
+    "code": "TTGDQPAN",
+    "type": "center",
+    "managerId": "u001",
+    "status": "active"
+  },
+  {
+    "id": "u126",
+    "parentId": "u001",
+    "name": "Trung tâm Nội trú",
+    "code": "TTNOITRU",
+    "type": "center",
+    "managerId": "u001",
+    "status": "active"
+  },
+  {
+    "id": "u127",
+    "parentId": "u001",
+    "name": "Trung tâm Truyền thông và Sản xuất học liệu",
+    "code": "TTTT_SXHL",
+    "type": "center",
+    "managerId": "u001",
+    "status": "active"
+  },
+  {
+    "id": "u128",
+    "parentId": "u001",
+    "name": "Trường THCS và THPT Sư phạm",
+    "code": "TTHCS_THPTSP",
+    "type": "school",
+    "managerId": "u001",
+    "status": "active"
+  },
+  {
+    "id": "u129",
+    "parentId": "u001",
+    "name": "Đảng ủy Trường",
+    "code": "DANGUY",
+    "type": "organization",
+    "managerId": "u001",
+    "status": "active"
+  },
+  {
+    "id": "u130",
+    "parentId": "u001",
+    "name": "Ban Giám hiệu",
+    "code": "BGH",
+    "type": "management",
+    "managerId": "u001",
+    "status": "active"
+  },
+  {
+    "id": "u131",
+    "parentId": "u001",
+    "name": "Công đoàn Trường",
+    "code": "CD",
+    "type": "organization",
+    "managerId": "u001",
+    "status": "active"
+  },
+  {
+    "id": "u132",
+    "parentId": "u001",
+    "name": "Đoàn Thanh niên",
+    "code": "DTN",
+    "type": "organization",
+    "managerId": "u001",
+    "status": "active"
+  },
+  {
+    "id": "u133",
+    "parentId": "u001",
+    "name": "Hội Sinh viên",
+    "code": "HSV",
+    "type": "organization",
+    "managerId": "u001",
+    "status": "active"
+  }
+]

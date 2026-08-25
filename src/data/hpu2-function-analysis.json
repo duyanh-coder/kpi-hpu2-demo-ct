@@ -1,0 +1,308 @@
+[
+  {
+    "stt": "1",
+    "name": "Quản trị Danh mục",
+    "items": [
+      {
+        "stt": "1.1",
+        "name": "Danh mục đơn vị tính",
+        "operations": [
+          "Thêm đơn vị tính\n- Mã đơn vị \n- Tên đơn vị",
+          "Cập nhật đơn vị tính\n- Mã đơn vị \n- Tên đơn vị",
+          "Xóa đơn vị (Chỉ xóa khi chưa được sử dụng)"
+        ],
+        "data": "1. Nhóm đơn vị đo lường tỷ lệ (%)\n-%\n-% đúng hạn\n-% hài lòng\n-%/năm\n-% tiêu chí\n2. Nhóm đơn vị định lượng\n-Cuộc\n-Kênh\n-Chương trình\n-Công cụ/phần mềm\n-Thỏa thuận\n-Hoạt động\n-Người\n-Lượt người\n-Bài\n-Bài/GV/năm\n-Nhóm\n-Dự án\n-Doanh nghiệp\n-Dashboard\n-Đơn vị\n-Lượt SV\n-Học phần\n-Bài giảng\n-Trường\n-Đối tác\n3. Nhóm đơn vị về trạng thái, mô hình và sản phẩm phức hợp\n-Trạng thái\n-Trạng thái/Mốc sản phẩm\n-Sáng kiến/Giải pháp\n-Bằng/giải pháp/phần mềm/quy trình…\n-Sản phẩm/mô hình\n-Sản phẩm/giải pháp\n-Mô hình\n-Học liệu/sản phẩm\n-Đề án\n-CT/hợp đồng/nhiệm vụ\n-Mô hình/sáng kiến\n-Tập thể/cá nhân"
+      },
+      {
+        "stt": "1.2000000000000002",
+        "name": "Danh mục chu kỳ",
+        "operations": [
+          "Thêm chu kỳ\n- Mã chu kỳ\n- Tên chu kỳ",
+          "Cập nhật đơn vị tính\n- Mã chu kỳ\n- Tên chu kỳ",
+          "Xóa chu kỳ (Chỉ xóa khi chưa được sử dụng)"
+        ],
+        "data": "Danh mục chu kỳ\n- Năm học\n- Học kỳ\n- Tháng\n- Quý\n- Tuần"
+      },
+      {
+        "stt": "1.3000000000000003",
+        "name": "Danh mục Điều kiện đánh giá",
+        "operations": [
+          "Thêm Điều kiện đánh giá\n- Mã Điều kiện đánh giá\n- Tên Điều kiện đánh giá",
+          "Cập nhật đơn vị tính\n- Mã Điều kiện đánh giá\n- Tên Điều kiện đánh giá",
+          "Xóa Điều kiện đánh giá (Chỉ xóa khi chưa được sử dụng)"
+        ],
+        "data": "Danh mục Điều kiện đánh giá\n- = ;  > ;  < ;  ≤;  ≥"
+      },
+      {
+        "stt": "1.3000000000000003",
+        "name": "Danh mục Lĩnh vực KPI",
+        "operations": [
+          "Thêm lĩnh vực\n- Mã Lĩnh vực KPI\n- Tên lĩnh vực KPI",
+          "Cập nhật lĩnh vực\n- Mã Lĩnh vực KPI\n- Tên lĩnh vực KPI",
+          "Xóa lĩnh vực (Chỉ xóa khi chưa được sử dụng)"
+        ],
+        "data": "Danh mục lĩnh vực KPI (13):\n- Quản trị\n- Cải cách hành chính\n- Tuyển sinh\n- Đào tạo\n- Khảo thí và đảm bảo chất lượng giáo dục\n- Quốc tế hóa giáo dục đại học\n- Nghiên cứu khoa học, đổi mới sáng tạo và chuyển giao công nghệ\n- Đổi mới sáng tạo, khởi nghiệp và hệ sinh thái EdTech\n- Chuyển đổi số và dữ liệu\n- Bình dân học vụ số và học liệu số\n- Chất lượng giảng viên và nguồn nhân lực\n- Hợp tác với doanh nghiệp, Sở GD&ĐT, cơ sở giáo dục, đào tạo\n- Thi đua, khen thưởng và nhân rộng mô hình"
+      },
+      {
+        "stt": "1.4000000000000004",
+        "name": "Danh mục Lĩnh vực Công tác",
+        "operations": [
+          "Thêm lĩnh vực công tác\n- Mã Lĩnh vực Công tác\n- Tên lĩnh vực Công tác",
+          "Cập nhật lĩnh vực công tác\n- Mã Lĩnh vực Công tác\n- Tên lĩnh vực Công tác",
+          "Xóa lĩnh vực (Chỉ xóa khi chưa được sử dụng)"
+        ],
+        "data": "Danh mục có 13 lĩnh vực:\n- Đào tạo, bồi dưỡng\n- KHCN&HTQT (Khoa học Công nghệ và Hợp tác quốc tế)\n- Quản trị, Tổ chức, thi đua\n- Cải cách hành chính\n- Tài chính\n- CSVC, đầu tư (Cơ sở vật chất)\n- HSSV (Học sinh sinh viên)\n- Chuyển đổi số\n- Sản xuất học liệu số\n- Truyền thông\n- Khảo thí và ĐBCLGD (Đảm bảo chất lượng giáo dục)\n- Công đoàn\n- Đoàn Thanh niên, Hội Sinh viên\n- Kiểm tra, giám sát\n- Công tác khác"
+      },
+      {
+        "stt": "1.5000000000000004",
+        "name": "Danh mục KPI",
+        "operations": [
+          "Thêm KPI\n- Lĩnh vực KPI\n- Mã KPI (Mã chỉ số)\n- Nội dung chỉ tiêu\n- Đơn vị tính \n- Chu kỳ đánh giá\n- Chỉ tiêu ",
+          "Cập nhật KPI\n- Lĩnh vực KPI\n- Mã chỉ số\n- Nội dung chỉ tiêu\n- Đơn vị tính\n- Chu kỳ đánh giá\n- Chỉ tiêu ",
+          "XóaKPI (Chỉ xóa khi chưa được sử dụng)"
+        ],
+        "data": ""
+      },
+      {
+        "stt": "1.6000000000000005",
+        "name": "Danh mục Đơn vị",
+        "operations": [
+          "Thêm Đơn vị\n- Mã đơn vị\n- Tên đơn vị",
+          "Cập nhật Đơn vị\n- Mã đơn vị\n- Tên đơn vị",
+          "Xóa Đơn vị (Chỉ xóa khi chưa được sử dụng)"
+        ],
+        "data": "1. Các Phòng chức năng\n- Phòng Đào tạo\n- Phòng Khoa học Công nghệ và Hợp tác Quốc tế (P. KHCN và HTQT)\n- Phòng Tổ chức Cán bộ (P. TCCB)\n- Phòng Hành chính\n- Phòng Kế hoạch Tài chính (P. KHTC)\n- Phòng Quản lý Cơ sở vật chất (P. QLCSVC)\n- Phòng Công tác chính trị - Học sinh sinh viên (P. CTCT-HSSV)\n2. Các Khoa đào tạo\n- Khoa Toán\n- Khoa Ngữ văn\n- Khoa Lịch sử\n- Khoa Sinh học\n- Khoa Vật lý\n- Khoa Hóa học\n- Khoa Giáo dục Chính trị (K. GDCT)\n- Khoa Tiếng Anh\n- Khoa Tiếng Trung Quốc (K. TTQ)\n- Khoa Giáo dục Tiểu học (K. GDTH)\n- Khoa Giáo dục Mầm non (K. GDMN)\n- Khoa Khoa học Thể dục thể thao (K. KHTDTT)\n- Khoa Tâm lý - Giáo dục (K. TL-GD)\n3. Các Viện và Trung tâm\n- Viện Nghiên cứu Sư phạm (V. NCSP)\n- Viện Nghiên cứu Khoa học và Ứng dụng (V. NCKH&UD)\n- Viện Công nghệ thông tin (V. CNTT)\n- Trung tâm Khảo thí và Đảm bảo chất lượng giáo dục (TT. Khảo thí và ĐBCLGD)\n- Trung tâm Học liệu và Truyền thông (TT. HL&TT)\n- Trung tâm Giáo dục Quốc phòng và An ninh (TT. GDQP&AN)\n- Trung tâm Tin học (TT. Tin học)\n4. Các đơn vị và tổ chức khác\n- Trường Trung học cơ sở và Trung học phổ thông Sư phạm (T. THCS và THPTSP)\n- Đảng ủy Trường\n- Ban Giám hiệu\n- Công đoàn Trường\n- Đoàn Thanh niên (ĐTN)\n- Hội Sinh viên (HSV)"
+      }
+    ]
+  },
+  {
+    "stt": "2",
+    "name": "Kế hoạch năm",
+    "items": [
+      {
+        "stt": "3",
+        "name": "Quản lý mục tiêu (Cascade KPI)",
+        "operations": [],
+        "data": ""
+      },
+      {
+        "stt": "3.1",
+        "name": "Cây mục tiêu đa cấp (Goal Tree)",
+        "operations": [
+          "Hiển thị cấu trúc cây mục tiêu trực quan toàn Trường qua 5 cấp bậc quản trị",
+          "Xem bản đồ chiến lược & Liên kết mục tiêu mục"
+        ],
+        "data": "Các cấp quản lý mục tiêu:\n- Cấp 1: Trường ĐHSP Hà Nội 2 (Chiến lược chung)\n- Cấp 2: Ban Giám hiệu (Chỉ đạo điều hành)\n- Cấp 3: Đơn vị (Phòng/Khoa/Viện/Trung tâm)\n- Cấp 4: Bộ môn / Tổ chuyên môn thuộc đơn vị\n- Cấp 5: Cá nhân (Viên chức, giảng viên, người lao động)"
+      },
+      {
+        "stt": "3.2",
+        "name": "Phân rã mục tiêu (Goal Cascading)",
+        "operations": [
+          "Chức năng phân rã KPI cấp Trường thành KPI đơn vị và phân bổ chỉ tiêu (Target) cho từng học kỳ/năm học",
+          "Thiết lập KPI cá nhân gắn với vị trí việc làm"
+        ],
+        "data": "Thông số phân bổ:\n- KPI Cha (Cấp Trường)\n- KPI Con (Cấp Đơn vị)\n- Tỷ lệ trọng số phân bổ\n- Chỉ tiêu phân bổ chi tiết"
+      },
+      {
+        "stt": "3.3",
+        "name": "Phản hồi mục tiêu (Bottom-up feedback)",
+        "operations": [
+          "Cho phép đơn vị/cá nhân phản hồi, kiến nghị điều chỉnh chỉ tiêu hoặc đề xuất chỉ số KPI đặc thù từ dưới lên"
+        ],
+        "data": "Biểu mẫu đề xuất điều chỉnh mục tiêu và ý kiến phê duyệt của cấp quản lý"
+      }
+    ]
+  },
+  {
+    "stt": "4",
+    "name": "Kho dữ liệu KPI",
+    "items": [
+      {
+        "stt": "4.1",
+        "name": "Thông số cấu hình KPI (KPI Metadata)",
+        "operations": [
+          "Quản lý và cấu hình chi tiết cho từng chỉ số KPI trong kho dữ liệu"
+        ],
+        "data": "Thông số cấu hình:\n- Mục tiêu, Chỉ tiêu (Target)\n- Trọng số KPI (Chủ trì, phối hợp)\n- Chu kỳ đo lường (Học kỳ/Năm học)\n- Ngưỡng cảnh báo đạt (Xanh, Vàng, Đỏ)\n- Người chịu trách nhiệm/Đơn vị sở hữu\n- Nguồn thu thập dữ liệu (Nhập tay / Tích hợp hệ thống)"
+      },
+      {
+        "stt": "4.2",
+        "name": "Lịch sử biến động KPI",
+        "operations": [
+          "Ghi lại dữ liệu thực tế thực tế qua từng chu kỳ của từng chỉ số KPI để phân tích tốc độ tăng trưởng"
+        ],
+        "data": "Bảng ghi lịch sử thay đổi số liệu thực đo và biểu đồ xu hướng tăng trưởng qua các năm"
+      },
+      {
+        "stt": "4.3",
+        "name": "Quản lý Minh chứng số",
+        "operations": [
+          "Tổ chức lưu trữ, quản lý và đối soát các tệp minh chứng đi kèm cho từng kết quả thực hiện KPI"
+        ],
+        "data": "Các định dạng tệp minh chứng: PDF ký số, Quyết định, Báo cáo rà soát, Văn bản bàn giao, Kế hoạch..."
+      }
+    ]
+  },
+  {
+    "stt": "5",
+    "name": "Trục tích hợp dữ liệu (Integration Hub)",
+    "items": [
+      {
+        "stt": "5.1",
+        "name": "Tích hợp hệ thống Đào tạo",
+        "operations": [
+          "Tự động đồng bộ số liệu quy mô tuyển sinh, lớp học LMS, tỷ lệ sinh viên tốt nghiệp và việc làm"
+        ],
+        "data": "Dữ liệu tích hợp:\n- Quy mô tuyển sinh đại học & SĐH (Thạc sĩ, Tiến sĩ)\n- % học phần trên LMS (ĐT02)\n- % sinh viên có việc làm sau tốt nghiệp (ĐT03, ĐT04)\n- % sinh viên tốt nghiệp đúng hạn (ĐT08)"
+      },
+      {
+        "stt": "5.2",
+        "name": "Tích hợp hệ thống eOffice",
+        "operations": [
+          "Đồng bộ tiến độ xử lý công việc và luồng văn bản đi/đến có chữ ký số"
+        ],
+        "data": "Dữ liệu tích hợp:\n- % văn bản xử lý trên eOffice có chữ ký số (CCHC02)\n- % nhiệm vụ giao việc theo nguyên tắc '6 rõ' (QT04)\n- % kết luận, chỉ đạo được thực hiện đúng hạn (QT07)"
+      },
+      {
+        "stt": "5.3",
+        "name": "Tích hợp hệ thống NCKH",
+        "operations": [
+          "Đồng bộ số lượng đề tài, sáng kiến và các công bố khoa học quốc tế của giảng viên"
+        ],
+        "data": "Dữ liệu tích hợp:\n- Tỷ lệ bài báo WoS/Scopus bình quân (KH02)\n- Số sáng kiến cải cách được công nhận (CCHC08, TĐ03)\n- Tỷ lệ đề tài nghiệm thu đúng hạn (KH10)"
+      },
+      {
+        "stt": "5.4",
+        "name": "Tích hợp hệ thống Nhân sự",
+        "operations": [
+          "Đồng bộ hồ sơ viên chức, học hàm, học vị, năng lực số và kết quả bồi dưỡng"
+        ],
+        "data": "Dữ liệu tích hợp:\n- Tỷ lệ giảng viên có trình độ tiến sĩ (NN01)\n- Tỷ lệ giảng viên đạt chuẩn năng lực số UNESCO (NN02)\n- Kết quả hoàn thành khóa bồi dưỡng chuyên sâu (NN04)"
+      },
+      {
+        "stt": "5.5",
+        "name": "Tích hợp hệ thống Tài chính",
+        "operations": [
+          "Đồng bộ dữ liệu thu chi ngân sách đầu tư cho chuyển đổi số và tỷ lệ doanh thu từ dịch vụ KHCN"
+        ],
+        "data": "Dữ liệu tích hợp:\n- % nguồn thu từ dịch vụ KHCN và CGCN (KH05)\n- Ngân sách phân bổ cho CĐS, học liệu số, hạ tầng mạng (TC05)"
+      },
+      {
+        "stt": "5.6",
+        "name": "Tích hợp hệ thống Khảo thí & ĐBCL",
+        "operations": [
+          "Đồng bộ kết quả kiểm định chương trình đào tạo, ngân hàng câu hỏi số và chuẩn ngoại ngữ"
+        ],
+        "data": "Dữ liệu tích hợp:\n- Tỷ lệ chương trình đào tạo đạt tiêu chuẩn kiểm định (ĐBCL02)\n- Tỷ lệ sinh viên tốt nghiệp đạt chuẩn ngoại ngữ/năng lực số (ĐBCL04, ĐBCL05)\n- Tỷ lệ kỳ thi trên nền tảng khảo thí số (ĐBCL09)"
+      }
+    ]
+  },
+  {
+    "stt": "6",
+    "name": "Chu trình Đánh giá & Cải tiến liên tục",
+    "items": [
+      {
+        "stt": "6.1",
+        "name": "Đánh giá & Tự đánh giá KPI",
+        "operations": [
+          "Quy trình thực hiện đánh giá cuối kỳ theo luồng 6 bước quy chuẩn",
+          "Tính toán điểm KPI tự động"
+        ],
+        "data": "Quy trình 6 bước đánh giá:\n1. Đơn vị tự đánh giá & nhập số liệu thực đo\n2. Đơn vị nộp và tải lên minh chứng số tương ứng\n3. Hệ thống đối chiếu dữ liệu tự động với các phân hệ liên kết\n4. Hội đồng thẩm định kiểm tra, đối soát và chấm điểm\n5. Hiệu trưởng phê duyệt kết quả chính thức\n6. Khóa dữ liệu và công bố công khai kết quả đánh giá"
+      },
+      {
+        "stt": "6.2",
+        "name": "Xếp loại chất lượng tự động",
+        "operations": [
+          "Tự động phân loại đơn vị và cá nhân dựa trên điểm KPI tổng hợp cuối kỳ"
+        ],
+        "data": "4 mức xếp loại:\n- Hoàn thành xuất sắc\n- Hoàn thành tốt\n- Hoàn thành\n- Không hoàn thành\n(Điểm tổng hợp đơn vị = 70% Điểm chủ trì + 30% Điểm phối hợp)"
+      },
+      {
+        "stt": "6.3",
+        "name": "Phân tích nguyên nhân & Cải tiến (PDCA)",
+        "operations": [
+          "Yêu cầu các đơn vị phân tích nguyên nhân đối với các chỉ số KPI không đạt ngưỡng chỉ tiêu; đề xuất kế hoạch hành động khắc phục"
+        ],
+        "data": "Thông số nhập liệu:\n- Chỉ số KPI không đạt\n- Phân tích nguyên nhân cốt lõi\n- Đề xuất giải pháp khắc phục\n- Kế hoạch hành động cải tiến chu kỳ sau"
+      },
+      {
+        "stt": "6.4",
+        "name": "Cải tiến mục tiêu & Cập nhật chỉ tiêu mới",
+        "operations": [
+          "Tự động cập nhật chỉ tiêu (Target) mới cho chu kỳ tiếp theo dựa trên kết quả đạt được và định hướng chiến lược"
+        ],
+        "data": "Lịch sử so sánh chỉ tiêu đề ra vs kết quả đạt được qua các chu kỳ để điều chỉnh tự động"
+      }
+    ]
+  },
+  {
+    "stt": "7",
+    "name": "Hệ thống eOffice phối hợp hằng ngày",
+    "items": [
+      {
+        "stt": "7.1",
+        "name": "Quản lý Giao việc & Phối hợp (6 Rõ)",
+        "operations": [
+          "Tạo lập và gửi Phiếu giao việc (Mẫu A) giữa đơn vị đầu mối và đơn vị phối hợp đảm bảo nguyên lý '6 rõ'",
+          "Tiếp nhận, phản hồi và xác nhận Phiếu giao việc"
+        ],
+        "data": "Cấu hình Phiếu giao việc '6 rõ':\n- Rõ việc (Tên phần việc cụ thể phân rã từ KPI)\n- Rõ người (Cá nhân/Bộ phận chủ trì & phối hợp)\n- Rõ thời gian (Thời hạn bắt đầu & hoàn thành)\n- Rõ trách nhiệm (Nội dung cam kết chất lượng)\n- Rõ sản phẩm (Yêu cầu đầu ra rõ ràng)\n- Rõ thẩm quyền (Người ký giao việc & người phê duyệt)"
+      },
+      {
+        "stt": "7.2",
+        "name": "Nhật ký tiến độ công việc (Mẫu B)",
+        "operations": [
+          "Ghi chép và cập nhật trạng thái tiến độ thực hiện định kỳ hoặc đột xuất"
+        ],
+        "data": "4 mức trạng thái tiến độ:\n- Đúng tiến độ\n- Chậm nhẹ\n- Chậm nghiêm trọng\n- Đình trệ"
+      },
+      {
+        "stt": "7.3",
+        "name": "Đôn đốc công việc leo thang 3 cấp độ",
+        "operations": [
+          "Tự động kích hoạt quy trình đôn đốc phối hợp khi phát hiện tiến độ Chậm nghiêm trọng hoặc Đình trệ"
+        ],
+        "data": "Quy trình đôn đốc 3 cấp độ:\n- Cấp độ 1: Nhắc nhở trực tiếp (qua bình luận hệ thống, thông báo, email)\n- Cấp độ 2 (Số hóa Mẫu C): Phát hành Phiếu đôn đốc chính thức, tự động nâng độ ưu tiên của hồ sơ công việc lên mức 'Cao'\n- Cấp độ 3: Báo cáo vượt cấp lên Ban Giám hiệu đính kèm toàn bộ lịch sử giao việc và đôn đốc phối hợp"
+      },
+      {
+        "stt": "7.4",
+        "name": "Lịch công tác, Nhắc việc & Thông báo",
+        "operations": [
+          "Đồng bộ lịch công tác tuần/tháng và gửi thông báo nhắc việc tự động"
+        ],
+        "data": "Gửi cảnh báo qua thông báo hệ thống hoặc email khi công việc sắp đến hạn hoặc bị trễ hạn cập nhật tiến độ"
+      }
+    ]
+  },
+  {
+    "stt": "8",
+    "name": "Báo cáo & Dashboard điều hành",
+    "items": [
+      {
+        "stt": "8.1",
+        "name": "Hệ thống 13 Dashboard chuyên ngành",
+        "operations": [
+          "Xây dựng 13 trang tổng quan hiển thị số liệu thực đo và tỷ lệ đạt KPI tương ứng với 13 mảng lĩnh vực quản trị"
+        ],
+        "data": "Giao diện hiển thị trực quan các biểu đồ so sánh chỉ tiêu vs thực đo của 13 mảng KPI"
+      },
+      {
+        "stt": "8.2",
+        "name": "Dashboard Điểm KPI",
+        "operations": [
+          "Theo dõi trực quan tỷ lệ hoàn thành nhiệm vụ đúng hạn và cảnh báo rủi ro sớm toàn Trường"
+        ],
+        "data": "Hiển thị bản đồ phân bố trạng thái KPI theo thời gian thực (Xanh, Vàng, Đỏ) và cảnh báo các chỉ số có nguy cơ không đạt chỉ tiêu"
+      },
+      {
+        "stt": "8.3",
+        "name": "Xuất báo cáo biểu mẫu quy chuẩn",
+        "operations": [
+          "Tự động trích xuất và kết xuất dữ liệu sang các biểu mẫu báo cáo KPI và phối hợp công tác theo đúng quy định"
+        ],
+        "data": "Danh sách biểu mẫu xuất báo cáo:\n- Phiếu giao phối hợp thực hiện KPI (Mẫu A)\n- Nhật ký kiểm tra, đôn đốc tiến độ phối hợp (Mẫu B)\n- Phiếu đôn đốc thực hiện phối hợp KPI (Mẫu C)\n- Báo cáo kết quả đôn đốc tiến độ phối hợp (Mẫu D)\n- Báo cáo tổng hợp đánh giá kết quả phối hợp thực hiện KPI (Mẫu E)\n- Báo cáo tổng hợp kết quả KPI toàn Trường (Mẫu 05)\n- Nhật ký công việc phát sinh (Mẫu 07)"
+      }
+    ]
+  }
+]

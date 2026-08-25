@@ -1,0 +1,62 @@
+[
+  {
+    "id": "u001",
+    "username": "admin",
+    "password": "hpu2@2026",
+    "fullName": "Quản trị hệ thống HPU2",
+    "email": "admin@hpu2.edu.vn",
+    "employeeCode": "HPU2-ADMIN",
+    "unitId": "u001",
+    "positionId": "p001",
+    "status": "active",
+    "createdAt": "2026-08-14T00:00:00Z"
+  },
+  {
+    "id": "u002",
+    "username": "lanhdao",
+    "password": "hpu2@2026",
+    "fullName": "Nguyễn Minh Anh",
+    "email": "minhanh@hpu2.edu.vn",
+    "employeeCode": "HPU2-001",
+    "unitId": "u130",
+    "positionId": "p002",
+    "status": "active",
+    "createdAt": "2026-08-14T00:00:00Z"
+  },
+  {
+    "id": "u003",
+    "username": "pdt01",
+    "password": "hpu2@2026",
+    "fullName": "Trần Thu Hà",
+    "email": "tranthuha@hpu2.edu.vn",
+    "employeeCode": "HPU2-002",
+    "unitId": "u101",
+    "positionId": "p003",
+    "status": "active",
+    "createdAt": "2026-08-14T00:00:00Z"
+  },
+  {
+    "id": "u004",
+    "username": "khcn01",
+    "password": "hpu2@2026",
+    "fullName": "Nguyễn Hoàng Nam",
+    "email": "hoangnam@hpu2.edu.vn",
+    "employeeCode": "HPU2-003",
+    "unitId": "u102",
+    "positionId": "p003",
+    "status": "active",
+    "createdAt": "2026-08-14T00:00:00Z"
+  },
+  {
+    "id": "u005",
+    "username": "gvtoan",
+    "password": "hpu2@2026",
+    "fullName": "Lê Thu Trang",
+    "email": "lethutrang@hpu2.edu.vn",
+    "employeeCode": "HPU2-004",
+    "unitId": "u107",
+    "positionId": "p004",
+    "status": "active",
+    "createdAt": "2026-08-14T00:00:00Z"
+  }
+]

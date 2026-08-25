@@ -1,0 +1,46 @@
+[
+  {
+    "id": "c001",
+    "code": "NH2026_2027",
+    "name": "Năm học 2026-2027",
+    "type": "academic_year",
+    "startDate": "2026-08-01",
+    "endDate": "2027-07-31",
+    "status": "active"
+  },
+  {
+    "id": "c002",
+    "code": "HK1_2026_2027",
+    "name": "Học kỳ I năm học 2026-2027",
+    "type": "semester",
+    "status": "active"
+  },
+  {
+    "id": "c003",
+    "code": "HK2_2026_2027",
+    "name": "Học kỳ II năm học 2026-2027",
+    "type": "semester",
+    "status": "active"
+  },
+  {
+    "id": "c004",
+    "code": "THANG",
+    "name": "Tháng",
+    "type": "month",
+    "status": "active"
+  },
+  {
+    "id": "c005",
+    "code": "QUY",
+    "name": "Quý",
+    "type": "quarter",
+    "status": "active"
+  },
+  {
+    "id": "c006",
+    "code": "TUAN",
+    "name": "Tuần",
+    "type": "week",
+    "status": "active"
+  }
+]

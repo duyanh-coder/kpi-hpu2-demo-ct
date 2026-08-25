@@ -1,0 +1,140 @@
+[
+  {
+    "id": "mu001",
+    "code": "PERCENT",
+    "name": "%",
+    "status": "active"
+  },
+  {
+    "id": "mu002",
+    "code": "PERCENT_ON_TIME",
+    "name": "% đúng hạn",
+    "status": "active"
+  },
+  {
+    "id": "mu003",
+    "code": "PERCENT_SAT",
+    "name": "% hài lòng",
+    "status": "active"
+  },
+  {
+    "id": "mu004",
+    "code": "COUNT_MEETING",
+    "name": "Cuộc",
+    "status": "active"
+  },
+  {
+    "id": "mu005",
+    "code": "CHANNEL",
+    "name": "Kênh",
+    "status": "active"
+  },
+  {
+    "id": "mu006",
+    "code": "PROGRAM",
+    "name": "Chương trình",
+    "status": "active"
+  },
+  {
+    "id": "mu007",
+    "code": "SOFTWARE",
+    "name": "Công cụ/phần mềm",
+    "status": "active"
+  },
+  {
+    "id": "mu008",
+    "code": "AGREEMENT",
+    "name": "Thỏa thuận",
+    "status": "active"
+  },
+  {
+    "id": "mu009",
+    "code": "ACTIVITY",
+    "name": "Hoạt động",
+    "status": "active"
+  },
+  {
+    "id": "mu010",
+    "code": "PERSON",
+    "name": "Người",
+    "status": "active"
+  },
+  {
+    "id": "mu011",
+    "code": "PERSON_VISIT",
+    "name": "Lượt người",
+    "status": "active"
+  },
+  {
+    "id": "mu012",
+    "code": "ARTICLE",
+    "name": "Bài",
+    "status": "active"
+  },
+  {
+    "id": "mu013",
+    "code": "PROJECT",
+    "name": "Dự án",
+    "status": "active"
+  },
+  {
+    "id": "mu014",
+    "code": "BUSINESS",
+    "name": "Doanh nghiệp",
+    "status": "active"
+  },
+  {
+    "id": "mu015",
+    "code": "DASHBOARD",
+    "name": "Dashboard",
+    "status": "active"
+  },
+  {
+    "id": "mu016",
+    "code": "UNIT",
+    "name": "Đơn vị",
+    "status": "active"
+  },
+  {
+    "id": "mu017",
+    "code": "STUDENT_VISIT",
+    "name": "Lượt SV",
+    "status": "active"
+  },
+  {
+    "id": "mu018",
+    "code": "COURSE",
+    "name": "Học phần",
+    "status": "active"
+  },
+  {
+    "id": "mu019",
+    "code": "MODEL",
+    "name": "Mô hình",
+    "status": "active"
+  },
+  {
+    "id": "mu020",
+    "code": "PRODUCT",
+    "name": "Sản phẩm/giải pháp",
+    "status": "active"
+  },
+  {
+    "id": "mu021",
+    "code": "INITIATIVE",
+    "name": "Sáng kiến/Giải pháp",
+    "status": "active"
+  },
+  {
+    "id": "mu022",
+    "code": "PROPOSAL",
+    "name": "Đề án",
+    "status": "active"
+  },
+  {
+    "id": "mu023",
+    "code": "PERSON_GROUP",
+    "name": "Tập thể/cá nhân",
+    "status": "active"
+  }
+]

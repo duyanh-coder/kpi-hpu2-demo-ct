@@ -1,0 +1,93 @@
+[
+  {
+    "id": "grp_qt",
+    "code": "QT",
+    "name": "Quản trị",
+    "description": "Lĩnh vực KPI HPU2: Quản trị",
+    "status": "active"
+  },
+  {
+    "id": "grp_cchc",
+    "code": "CCHC",
+    "name": "Cải cách hành chính",
+    "description": "Lĩnh vực KPI HPU2: Cải cách hành chính",
+    "status": "active"
+  },
+  {
+    "id": "grp_ts",
+    "code": "TS",
+    "name": "Tuyển sinh",
+    "description": "Lĩnh vực KPI HPU2: Tuyển sinh",
+    "status": "active"
+  },
+  {
+    "id": "grp_dt",
+    "code": "ĐT",
+    "name": "Đào tạo",
+    "description": "Lĩnh vực KPI HPU2: Đào tạo",
+    "status": "active"
+  },
+  {
+    "id": "grp_dbcl",
+    "code": "ĐBCL",
+    "name": "Khảo thí và đảm bảo chất lượng giáo dục",
+    "description": "Lĩnh vực KPI HPU2: Khảo thí và đảm bảo chất lượng giáo dục",
+    "status": "active"
+  },
+  {
+    "id": "grp_qth",
+    "code": "QTH",
+    "name": "Quốc tế hóa giáo dục đại học",
+    "description": "Lĩnh vực KPI HPU2: Quốc tế hóa giáo dục đại học",
+    "status": "active"
+  },
+  {
+    "id": "grp_kh",
+    "code": "KH",
+    "name": "Nghiên cứu khoa học, đổi mới sáng tạo và chuyển giao công nghệ",
+    "description": "Lĩnh vực KPI HPU2: Nghiên cứu khoa học, đổi mới sáng tạo và chuyển giao công nghệ",
+    "status": "active"
+  },
+  {
+    "id": "grp_dmst",
+    "code": "ĐMST",
+    "name": "Đổi mới sáng tạo, khởi nghiệp và hệ sinh thái EdTech",
+    "description": "Lĩnh vực KPI HPU2: Đổi mới sáng tạo, khởi nghiệp và hệ sinh thái EdTech",
+    "status": "active"
+  },
+  {
+    "id": "grp_cds",
+    "code": "CĐS",
+    "name": "Chuyển đổi số và dữ liệu",
+    "description": "Lĩnh vực KPI HPU2: Chuyển đổi số và dữ liệu",
+    "status": "active"
+  },
+  {
+    "id": "grp_bd",
+    "code": "BD",
+    "name": "Bình dân học vụ số và học liệu số",
+    "description": "Lĩnh vực KPI HPU2: Bình dân học vụ số và học liệu số",
+    "status": "active"
+  },
+  {
+    "id": "grp_nn",
+    "code": "NN",
+    "name": "Chất lượng giảng viên và nguồn nhân lực",
+    "description": "Lĩnh vực KPI HPU2: Chất lượng giảng viên và nguồn nhân lực",
+    "status": "active"
+  },
+  {
+    "id": "grp_ht",
+    "code": "HT",
+    "name": "Hợp tác với doanh nghiệp, Sở GD&ĐT, cơ sở giáo dục, đào tạo",
+    "description": "Lĩnh vực KPI HPU2: Hợp tác với doanh nghiệp, Sở GD&ĐT, cơ sở giáo dục, đào tạo",
+    "status": "active"
+  },
+  {
+    "id": "grp_td",
+    "code": "TĐ",
+    "name": "Thi đua, khen thưởng và nhân rộng mô hình",
+    "description": "Lĩnh vực KPI HPU2: Thi đua, khen thưởng và nhân rộng mô hình",
+    "status": "active"
+  }
+]
