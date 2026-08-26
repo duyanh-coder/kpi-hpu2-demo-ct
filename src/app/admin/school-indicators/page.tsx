@@ -1,6 +1,7 @@
 'use client';
 
-import { Plus, Edit, Trash2, Copy } from 'lucide-react';
+import { Plus, Edit, Trash2, Copy, Search } from 'lucide-react';
+import sourceIndicators from '@/data/hpu2-school-indicators.json';
 import { useState, useEffect, useCallback, useMemo } from 'react';
 import Modal from '@/components/ui/Modal';
 import { apiGet, apiPost, apiPut, apiDelete } from '@/lib/api';
@@ -16,6 +17,9 @@ export default function SchoolIndicatorsPage() {
   const [editItem, setEditItem] = useState<KPIIndicator | null>(null);
   const [editObjIds, setEditObjIds] = useState<string[]>([]);
   const [showCloneModal, setShowCloneModal] = useState(false);
+  const [search, setSearch] = useState('');
+  const [groupFilter, setGroupFilter] = useState('all');
+  const [cycleFilter, setCycleFilter] = useState('all');
   const [cloneFromYear, setCloneFromYear] = useState('');
 
   const loadYears = useCallback(async () => {
@@ -61,6 +65,16 @@ export default function SchoolIndicatorsPage() {
     });
     return map;
   }, [links, objectives]);
+
+  const sourceGroups = useMemo(() => [...new Set(sourceIndicators.map(x => x.group))], []);
+  const sourceRows = useMemo(() => {
+    const q = search.trim().toLowerCase();
+    return sourceIndicators.filter(x =>
+      (groupFilter === 'all' || x.group === groupFilter) &&
+      (cycleFilter === 'all' || x.cycle === cycleFilter) &&
+      (!q || `${x.code} ${x.name} ${x.group} ${x.target}`.toLowerCase().includes(q))
+    );
+  }, [search, groupFilter, cycleFilter]);
 
   const getObjIdsForIndicator = (indicatorCode: string): string[] => {
     return links
@@ -164,44 +178,51 @@ export default function SchoolIndicatorsPage() {
       </div>
 
       <div className="card">
+        <div className="card-header flex flex-col lg:flex-row lg:items-center justify-between gap-3">
+          <div>
+            <h3 className="text-white">Bộ chỉ tiêu cấp Trường</h3>
+            <p className="text-white/80 text-xs mt-1">Dữ liệu nguồn: Bộ KPI chính năm học 2026–2027.</p>
+          </div>
+          <div className="flex flex-col sm:flex-row gap-2 w-full lg:w-auto">
+            <select value={groupFilter} onChange={e => setGroupFilter(e.target.value)} className="px-3 py-2 rounded-lg border text-sm bg-white text-text-dark">
+              <option value="all">Tất cả lĩnh vực</option>
+              {sourceGroups.map(g => <option key={g} value={g}>{g}</option>)}
+            </select>
+            <select value={cycleFilter} onChange={e => setCycleFilter(e.target.value)} className="px-3 py-2 rounded-lg border text-sm bg-white text-text-dark">
+              <option value="all">Tất cả chu kỳ</option><option value="Năm học">Năm học</option><option value="Học kỳ">Học kỳ</option>
+            </select>
+            <div className="relative"><Search size={15} className="absolute left-3 top-1/2 -translate-y-1/2 text-text-light"/><input value={search} onChange={e => setSearch(e.target.value)} placeholder="Tìm mã hoặc nội dung..." className="w-full lg:w-64 pl-9 pr-3 py-2 rounded-lg border text-sm bg-white text-text-dark"/></div>
+          </div>
+        </div>
         <div className="p-0">
           <div className="overflow-x-auto"><table className="table">
             <thead>
-              <tr><th>Mã</th><th>Tên chỉ tiêu</th><th>Đơn vị</th><th>Chỉ tiêu</th><th>Trọng số</th><th>Mục tiêu CL</th><th>Thao tác</th></tr>
+              <tr><th>Mã KPI</th><th>Nội dung chỉ tiêu / Lĩnh vực</th><th>ĐVT</th><th>Chỉ tiêu năm học 2026–2027</th><th>Chu kỳ</th><th>Mục tiêu CL</th><th>Thao tác</th></tr>
             </thead>
             <tbody>
-              {items.map(ind => {
+              {sourceRows.map((ind, idx) => {
+                const existing = items.find(x => x.code === ind.code);
                 const objNames = indicatorToObjectives[ind.code] || [];
                 return (
-                  <tr key={ind.id}>
+                  <tr key={ind.code}>
                     <td><span className="badge badge-info">{ind.code}</span></td>
-                    <td className="font-medium max-w-[250px] truncate" title={ind.name}>{ind.name}</td>
+                    <td><div className="font-medium">{ind.name}</div><div className="text-xs text-text-light mt-1">{ind.group}</div></td>
                     <td className="text-sm">{ind.unit}</td>
-                    <td className="text-sm">{ind.targetValue}</td>
-                    <td className="text-sm">{ind.weight}%</td>
+                    <td className="text-sm font-medium">{ind.target}</td>
+                    <td className="text-sm">{ind.cycle}</td>
                     <td>
-                      {objNames.length > 0 ? (
-                        <div className="flex flex-wrap gap-1">
-                          {objNames.map(n => (
-                            <span key={n} className="badge badge-secondary text-[10px]">{n}</span>
-                          ))}
-                        </div>
-                      ) : (
-                        <span className="text-text-light text-xs">—</span>
-                      )}
+                      {objNames.length > 0 ? <div className="flex flex-wrap gap-1">{objNames.map(n => <span key={n} className="badge badge-secondary text-[10px]">{n}</span>)}</div> : <span className="text-text-light text-xs">Chưa liên kết</span>}
                     </td>
                     <td>
-                      <div className="flex gap-1">
-                        <button onClick={() => openEdit(ind)} className="p-1 text-accent-yellow hover:bg-accent-yellow/10 rounded"><Edit size={14} /></button>
-                        <button onClick={() => handleDelete(ind.id, ind.code)} className="p-1 text-accent-red hover:bg-accent-red/10 rounded"><Trash2 size={14} /></button>
-                      </div>
+                      {existing ? <div className="flex gap-1">
+                        <button onClick={() => openEdit(existing)} className="p-1 text-accent-yellow hover:bg-accent-yellow/10 rounded"><Edit size={14} /></button>
+                        <button onClick={() => handleDelete(existing.id, existing.code)} className="p-1 text-accent-red hover:bg-accent-red/10 rounded"><Trash2 size={14} /></button>
+                      </div> : <button onClick={openCreate} className="text-xs text-primary hover:underline">Thêm vào quản lý</button>}
                     </td>
                   </tr>
                 );
               })}
-              {items.length === 0 && (
-                <tr><td colSpan={7} className="text-center text-text-light text-sm py-8">Chưa có chỉ tiêu nào</td></tr>
-              )}
+              {sourceRows.length === 0 && <tr><td colSpan={7} className="text-center text-text-light text-sm py-8">Không tìm thấy chỉ tiêu phù hợp</td></tr>}
             </tbody>
           </table></div>
         </div>

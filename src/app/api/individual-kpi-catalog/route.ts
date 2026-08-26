@@ -22,6 +22,8 @@ export async function POST(request: NextRequest) {
     positionCode: body.positionCode,
     unitId: body.unitId,
     linkedCatalogId: body.linkedCatalogId || null,
+    target: body.target || '',
+    cycle: body.cycle || 'Năm học',
     status: 'active',
   };
   items.push(newItem);

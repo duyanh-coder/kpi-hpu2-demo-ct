@@ -152,7 +152,7 @@ const menuItems: MenuItem[] = [
 export default function Sidebar({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) {
   const pathname = usePathname();
   const [expandedGroups, setExpandedGroups] = useState<string[]>(() => {
-    if (pathname.startsWith('/kpi/academic') || pathname.startsWith('/kpi/cycles') || pathname.startsWith('/admin/organization') || pathname.startsWith('/admin/positions') || pathname.startsWith('/admin/job-positions') || pathname.startsWith('/admin/shared-categories') || pathname.startsWith('/admin/kpi-catalogs')) return ['/setup'];
+    if (pathname.startsWith('/kpi/academic') || pathname.startsWith('/kpi/cycles') || pathname.startsWith('/admin/organization') || pathname.startsWith('/admin/positions') || pathname.startsWith('/admin/job-positions') || pathname.startsWith('/admin/shared-categories') || pathname.startsWith('/admin/kpi-catalogs') || pathname.startsWith('/admin/kpi-data')) return ['/setup'];
     if (pathname.startsWith('/admin/school-indicators') || pathname.startsWith('/kpi/strategic') || pathname.startsWith('/kpi/kpi-templates') || pathname.startsWith('/admin/bsc') || pathname.startsWith('/admin/target-groups') || pathname.startsWith('/admin/import')) return ['/define'];
     if (pathname.startsWith('/kpi/cascade') || pathname.startsWith('/kpi/task-assignment') || pathname.startsWith('/kpi/annual-work-plan') || pathname.startsWith('/kpi/plans') || pathname.startsWith('/kpi/department') || pathname.startsWith('/kpi/my-kpi') || pathname.startsWith('/kpi/plan-versions')) return ['/deploy'];
     if (pathname.startsWith('/kpi/progress') || pathname.startsWith('/kpi/evidences') || pathname.startsWith('/kpi/personal-dashboard') || pathname.startsWith('/kpi/unit-dashboard') || pathname.startsWith('/kpi/executive-dashboard') || pathname.startsWith('/kpi/warnings')) return ['/execute'];
@@ -193,10 +193,10 @@ export default function Sidebar({ isOpen, onClose }: { isOpen: boolean; onClose:
   );
 
   return (
-    <aside className={`fixed inset-y-0 left-0 z-50 w-64 bg-white border-r border-border min-h-screen transform transition-transform duration-200 ease-in-out lg:static lg:translate-x-0 ${
+    <aside className={`fixed inset-y-0 left-0 z-50 flex h-dvh w-64 flex-col bg-white border-r border-border transform transition-transform duration-200 ease-in-out lg:translate-x-0 ${
       isOpen ? 'translate-x-0' : '-translate-x-full'
     }`}>
-      <div className="p-4 border-b border-border flex items-center justify-between">
+      <div className="shrink-0 p-4 border-b border-border flex items-center justify-between bg-white">
         <Link href="/" className="flex items-center gap-3">
           <img src="/logo-hpu2.png" alt="Đại học Sư phạm Hà Nội 2" className="w-10 h-10 object-contain" />
           <div>
@@ -209,7 +209,7 @@ export default function Sidebar({ isOpen, onClose }: { isOpen: boolean; onClose:
         </button>
       </div>
 
-      <nav className="p-2 overflow-y-auto max-h-[calc(100vh-80px)]">
+      <nav className="min-h-0 flex-1 overflow-y-auto overscroll-contain p-2">
         {menuItems.map((item) => {
           const Icon = item.icon;
           const hasChildren = item.children && item.children.length > 0;

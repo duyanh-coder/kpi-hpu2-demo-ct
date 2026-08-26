@@ -1,0 +1,398 @@
+{
+  "school": [
+    {
+      "id": "BKPI-T-01",
+      "code": "QT02",
+      "taskNo": 41,
+      "task": "Triển khai văn bản hướng dẫn đánh giá viên chức, NLĐ theo KPI tại các đơn vị",
+      "owner": "P. TCCB",
+      "kpiCodes": [
+        "QT02"
+      ],
+      "result": "Văn bản hướng dẫn được ban hành và triển khai đến 100% đơn vị thí điểm",
+      "deadline": "8/2026",
+      "level": "Trường"
+    },
+    {
+      "id": "BKPI-T-02",
+      "code": "QT01",
+      "taskNo": 42,
+      "task": "Ban hành kế hoạch triển khai Quyết định số 2371/QĐ-TTg và hướng dẫn các đơn vị lồng ghép nhiệm vụ vào kế hoạch hành động năm học",
+      "owner": "Ban Chỉ đạo thực hiện Quyết định 2371",
+      "kpiCodes": [
+        "QT01",
+        "QT04",
+        "QT05"
+      ],
+      "result": "Kế hoạch được ban hành; hướng dẫn lồng ghép nhiệm vụ vào kế hoạch đơn vị",
+      "deadline": "8/2026",
+      "level": "Trường"
+    },
+    {
+      "id": "BKPI-T-03",
+      "code": "QT08",
+      "taskNo": 43,
+      "task": "Xây dựng Danh mục văn bản nội bộ cần rà soát, sửa đổi, bổ sung hoặc ban hành mới trong năm học",
+      "owner": "P. Hành chính",
+      "kpiCodes": [
+        "QT08"
+      ],
+      "result": "Danh mục văn bản kèm phân công đơn vị chủ trì và tiến độ",
+      "deadline": "9/2026",
+      "level": "Trường"
+    },
+    {
+      "id": "BKPI-T-04",
+      "code": "TĐ03",
+      "taskNo": 44,
+      "task": "Ban hành Quyết định công nhận sáng kiến có phạm vi ảnh hưởng, khả năng nhân rộng cấp cơ sở",
+      "owner": "P. TCCB",
+      "kpiCodes": [
+        "TĐ03"
+      ],
+      "result": "Quyết định công nhận sáng kiến cấp cơ sở được ban hành",
+      "deadline": "Trước 30/8/2026",
+      "level": "Trường"
+    },
+    {
+      "id": "BKPI-T-05",
+      "code": "ĐT03",
+      "taskNo": 13,
+      "task": "Xét tốt nghiệp cho sinh viên đại học hệ chính quy đợt tháng 8",
+      "owner": "P. Đào tạo",
+      "kpiCodes": [
+        "ĐT03"
+      ],
+      "result": "Quyết định công nhận tốt nghiệp đợt tháng 8",
+      "deadline": "8/2026",
+      "level": "Trường"
+    },
+    {
+      "id": "BKPI-T-06",
+      "code": "HT02",
+      "taskNo": 15,
+      "task": "Triển khai kế hoạch công tác Kiến tập, TTSP, TTCN",
+      "owner": "P. Đào tạo",
+      "kpiCodes": [
+        "HT02"
+      ],
+      "result": "Kế hoạch kiến tập, TTSP, TTCN được ban hành",
+      "deadline": "8/2026",
+      "level": "Trường"
+    },
+    {
+      "id": "BKPI-T-07",
+      "code": "ĐT02",
+      "taskNo": 16,
+      "task": "Xét kết quả học tập học kỳ 2 năm học 2025-2026",
+      "owner": "P. Đào tạo",
+      "kpiCodes": [
+        "ĐT02"
+      ],
+      "result": "Bảng tổng hợp kết quả học tập HK2 năm học 2025-2026",
+      "deadline": "8/2026",
+      "level": "Trường"
+    },
+    {
+      "id": "BKPI-T-08",
+      "code": "TS01",
+      "taskNo": 86,
+      "task": "Rà soát, bổ sung ngân hàng đề nguồn phục vụ kì thi độc lập tuyển sinh đại học chính quy",
+      "owner": "TT. Khảo thí và ĐBCLGD",
+      "kpiCodes": [
+        "TS01",
+        "ĐBCL07"
+      ],
+      "result": "Bộ ngân hàng đề nguồn phục vụ kì thi độc lập tuyển sinh đại học chính quy năm 2027",
+      "deadline": "11/2026",
+      "level": "Trường"
+    },
+    {
+      "id": "BKPI-T-09",
+      "code": "HT02",
+      "taskNo": 3,
+      "task": "Rà soát kế hoạch đào tạo, thực hành, thực tập, kiến tập, TTSP theo hướng tăng cường trải nghiệm thực tiễn và năng lực CĐS giáo dục",
+      "owner": "P. Đào tạo",
+      "kpiCodes": [
+        "HT02"
+      ],
+      "result": "Kế hoạch thực hành, thực tập năm học mới",
+      "deadline": "7/2027",
+      "level": "Trường"
+    },
+    {
+      "id": "BKPI-T-10",
+      "code": "KH04",
+      "taskNo": 8,
+      "task": "Cập nhật cơ sở dữ liệu công bố khoa học, nhóm nghiên cứu, chuyên gia, đối tác, đề tài, sản phẩm chuyển giao và học liệu số",
+      "owner": "P. KHCN và HTQT",
+      "kpiCodes": [
+        "KH04",
+        "KH07",
+        "ĐT02"
+      ],
+      "result": "Cơ sở dữ liệu KHCN&HTQT được cập nhật",
+      "deadline": "7/2027",
+      "level": "Trường"
+    },
+    {
+      "id": "BKPI-T-11",
+      "code": "TS01",
+      "taskNo": 4,
+      "task": "Tổ chức thi tuyển sinh đại học năm 2027 (xét tuyển đợt 1)",
+      "owner": "P. Đào tạo",
+      "kpiCodes": [
+        "TS01"
+      ],
+      "result": "Hoàn thành xét tuyển đợt 1; danh sách thí sinh trúng tuyển",
+      "deadline": "7/2027",
+      "level": "Trường"
+    }
+  ],
+  "unit": [
+    {
+      "id": "BKPI-DV-01",
+      "code": "DV-QT02",
+      "sourceTaskNo": 41,
+      "kpiCode": "QT02",
+      "task": "Tổ chức triển khai hướng dẫn đánh giá KPI tại đơn vị",
+      "ownerType": "Đơn vị trực thuộc",
+      "result": "100% cán bộ thuộc phạm vi đơn vị được phổ biến, hướng dẫn thực hiện",
+      "deadline": "8/2026",
+      "level": "Đơn vị"
+    },
+    {
+      "id": "BKPI-DV-02",
+      "code": "DV-QT01",
+      "sourceTaskNo": 42,
+      "kpiCode": "QT01",
+      "task": "Lồng ghép nhiệm vụ theo Quyết định 2371 vào kế hoạch hành động của đơn vị",
+      "ownerType": "Khoa/Phòng/Ban",
+      "result": "Kế hoạch hành động đơn vị có mục tiêu, nhiệm vụ, sản phẩm và tiến độ",
+      "deadline": "Theo kế hoạch đơn vị",
+      "level": "Đơn vị"
+    },
+    {
+      "id": "BKPI-DV-03",
+      "code": "DV-QT04",
+      "sourceTaskNo": 42,
+      "kpiCode": "QT04",
+      "task": "Phân công nhiệm vụ trọng tâm theo nguyên tắc 6 rõ",
+      "ownerType": "Đơn vị chủ trì/phối hợp",
+      "result": "Nhiệm vụ có người chịu trách nhiệm, thời hạn và sản phẩm đầu ra",
+      "deadline": "Theo nhiệm vụ",
+      "level": "Đơn vị"
+    },
+    {
+      "id": "BKPI-DV-04",
+      "code": "DV-QT05",
+      "sourceTaskNo": 42,
+      "kpiCode": "QT05",
+      "task": "Cập nhật tiến độ nhiệm vụ thuộc đơn vị trên hệ thống",
+      "ownerType": "Đơn vị",
+      "result": "Tiến độ được cập nhật đầy đủ theo chu kỳ theo dõi",
+      "deadline": "Định kỳ",
+      "level": "Đơn vị"
+    },
+    {
+      "id": "BKPI-DV-05",
+      "code": "DV-QT08",
+      "sourceTaskNo": 43,
+      "kpiCode": "QT08",
+      "task": "Rà soát văn bản, quy trình thuộc phạm vi quản lý của đơn vị",
+      "ownerType": "Phòng/Trung tâm/Khoa",
+      "result": "Danh mục văn bản cần sửa đổi hoặc ban hành mới",
+      "deadline": "9/2026",
+      "level": "Đơn vị"
+    },
+    {
+      "id": "BKPI-DV-06",
+      "code": "DV-TD03",
+      "sourceTaskNo": 44,
+      "kpiCode": "TĐ03",
+      "task": "Tổ chức đề xuất, xét chọn sáng kiến trong đơn vị",
+      "ownerType": "Đơn vị",
+      "result": "Hồ sơ sáng kiến đủ điều kiện đề nghị công nhận",
+      "deadline": "Theo đợt",
+      "level": "Đơn vị"
+    },
+    {
+      "id": "BKPI-DV-07",
+      "code": "DV-ĐT03",
+      "sourceTaskNo": 13,
+      "kpiCode": "ĐT03",
+      "task": "Hoàn thiện hồ sơ, dữ liệu xét tốt nghiệp thuộc đơn vị",
+      "ownerType": "Khoa/Đơn vị đào tạo",
+      "result": "Danh sách, hồ sơ và dữ liệu xét tốt nghiệp đúng tiến độ",
+      "deadline": "8/2026",
+      "level": "Đơn vị"
+    },
+    {
+      "id": "BKPI-DV-08",
+      "code": "DV-HT02",
+      "sourceTaskNo": 15,
+      "kpiCode": "HT02",
+      "task": "Phối hợp triển khai kiến tập, thực tập, TTSP theo kế hoạch",
+      "ownerType": "Khoa/Bộ môn",
+      "result": "Kế hoạch và danh sách triển khai được hoàn thành",
+      "deadline": "Theo kế hoạch",
+      "level": "Đơn vị"
+    },
+    {
+      "id": "BKPI-DV-09",
+      "code": "DV-ĐT02",
+      "sourceTaskNo": 16,
+      "kpiCode": "ĐT02",
+      "task": "Rà soát, xác nhận kết quả học tập thuộc phạm vi quản lý",
+      "ownerType": "Khoa/Bộ môn",
+      "result": "Dữ liệu kết quả học tập được tổng hợp, xác nhận",
+      "deadline": "8/2026",
+      "level": "Đơn vị"
+    },
+    {
+      "id": "BKPI-DV-10",
+      "code": "DV-TS01",
+      "sourceTaskNo": 86,
+      "kpiCode": "TS01",
+      "task": "Thực hiện nhiệm vụ chuẩn bị phục vụ tuyển sinh theo phân công",
+      "ownerType": "Đơn vị liên quan",
+      "result": "Ngân hàng đề, hồ sơ hoặc dữ liệu được hoàn thành theo nhiệm vụ",
+      "deadline": "11/2026",
+      "level": "Đơn vị"
+    },
+    {
+      "id": "BKPI-DV-11",
+      "code": "DV-KH04",
+      "sourceTaskNo": 8,
+      "kpiCode": "KH04",
+      "task": "Cập nhật dữ liệu KHCN, chuyên gia, đối tác và sản phẩm thuộc đơn vị",
+      "ownerType": "Khoa/Phòng/Trung tâm",
+      "result": "Dữ liệu được cập nhật và xác nhận",
+      "deadline": "7/2027",
+      "level": "Đơn vị"
+    }
+  ],
+  "individual": [
+    {
+      "id": "BKPI-CN-01",
+      "code": "CN-QT02",
+      "sourceTaskNo": 41,
+      "kpiCode": "QT02",
+      "position": "Chuyên viên",
+      "task": "Soạn thảo, tổng hợp và triển khai tài liệu hướng dẫn đánh giá KPI được phân công",
+      "result": "Tài liệu/hồ sơ được hoàn thành và ban hành đúng hạn",
+      "deadline": "8/2026",
+      "level": "Cá nhân"
+    },
+    {
+      "id": "BKPI-CN-02",
+      "code": "CN-QT01",
+      "sourceTaskNo": 42,
+      "kpiCode": "QT01",
+      "position": "Cán bộ quản lý",
+      "task": "Chỉ đạo xây dựng và phê duyệt kế hoạch hành động của đơn vị",
+      "result": "Kế hoạch hành động đầy đủ nội dung, trách nhiệm và tiến độ",
+      "deadline": "Theo kế hoạch",
+      "level": "Cá nhân"
+    },
+    {
+      "id": "BKPI-CN-03",
+      "code": "CN-QT04",
+      "sourceTaskNo": 42,
+      "kpiCode": "QT04",
+      "position": "Cán bộ quản lý",
+      "task": "Phân công nhiệm vụ theo nguyên tắc 6 rõ và theo dõi thực hiện",
+      "result": "Nhiệm vụ được giao đúng người, rõ thời hạn và sản phẩm",
+      "deadline": "Theo nhiệm vụ",
+      "level": "Cá nhân"
+    },
+    {
+      "id": "BKPI-CN-04",
+      "code": "CN-QT05",
+      "sourceTaskNo": 42,
+      "kpiCode": "QT05",
+      "position": "Chuyên viên",
+      "task": "Cập nhật tiến độ và minh chứng nhiệm vụ được giao",
+      "result": "Tiến độ được cập nhật đúng hạn, đầy đủ minh chứng",
+      "deadline": "Định kỳ",
+      "level": "Cá nhân"
+    },
+    {
+      "id": "BKPI-CN-05",
+      "code": "CN-QT08",
+      "sourceTaskNo": 43,
+      "kpiCode": "QT08",
+      "position": "Chuyên viên",
+      "task": "Rà soát, tổng hợp danh mục văn bản thuộc phần việc được giao",
+      "result": "Danh mục và hồ sơ rà soát hoàn thành đúng hạn",
+      "deadline": "9/2026",
+      "level": "Cá nhân"
+    },
+    {
+      "id": "BKPI-CN-06",
+      "code": "CN-TD03",
+      "sourceTaskNo": 44,
+      "kpiCode": "TĐ03",
+      "position": "Cán bộ quản lý",
+      "task": "Tổ chức xét chọn, hoàn thiện hồ sơ sáng kiến thuộc đơn vị",
+      "result": "Hồ sơ sáng kiến được hoàn thiện theo quy định",
+      "deadline": "Theo đợt",
+      "level": "Cá nhân"
+    },
+    {
+      "id": "BKPI-CN-07",
+      "code": "CN-ĐT03",
+      "sourceTaskNo": 13,
+      "kpiCode": "ĐT03",
+      "position": "Chuyên viên",
+      "task": "Kiểm tra, tổng hợp hồ sơ và dữ liệu xét tốt nghiệp",
+      "result": "Hồ sơ, danh sách xét tốt nghiệp chính xác và đúng hạn",
+      "deadline": "8/2026",
+      "level": "Cá nhân"
+    },
+    {
+      "id": "BKPI-CN-08",
+      "code": "CN-HT02",
+      "sourceTaskNo": 15,
+      "kpiCode": "HT02",
+      "position": "Giảng viên",
+      "task": "Thực hiện nhiệm vụ hướng dẫn, phối hợp kiến tập/thực tập/TTSP",
+      "result": "Hoàn thành phần việc được giao và báo cáo kết quả",
+      "deadline": "Theo kế hoạch",
+      "level": "Cá nhân"
+    },
+    {
+      "id": "BKPI-CN-09",
+      "code": "CN-ĐT02",
+      "sourceTaskNo": 16,
+      "kpiCode": "ĐT02",
+      "position": "Giảng viên",
+      "task": "Nhập, rà soát và xác nhận kết quả học tập thuộc học phần được phân công",
+      "result": "Kết quả học tập chính xác, được cập nhật đúng thời hạn",
+      "deadline": "8/2026",
+      "level": "Cá nhân"
+    },
+    {
+      "id": "BKPI-CN-10",
+      "code": "CN-TS01",
+      "sourceTaskNo": 86,
+      "kpiCode": "TS01",
+      "position": "Chuyên viên",
+      "task": "Thực hiện phần việc chuẩn bị ngân hàng đề và dữ liệu phục vụ tuyển sinh",
+      "result": "Sản phẩm được giao hoàn thành đúng tiến độ",
+      "deadline": "11/2026",
+      "level": "Cá nhân"
+    },
+    {
+      "id": "BKPI-CN-11",
+      "code": "CN-KH04",
+      "sourceTaskNo": 8,
+      "kpiCode": "KH04",
+      "position": "Giảng viên",
+      "task": "Cập nhật công bố khoa học, nhóm nghiên cứu, sản phẩm và dữ liệu chuyên môn",
+      "result": "Dữ liệu cá nhân/nhóm nghiên cứu được cập nhật đầy đủ",
+      "deadline": "7/2027",
+      "level": "Cá nhân"
+    }
+  ]
+}

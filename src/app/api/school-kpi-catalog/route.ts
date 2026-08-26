@@ -23,6 +23,8 @@ export async function POST(request: NextRequest) {
     direction: body.direction || 'higher_better',
     requiredEvidence: body.requiredEvidence ?? true,
     maxScore: body.maxScore,
+    target: body.target || '',
+    cycle: body.cycle || 'Năm học',
     status: 'active',
   };
   items.push(newItem);

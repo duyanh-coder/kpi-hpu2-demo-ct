@@ -19,6 +19,8 @@ export async function POST(request: NextRequest) {
     name: body.name,
     unitId: body.unitId,
     linkedCatalogId: body.linkedCatalogId || null,
+    target: body.target || '',
+    cycle: body.cycle || 'Năm học',
     status: 'active',
   };
   items.push(newItem);

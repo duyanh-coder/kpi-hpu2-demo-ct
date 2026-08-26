@@ -6,6 +6,7 @@ import Modal from '@/components/ui/Modal';
 import { apiGet, apiPost, apiPut, apiDelete } from '@/lib/api';
 import unitsData from '@/data/units.json';
 import usersData from '@/data/users.json';
+import cascadeSeed from '@/data/hpu2-mbo-cascade.json';
 import type { KPIIndicator, AcademicYear } from '@/types';
 
 interface KPICascadeAssignment {
@@ -63,8 +64,6 @@ export default function CascadeAssignmentsPage() {
   const [indicators, setIndicators] = useState<KPIIndicator[]>([]);
   const [items, setItems] = useState<KPICascadeAssignment[]>([]);
   const [selectedCycleId, setSelectedCycleId] = useState('');
-  const selectedCycleIdRef = useRef(selectedCycleId);
-  selectedCycleIdRef.current = selectedCycleId;
   const [searchTerm, setSearchTerm] = useState('');
   const [statusFilter, setStatusFilter] = useState('all');
   const [detailTab, setDetailTab] = useState<'list' | 'ratio'>('list');
@@ -72,37 +71,64 @@ export default function CascadeAssignmentsPage() {
   const [showEdit, setShowEdit] = useState(false);
   const [selected, setSelected] = useState<KPICascadeAssignment | null>(null);
   const [loading, setLoading] = useState(true);
+  const loadRequestRef = useRef(0);
 
   const loadYears = useCallback(async () => {
     const y = await apiGet<AcademicYear[]>('/api/academic-years');
     setYears(y);
-    if (!selectedYearId) {
-      const active = y.find(ay => ay.status === 'active');
-      if (active) setSelectedYearId(active.id);
-    }
-  }, [selectedYearId]);
+    setSelectedYearId(prev => prev || y.find(ay => ay.status === 'active')?.id || y[0]?.id || '');
+  }, []);
 
   const load = useCallback(async (yearId: string) => {
     if (!yearId) return;
+    const requestId = ++loadRequestRef.current;
+    setLoading(true);
     try {
       const [c, a, ind] = await Promise.all([
         apiGet<KPICycle[]>('/api/cycles'),
         apiGet<KPICascadeAssignment[]>('/api/cascade-assignments'),
         apiGet<KPIIndicator[]>(`/api/indicators?academicYearId=${yearId}`),
       ]);
-      const yearCycles = c.filter(cy => cy.academicYearId === yearId);
-      setCycles(yearCycles);
-      setItems(a);
-      setIndicators(ind);
-      if (!selectedCycleIdRef.current && yearCycles.length > 0) {
-        const active = yearCycles.find(cy => cy.status === 'active');
-        setSelectedCycleId(active?.id || yearCycles[0].id);
-      }
-    } catch { /* empty */ } finally { setLoading(false); }
-  }, []);
 
-  useEffect(() => { loadYears(); }, [loadYears]);
-  useEffect(() => { if (selectedYearId) load(selectedYearId); }, [selectedYearId, load]);
+      if (requestId !== loadRequestRef.current) return;
+
+      const yearCycles = c.filter(cy => cy.academicYearId === yearId);
+      const activeCycle = yearCycles.find(cy => cy.status === 'active') || yearCycles[0];
+      const currentCycleId = activeCycle?.id || '';
+      const yearCycleIds = new Set(yearCycles.map(cy => cy.id));
+      const apiItemsForYear = a.filter(item => yearCycleIds.has(item.cycleId));
+
+      // Năm học 2026-2027 chưa có assignment trong API nguồn:
+      // dùng mock HPU2 làm fallback nhưng không ghi đè dữ liệu API.
+      const isHPU2Year = yearId === 'ay003' || /2026-2027/.test(
+        (years.find(y => y.id === yearId)?.name || '')
+      );
+      const hpu2Fallback = isHPU2Year && currentCycleId
+        ? (cascadeSeed as KPICascadeAssignment[]).map(item => ({ ...item, cycleId: currentCycleId }))
+        : [];
+
+      setCycles(yearCycles);
+      setSelectedCycleId(currentCycleId);
+      setItems(apiItemsForYear.length > 0 ? apiItemsForYear : hpu2Fallback);
+      setIndicators(ind);
+    } catch {
+      if (requestId !== loadRequestRef.current) return;
+    } finally {
+      if (requestId === loadRequestRef.current) setLoading(false);
+    }
+  }, [years]);
+
+  useEffect(() => { void loadYears(); }, [loadYears]);
+
+  useEffect(() => {
+    if (selectedYearId) void load(selectedYearId);
+  }, [selectedYearId, load]);
+
+  const handleYearChange = useCallback((yearId: string) => {
+    if (!yearId || yearId === selectedYearId) return;
+    setSelectedCycleId('');
+    setSelectedYearId(yearId);
+  }, [selectedYearId]);
 
   const indicatorMap: Record<string, { name: string; unit: string }> = {};
   indicators.forEach(i => { indicatorMap[i.id] = { name: i.name, unit: i.unit }; });
@@ -238,7 +264,7 @@ export default function CascadeAssignmentsPage() {
       <div className="flex items-center gap-3 flex-wrap">
         <span className="text-sm font-medium text-text-dark">Năm học:</span>
         {years.map(ay => (
-          <button key={ay.id} onClick={() => { setSelectedYearId(ay.id); setSelectedCycleId(''); }}
+          <button key={ay.id} onClick={() => handleYearChange(ay.id)}
             className={`px-3 py-1.5 rounded text-sm transition-colors ${selectedYearId === ay.id ? 'bg-primary text-white' : 'bg-white border border-border text-text-dark hover:bg-bg-cream'}`}>
             {ay.name}
           </button>
@@ -389,7 +415,7 @@ function ContributionRatioTable({ indicatorsData, cascadeItems, unitsData }: {
     return map;
   }, [cascadeItems]);
 
-  const schoolIndicators = indicatorsData.filter(i => i.id.startsWith('HPU2'));
+  const schoolIndicators = indicatorsData.filter(i => i.id.startsWith('CTU'));
 
   return (
     <div className="space-y-4">

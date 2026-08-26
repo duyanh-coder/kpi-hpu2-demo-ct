@@ -561,6 +561,8 @@ export interface SchoolKPICatalog {
   requiredEvidence: boolean;
   maxScore: number;
   status: 'active' | 'inactive';
+  target?: string;
+  cycle?: string;
 }
 
 export interface KPIGroupCatalog {
@@ -578,6 +580,8 @@ export interface UnitKPICatalog {
   name: string;
   unitId: string;
   linkedCatalogId: string | null;
+  target?: string;
+  cycle?: string;
   status: 'active' | 'inactive';
 }
 
@@ -588,6 +592,8 @@ export interface IndividualKPICatalog {
   positionCode: string;
   unitId: string;
   linkedCatalogId: string | null;
+  target?: string;
+  cycle?: string;
   status: 'active' | 'inactive';
 }
 

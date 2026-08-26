@@ -1,542 +1,156 @@
 [
   {
-    "id": "IND-QT01",
-    "code": "QT01",
-    "name": "Tỷ lệ đơn vị trực thuộc ban hành kế hoạch hành động triển khai nhiệm vụ năm học đúng hạn, có đầy đủ mục tiêu, nhiệm vụ, sản phẩm đầu ra, tiến độ, đơn vị/cá nhân chịu trách nhiệm và chỉ số theo dõi",
-    "status": "active",
+    "id": "HPU2-IND-01",
+    "code": "CN-QL01",
+    "name": "Hoàn thành việc xây dựng và tổ chức thực hiện kế hoạch công tác thuộc phạm vi được giao.",
+    "positionCode": "QL",
+    "unitId": "mu001",
     "linkedCatalogId": "HPU2-QT01",
-    "positionCode": "GV",
-    "unitId": "u001"
+    "target": "100%",
+    "cycle": "Năm học",
+    "status": "active"
   },
   {
-    "id": "IND-QT02",
-    "code": "QT02",
-    "name": "Tỷ lệ đơn vị trực thuộc nộp báo cáo KPI đúng thời hạn, đầy đủ số liệu, minh chứng và được đơn vị đầu mối xác nhận hợp lệ",
-    "status": "active",
-    "linkedCatalogId": "HPU2-QT02",
-    "positionCode": "GV",
-    "unitId": "u001"
-  },
-  {
-    "id": "IND-QT03",
-    "code": "QT03",
-    "name": "Số cuộc giao ban chuyên đề về triển khai Nghị quyết 57-NQ/TW, Nghị quyết 71-NQ/TW và Đề án 01",
-    "status": "active",
-    "linkedCatalogId": "HPU2-QT03",
-    "positionCode": "GV",
-    "unitId": "u001"
-  },
-  {
-    "id": "IND-QT04",
-    "code": "QT04",
-    "name": "Tỷ lệ nhiệm vụ trọng tâm được phân công theo nguyên tắc “6 rõ”",
-    "status": "active",
-    "linkedCatalogId": "HPU2-QT04",
-    "positionCode": "GV",
-    "unitId": "u001"
-  },
-  {
-    "id": "IND-QT05",
-    "code": "QT05",
-    "name": "Tỷ lệ nhiệm vụ trọng tâm được cập nhật tiến độ trên hệ thống theo dõi/dashboard",
-    "status": "active",
+    "id": "HPU2-IND-02",
+    "code": "CN-QL02",
+    "name": "Theo dõi, đôn đốc và cập nhật tiến độ nhiệm vụ thuộc phạm vi quản lý.",
+    "positionCode": "QL",
+    "unitId": "mu001",
     "linkedCatalogId": "HPU2-QT05",
-    "positionCode": "GV",
-    "unitId": "u001"
+    "target": "≥95%",
+    "cycle": "Tháng/Học kỳ",
+    "status": "active"
   },
   {
-    "id": "IND-QT06",
-    "code": "QT06",
-    "name": "Tỷ lệ nhiệm vụ đột xuất, phát sinh được đơn vị tiếp nhận, xử lý hoặc báo cáo đạt yêu cầu trở lên theo Nhật ký công việc phát sinh, bao gồm nhiệm vụ do Bộ GD&ĐT, cơ quan quản lý cấp trên, Đảng ủy, Ban Giám hiệu giao ngoài kế hoạch thường xuyên",
-    "status": "active",
-    "linkedCatalogId": "HPU2-QT06",
-    "positionCode": "GV",
-    "unitId": "u001"
-  },
-  {
-    "id": "IND-QT07",
-    "code": "QT07",
-    "name": "Tỷ lệ kết luận, chỉ đạo của Đảng ủy, Ban Giám hiệu được thực hiện đúng hạn",
-    "status": "active",
-    "linkedCatalogId": "HPU2-QT07",
-    "positionCode": "GV",
-    "unitId": "u001"
-  },
-  {
-    "id": "IND-QT08",
-    "code": "QT08",
-    "name": "Tỷ lệ văn bản, quy chế, quy định nội bộ được rà soát, sửa đổi, bổ sung hoặc ban hành mới trong năm học theo Danh mục đã xác định, đáp ứng yêu cầu đổi mới thể chế quản trị và chuyển đổi số của (Quy chế tổ chức và hoạt động, Quy định quản trị theo KPI, Quy chế chi tiêu nội bộ, Quy định vị trí việc làm, Quy chế phối hợp, Quy chế làm việc của giảng viên, Quy chế quản trị dữ liệu...)",
-    "status": "active",
-    "linkedCatalogId": "HPU2-QT08",
-    "positionCode": "GV",
-    "unitId": "u001"
-  },
-  {
-    "id": "IND-CCHC01",
-    "code": "CCHC01",
-    "name": "Tỷ lệ thủ tục hành chính nội bộ được rà soát, đơn giản hóa, công bố công khai quy trình (thành phần hồ sơ, thời gian, đầu mối xử lý)",
-    "status": "active",
-    "linkedCatalogId": "HPU2-CCHC01",
-    "positionCode": "GV",
-    "unitId": "u001"
-  },
-  {
-    "id": "IND-CCHC02",
-    "code": "CCHC02",
-    "name": "Tỷ lệ văn bản đi/đến được xử lý trên hệ thống quản lý văn bản điện tử, có chữ ký số",
-    "status": "active",
-    "linkedCatalogId": "HPU2-CCHC02",
-    "positionCode": "GV",
-    "unitId": "u001"
-  },
-  {
-    "id": "IND-CCHC03",
-    "code": "CCHC03",
-    "name": "Tỷ lệ thủ tục hành chính theo hướng toàn trình cho cán bộ, giảng viên, sinh viên (nộp hồ sơ, tra cứu, nhận kết quả trực tuyến)",
-    "status": "active",
-    "linkedCatalogId": "HPU2-CCHC03",
-    "positionCode": "GV",
-    "unitId": "u001"
-  },
-  {
-    "id": "IND-CCHC04",
-    "code": "CCHC04",
-    "name": "Tỷ lệ hồ sơ, thủ tục hành chính được xử lý đúng hạn so với quy định",
-    "status": "active",
-    "linkedCatalogId": "HPU2-CCHC04",
-    "positionCode": "GV",
-    "unitId": "u001"
-  },
-  {
-    "id": "IND-CCHC05",
-    "code": "CCHC05",
-    "name": "Tỷ lệ hồ sơ, tài liệu mới thuộc Danh mục hồ sơ bắt buộc số hóa trong năm học được số hóa, lập metadata, phân quyền và quản lý trên hệ thống lưu trữ điện tử của Trường.",
-    "status": "active",
-    "linkedCatalogId": "HPU2-CCHC05",
-    "positionCode": "GV",
-    "unitId": "u001"
-  },
-  {
-    "id": "IND-CCHC06",
-    "code": "CCHC06",
-    "name": "Mức độ hài lòng của cán bộ, giảng viên, sinh viên đối với chất lượng phục vụ hài lòng hành chính (khảo sát định kỳ)",
-    "status": "active",
-    "linkedCatalogId": "HPU2-CCHC06",
-    "positionCode": "GV",
-    "unitId": "u001"
-  },
-  {
-    "id": "IND-CCHC07",
-    "code": "CCHC07",
-    "name": "Hoàn thành 100% việc rà soát, chuẩn hóa Hoàn thành rà soát, chuẩn hóa, số hóa và ban hành Bộ quy trình hành chính, Trạng thái văn thư, lưu trữ tích hợp trên nền tảng số của Bộ quy trình hành chính tích hợp trên nền tảng số",
-    "status": "active",
-    "linkedCatalogId": "HPU2-CCHC07",
-    "positionCode": "GV",
-    "unitId": "u001"
-  },
-  {
-    "id": "IND-CCHC08",
-    "code": "CCHC08",
-    "name": "Số sáng kiến, giải pháp cải cách hành chính, đơn giản hóa quy trình, tích hợp Sáng kiến/ dữ liệu hoặc nâng cao chất lượng phục vụ được đề xuất, thẩm định và áp dụng giải pháp thực tế",
-    "status": "active",
-    "linkedCatalogId": "HPU2-CCHC08",
-    "positionCode": "GV",
-    "unitId": "u001"
-  },
-  {
-    "id": "IND-TS01",
-    "code": "TS01",
-    "name": "Tỷ lệ hoàn thành chỉ tiêu tuyển sinh được giao",
-    "status": "active",
-    "linkedCatalogId": "HPU2-TS01",
-    "positionCode": "GV",
-    "unitId": "u001"
-  },
-  {
-    "id": "IND-TS02",
-    "code": "TS02",
-    "name": "Tỷ lệ thí sinh nhập học thực tế trên tổng số trúng tuyển (giảm tỷ lệ “ảo”)",
-    "status": "active",
-    "linkedCatalogId": "HPU2-TS02",
-    "positionCode": "GV",
-    "unitId": "u001"
-  },
-  {
-    "id": "IND-TS03",
-    "code": "TS03",
-    "name": "Tỷ lệ hồ sơ, quy trình tuyển sinh (đăng ký, xét tuyển, xác nhận nhập học) được thực hiện trực tuyến toàn trình",
-    "status": "active",
-    "linkedCatalogId": "HPU2-TS03",
-    "positionCode": "GV",
-    "unitId": "u001"
-  },
-  {
-    "id": "IND-TS04",
-    "code": "TS04",
-    "name": "Tỷ lệ hồ sơ, minh chứng tuyển sinh được số hóa, lưu trữ và đối soát tự động với hệ thống của Bộ Giáo dục và Đào tạo",
-    "status": "active",
-    "linkedCatalogId": "HPU2-TS04",
-    "positionCode": "GV",
-    "unitId": "u001"
-  },
-  {
-    "id": "IND-TS05",
-    "code": "TS05",
-    "name": "Số kênh/hình thức truyền thông tuyển sinh số (website, mạng xã hội, tư vấn trực tuyến, trợ lý ảo/chatbot AI tư vấn tuyển sinh) được triển khai",
-    "status": "active",
-    "linkedCatalogId": "HPU2-TS05",
-    "positionCode": "GV",
-    "unitId": "u001"
-  },
-  {
-    "id": "IND-TS06",
-    "code": "TS06",
-    "name": "Mức độ hài lòng của thí sinh, phụ huynh đối với công tác tư vấn, hỗ trợ tuyển hài lòng sinh (khảo sát)",
-    "status": "active",
-    "linkedCatalogId": "HPU2-TS06",
-    "positionCode": "GV",
-    "unitId": "u001"
-  },
-  {
-    "id": "IND-TS07",
-    "code": "TS07",
-    "name": "Tốc độ tăng trưởng quy mô tuyển sinh sau đại học (thạc sĩ, tiến sĩ)",
-    "status": "active",
-    "linkedCatalogId": "HPU2-TS07",
-    "positionCode": "GV",
-    "unitId": "u001"
-  },
-  {
-    "id": "IND-ĐT01",
-    "code": "ĐT01",
-    "name": "Tỷ lệ chương trình đào tạo được rà soát, cập nhật theo hướng tích hợp năng lực số, đổi mới sáng tạo, AI và công nghệ giáo dục đáp ứng Thông tư 54/2026/TT-BGDĐT và Thông tư 56/2026/TT-BGDĐT của Bộ Giáo dục và Đào tạo",
-    "status": "active",
-    "linkedCatalogId": "HPU2-ĐT01",
-    "positionCode": "GV",
-    "unitId": "u001"
-  },
-  {
-    "id": "IND-ĐT02",
-    "code": "ĐT02",
-    "name": "Tỷ lệ học phần vận hành trên hệ thống LMS có dữ liệu học tập chuẩn theo quy định của Trường",
-    "status": "active",
-    "linkedCatalogId": "HPU2-ĐT02",
-    "positionCode": "GV",
-    "unitId": "u001"
-  },
-  {
-    "id": "IND-ĐT03",
-    "code": "ĐT03",
-    "name": "Tỷ lệ sinh viên tốt nghiệp có việc làm, tự tạo việc làm hoặc tiếp tục học tập trong vòng 12 tháng sau tốt nghiệp",
-    "status": "active",
-    "linkedCatalogId": "HPU2-ĐT03",
-    "positionCode": "GV",
-    "unitId": "u001"
-  },
-  {
-    "id": "IND-ĐT04",
-    "code": "ĐT04",
-    "name": "Tỷ lệ sinh viên tốt nghiệp có việc làm phù hợp với ngành/chuyên ngành đào tạo",
-    "status": "active",
-    "linkedCatalogId": "HPU2-ĐT04",
-    "positionCode": "GV",
-    "unitId": "u001"
-  },
-  {
-    "id": "IND-ĐT05",
-    "code": "ĐT05",
-    "name": "Tỷ lệ giảng viên áp dụng phương pháp giảng dạy tích cực, cá thể hóa hoặc dạy học kết hợp, có ứng dụng công nghệ số/AI trong tổ chức dạy học",
-    "status": "active",
-    "linkedCatalogId": "HPU2-ĐT05",
-    "positionCode": "GV",
-    "unitId": "u001"
-  },
-  {
-    "id": "IND-ĐT06",
-    "code": "ĐT06",
-    "name": "Tỷ lệ người học hài lòng với chất lượng giảng dạy, học liệu và hỗ trợ học tập (khảo sát định kỳ)",
-    "status": "active",
-    "linkedCatalogId": "HPU2-ĐT06",
-    "positionCode": "GV",
-    "unitId": "u001"
-  },
-  {
-    "id": "IND-ĐT07",
-    "code": "ĐT07",
-    "name": "Số chương trình đào tạo mới/chương trình liên kết đáp ứng nhu cầu thị trường Chương Năm học lao động và chuyển đổi số giáo dục được mở trình",
-    "status": "active",
-    "linkedCatalogId": "HPU2-ĐT07",
-    "positionCode": "GV",
-    "unitId": "u001"
-  },
-  {
-    "id": "IND-ĐT08",
-    "code": "ĐT08",
-    "name": "Tỷ lệ sinh viên tốt nghiệp đúng hạn theo thời gian thiết kế của chương trình đào tạo",
-    "status": "active",
-    "linkedCatalogId": "HPU2-ĐT08",
-    "positionCode": "GV",
-    "unitId": "u001"
-  },
-  {
-    "id": "IND-ĐBCL01",
-    "code": "ĐBCL01",
-    "name": "Tỷ lệ tiêu chí đạt chuẩn cơ sở giáo dục đại học theo Thông tư 01/2024/TT- BGDĐT",
-    "status": "active",
-    "linkedCatalogId": "HPU2-ĐBCL01",
-    "positionCode": "GV",
-    "unitId": "u001"
-  },
-  {
-    "id": "IND-ĐBCL02",
-    "code": "ĐBCL02",
-    "name": "100% đến hạn hoặc được đưa Tỷ lệ chương trình đào tạo cử nhân đạt tiêu chuẩn kiểm định chất lượng kiểm định trong năm học",
-    "status": "active",
-    "linkedCatalogId": "HPU2-ĐBCL02",
-    "positionCode": "GV",
-    "unitId": "u001"
-  },
-  {
-    "id": "IND-ĐBCL03",
-    "code": "ĐBCL03",
-    "name": "Số chương trình đào tạo được kiểm định quốc tế hoặc được đối tác quốc tế Chương Năm học công nhận/chứng nhận tương đương trình",
-    "status": "active",
-    "linkedCatalogId": "HPU2-ĐBCL03",
-    "positionCode": "GV",
-    "unitId": "u001"
-  },
-  {
-    "id": "IND-ĐBCL04",
-    "code": "ĐBCL04",
-    "name": "Tỷ lệ sinh viên tốt nghiệp đạt chuẩn năng lực số theo Khung năng lực số quốc gia tại thời điểm tốt nghiệp",
-    "status": "active",
-    "linkedCatalogId": "HPU2-ĐBCL04",
-    "positionCode": "GV",
-    "unitId": "u001"
-  },
-  {
-    "id": "IND-ĐBCL05",
-    "code": "ĐBCL05",
-    "name": "Tỷ lệ sinh viên tốt nghiệp đạt chuẩn ngoại ngữ đầu ra có chứng chỉ hợp lệ",
-    "status": "active",
-    "linkedCatalogId": "HPU2-ĐBCL05",
-    "positionCode": "GV",
-    "unitId": "u001"
-  },
-  {
-    "id": "IND-ĐBCL06",
-    "code": "ĐBCL06",
-    "name": "100% (đối với Tỷ lệ học phần áp dụng phương thức kiểm tra, đánh giá theo chuẩn đầu ra các học phần (ma trận đề thi, rubric, hướng dẫn chấm liên kết với chuẩn đầu ra học phần và chương trình đào tạo) chỉnh sửa, ban hành mới)",
-    "status": "active",
-    "linkedCatalogId": "HPU2-ĐBCL06",
-    "positionCode": "GV",
-    "unitId": "u001"
-  },
-  {
-    "id": "IND-ĐBCL07",
-    "code": "ĐBCL07",
-    "name": "Tỷ lệ ngân hàng câu hỏi/đề thi phục vụ tuyển sinh (SP2E) đánh giá trên máy tính được số hóa, chuẩn hóa theo ma trận năng lực",
-    "status": "active",
-    "linkedCatalogId": "HPU2-ĐBCL07",
-    "positionCode": "GV",
-    "unitId": "u001"
-  },
-  {
-    "id": "IND-ĐBCL08",
-    "code": "ĐBCL08",
-    "name": "Ban hành quy Ban hành và triển khai quy định, hướng dẫn về kiểm tra, đánh giá có ứng định/hướng dẫn dụng AI (hỗ trợ ra đề/chấm thi, phòng chống gian lận học thuật do AI tạo sinh) kiểm tra, đánh giá đúng thời hạn",
-    "status": "active",
-    "linkedCatalogId": "HPU2-ĐBCL08",
-    "positionCode": "GV",
-    "unitId": "u001"
-  },
-  {
-    "id": "IND-ĐBCL09",
-    "code": "ĐBCL09",
-    "name": "Tỷ lệ kỳ thi/đánh giá kết thúc học phần được tổ chức trên nền tảng khảo thí số (thi trên máy tính/trực tuyến có giám sát)",
-    "status": "active",
-    "linkedCatalogId": "HPU2-ĐBCL09",
-    "positionCode": "GV",
-    "unitId": "u001"
-  },
-  {
-    "id": "IND-ĐBCL10",
-    "code": "ĐBCL10",
-    "name": "Tỷ lệ giảng viên được tập huấn về xây dựng công cụ kiểm tra, đánh giá theo chuẩn đầu ra và sử dụng công cụ AI hỗ trợ khảo thí",
-    "status": "active",
-    "linkedCatalogId": "HPU2-ĐBCL10",
-    "positionCode": "GV",
-    "unitId": "u001"
-  },
-  {
-    "id": "IND-ĐBCL11",
-    "code": "ĐBCL11",
-    "name": "Công Số công cụ/phần mềm phát hiện đạo văn, gian lận học thuật, sử dụng AI cụ/phần không minh bạch trong bài làm của người học được triển khai mềm",
-    "status": "active",
-    "linkedCatalogId": "HPU2-ĐBCL11",
-    "positionCode": "GV",
-    "unitId": "u001"
-  },
-  {
-    "id": "IND-QTH01",
-    "code": "QTH01",
-    "name": "Rà soát tiêu Tình trạng tham gia bảng xếp hạng đại học quốc tế có uy tín hồ sơ",
-    "status": "active",
-    "linkedCatalogId": "HPU2-QTH01",
-    "positionCode": "GV",
-    "unitId": "u001"
-  },
-  {
-    "id": "IND-QTH02",
-    "code": "QTH02",
-    "name": "Số chương trình đào tạo phát triển theo định hướng quốc tế hóa hoặc được Chương Năm học đối tác quốc tế công nhận trình",
-    "status": "active",
-    "linkedCatalogId": "HPU2-QTH02",
-    "positionCode": "GV",
-    "unitId": "u001"
-  },
-  {
-    "id": "IND-QTH03",
-    "code": "QTH03",
-    "name": "Tỷ lệ giảng viên tham gia ít nhất một hoạt động giảng dạy, nghiên cứu, hợp tác học thuật có yếu tố quốc tế",
-    "status": "active",
-    "linkedCatalogId": "HPU2-QTH03",
-    "positionCode": "GV",
-    "unitId": "u001"
-  },
-  {
-    "id": "IND-QTH04",
-    "code": "QTH04",
-    "name": "Số thỏa thuận hợp tác quốc tế được ký kết, gia hạn hoặc triển khai thực chất",
-    "status": "active",
-    "linkedCatalogId": "HPU2-QTH04",
-    "positionCode": "GV",
-    "unitId": "u001"
-  },
-  {
-    "id": "IND-QTH05",
-    "code": "QTH05",
-    "name": "Số hội thảo, tọa đàm, seminar, lớp học, chuyên đề học thuật có yếu tố quốc Hoạt động tế được tổ chức",
-    "status": "active",
-    "linkedCatalogId": "HPU2-QTH05",
-    "positionCode": "GV",
-    "unitId": "u001"
-  },
-  {
-    "id": "IND-QTH06",
-    "code": "QTH06",
-    "name": "Số lượt giảng viên, viên chức, người học tham gia trao đổi, học tập, nghiên cứu, thực tập, bồi dưỡng hoặc hoạt động học thuật quốc tế theo hình thức trực tiếp hoặc trực tuyến.",
-    "status": "active",
-    "linkedCatalogId": "HPU2-QTH06",
-    "positionCode": "GV",
-    "unitId": "u001"
-  },
-  {
-    "id": "IND-QTH07",
-    "code": "QTH07",
-    "name": "Số công bố khoa học có đồng tác giả là nhà khoa học, giảng viên, nghiên cứu Năm học ≥15 sinh hoặc đối tác quốc tế",
-    "status": "active",
-    "linkedCatalogId": "HPU2-QTH07",
-    "positionCode": "GV",
-    "unitId": "u001"
-  },
-  {
-    "id": "IND-KH01",
-    "code": "KH01",
-    "name": "Tốc độ tăng trưởng trung bình hằng năm số bài báo khoa học công bố trên %/năm tạp chí thuộc danh mục Scopus/WoS",
-    "status": "active",
+    "id": "HPU2-IND-03",
+    "code": "CN-QL03",
+    "name": "Hoàn thành chỉ tiêu kết quả chuyên môn/KHCN được giao trong năm học.",
+    "positionCode": "QL",
+    "unitId": "mu001",
     "linkedCatalogId": "HPU2-KH01",
-    "positionCode": "GV",
-    "unitId": "u001"
+    "target": "Theo chỉ tiêu giao",
+    "cycle": "Năm học",
+    "status": "active"
   },
   {
-    "id": "IND-KH02",
-    "code": "KH02",
-    "name": "Tỷ lệ bài báo WoS/Scopus bình quân trên một giảng viên/năm",
-    "status": "active",
-    "linkedCatalogId": "HPU2-KH02",
-    "positionCode": "GV",
-    "unitId": "u001"
+    "id": "HPU2-IND-04",
+    "code": "CN-QL04",
+    "name": "Đề xuất hoặc tổ chức áp dụng ít nhất một sáng kiến/cải tiến có minh chứng.",
+    "positionCode": "QL",
+    "unitId": "mu001",
+    "linkedCatalogId": "HPU2-TĐ01",
+    "target": "≥01",
+    "cycle": "Năm học",
+    "status": "active"
   },
   {
-    "id": "IND-KH03",
-    "code": "KH03",
-    "name": "Bằng/giải Số bằng sáng chế, giải pháp hữu ích, phần mềm, quy trình công nghệ, bộ công pháp/phần cụ, mô hình giáo dục hoặc sản phẩm sở hữu trí tuệ được đăng ký, công bố, mềm/quy nghiệm thu hoặc chuyển giao trình…",
-    "status": "active",
-    "linkedCatalogId": "HPU2-KH03",
+    "id": "HPU2-IND-05",
+    "code": "CN-GV01",
+    "name": "Áp dụng phương pháp giảng dạy tích cực hoặc dạy học kết hợp trong học phần được phân công.",
     "positionCode": "GV",
-    "unitId": "u001"
+    "unitId": "mu001",
+    "linkedCatalogId": "HPU2-ĐT05",
+    "target": "100% học phần phù hợp",
+    "cycle": "Học kỳ",
+    "status": "active"
   },
   {
-    "id": "IND-KH04",
-    "code": "KH04",
-    "name": "Tỷ lệ đề tài, giải pháp nghiên cứu khoa học các cấp có sản phẩm được ứng dụng thực tiễn hoặc chuyển giao (có hợp đồng/biên bản chuyển giao hoặc minh chứng sử dụng thực)",
-    "status": "active",
-    "linkedCatalogId": "HPU2-KH04",
+    "id": "HPU2-IND-06",
+    "code": "CN-GV02",
+    "name": "Hoàn thành chỉ tiêu công bố khoa học hoặc sản phẩm chuyên môn theo kế hoạch cá nhân.",
     "positionCode": "GV",
-    "unitId": "u001"
+    "unitId": "mu001",
+    "linkedCatalogId": "HPU2-KH01",
+    "target": "Theo chỉ tiêu giao",
+    "cycle": "Năm học",
+    "status": "active"
   },
   {
-    "id": "IND-KH05",
-    "code": "KH05",
-    "name": "Tỷ lệ nguồn thu từ hoạt động khoa học công nghệ, tư vấn giáo dục, chuyển giao tri thức/công nghệ, dịch vụ khoa học, bồi dưỡng và ứng dụng sản phẩm nghiên cứu trên tổng thu hợp pháp của Trường",
-    "status": "active",
-    "linkedCatalogId": "HPU2-KH05",
+    "id": "HPU2-IND-07",
+    "code": "CN-GV03",
+    "name": "Xây dựng hoặc đóng góp học liệu số, bài giảng số phục vụ đào tạo.",
     "positionCode": "GV",
-    "unitId": "u001"
+    "unitId": "mu001",
+    "linkedCatalogId": "HPU2-BD05",
+    "target": "≥01",
+    "cycle": "Năm học",
+    "status": "active"
   },
   {
-    "id": "IND-KH06",
-    "code": "KH06",
-    "name": "Hoàn thành ban hành và triển khai Đề án nâng chuẩn Tạp chí khoa học của Trạng thái/ Ban hành và hoặc tối thiểu 01 chuyên san theo tiêu chuẩn chỉ mục quốc tế, gắn với triển khai chuẩn hóa quy trình phản biện, đạo đức xuất bản, dữ liệu số và hội đồng biên tập phẩm",
-    "status": "active",
-    "linkedCatalogId": "HPU2-KH06",
+    "id": "HPU2-IND-08",
+    "code": "CN-GV04",
+    "name": "Hoàn thành yêu cầu bồi dưỡng, cập nhật năng lực số và chuyên môn.",
     "positionCode": "GV",
-    "unitId": "u001"
+    "unitId": "mu001",
+    "linkedCatalogId": "HPU2-NN02",
+    "target": "Theo kế hoạch",
+    "cycle": "Năm học",
+    "status": "active"
   },
   {
-    "id": "IND-KH07",
-    "code": "KH07",
-    "name": "Số nhóm nghiên cứu mạnh, nhóm nghiên cứu tiềm năng trong lĩnh vực công Nhóm nghệ giáo dục, AI, chuyển đổi số và khoa học giáo dục",
-    "status": "active",
-    "linkedCatalogId": "HPU2-KH07",
+    "id": "HPU2-IND-09",
+    "code": "CN-GV05",
+    "name": "Có sáng kiến, giải pháp cải tiến hoặc đổi mới phương pháp được áp dụng.",
     "positionCode": "GV",
-    "unitId": "u001"
+    "unitId": "mu001",
+    "linkedCatalogId": "HPU2-TĐ03",
+    "target": "≥01",
+    "cycle": "Năm học",
+    "status": "active"
   },
   {
-    "id": "IND-KH08",
-    "code": "KH08",
-    "name": "Tỷ lệ quy chế, quy định nội bộ về quản lý KHCN, ĐMST và CGCN được rà soát, sửa đổi, bổ sung hoặc ban hành mới (quy chế quản lý nhiệm vụ KHCN, ĐMST, quy chế khoán chi, sở hữu trí tuệ, nhóm nghiên cứu mạnh, liêm chính học thuật...)",
-    "status": "active",
-    "linkedCatalogId": "HPU2-KH08",
-    "positionCode": "GV",
-    "unitId": "u001"
+    "id": "HPU2-IND-10",
+    "code": "CN-CV01",
+    "name": "Hoàn thành báo cáo, hồ sơ và nhiệm vụ được giao đúng thời hạn.",
+    "positionCode": "CV",
+    "unitId": "mu001",
+    "linkedCatalogId": "HPU2-QT02",
+    "target": "≥95%",
+    "cycle": "Tháng/Học kỳ",
+    "status": "active"
   },
   {
-    "id": "IND-KH09",
-    "code": "KH09",
-    "name": "Tỷ lệ nhiệm vụ, đề tài KHCN các cấp được quản trị, cập nhật tiến độ và nghiệm thu trên hệ thống/nền tảng số dùng chung",
-    "status": "active",
-    "linkedCatalogId": "HPU2-KH09",
-    "positionCode": "GV",
-    "unitId": "u001"
+    "id": "HPU2-IND-11",
+    "code": "CN-CV02",
+    "name": "Xử lý hồ sơ, thủ tục thuộc phạm vi phụ trách đúng hạn.",
+    "positionCode": "CV",
+    "unitId": "mu001",
+    "linkedCatalogId": "HPU2-CCHC04",
+    "target": "≥95%",
+    "cycle": "Tháng/Học kỳ",
+    "status": "active"
   },
   {
-    "id": "IND-KH10",
-    "code": "KH10",
-    "name": "Tỷ lệ đề tài nghiệm thu đúng hạn so với tổng số đề tài đến hạn nghiệm thu",
-    "status": "active",
-    "linkedCatalogId": "HPU2-KH10",
-    "positionCode": "GV",
-    "unitId": "u001"
+    "id": "HPU2-IND-12",
+    "code": "CN-CV03",
+    "name": "Thực hiện số hóa, cập nhật và quản lý hồ sơ thuộc phạm vi phụ trách.",
+    "positionCode": "CV",
+    "unitId": "mu001",
+    "linkedCatalogId": "HPU2-CCHC05",
+    "target": "100% kế hoạch",
+    "cycle": "Năm học",
+    "status": "active"
   },
   {
-    "id": "IND-ĐMST01",
-    "code": "ĐMST01",
-    "name": "Số dự án khởi nghiệp sáng tạo, đổi mới sáng tạo hoặc EdTech của giảng viên, Tăng 10% so sinh viên, học viên, nghiên cứu sinh được hình thành, tuyển chọn, ươm tạo hoặc hỗ trợ trong năm học trước",
-    "status": "active",
-    "linkedCatalogId": "HPU2-ĐMST01",
-    "positionCode": "GV",
-    "unitId": "u001"
+    "id": "HPU2-IND-13",
+    "code": "CN-CV04",
+    "name": "Cập nhật dữ liệu KPI và dữ liệu công việc được giao đúng hạn.",
+    "positionCode": "CV",
+    "unitId": "mu001",
+    "linkedCatalogId": "HPU2-CĐS04",
+    "target": "≥95%",
+    "cycle": "Tháng/Học kỳ",
+    "status": "active"
+  },
+  {
+    "id": "HPU2-IND-14",
+    "code": "CN-CV05",
+    "name": "Đề xuất ít nhất một giải pháp cải tiến quy trình hoặc ứng dụng công nghệ.",
+    "positionCode": "CV",
+    "unitId": "mu001",
+    "linkedCatalogId": "HPU2-TĐ03",
+    "target": "≥01",
+    "cycle": "Năm học",
+    "status": "active"
   }
 ]

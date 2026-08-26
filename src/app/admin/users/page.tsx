@@ -5,6 +5,7 @@ import { Plus, Search, Edit, Trash2, User, Eye, Shield } from 'lucide-react';
 import Modal from '@/components/ui/Modal';
 import { apiGet, apiPost, apiPut, apiDelete } from '@/lib/api';
 import unitsData from '@/data/units.json';
+import positionsData from '@/data/positions.json';
 import rolesData from '@/data/roles.json';
 
 interface UserData {
@@ -232,7 +233,7 @@ function UserForm({ user, userRoleIds = [], onSubmit, onCancel }: { user?: UserD
     email: user?.email || '',
     employeeCode: user?.employeeCode || '',
     unitId: user?.unitId || '',
-    positionId: user?.positionId || '',
+    positionId: user?.positionId || 'p003',
   });
   const [selectedRoleIds, setSelectedRoleIds] = useState<string[]>(userRoleIds);
 
@@ -285,13 +286,11 @@ function UserForm({ user, userRoleIds = [], onSubmit, onCancel }: { user?: UserD
           <select value={form.positionId} onChange={(e) => setForm({ ...form, positionId: e.target.value })}
             className="w-full px-3 py-2 rounded-lg border border-border text-sm focus:outline-none focus:border-primary">
             <option value="">-- Chọn vị trí --</option>
-            <option value="p001">Quản trị viên</option>
-            <option value="p002">Trưởng đơn vị</option>
-            <option value="p003">Giảng viên</option>
-            <option value="p004">Trưởng bộ môn</option>
-            <option value="p005">Nghiên cứu viên</option>
-            <option value="p006">Chuyên viên</option>
-            <option value="p007">Nhân viên</option>
+            {(positionsData as { id: string; name: string; status: string }[])
+              .filter((position) => position.status === 'active')
+              .map((position) => (
+                <option key={position.id} value={position.id}>{position.name}</option>
+              ))}
           </select>
         </div>
       </div>

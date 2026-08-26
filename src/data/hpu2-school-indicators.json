@@ -1,0 +1,452 @@
+[
+  {
+    "code": "QT01",
+    "group": "Quản trị",
+    "name": "Tỷ lệ đơn vị trực thuộc ban hành kế hoạch hành động triển khai nhiệm vụ năm học đúng hạn, có đầy đủ mục tiêu, nhiệm vụ, sản phẩm đầu ra, tiến độ, đơn vị/cá nhân chịu trách nhiệm và chỉ số theo dõi",
+    "unit": "%",
+    "cycle": "Năm học",
+    "target": "100%",
+    "source": "QĐ ban hành Bộ KPI chính năm học 2026–2027"
+  },
+  {
+    "code": "QT02",
+    "group": "Quản trị",
+    "name": "Tỷ lệ đơn vị trực thuộc nộp báo cáo KPI đúng thời hạn, đầy đủ số liệu, minh chứng và được đơn vị đầu mối xác nhận hợp lệ",
+    "unit": "%",
+    "cycle": "Học kỳ",
+    "target": "≥90%",
+    "source": "QĐ ban hành Bộ KPI chính năm học 2026–2027"
+  },
+  {
+    "code": "QT03",
+    "group": "Quản trị",
+    "name": "Số cuộc giao ban chuyên đề về triển khai Nghị quyết 57-NQ/TW, Nghị quyết 71-NQ/TW và Đề án 01",
+    "unit": "Cuộc",
+    "cycle": "Năm học",
+    "target": "≥02",
+    "source": "QĐ ban hành Bộ KPI chính năm học 2026–2027"
+  },
+  {
+    "code": "QT04",
+    "group": "Quản trị",
+    "name": "Tỷ lệ nhiệm vụ trọng tâm được phân công theo nguyên tắc “6 rõ”",
+    "unit": "%",
+    "cycle": "Học kỳ",
+    "target": "≥80%",
+    "source": "QĐ ban hành Bộ KPI chính năm học 2026–2027"
+  },
+  {
+    "code": "QT05",
+    "group": "Quản trị",
+    "name": "Tỷ lệ nhiệm vụ trọng tâm được cập nhật tiến độ trên hệ thống theo dõi/dashboard",
+    "unit": "%",
+    "cycle": "Học kỳ",
+    "target": "≥80%",
+    "source": "QĐ ban hành Bộ KPI chính năm học 2026–2027"
+  },
+  {
+    "code": "QT06",
+    "group": "Quản trị",
+    "name": "Tỷ lệ nhiệm vụ đột xuất, phát sinh được đơn vị tiếp nhận, xử lý hoặc báo cáo đạt yêu cầu trở lên theo Nhật ký công việc phát sinh",
+    "unit": "%",
+    "cycle": "Học kỳ",
+    "target": "≥70%",
+    "source": "QĐ ban hành Bộ KPI chính năm học 2026–2027"
+  },
+  {
+    "code": "QT07",
+    "group": "Quản trị",
+    "name": "Tỷ lệ kết luận, chỉ đạo của Đảng ủy, Ban Giám hiệu được thực hiện đúng hạn",
+    "unit": "%",
+    "cycle": "Học kỳ",
+    "target": "≥85%",
+    "source": "QĐ ban hành Bộ KPI chính năm học 2026–2027"
+  },
+  {
+    "code": "QT08",
+    "group": "Quản trị",
+    "name": "Tỷ lệ văn bản, quy chế, quy định nội bộ được rà soát, sửa đổi, bổ sung hoặc ban hành mới trong năm học theo Danh mục đã xác định",
+    "unit": "%",
+    "cycle": "Năm học",
+    "target": "100%",
+    "source": "QĐ ban hành Bộ KPI chính năm học 2026–2027"
+  },
+  {
+    "code": "CCHC01",
+    "group": "Cải cách hành chính",
+    "name": "Tỷ lệ thủ tục hành chính nội bộ được rà soát, đơn giản hóa, công bố công khai quy trình",
+    "unit": "%",
+    "cycle": "Năm học",
+    "target": "≥60%",
+    "source": "QĐ ban hành Bộ KPI chính năm học 2026–2027"
+  },
+  {
+    "code": "CCHC02",
+    "group": "Cải cách hành chính",
+    "name": "Tỷ lệ văn bản đi/đến được xử lý trên hệ thống quản lý văn bản điện tử, có chữ ký số",
+    "unit": "%",
+    "cycle": "Học kỳ",
+    "target": "≥85%",
+    "source": "QĐ ban hành Bộ KPI chính năm học 2026–2027"
+  },
+  {
+    "code": "CCHC03",
+    "group": "Cải cách hành chính",
+    "name": "Tỷ lệ thủ tục hành chính theo hướng toàn trình cho cán bộ, giảng viên, sinh viên",
+    "unit": "%",
+    "cycle": "Năm học",
+    "target": "≥50%",
+    "source": "QĐ ban hành Bộ KPI chính năm học 2026–2027"
+  },
+  {
+    "code": "CCHC04",
+    "group": "Cải cách hành chính",
+    "name": "Tỷ lệ hồ sơ, thủ tục hành chính được xử lý đúng hạn so với quy định",
+    "unit": "% đúng hạn",
+    "cycle": "Học kỳ",
+    "target": "≥85%",
+    "source": "QĐ ban hành Bộ KPI chính năm học 2026–2027"
+  },
+  {
+    "code": "CCHC05",
+    "group": "Cải cách hành chính",
+    "name": "Tỷ lệ hồ sơ, tài liệu mới thuộc Danh mục hồ sơ bắt buộc số hóa trong năm học được số hóa, lập metadata, phân quyền và quản lý trên hệ thống lưu trữ điện tử của Trường",
+    "unit": "%",
+    "cycle": "Năm học",
+    "target": "≥85%",
+    "source": "QĐ ban hành Bộ KPI chính năm học 2026–2027"
+  },
+  {
+    "code": "CCHC06",
+    "group": "Cải cách hành chính",
+    "name": "Mức độ hài lòng của cán bộ, giảng viên, sinh viên đối với chất lượng phục vụ hành chính",
+    "unit": "% hài lòng",
+    "cycle": "Năm học",
+    "target": "≥75%",
+    "source": "QĐ ban hành Bộ KPI chính năm học 2026–2027"
+  },
+  {
+    "code": "CCHC07",
+    "group": "Cải cách hành chính",
+    "name": "Hoàn thành rà soát, chuẩn hóa, số hóa và ban hành Bộ quy trình hành chính, văn thư, lưu trữ tích hợp trên nền tảng số của Trường",
+    "unit": "Trạng thái",
+    "cycle": "Năm học",
+    "target": "Hoàn thành",
+    "source": "QĐ ban hành Bộ KPI chính năm học 2026–2027"
+  },
+  {
+    "code": "CCHC08",
+    "group": "Cải cách hành chính",
+    "name": "Số sáng kiến, giải pháp cải cách hành chính, đơn giản hóa quy trình, tích hợp dữ liệu hoặc nâng cao chất lượng phục vụ được đề xuất, thẩm định và áp dụng thực tế",
+    "unit": "Sáng kiến/giải pháp",
+    "cycle": "Năm học",
+    "target": "≥03",
+    "source": "QĐ ban hành Bộ KPI chính năm học 2026–2027"
+  },
+  {
+    "code": "TS01",
+    "group": "Tuyển sinh",
+    "name": "Tỷ lệ hoàn thành chỉ tiêu tuyển sinh được giao",
+    "unit": "%",
+    "cycle": "Năm học",
+    "target": "≥90%",
+    "source": "QĐ ban hành Bộ KPI chính năm học 2026–2027"
+  },
+  {
+    "code": "TS02",
+    "group": "Tuyển sinh",
+    "name": "Tỷ lệ thí sinh nhập học thực tế trên tổng số trúng tuyển (giảm tỷ lệ “ảo”)",
+    "unit": "%",
+    "cycle": "Năm học",
+    "target": "≥80%",
+    "source": "QĐ ban hành Bộ KPI chính năm học 2026–2027"
+  },
+  {
+    "code": "TS03",
+    "group": "Tuyển sinh",
+    "name": "Tỷ lệ hồ sơ, quy trình tuyển sinh (đăng ký, xét tuyển, xác nhận nhập học) được thực hiện trực tuyến toàn trình",
+    "unit": "%",
+    "cycle": "Năm học",
+    "target": "≥65%",
+    "source": "QĐ ban hành Bộ KPI chính năm học 2026–2027"
+  },
+  {
+    "code": "TS04",
+    "group": "Tuyển sinh",
+    "name": "Tỷ lệ hồ sơ, minh chứng tuyển sinh được số hóa, lưu trữ và đối soát tự động với hệ thống của Bộ Giáo dục và Đào tạo",
+    "unit": "%",
+    "cycle": "Năm học",
+    "target": "≥65%",
+    "source": "QĐ ban hành Bộ KPI chính năm học 2026–2027"
+  },
+  {
+    "code": "TS05",
+    "group": "Tuyển sinh",
+    "name": "Số kênh/hình thức truyền thông tuyển sinh số được triển khai",
+    "unit": "Kênh",
+    "cycle": "Năm học",
+    "target": "≥03",
+    "source": "QĐ ban hành Bộ KPI chính năm học 2026–2027"
+  },
+  {
+    "code": "TS06",
+    "group": "Tuyển sinh",
+    "name": "Mức độ hài lòng của thí sinh, phụ huynh đối với công tác tư vấn, hỗ trợ tuyển sinh",
+    "unit": "% hài lòng",
+    "cycle": "Năm học",
+    "target": "≥80%",
+    "source": "QĐ ban hành Bộ KPI chính năm học 2026–2027"
+  },
+  {
+    "code": "TS07",
+    "group": "Tuyển sinh",
+    "name": "Tốc độ tăng trưởng quy mô tuyển sinh sau đại học (thạc sĩ, tiến sĩ)",
+    "unit": "%/năm",
+    "cycle": "Năm học",
+    "target": "Tăng ≥5%/năm",
+    "source": "QĐ ban hành Bộ KPI chính năm học 2026–2027"
+  },
+  {
+    "code": "ĐT01",
+    "group": "Đào tạo",
+    "name": "Tỷ lệ chương trình đào tạo được rà soát, cập nhật theo hướng tích hợp năng lực số, đổi mới sáng tạo, AI và công nghệ giáo dục",
+    "unit": "%",
+    "cycle": "Năm học",
+    "target": "100%",
+    "source": "QĐ ban hành Bộ KPI chính năm học 2026–2027"
+  },
+  {
+    "code": "ĐT02",
+    "group": "Đào tạo",
+    "name": "Tỷ lệ học phần vận hành trên hệ thống LMS có dữ liệu học tập chuẩn theo quy định của Trường",
+    "unit": "%",
+    "cycle": "Học kỳ",
+    "target": "≥65%",
+    "source": "QĐ ban hành Bộ KPI chính năm học 2026–2027"
+  },
+  {
+    "code": "ĐT03",
+    "group": "Đào tạo",
+    "name": "Tỷ lệ sinh viên tốt nghiệp có việc làm, tự tạo việc làm hoặc tiếp tục học tập trong vòng 12 tháng sau tốt nghiệp",
+    "unit": "%",
+    "cycle": "Năm học",
+    "target": "≥85%",
+    "source": "QĐ ban hành Bộ KPI chính năm học 2026–2027"
+  },
+  {
+    "code": "ĐMST05",
+    "group": "Đổi mới sáng tạo",
+    "name": "Số sản phẩm, giải pháp EdTech, AI hoặc công nghệ giáo dục được thử nghiệm, ứng dụng trong đào tạo hoặc trường phổ thông",
+    "unit": "Sản phẩm/giải pháp",
+    "cycle": "Năm học",
+    "target": "≥03",
+    "source": "QĐ ban hành Bộ KPI chính năm học 2026–2027"
+  },
+  {
+    "code": "ĐMST06",
+    "group": "Đổi mới sáng tạo",
+    "name": "Số mô hình Lab-to-School được triển khai nhằm chuyển giao giải pháp sư phạm thông minh vào trường phổ thông",
+    "unit": "Mô hình",
+    "cycle": "Năm học",
+    "target": "≥02",
+    "source": "QĐ ban hành Bộ KPI chính năm học 2026–2027"
+  },
+  {
+    "code": "CĐS01",
+    "group": "Chuyển đổi số và dữ liệu",
+    "name": "Tỷ lệ quy trình nghiệp vụ cốt lõi được số hóa toàn trình",
+    "unit": "%",
+    "cycle": "Học kỳ",
+    "target": "≥70%",
+    "source": "QĐ ban hành Bộ KPI chính năm học 2026–2027"
+  },
+  {
+    "code": "CĐS02",
+    "group": "Chuyển đổi số và dữ liệu",
+    "name": "Tỷ lệ giảm thời gian xử lý thủ tục hành chính trọng điểm",
+    "unit": "%",
+    "cycle": "Năm học",
+    "target": "≥30%",
+    "source": "QĐ ban hành Bộ KPI chính năm học 2026–2027"
+  },
+  {
+    "code": "CĐS03",
+    "group": "Chuyển đổi số và dữ liệu",
+    "name": "Tỷ lệ đơn vị trực thuộc khai thác, sử dụng hệ thống theo dõi và quản trị hiệu suất (KPI) trên nền tảng số để giao, cập nhật dữ liệu/minh chứng và đánh giá tiến độ",
+    "unit": "%",
+    "cycle": "Học kỳ",
+    "target": "≥80%",
+    "source": "QĐ ban hành Bộ KPI chính năm học 2026–2027"
+  },
+  {
+    "code": "CĐS04",
+    "group": "Chuyển đổi số và dữ liệu",
+    "name": "Tỷ lệ dữ liệu chỉ tiêu, kết quả thực hiện KPI và nhiệm vụ trọng tâm của đơn vị được cập nhật đúng hạn, đầy đủ minh chứng trên hệ thống Dashboard",
+    "unit": "%",
+    "cycle": "Học kỳ",
+    "target": "≥80%",
+    "source": "QĐ ban hành Bộ KPI chính năm học 2026–2027"
+  },
+  {
+    "code": "CĐS05",
+    "group": "Chuyển đổi số và dữ liệu",
+    "name": "Số Dashboard điều hành chuyên ngành được xây dựng, kết nối CSDL dùng chung và đưa vào vận hành thực tế",
+    "unit": "Dashboard",
+    "cycle": "Học kỳ",
+    "target": "≥05",
+    "source": "QĐ ban hành Bộ KPI chính năm học 2026–2027"
+  },
+  {
+    "code": "CĐS06",
+    "group": "Chuyển đổi số và dữ liệu",
+    "name": "Tỷ lệ dữ liệu dùng chung đạt chuẩn chất lượng, được chuẩn hóa, cập nhật và kiểm chứng",
+    "unit": "%",
+    "cycle": "Học kỳ",
+    "target": "≥80%",
+    "source": "QĐ ban hành Bộ KPI chính năm học 2026–2027"
+  },
+  {
+    "code": "BD10",
+    "group": "Bồi dưỡng",
+    "name": "Ban hành và triển khai Đề án phát triển học liệu số phục vụ đào tạo chính quy, đào tạo thường xuyên, bồi dưỡng giáo viên và học tập suốt đời giai đoạn 2026–2030",
+    "unit": "Đề án",
+    "cycle": "Học kỳ",
+    "target": "Ban hành và triển khai",
+    "source": "QĐ ban hành Bộ KPI chính năm học 2026–2027"
+  },
+  {
+    "code": "BD11",
+    "group": "Bồi dưỡng",
+    "name": "Số học phần/bài giảng e-learning phục vụ đào tạo chính quy hoặc đào tạo thường xuyên được sản xuất, thẩm định và đưa vào sử dụng trên hệ thống học tập số của Trường",
+    "unit": "Học phần",
+    "cycle": "Năm học",
+    "target": "03",
+    "source": "QĐ ban hành Bộ KPI chính năm học 2026–2027"
+  },
+  {
+    "code": "BD12",
+    "group": "Bồi dưỡng",
+    "name": "Số bài giảng số phục vụ chương trình giáo dục chính trị, công dân, pháp luật, văn hóa sư phạm và kỹ năng học tập đầu khóa cho sinh viên",
+    "unit": "Bài giảng",
+    "cycle": "Năm học",
+    "target": "06",
+    "source": "QĐ ban hành Bộ KPI chính năm học 2026–2027"
+  },
+  {
+    "code": "BD13",
+    "group": "Bồi dưỡng",
+    "name": "Số hóa bài giảng",
+    "unit": "Bài giảng",
+    "cycle": "Năm học",
+    "target": "≥03 bài giảng chuyên ngành bắt buộc/CTĐT",
+    "source": "QĐ ban hành Bộ KPI chính năm học 2026–2027"
+  },
+  {
+    "code": "NN01",
+    "group": "Chất lượng giảng viên và nguồn nhân lực",
+    "name": "Tỷ lệ giảng viên cơ hữu có trình độ tiến sĩ đạt chuẩn",
+    "unit": "%",
+    "cycle": "Năm học",
+    "target": "65%",
+    "source": "QĐ ban hành Bộ KPI chính năm học 2026–2027"
+  },
+  {
+    "code": "NN02",
+    "group": "Chất lượng giảng viên và nguồn nhân lực",
+    "name": "Tỷ lệ giảng viên đạt chuẩn kỹ năng số mức độ “Thành thạo” (hoặc tương đương)",
+    "unit": "%",
+    "cycle": "Năm học",
+    "target": ">50%",
+    "source": "QĐ ban hành Bộ KPI chính năm học 2026–2027"
+  },
+  {
+    "code": "NN03",
+    "group": "Chất lượng giảng viên và nguồn nhân lực",
+    "name": "Tỷ lệ viên chức quản lý và viên chức hỗ trợ đào tạo được bồi dưỡng, cập nhật năng lực về quản trị số, khai thác dữ liệu điều hành và an toàn thông tin",
+    "unit": "%",
+    "cycle": "Năm học",
+    "target": "≥85%",
+    "source": "QĐ ban hành Bộ KPI chính năm học 2026–2027"
+  },
+  {
+    "code": "NN04",
+    "group": "Chất lượng giảng viên và nguồn nhân lực",
+    "name": "Tỷ lệ giảng viên và viên chức quản lý hoàn thành các khóa bồi dưỡng chuyên sâu trong nước và quốc tế về KHCN, đổi mới sáng tạo, chuyển đổi số",
+    "unit": "%",
+    "cycle": "Năm học",
+    "target": "≥30%",
+    "source": "QĐ ban hành Bộ KPI chính năm học 2026–2027"
+  },
+  {
+    "code": "HT01",
+    "group": "Hợp tác",
+    "name": "Số doanh nghiệp công nghệ, EdTech, doanh nghiệp sử dụng lao động hoặc doanh nghiệp có năng lực hỗ trợ đào tạo, nghiên cứu, chuyển đổi số, thực tập, việc làm, chuyển giao công nghệ ký kết và triển khai ít nhất một hoạt động hợp tác thực chất với Trường",
+    "unit": "Doanh nghiệp",
+    "cycle": "Năm học",
+    "target": "≥10",
+    "source": "QĐ ban hành Bộ KPI chính năm học 2026–2027"
+  },
+  {
+    "code": "HT02",
+    "group": "Hợp tác",
+    "name": "Số trường phổ thông ký kết/duy trì phối hợp thực chất với các đơn vị đào tạo trong thực hành, thực tập sư phạm, đổi mới phương pháp dạy học, NCKH ứng dụng và chuyển đổi số giáo dục",
+    "unit": "Trường",
+    "cycle": "Năm học",
+    "target": "≥60",
+    "source": "QĐ ban hành Bộ KPI chính năm học 2026–2027"
+  },
+  {
+    "code": "HT03",
+    "group": "Hợp tác",
+    "name": "Số đối tác ký kết/triển khai hợp tác thực chất với Trường trong bồi dưỡng nhà giáo, đặt hàng đào tạo, phối hợp đào tạo, chuyển giao, chuyển đổi số và NCKH",
+    "unit": "Đối tác",
+    "cycle": "Năm học",
+    "target": "≥10",
+    "source": "QĐ ban hành Bộ KPI chính năm học 2026–2027"
+  },
+  {
+    "code": "HT05",
+    "group": "Hợp tác",
+    "name": "Số mô hình hệ sinh thái hợp tác đa bên (Trường – Địa phương – Trường phổ thông – Doanh nghiệp) được phê duyệt, triển khai thực tế và nghiệm thu đánh giá hiệu quả",
+    "unit": "Mô hình",
+    "cycle": "Năm học",
+    "target": "≥02",
+    "source": "QĐ ban hành Bộ KPI chính năm học 2026–2027"
+  },
+  {
+    "code": "TĐ01",
+    "group": "Thi đua, khen thưởng và nhân rộng mô hình",
+    "name": "Số mô hình, sáng kiến, cách làm hay được Trường đánh giá, công nhận và ban hành kế hoạch nhân rộng",
+    "unit": "Mô hình/sáng kiến",
+    "cycle": "Năm học",
+    "target": "≥03",
+    "source": "QĐ ban hành Bộ KPI chính năm học 2026–2027"
+  },
+  {
+    "code": "TĐ02",
+    "group": "Thi đua, khen thưởng và nhân rộng mô hình",
+    "name": "Số tập thể, cá nhân được biểu dương, khen thưởng chuyên đề hoặc đột xuất dựa trên sản phẩm, kết quả, công trình, sáng kiến, mô hình hoặc thành tích nổi bật",
+    "unit": "Tập thể/cá nhân",
+    "cycle": "Năm học",
+    "target": "≥20",
+    "source": "QĐ ban hành Bộ KPI chính năm học 2026–2027"
+  },
+  {
+    "code": "TĐ03",
+    "group": "Thi đua, khen thưởng và nhân rộng mô hình",
+    "name": "Số sáng kiến, giải pháp cải tiến quy trình, ứng dụng công nghệ, dữ liệu, AI hoặc đổi mới phương pháp được công nhận và có minh chứng áp dụng",
+    "unit": "Sáng kiến/giải pháp",
+    "cycle": "Năm học",
+    "target": "≥10",
+    "source": "QĐ ban hành Bộ KPI chính năm học 2026–2027"
+  },
+  {
+    "code": "TĐ04",
+    "group": "Thi đua, khen thưởng và nhân rộng mô hình",
+    "name": "Tỷ lệ đơn vị thuộc Trường sử dụng dữ liệu KPI đã được xác nhận trên dashboard điều hành làm căn cứ bắt buộc trong đánh giá thi đua, xếp loại chất lượng đơn vị và xét khen thưởng năm học",
+    "unit": "%",
+    "cycle": "Năm học",
+    "target": "100%",
+    "source": "QĐ ban hành Bộ KPI chính năm học 2026–2027"
+  }
+]

@@ -1,46 +1,26 @@
 [
   {
-    "id": "c001",
-    "code": "NH2026_2027",
-    "name": "Năm học 2026-2027",
-    "type": "academic_year",
-    "startDate": "2026-08-01",
-    "endDate": "2027-07-31",
+    "id": "cycle_hpu2_2026_2027",
+    "academicYearId": "ay_hpu2_2026_2027",
+    "name": "Chu kỳ KPI năm học 2026-2027",
+    "startDate": "2026-09-01",
+    "endDate": "2027-08-31",
     "status": "active"
   },
   {
-    "id": "c002",
-    "code": "HK1_2026_2027",
-    "name": "Học kỳ I năm học 2026-2027",
-    "type": "semester",
+    "id": "cycle_hpu2_hk1_2026_2027",
+    "academicYearId": "ay_hpu2_2026_2027",
+    "name": "Theo dõi thực hiện KPI học kỳ I",
+    "startDate": "2026-09-01",
+    "endDate": "2027-01-31",
     "status": "active"
   },
   {
-    "id": "c003",
-    "code": "HK2_2026_2027",
-    "name": "Học kỳ II năm học 2026-2027",
-    "type": "semester",
-    "status": "active"
-  },
-  {
-    "id": "c004",
-    "code": "THANG",
-    "name": "Tháng",
-    "type": "month",
-    "status": "active"
-  },
-  {
-    "id": "c005",
-    "code": "QUY",
-    "name": "Quý",
-    "type": "quarter",
-    "status": "active"
-  },
-  {
-    "id": "c006",
-    "code": "TUAN",
-    "name": "Tuần",
-    "type": "week",
-    "status": "active"
+    "id": "cycle_hpu2_hk2_2026_2027",
+    "academicYearId": "ay_hpu2_2026_2027",
+    "name": "Theo dõi thực hiện KPI học kỳ II",
+    "startDate": "2027-02-01",
+    "endDate": "2027-08-31",
+    "status": "draft"
   }
 ]
