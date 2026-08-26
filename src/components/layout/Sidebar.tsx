@@ -12,7 +12,6 @@ import {
   ChevronDown,
   ChevronRight,
   TrendingUp,
-  Briefcase,
   Shield,
   LifeBuoy,
 } from 'lucide-react';
@@ -41,6 +40,7 @@ const menuItems: MenuItem[] = [
       { href: '/admin/job-positions', label: 'Vị trí việc làm' },
       { href: '/admin/shared-categories', label: 'Danh mục dùng chung' },
       { href: '/admin/kpi-catalogs', label: 'Danh mục chỉ tiêu KPI' },
+      { href: '/admin/kpi-data', label: 'Bộ chỉ tiêu KPI' },
     ],
   },
 
@@ -52,7 +52,6 @@ const menuItems: MenuItem[] = [
       { href: '/admin/bsc', label: 'Quản lý phối cảnh' },
       { href: '/kpi/strategic-objectives', label: 'Mục tiêu chiến lược' },
       { href: '/admin/school-indicators', label: 'Chỉ tiêu Trường' },
-      { href: '/admin/kpi-data', label: 'Bộ chỉ tiêu KPI' },
       { href: '/kpi/kpi-templates', label: 'Bộ KPI mẫu' },
       { href: '/admin/target-groups', label: 'Nhóm đối tượng' },
       { href: '/admin/import', label: 'Import dữ liệu' },
@@ -88,28 +87,6 @@ const menuItems: MenuItem[] = [
     ],
   },
 
-  {
-    href: '/kpi/domain',
-    label: 'Nghiệp vụ KPI',
-    icon: Briefcase,
-    children: [
-      { href: '/kpi/domain/training-admission', label: 'Tuyển sinh' },
-      { href: '/kpi/domain/training-program', label: 'CTĐT & Học phần' },
-      { href: '/kpi/domain/graduation-employment', label: 'Tốt nghiệp & Việc làm' },
-      { href: '/kpi/domain/survey-quality', label: 'Khảo sát & ĐBCL' },
-      { href: '/kpi/domain/research', label: 'KHCN' },
-      { href: '/kpi/domain/international', label: 'Hợp tác quốc tế' },
-      { href: '/kpi/domain/finance', label: 'Tài chính' },
-      { href: '/kpi/domain/hr-staffing', label: 'Đội ngũ' },
-      { href: '/kpi/domain/digital-transformation', label: 'Chuyển đổi số' },
-      { href: '/kpi/domain/community-service', label: 'Phục vụ cộng đồng' },
-      { href: '/kpi/domain/lecturer', label: 'Giảng viên' },
-      { href: '/kpi/domain/staff', label: 'Viên chức' },
-      { href: '/kpi/domain/researcher', label: 'Nghiên cứu viên' },
-      { href: '/kpi/domain/service-staff', label: 'Nhân viên phục vụ' },
-      { href: '/kpi/domain/adjustment', label: 'Điều chỉnh kết quả' },
-    ],
-  },
 
   {
     href: '/kpi/evaluation',
@@ -176,10 +153,9 @@ export default function Sidebar({ isOpen, onClose }: { isOpen: boolean; onClose:
   const pathname = usePathname();
   const [expandedGroups, setExpandedGroups] = useState<string[]>(() => {
     if (pathname.startsWith('/kpi/academic') || pathname.startsWith('/kpi/cycles') || pathname.startsWith('/admin/organization') || pathname.startsWith('/admin/positions') || pathname.startsWith('/admin/job-positions') || pathname.startsWith('/admin/shared-categories') || pathname.startsWith('/admin/kpi-catalogs')) return ['/setup'];
-    if (pathname.startsWith('/admin/school-indicators') || pathname.startsWith('/admin/kpi-data') || pathname.startsWith('/kpi/strategic') || pathname.startsWith('/kpi/kpi-templates') || pathname.startsWith('/admin/bsc') || pathname.startsWith('/admin/target-groups') || pathname.startsWith('/admin/import')) return ['/define'];
+    if (pathname.startsWith('/admin/school-indicators') || pathname.startsWith('/kpi/strategic') || pathname.startsWith('/kpi/kpi-templates') || pathname.startsWith('/admin/bsc') || pathname.startsWith('/admin/target-groups') || pathname.startsWith('/admin/import')) return ['/define'];
     if (pathname.startsWith('/kpi/cascade') || pathname.startsWith('/kpi/task-assignment') || pathname.startsWith('/kpi/annual-work-plan') || pathname.startsWith('/kpi/plans') || pathname.startsWith('/kpi/department') || pathname.startsWith('/kpi/my-kpi') || pathname.startsWith('/kpi/plan-versions')) return ['/deploy'];
     if (pathname.startsWith('/kpi/progress') || pathname.startsWith('/kpi/evidences') || pathname.startsWith('/kpi/personal-dashboard') || pathname.startsWith('/kpi/unit-dashboard') || pathname.startsWith('/kpi/executive-dashboard') || pathname.startsWith('/kpi/warnings')) return ['/execute'];
-    if (pathname.startsWith('/kpi/domain')) return ['/kpi/domain'];
     if (pathname.startsWith('/kpi/evaluation') || pathname.startsWith('/kpi/council') || pathname.startsWith('/kpi/scoring') || pathname.startsWith('/kpi/approvals') || pathname.startsWith('/admin/complaints')) return ['/kpi/evaluation'];
     if (pathname.startsWith('/reports') || pathname.startsWith('/kpi/trends') || pathname.startsWith('/kpi/archive') || pathname.startsWith('/admin/scheduled-reports')) return ['/reporting'];
     if (pathname.startsWith('/admin/users') || pathname.startsWith('/admin/roles') || pathname.startsWith('/admin/notifications') || pathname.startsWith('/admin/audit') || pathname.startsWith('/admin/backup') || pathname.startsWith('/admin/unlock') || pathname.startsWith('/admin/security') || pathname.startsWith('/admin/api-configs') || pathname.startsWith('/admin/sync-logs') || pathname.startsWith('/admin/data-reconciliation') || pathname.startsWith('/admin/approval-workflows') || pathname.startsWith('/admin/settings')) return ['/admin/users'];
