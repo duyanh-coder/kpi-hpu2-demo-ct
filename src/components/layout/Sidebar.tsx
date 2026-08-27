@@ -41,6 +41,9 @@ const menuItems: MenuItem[] = [
       { href: '/admin/shared-categories', label: 'Danh mục dùng chung' },
       { href: '/admin/kpi-catalogs', label: 'Danh mục chỉ tiêu KPI' },
       { href: '/admin/kpi-data', label: 'Bộ chỉ tiêu KPI' },
+      { href: '/kpi/kpi-templates', label: 'Bộ KPI mẫu' },
+      { href: '/admin/target-groups', label: 'Nhóm đối tượng' },
+      { href: '/admin/import', label: 'Import dữ liệu' },
     ],
   },
 
@@ -52,9 +55,6 @@ const menuItems: MenuItem[] = [
       { href: '/admin/bsc', label: 'Quản lý phối cảnh' },
       { href: '/kpi/strategic-objectives', label: 'Mục tiêu chiến lược' },
       { href: '/admin/school-indicators', label: 'Chỉ tiêu Trường' },
-      { href: '/kpi/kpi-templates', label: 'Bộ KPI mẫu' },
-      { href: '/admin/target-groups', label: 'Nhóm đối tượng' },
-      { href: '/admin/import', label: 'Import dữ liệu' },
     ],
   },
 
