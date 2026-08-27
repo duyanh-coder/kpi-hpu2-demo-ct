@@ -10,12 +10,17 @@ function LoginForm() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const callbackUrl = searchParams.get('callbackUrl') || '/';
+  const authError = searchParams.get('error');
 
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
+  const authErrorMessage = authError
+    ? { CredentialsSignin: 'Tên đăng nhập hoặc mật khẩu không đúng' }[authError] || 'Đã có lỗi xác thực, vui lòng thử lại'
+    : null;
+
   const [showForgotModal, setShowForgotModal] = useState(false);
   const [forgotEmail, setForgotEmail] = useState('');
   const [forgotMessage, setForgotMessage] = useState<{ type: 'success' | 'error'; text: string } | null>(null);
@@ -63,9 +68,9 @@ function LoginForm() {
           </div>
 
           <form onSubmit={handleSubmit} className="space-y-5">
-            {error && (
+            {(error || authErrorMessage) && (
               <div className="bg-red-50 border border-red-200 text-red-700 text-sm rounded-lg px-4 py-3">
-                {error}
+                {error || authErrorMessage}
               </div>
             )}
 

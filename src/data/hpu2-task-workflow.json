@@ -1,0 +1,843 @@
+[
+  {
+    "id": "CV-2026-001",
+    "qdNo": 1,
+    "field": "Đào tạo, bồi dưỡng",
+    "title": "Rà soát chuẩn đầu ra các CTĐT theo hướng bổ sung năng lực số, năng lực AI, ĐMST, khởi nghiệp, hội nhập và phục vụ cộng đồng",
+    "owner": "P. Đào tạo",
+    "assignees": [
+      "TT. Khảo thí và ĐBCLGD"
+    ],
+    "kpis": [
+      "ĐMST01"
+    ],
+    "result": "Báo cáo rà soát chuẩn đầu ra; danh mục CTĐT cần cập nhật",
+    "due": "31/08/2026",
+    "progress": 82,
+    "status": "Đang thực hiện",
+    "priority": "Cao",
+    "phase": "Theo dõi",
+    "trend": "Đúng tiến độ",
+    "evidence": 3,
+    "updates": [
+      {
+        "date": "18/08/2026",
+        "by": "P. Đào tạo",
+        "progress": 65,
+        "note": "Đã hoàn thành rà soát 18/24 chương trình đào tạo."
+      },
+      {
+        "date": "24/08/2026",
+        "by": "TT. Khảo thí và ĐBCLGD",
+        "progress": 82,
+        "note": "Đã đối chiếu chuẩn đầu ra và tổng hợp danh mục cần cập nhật."
+      }
+    ],
+    "strategicCriterion": {
+      "id": "TC-01",
+      "title": "Nâng cao chất lượng đào tạo và năng lực số"
+    },
+    "annualPlan": {
+      "id": "KH-001",
+      "title": "Rà soát chuẩn đầu ra các CTĐT theo hướng bổ sung năng lực số, năng lực AI, ĐMST, khởi nghiệp, hội nhập và phục vụ cộng đồng",
+      "source": "Kế hoạch công tác năm học 2026–2027 · Nhiệm vụ 1",
+      "result": "Báo cáo rà soát chuẩn đầu ra; danh mục CTĐT cần cập nhật"
+    },
+    "unitTasks": [
+      {
+        "id": "DV-001-01",
+        "unit": "P. Đào tạo",
+        "role": "Chủ trì",
+        "title": "Xây dựng và tổ chức thực hiện kế hoạch chi tiết",
+        "progress": 82,
+        "status": "Đang thực hiện"
+      },
+      {
+        "id": "DV-001-02",
+        "unit": "TT. Khảo thí và ĐBCLGD",
+        "role": "Phối hợp",
+        "title": "Phối hợp triển khai phần việc thuộc phạm vi đơn vị",
+        "progress": 74,
+        "status": "Đang thực hiện"
+      }
+    ],
+    "personalTasks": [
+      {
+        "id": "CN-001-01",
+        "parentUnitTaskId": "DV-001-01",
+        "person": "Nguyễn Văn Minh",
+        "position": "Chuyên viên",
+        "unit": "P. Đào tạo",
+        "title": "Thu thập và tổng hợp dữ liệu đầu vào",
+        "progress": 82,
+        "status": "Đang thực hiện"
+      },
+      {
+        "id": "CN-001-02",
+        "parentUnitTaskId": "DV-001-02",
+        "person": "Trần Thị Lan",
+        "position": "Phó Trưởng phòng",
+        "unit": "TT. Khảo thí và ĐBCLGD",
+        "title": "Soạn thảo hồ sơ/kế hoạch và phối hợp xử lý",
+        "progress": 68,
+        "status": "Đang thực hiện"
+      }
+    ]
+  },
+  {
+    "id": "CV-2026-003",
+    "qdNo": 3,
+    "field": "Đào tạo, bồi dưỡng",
+    "title": "Xác định danh mục học phần triển khai trên LMS, học phần dạy học kết hợp, học liệu số, bài giảng số hoặc ngân hàng câu hỏi số",
+    "owner": "P. Đào tạo",
+    "assignees": [
+      "Các đơn vị đào tạo"
+    ],
+    "kpis": [
+      "ĐBCL07",
+      "ĐT02"
+    ],
+    "result": "Danh mục học phần có triển khai LMS/học liệu số; tối thiểu 60% học phần HK1 có không gian LMS",
+    "due": "31/08/2026",
+    "progress": 58,
+    "status": "Cần đôn đốc",
+    "priority": "Cao",
+    "phase": "Đôn đốc",
+    "trend": "Chậm nhẹ",
+    "evidence": 2,
+    "updates": [
+      {
+        "date": "20/08/2026",
+        "by": "P. Đào tạo",
+        "progress": 45,
+        "note": "Một số đơn vị chưa hoàn thành đăng ký học phần trên LMS."
+      },
+      {
+        "date": "25/08/2026",
+        "by": "Các đơn vị đào tạo",
+        "progress": 58,
+        "note": "Đã bổ sung kế hoạch triển khai; cam kết hoàn thành trước hạn."
+      }
+    ],
+    "strategicCriterion": {
+      "id": "TC-01",
+      "title": "Nâng cao chất lượng đào tạo và năng lực số"
+    },
+    "annualPlan": {
+      "id": "KH-003",
+      "title": "Xác định danh mục học phần triển khai trên LMS, học phần dạy học kết hợp, học liệu số, bài giảng số hoặc ngân hàng câu hỏi số",
+      "source": "Kế hoạch công tác năm học 2026–2027 · Nhiệm vụ 3",
+      "result": "Danh mục học phần có triển khai LMS/học liệu số; tối thiểu 60% học phần HK1 có không gian LMS"
+    },
+    "unitTasks": [
+      {
+        "id": "DV-003-01",
+        "unit": "P. Đào tạo",
+        "role": "Chủ trì",
+        "title": "Xây dựng và tổ chức thực hiện kế hoạch chi tiết",
+        "progress": 58,
+        "status": "Cần đôn đốc"
+      },
+      {
+        "id": "DV-003-02",
+        "unit": "Các đơn vị đào tạo",
+        "role": "Phối hợp",
+        "title": "Phối hợp triển khai phần việc thuộc phạm vi đơn vị",
+        "progress": 50,
+        "status": "Đang thực hiện"
+      }
+    ],
+    "personalTasks": [
+      {
+        "id": "CN-003-01",
+        "parentUnitTaskId": "DV-003-01",
+        "person": "Nguyễn Văn Minh",
+        "position": "Chuyên viên",
+        "unit": "P. Đào tạo",
+        "title": "Thu thập và tổng hợp dữ liệu đầu vào",
+        "progress": 58,
+        "status": "Đang thực hiện"
+      },
+      {
+        "id": "CN-003-02",
+        "parentUnitTaskId": "DV-003-02",
+        "person": "Trần Thị Lan",
+        "position": "Phó Trưởng phòng",
+        "unit": "Các đơn vị đào tạo",
+        "title": "Soạn thảo hồ sơ/kế hoạch và phối hợp xử lý",
+        "progress": 44,
+        "status": "Đang thực hiện"
+      }
+    ]
+  },
+  {
+    "id": "CV-2026-025",
+    "qdNo": 25,
+    "field": "KHCN & HTQT",
+    "title": "Ban hành định hướng nhiệm vụ KHCN năm học 2026-2027, ưu tiên khoa học giáo dục, EdTech, AI trong giáo dục và khoa học dữ liệu",
+    "owner": "P. KHCN và HTQT",
+    "assignees": [
+      "P. Đào tạo"
+    ],
+    "kpis": [
+      "HT02",
+      "KH01",
+      "ĐMST05"
+    ],
+    "result": "Văn bản định hướng nhiệm vụ KHCN năm học 2026-2027; danh mục hướng nghiên cứu ưu tiên",
+    "due": "30/09/2026",
+    "progress": 30,
+    "status": "Đang thực hiện",
+    "priority": "Bình thường",
+    "phase": "Theo dõi",
+    "trend": "Đúng tiến độ",
+    "evidence": 1,
+    "updates": [
+      {
+        "date": "22/08/2026",
+        "by": "P. KHCN và HTQT",
+        "progress": 30,
+        "note": "Đã dự thảo khung định hướng và nhóm hướng nghiên cứu ưu tiên."
+      }
+    ],
+    "strategicCriterion": {
+      "id": "TC-03",
+      "title": "Phát triển khoa học công nghệ, đổi mới sáng tạo và hội nhập"
+    },
+    "annualPlan": {
+      "id": "KH-025",
+      "title": "Ban hành định hướng nhiệm vụ KHCN năm học 2026-2027, ưu tiên khoa học giáo dục, EdTech, AI trong giáo dục và khoa học dữ liệu",
+      "source": "Kế hoạch công tác năm học 2026–2027 · Nhiệm vụ 25",
+      "result": "Văn bản định hướng nhiệm vụ KHCN năm học 2026-2027; danh mục hướng nghiên cứu ưu tiên"
+    },
+    "unitTasks": [
+      {
+        "id": "DV-025-01",
+        "unit": "P. KHCN và HTQT",
+        "role": "Chủ trì",
+        "title": "Xây dựng và tổ chức thực hiện kế hoạch chi tiết",
+        "progress": 30,
+        "status": "Đang thực hiện"
+      },
+      {
+        "id": "DV-025-02",
+        "unit": "P. Đào tạo",
+        "role": "Phối hợp",
+        "title": "Phối hợp triển khai phần việc thuộc phạm vi đơn vị",
+        "progress": 22,
+        "status": "Đang thực hiện"
+      }
+    ],
+    "personalTasks": [
+      {
+        "id": "CN-025-01",
+        "parentUnitTaskId": "DV-025-01",
+        "person": "Nguyễn Văn Minh",
+        "position": "Chuyên viên",
+        "unit": "P. KHCN và HTQT",
+        "title": "Thu thập và tổng hợp dữ liệu đầu vào",
+        "progress": 30,
+        "status": "Đang thực hiện"
+      },
+      {
+        "id": "CN-025-02",
+        "parentUnitTaskId": "DV-025-02",
+        "person": "Trần Thị Lan",
+        "position": "Phó Trưởng phòng",
+        "unit": "P. Đào tạo",
+        "title": "Soạn thảo hồ sơ/kế hoạch và phối hợp xử lý",
+        "progress": 16,
+        "status": "Đang thực hiện"
+      }
+    ]
+  },
+  {
+    "id": "CV-2026-036",
+    "qdNo": 36,
+    "field": "Quản trị, tổ chức, thi đua",
+    "title": "Xây dựng kế hoạch triển khai Bộ chỉ số KPI cấp đơn vị năm học 2026-2027, gắn với các mục tiêu chiến lược",
+    "owner": "Các đơn vị",
+    "assignees": [
+      "Các đơn vị đầu mối"
+    ],
+    "kpis": [
+      "QT01"
+    ],
+    "result": "Kế hoạch triển khai KPI cấp đơn vị năm học 2026-2027 được ban hành",
+    "due": "30/09/2026",
+    "progress": 72,
+    "status": "Đang thực hiện",
+    "priority": "Cao",
+    "phase": "Theo dõi",
+    "trend": "Đúng tiến độ",
+    "evidence": 4,
+    "updates": [
+      {
+        "date": "12/08/2026",
+        "by": "P. TCCB",
+        "progress": 40,
+        "note": "Đã gửi biểu mẫu và hướng dẫn xây dựng kế hoạch KPI cấp đơn vị."
+      },
+      {
+        "date": "24/08/2026",
+        "by": "Các đơn vị đầu mối",
+        "progress": 72,
+        "note": "Đa số đơn vị đã hoàn thiện dự thảo kế hoạch."
+      }
+    ],
+    "strategicCriterion": {
+      "id": "TC-05",
+      "title": "Đổi mới quản trị đại học, tổ chức và phát triển nguồn nhân lực"
+    },
+    "annualPlan": {
+      "id": "KH-036",
+      "title": "Xây dựng kế hoạch triển khai Bộ chỉ số KPI cấp đơn vị năm học 2026-2027, gắn với các mục tiêu chiến lược",
+      "source": "Kế hoạch công tác năm học 2026–2027 · Nhiệm vụ 36",
+      "result": "Kế hoạch triển khai KPI cấp đơn vị năm học 2026-2027 được ban hành"
+    },
+    "unitTasks": [
+      {
+        "id": "DV-036-01",
+        "unit": "Các đơn vị",
+        "role": "Chủ trì",
+        "title": "Xây dựng và tổ chức thực hiện kế hoạch chi tiết",
+        "progress": 72,
+        "status": "Đang thực hiện"
+      }
+    ],
+    "personalTasks": [
+      {
+        "id": "CN-036-01",
+        "parentUnitTaskId": "DV-036-01",
+        "person": "Nguyễn Văn Minh",
+        "position": "Chuyên viên",
+        "unit": "Các đơn vị",
+        "title": "Thu thập và tổng hợp dữ liệu đầu vào",
+        "progress": 72,
+        "status": "Đang thực hiện"
+      }
+    ]
+  },
+  {
+    "id": "CV-2026-037",
+    "qdNo": 37,
+    "field": "Quản trị, tổ chức, thi đua",
+    "title": "Ban hành hướng dẫn/checklist áp dụng nguyên tắc “6 rõ” khi phân công nhiệm vụ; tổ chức tập huấn cho lãnh đạo các đơn vị",
+    "owner": "P. TCCB",
+    "assignees": [
+      "Các đơn vị"
+    ],
+    "kpis": [
+      "QT04"
+    ],
+    "result": "Tài liệu hướng dẫn “6 rõ”; danh sách lãnh đạo tham dự tập huấn",
+    "due": "30/09/2026",
+    "progress": 45,
+    "status": "Đang thực hiện",
+    "priority": "Cao",
+    "phase": "Theo dõi",
+    "trend": "Đúng tiến độ",
+    "evidence": 2,
+    "updates": [
+      {
+        "date": "21/08/2026",
+        "by": "P. TCCB",
+        "progress": 45,
+        "note": "Đã hoàn thành dự thảo checklist 6 rõ và kế hoạch tập huấn."
+      }
+    ],
+    "strategicCriterion": {
+      "id": "TC-05",
+      "title": "Đổi mới quản trị đại học, tổ chức và phát triển nguồn nhân lực"
+    },
+    "annualPlan": {
+      "id": "KH-037",
+      "title": "Ban hành hướng dẫn/checklist áp dụng nguyên tắc “6 rõ” khi phân công nhiệm vụ; tổ chức tập huấn cho lãnh đạo các đơn vị",
+      "source": "Kế hoạch công tác năm học 2026–2027 · Nhiệm vụ 37",
+      "result": "Tài liệu hướng dẫn “6 rõ”; danh sách lãnh đạo tham dự tập huấn"
+    },
+    "unitTasks": [
+      {
+        "id": "DV-037-01",
+        "unit": "P. TCCB",
+        "role": "Chủ trì",
+        "title": "Xây dựng và tổ chức thực hiện kế hoạch chi tiết",
+        "progress": 45,
+        "status": "Đang thực hiện"
+      }
+    ],
+    "personalTasks": [
+      {
+        "id": "CN-037-01",
+        "parentUnitTaskId": "DV-037-01",
+        "person": "Nguyễn Văn Minh",
+        "position": "Chuyên viên",
+        "unit": "P. TCCB",
+        "title": "Thu thập và tổng hợp dữ liệu đầu vào",
+        "progress": 45,
+        "status": "Đang thực hiện"
+      }
+    ]
+  },
+  {
+    "id": "CV-2026-038",
+    "qdNo": 38,
+    "field": "Quản trị, tổ chức, thi đua",
+    "title": "Xây dựng và ban hành mẫu Nhật ký công việc phát sinh; hướng dẫn các đơn vị ghi nhận, tự chấm điểm theo 4 tiêu chí",
+    "owner": "P. Hành chính",
+    "assignees": [
+      "Các đơn vị"
+    ],
+    "kpis": [
+      "QT06"
+    ],
+    "result": "Mẫu Nhật ký công việc phát sinh ban hành; báo cáo tỷ lệ nhiệm vụ đột xuất đạt yêu cầu mỗi học kỳ",
+    "due": "30/09/2026",
+    "progress": 20,
+    "status": "Chờ tiếp nhận",
+    "priority": "Cao",
+    "phase": "Giao việc",
+    "trend": "Chưa cập nhật",
+    "evidence": 0,
+    "updates": [],
+    "strategicCriterion": {
+      "id": "TC-05",
+      "title": "Đổi mới quản trị đại học, tổ chức và phát triển nguồn nhân lực"
+    },
+    "annualPlan": {
+      "id": "KH-038",
+      "title": "Xây dựng và ban hành mẫu Nhật ký công việc phát sinh; hướng dẫn các đơn vị ghi nhận, tự chấm điểm theo 4 tiêu chí",
+      "source": "Kế hoạch công tác năm học 2026–2027 · Nhiệm vụ 38",
+      "result": "Mẫu Nhật ký công việc phát sinh ban hành; báo cáo tỷ lệ nhiệm vụ đột xuất đạt yêu cầu mỗi học kỳ"
+    },
+    "unitTasks": [
+      {
+        "id": "DV-038-01",
+        "unit": "P. Hành chính",
+        "role": "Chủ trì",
+        "title": "Xây dựng và tổ chức thực hiện kế hoạch chi tiết",
+        "progress": 20,
+        "status": "Chờ tiếp nhận"
+      }
+    ],
+    "personalTasks": [
+      {
+        "id": "CN-038-01",
+        "parentUnitTaskId": "DV-038-01",
+        "person": "Nguyễn Văn Minh",
+        "position": "Chuyên viên",
+        "unit": "P. Hành chính",
+        "title": "Thu thập và tổng hợp dữ liệu đầu vào",
+        "progress": 20,
+        "status": "Đang thực hiện"
+      }
+    ]
+  },
+  {
+    "id": "CV-2026-041",
+    "qdNo": 41,
+    "field": "Quản trị, tổ chức, thi đua",
+    "title": "Triển khai văn bản hướng dẫn đánh giá viên chức, NLĐ theo KPI tại các đơn vị",
+    "owner": "P. TCCB",
+    "assignees": [
+      "Các đơn vị"
+    ],
+    "kpis": [
+      "QT02"
+    ],
+    "result": "Văn bản hướng dẫn được ban hành và triển khai đến 100% đơn vị thí điểm",
+    "due": "31/08/2026",
+    "progress": 90,
+    "status": "Chờ nghiệm thu",
+    "priority": "Cao",
+    "phase": "Nghiệm thu",
+    "trend": "Đúng tiến độ",
+    "evidence": 6,
+    "updates": [
+      {
+        "date": "15/08/2026",
+        "by": "P. TCCB",
+        "progress": 70,
+        "note": "Đã ban hành hướng dẫn và tổ chức phổ biến."
+      },
+      {
+        "date": "25/08/2026",
+        "by": "Các đơn vị",
+        "progress": 90,
+        "note": "Đã triển khai tại các đơn vị thí điểm; đang hoàn thiện hồ sơ xác nhận."
+      }
+    ],
+    "strategicCriterion": {
+      "id": "TC-05",
+      "title": "Đổi mới quản trị đại học, tổ chức và phát triển nguồn nhân lực"
+    },
+    "annualPlan": {
+      "id": "KH-041",
+      "title": "Triển khai văn bản hướng dẫn đánh giá viên chức, NLĐ theo KPI tại các đơn vị",
+      "source": "Kế hoạch công tác năm học 2026–2027 · Nhiệm vụ 41",
+      "result": "Văn bản hướng dẫn được ban hành và triển khai đến 100% đơn vị thí điểm"
+    },
+    "unitTasks": [
+      {
+        "id": "DV-041-01",
+        "unit": "P. TCCB",
+        "role": "Chủ trì",
+        "title": "Xây dựng và tổ chức thực hiện kế hoạch chi tiết",
+        "progress": 90,
+        "status": "Chờ nghiệm thu"
+      }
+    ],
+    "personalTasks": [
+      {
+        "id": "CN-041-01",
+        "parentUnitTaskId": "DV-041-01",
+        "person": "Nguyễn Văn Minh",
+        "position": "Chuyên viên",
+        "unit": "P. TCCB",
+        "title": "Thu thập và tổng hợp dữ liệu đầu vào",
+        "progress": 90,
+        "status": "Đang thực hiện"
+      }
+    ]
+  },
+  {
+    "id": "CV-2026-042",
+    "qdNo": 42,
+    "field": "Quản trị, tổ chức, thi đua",
+    "title": "Ban hành kế hoạch triển khai Quyết định số 2371/QĐ-TTg năm học 2026-2027 và hướng dẫn các đơn vị lồng ghép nhiệm vụ",
+    "owner": "Ban Chỉ đạo thực hiện Quyết định 2371",
+    "assignees": [
+      "P. Đào tạo",
+      "Khoa Tiếng Anh",
+      "P. KHTC",
+      "TT. Khảo thí và ĐBCLGD",
+      "Các đơn vị liên quan"
+    ],
+    "kpis": [
+      "QT01",
+      "QT04",
+      "QT05"
+    ],
+    "result": "Kế hoạch triển khai Quyết định 2371/QĐ-TTg được ban hành; hướng dẫn lồng ghép nhiệm vụ 2371 vào kế hoạch đơn vị",
+    "due": "31/08/2026",
+    "progress": 100,
+    "status": "Hoàn thành",
+    "priority": "Cao",
+    "phase": "Hoàn thành",
+    "trend": "Hoàn thành",
+    "evidence": 7,
+    "updates": [
+      {
+        "date": "10/08/2026",
+        "by": "Ban Chỉ đạo",
+        "progress": 60,
+        "note": "Đã hoàn thành dự thảo và lấy ý kiến các đơn vị."
+      },
+      {
+        "date": "26/08/2026",
+        "by": "Ban Chỉ đạo",
+        "progress": 100,
+        "note": "Kế hoạch đã được ban hành và gửi các đơn vị triển khai."
+      }
+    ],
+    "strategicCriterion": {
+      "id": "TC-05",
+      "title": "Đổi mới quản trị đại học, tổ chức và phát triển nguồn nhân lực"
+    },
+    "annualPlan": {
+      "id": "KH-042",
+      "title": "Ban hành kế hoạch triển khai Quyết định số 2371/QĐ-TTg năm học 2026-2027 và hướng dẫn các đơn vị lồng ghép nhiệm vụ",
+      "source": "Kế hoạch công tác năm học 2026–2027 · Nhiệm vụ 42",
+      "result": "Kế hoạch triển khai Quyết định 2371/QĐ-TTg được ban hành; hướng dẫn lồng ghép nhiệm vụ 2371 vào kế hoạch đơn vị"
+    },
+    "unitTasks": [
+      {
+        "id": "DV-042-01",
+        "unit": "Ban Chỉ đạo thực hiện Quyết định 2371",
+        "role": "Chủ trì",
+        "title": "Xây dựng và tổ chức thực hiện kế hoạch chi tiết",
+        "progress": 100,
+        "status": "Hoàn thành"
+      },
+      {
+        "id": "DV-042-02",
+        "unit": "P. Đào tạo",
+        "role": "Phối hợp",
+        "title": "Phối hợp triển khai phần việc thuộc phạm vi đơn vị",
+        "progress": 92,
+        "status": "Đang thực hiện"
+      },
+      {
+        "id": "DV-042-03",
+        "unit": "Khoa Tiếng Anh",
+        "role": "Phối hợp",
+        "title": "Phối hợp triển khai phần việc thuộc phạm vi đơn vị",
+        "progress": 84,
+        "status": "Đang thực hiện"
+      }
+    ],
+    "personalTasks": [
+      {
+        "id": "CN-042-01",
+        "parentUnitTaskId": "DV-042-01",
+        "person": "Nguyễn Văn Minh",
+        "position": "Chuyên viên",
+        "unit": "Ban Chỉ đạo thực hiện Quyết định 2371",
+        "title": "Thu thập và tổng hợp dữ liệu đầu vào",
+        "progress": 100,
+        "status": "Hoàn thành"
+      },
+      {
+        "id": "CN-042-02",
+        "parentUnitTaskId": "DV-042-02",
+        "person": "Trần Thị Lan",
+        "position": "Phó Trưởng phòng",
+        "unit": "P. Đào tạo",
+        "title": "Soạn thảo hồ sơ/kế hoạch và phối hợp xử lý",
+        "progress": 86,
+        "status": "Đang thực hiện"
+      },
+      {
+        "id": "CN-042-03",
+        "parentUnitTaskId": "DV-042-03",
+        "person": "Lê Hoàng Nam",
+        "position": "Chuyên viên",
+        "unit": "Khoa Tiếng Anh",
+        "title": "Rà soát, hoàn thiện sản phẩm và cập nhật minh chứng",
+        "progress": 72,
+        "status": "Đang thực hiện"
+      }
+    ]
+  },
+  {
+    "id": "CV-2026-043",
+    "qdNo": 43,
+    "field": "Quản trị, tổ chức, thi đua",
+    "title": "Xây dựng Danh mục văn bản nội bộ cần rà soát, sửa đổi, bổ sung hoặc ban hành mới trong năm học",
+    "owner": "P. Hành chính",
+    "assignees": [
+      "Các Phòng",
+      "TT"
+    ],
+    "kpis": [
+      "QT08"
+    ],
+    "result": "Danh mục văn bản nội bộ cần rà soát/ban hành trong năm học, kèm phân công đơn vị chủ trì và tiến độ từng văn bản",
+    "due": "30/09/2026",
+    "progress": 35,
+    "status": "Đang thực hiện",
+    "priority": "Bình thường",
+    "phase": "Theo dõi",
+    "trend": "Đúng tiến độ",
+    "evidence": 1,
+    "updates": [
+      {
+        "date": "23/08/2026",
+        "by": "P. Hành chính",
+        "progress": 35,
+        "note": "Đã tổng hợp danh mục văn bản từ các đầu mối."
+      }
+    ],
+    "strategicCriterion": {
+      "id": "TC-05",
+      "title": "Đổi mới quản trị đại học, tổ chức và phát triển nguồn nhân lực"
+    },
+    "annualPlan": {
+      "id": "KH-043",
+      "title": "Xây dựng Danh mục văn bản nội bộ cần rà soát, sửa đổi, bổ sung hoặc ban hành mới trong năm học",
+      "source": "Kế hoạch công tác năm học 2026–2027 · Nhiệm vụ 43",
+      "result": "Danh mục văn bản nội bộ cần rà soát/ban hành trong năm học, kèm phân công đơn vị chủ trì và tiến độ từng văn bản"
+    },
+    "unitTasks": [
+      {
+        "id": "DV-043-01",
+        "unit": "P. Hành chính",
+        "role": "Chủ trì",
+        "title": "Xây dựng và tổ chức thực hiện kế hoạch chi tiết",
+        "progress": 35,
+        "status": "Đang thực hiện"
+      },
+      {
+        "id": "DV-043-02",
+        "unit": "Các Phòng",
+        "role": "Phối hợp",
+        "title": "Phối hợp triển khai phần việc thuộc phạm vi đơn vị",
+        "progress": 27,
+        "status": "Đang thực hiện"
+      },
+      {
+        "id": "DV-043-03",
+        "unit": "TT",
+        "role": "Phối hợp",
+        "title": "Phối hợp triển khai phần việc thuộc phạm vi đơn vị",
+        "progress": 19,
+        "status": "Đang thực hiện"
+      }
+    ],
+    "personalTasks": [
+      {
+        "id": "CN-043-01",
+        "parentUnitTaskId": "DV-043-01",
+        "person": "Nguyễn Văn Minh",
+        "position": "Chuyên viên",
+        "unit": "P. Hành chính",
+        "title": "Thu thập và tổng hợp dữ liệu đầu vào",
+        "progress": 35,
+        "status": "Đang thực hiện"
+      },
+      {
+        "id": "CN-043-02",
+        "parentUnitTaskId": "DV-043-02",
+        "person": "Trần Thị Lan",
+        "position": "Phó Trưởng phòng",
+        "unit": "Các Phòng",
+        "title": "Soạn thảo hồ sơ/kế hoạch và phối hợp xử lý",
+        "progress": 21,
+        "status": "Đang thực hiện"
+      },
+      {
+        "id": "CN-043-03",
+        "parentUnitTaskId": "DV-043-03",
+        "person": "Lê Hoàng Nam",
+        "position": "Chuyên viên",
+        "unit": "TT",
+        "title": "Rà soát, hoàn thiện sản phẩm và cập nhật minh chứng",
+        "progress": 7,
+        "status": "Đang thực hiện"
+      }
+    ]
+  },
+  {
+    "id": "CV-2026-046",
+    "qdNo": 46,
+    "field": "Cải cách hành chính",
+    "title": "Triển khai hệ thống quản lý văn bản điện tử tích hợp chữ ký số cho viên chức; tập huấn sử dụng",
+    "owner": "P. Hành chính",
+    "assignees": [
+      "Các đơn vị"
+    ],
+    "kpis": [
+      "CCHC02"
+    ],
+    "result": "Hệ thống vận hành; danh sách tài khoản chữ ký số đã cấp; tổ chức tập huấn",
+    "due": "31/12/2026",
+    "progress": 18,
+    "status": "Đang thực hiện",
+    "priority": "Cao",
+    "phase": "Theo dõi",
+    "trend": "Đúng tiến độ",
+    "evidence": 2,
+    "updates": [
+      {
+        "date": "25/08/2026",
+        "by": "P. Hành chính",
+        "progress": 18,
+        "note": "Đã hoàn thành khảo sát nhu cầu và danh sách tài khoản cần cấp."
+      }
+    ],
+    "strategicCriterion": {
+      "id": "TC-06",
+      "title": "Chuyển đổi số và nâng cao hiệu quả quản trị, hành chính"
+    },
+    "annualPlan": {
+      "id": "KH-046",
+      "title": "Triển khai hệ thống quản lý văn bản điện tử tích hợp chữ ký số cho viên chức; tập huấn sử dụng",
+      "source": "Kế hoạch công tác năm học 2026–2027 · Nhiệm vụ 46",
+      "result": "Hệ thống vận hành; danh sách tài khoản chữ ký số đã cấp; tổ chức tập huấn"
+    },
+    "unitTasks": [
+      {
+        "id": "DV-046-01",
+        "unit": "P. Hành chính",
+        "role": "Chủ trì",
+        "title": "Xây dựng và tổ chức thực hiện kế hoạch chi tiết",
+        "progress": 18,
+        "status": "Đang thực hiện"
+      }
+    ],
+    "personalTasks": [
+      {
+        "id": "CN-046-01",
+        "parentUnitTaskId": "DV-046-01",
+        "person": "Nguyễn Văn Minh",
+        "position": "Chuyên viên",
+        "unit": "P. Hành chính",
+        "title": "Thu thập và tổng hợp dữ liệu đầu vào",
+        "progress": 18,
+        "status": "Đang thực hiện"
+      }
+    ]
+  },
+  {
+    "id": "CV-2026-047",
+    "qdNo": 47,
+    "field": "Cải cách hành chính",
+    "title": "Thiết lập cơ chế theo dõi thời gian xử lý hồ sơ, thủ tục trên hệ thống; báo cáo tỷ lệ xử lý đúng hạn hằng học kỳ",
+    "owner": "P. Hành chính",
+    "assignees": [
+      "TT. Tin học"
+    ],
+    "kpis": [
+      "CCHC04"
+    ],
+    "result": "Chức năng cảnh báo quá hạn vận hành; báo cáo tỷ lệ đúng hạn",
+    "due": "31/12/2026",
+    "progress": 8,
+    "status": "Chờ tiếp nhận",
+    "priority": "Cao",
+    "phase": "Giao việc",
+    "trend": "Chưa cập nhật",
+    "evidence": 0,
+    "updates": [],
+    "strategicCriterion": {
+      "id": "TC-06",
+      "title": "Chuyển đổi số và nâng cao hiệu quả quản trị, hành chính"
+    },
+    "annualPlan": {
+      "id": "KH-047",
+      "title": "Thiết lập cơ chế theo dõi thời gian xử lý hồ sơ, thủ tục trên hệ thống; báo cáo tỷ lệ xử lý đúng hạn hằng học kỳ",
+      "source": "Kế hoạch công tác năm học 2026–2027 · Nhiệm vụ 47",
+      "result": "Chức năng cảnh báo quá hạn vận hành; báo cáo tỷ lệ đúng hạn"
+    },
+    "unitTasks": [
+      {
+        "id": "DV-047-01",
+        "unit": "P. Hành chính",
+        "role": "Chủ trì",
+        "title": "Xây dựng và tổ chức thực hiện kế hoạch chi tiết",
+        "progress": 8,
+        "status": "Chờ tiếp nhận"
+      },
+      {
+        "id": "DV-047-02",
+        "unit": "TT. Tin học",
+        "role": "Phối hợp",
+        "title": "Phối hợp triển khai phần việc thuộc phạm vi đơn vị",
+        "progress": 0,
+        "status": "Đang thực hiện"
+      }
+    ],
+    "personalTasks": [
+      {
+        "id": "CN-047-01",
+        "parentUnitTaskId": "DV-047-01",
+        "person": "Nguyễn Văn Minh",
+        "position": "Chuyên viên",
+        "unit": "P. Hành chính",
+        "title": "Thu thập và tổng hợp dữ liệu đầu vào",
+        "progress": 8,
+        "status": "Đang thực hiện"
+      },
+      {
+        "id": "CN-047-02",
+        "parentUnitTaskId": "DV-047-02",
+        "person": "Trần Thị Lan",
+        "position": "Phó Trưởng phòng",
+        "unit": "TT. Tin học",
+        "title": "Soạn thảo hồ sơ/kế hoạch và phối hợp xử lý",
+        "progress": 0,
+        "status": "Chờ giao việc"
+      }
+    ]
+  }
+]

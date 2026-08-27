@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { Search, BarChart2, Building, Users, ChevronDown, ChevronRight, ArrowRight } from 'lucide-react';
 import { getCompletionStatus, calcCompletionRate } from '@/lib/kpi';
 import schoolIndicators from '@/data/indicators.json';
@@ -147,8 +147,8 @@ export default function KPIPage() {
             const derived = unitKpisForSchool[kpi.id] || [];
             const isExpanded = expandedIndicator === kpi.id;
             return (
-              <>
-                <tr key={kpi.id} className={isExpanded ? 'bg-bg-cream' : ''}>
+              <React.Fragment key={kpi.id}>
+                <tr className={isExpanded ? 'bg-bg-cream' : ''}>
                   <td><span className="badge badge-info">{kpi.id}</span></td>
                   <td className="font-medium">{kpi.name}</td>
                   <td><span className="badge" style={{ backgroundColor: '#e3f2fd', color: '#1976d2' }}>{kpi.category}</span></td>
@@ -190,7 +190,7 @@ export default function KPIPage() {
                     </td>
                   </tr>
                 )}
-              </>
+              </React.Fragment>
             );
           })}
         </tbody>

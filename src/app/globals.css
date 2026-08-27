@@ -168,3 +168,127 @@ html, body { max-width: 100%; overflow-x: hidden; }
   .table { min-width: 720px; }
   .table-scroll, .overflow-x-auto { -webkit-overflow-scrolling: touch; }
 }
+
+/* =========================================================
+   PATCH 12 – Dashboard responsive + constrained panels
+   ========================================================= */
+.dashboard-viewport{display:flex;flex-direction:column;gap:0;min-width:0}
+.dashboard-analytics-grid{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+.dashboard-fixed-panel{min-height:0;height:clamp(300px,36vh,420px);display:flex;flex-direction:column;overflow:hidden}
+.dashboard-fixed-panel .panel-title-row{flex:0 0 auto}
+.field-chart-scroll,.multi-chart-scroll{min-height:0;overflow:auto;padding:16px 2px 4px;scrollbar-gutter:stable}
+.field-chart-row{display:grid;grid-template-columns:minmax(150px,1fr) minmax(140px,1.5fr) 48px;align-items:center;gap:14px;padding:9px 2px;border-bottom:1px solid #f0ece9}
+.field-chart-row:last-child{border-bottom:0}.field-chart-label{min-width:0}.field-chart-label strong{display:block;font-size:.9em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.field-chart-label small{display:block;margin-top:3px;color:var(--muted);font-size:.75em}.field-chart-track,.multi-track{height:9px;background:#eee7e4;border-radius:99px;overflow:hidden}.field-chart-track i,.multi-track i{display:block;height:100%;background:var(--primary);border-radius:inherit}.field-chart-row>b{text-align:right;font-size:.85em;color:var(--primary)}
+.multi-metric{padding:9px 2px 11px;border-bottom:1px solid #f0ece9}.multi-metric:last-of-type{border-bottom:0}.multi-metric>div:first-child{display:flex;justify-content:space-between;gap:12px;margin-bottom:7px}.multi-metric strong{font-size:.9em}.multi-metric span{font-size:.82em;font-weight:700;color:var(--primary)}.multi-summary{margin-top:14px;padding:12px 14px;border:1px solid #eadbd8;background:#fcf8f7;border-radius:9px;display:flex;justify-content:space-between}.multi-summary strong{color:var(--primary)}
+.dashboard-kpi-watch{margin-bottom:20px;overflow:hidden}.kpi-watch-scroll{max-height:clamp(260px,34vh,390px);overflow:auto}.kpi-watch-table{width:100%;min-width:980px;border-collapse:collapse}.kpi-watch-table th{position:sticky;top:0;z-index:2;background:var(--primary);color:#fff;padding:12px 14px;text-align:left;font-size:.8em;white-space:nowrap}.kpi-watch-table td{padding:12px 14px;border-bottom:1px solid #eee8e6;font-size:.82em;vertical-align:middle}.kpi-watch-table td strong{font-size:1em;line-height:1.45}.kpi-watch-table tbody tr:hover{background:#fcf8f7}.kpi-progress{position:relative;width:150px;height:8px;background:#eee7e4;border-radius:99px;overflow:hidden}.kpi-progress i{display:block;height:100%;background:var(--primary);border-radius:inherit}.kpi-progress span{position:absolute;right:0;top:12px;color:var(--muted);font-size:.82em}.kpi-status{display:inline-flex;align-items:center;white-space:nowrap;padding:5px 9px;border-radius:99px;font-size:.75em;font-weight:700}.kpi-status.done{background:#eaf6ec;color:#27733b}.kpi-status.working{background:#eaf1fa;color:#2d6ba9}.kpi-status.watch{background:#fff3d9;color:#9b6a08}.kpi-status.late{background:#fceaea;color:#ad3a35}
+@media (min-width:901px) and (min-height:820px){.dashboard-viewport{max-height:calc(100vh - 150px);overflow-y:auto;padding-right:4px}.dashboard-viewport .stats-grid{flex:0 0 auto}.dashboard-viewport .dashboard-grid{flex:0 0 auto}.dashboard-viewport .footer{flex:0 0 auto}.dashboard-grid>.panel:not(.dashboard-fixed-panel){min-height:0;max-height:clamp(300px,38vh,460px);overflow:auto}.dashboard-grid>.panel .list{max-height:clamp(215px,29vh,360px);overflow:auto}}
+@media(max-width:1200px){.app-content{padding:22px 24px}.stats-grid{gap:12px}.stat-card{padding:18px;gap:14px;min-height:116px}.stat-icon{width:58px;height:58px;font-size:27px}.dashboard-grid{gap:14px}.panel{padding:16px}.progress-content{gap:22px}.donut{width:160px;height:160px}.donut>div{width:114px;height:114px}.field-chart-row{grid-template-columns:minmax(130px,1fr) minmax(120px,1.5fr) 44px}}
+@media(max-width:900px){.dashboard-viewport{max-height:none;overflow:visible}.dashboard-analytics-grid{grid-template-columns:1fr}.dashboard-fixed-panel{height:auto;max-height:420px}.field-chart-scroll,.multi-chart-scroll{overflow:visible}.dashboard-kpi-watch{padding:0}.dashboard-kpi-watch .panel-title-row{padding:16px}.kpi-watch-scroll{max-height:420px}.dashboard-grid>.panel:not(.dashboard-fixed-panel){max-height:none}.dashboard-grid>.panel .list{max-height:none}.progress-content{flex-wrap:wrap}}
+@media(max-width:700px){.app-content{padding:14px}.welcome-row h1{font-size:22px}.stats-grid{grid-template-columns:1fr 1fr;gap:10px}.stat-card{min-height:102px;padding:14px;gap:10px}.stat-icon{width:46px;height:46px;border-radius:13px;font-size:22px}.stat-card strong{font-size:24px}.stat-card small{line-height:1.35}.dashboard-grid{grid-template-columns:1fr;gap:12px;margin-bottom:12px}.panel{padding:14px;border-radius:11px}.panel-title-row{gap:12px}.panel-title-row h3{font-size:15px}.panel-title-row span{font-size:11px;text-align:right}.progress-content{padding:16px 0}.donut{width:145px;height:145px}.donut>div{width:104px;height:104px}.legend-list{width:100%}.field-chart-row{grid-template-columns:minmax(115px,1fr) minmax(100px,1.3fr) 40px;gap:9px}.field-chart-label strong{font-size:.82em}.dashboard-fixed-panel{max-height:390px}.kpi-watch-scroll{max-height:360px}}
+@media(max-width:420px){.stats-grid{grid-template-columns:1fr}.stat-card{min-height:88px}.field-chart-row{grid-template-columns:1fr 54px}.field-chart-track{grid-column:1/-1;grid-row:2}.field-chart-label small{display:none}.field-chart-row>b{grid-column:2;grid-row:1}.dashboard-fixed-panel{max-height:430px}.kpi-watch-scroll{max-height:340px}}
+
+/* Dashboard: giới hạn chiều cao card theo viewport, giữ nguyên theme/layout CTU */
+.dashboard-page .dashboard-stat-card {
+  min-height: 104px;
+}
+
+@media (min-width: 1024px) {
+  .dashboard-page .dashboard-chart-card {
+    height: clamp(320px, 36vh, 390px);
+    overflow: hidden;
+  }
+
+  .dashboard-page .dashboard-data-card {
+    height: clamp(360px, 46vh, 560px);
+  }
+
+  .dashboard-page .dashboard-table-card {
+    height: clamp(420px, 62vh, 760px);
+  }
+
+  .dashboard-page .dashboard-card-body {
+    overscroll-behavior: contain;
+    scrollbar-gutter: stable;
+  }
+
+  .dashboard-page .dashboard-card-body::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  .dashboard-page .dashboard-card-body::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, .16);
+    border-radius: 8px;
+  }
+}
+
+@media (max-width: 1023px) {
+  .dashboard-page .dashboard-chart-card,
+  .dashboard-page .dashboard-data-card,
+  .dashboard-page .dashboard-table-card {
+    height: auto;
+    max-height: none;
+  }
+
+  .dashboard-page .dashboard-card-body {
+    overflow: visible;
+  }
+}
+
+@media (max-height: 760px) and (min-width: 1024px) {
+  .dashboard-page .dashboard-chart-card {
+    height: 300px;
+  }
+
+  .dashboard-page .dashboard-data-card {
+    height: 390px;
+  }
+
+  .dashboard-page .dashboard-table-card {
+    height: 500px;
+  }
+}
+
+
+
+
+
+/* Dashboard: vùng scroll nội bộ nhưng cho phép scroll tiếp ra trang */
+@media (min-width: 1024px) {
+  .dashboard-page .dashboard-top-card {
+    height: clamp(400px, 52vh, 620px) !important;
+    min-height: 0;
+  }
+
+  .dashboard-page .dashboard-top-card > .dashboard-card-body,
+  .dashboard-page .dashboard-top-card > div:last-child:not(.card-header) {
+    min-height: 0;
+    overflow-y: auto;
+    overscroll-behavior-y: auto;
+  }
+
+  .dashboard-page .dashboard-table-card {
+    height: clamp(440px, 60vh, 760px) !important;
+    min-height: 0;
+  }
+
+  .dashboard-page .dashboard-table-scroll {
+    min-height: 0;
+    overflow: auto;
+    overscroll-behavior: auto;
+  }
+}
+
+@media (max-width: 1023px) {
+  .dashboard-page .dashboard-top-card,
+  .dashboard-page .dashboard-table-card {
+    height: auto !important;
+    min-height: 0;
+  }
+
+  .dashboard-page .dashboard-top-card > .dashboard-card-body,
+  .dashboard-page .dashboard-top-card > div:last-child:not(.card-header),
+  .dashboard-page .dashboard-table-scroll {
+    overflow: visible;
+  }
+}
