@@ -35,6 +35,7 @@ const menuItems: MenuItem[] = [
     children: [
       { href: '/admin/bsc', label: 'Quản lý phối cảnh' },
       { href: '/kpi/strategic-objectives', label: 'Mục tiêu chiến lược' },
+      { href: '/admin/kpi-catalogs', label: 'Bộ chỉ tiêu KPI' },
       { href: '/admin/school-indicators', label: 'Chỉ tiêu Trường' },
     ],
   },
@@ -140,8 +141,6 @@ const menuItems: MenuItem[] = [
       { href: '/admin/positions', label: 'Chức vụ / Chức danh' },
       { href: '/admin/job-positions', label: 'Vị trí việc làm' },
       { href: '/admin/shared-categories', label: 'Danh mục dùng chung' },
-      { href: '/admin/kpi-catalogs', label: 'Danh mục chỉ tiêu KPI' },
-      { href: '/admin/kpi-data', label: 'Bộ chỉ tiêu KPI' },
       { href: '/kpi/kpi-templates', label: 'Bộ KPI mẫu' },
       { href: '/admin/target-groups', label: 'Nhóm đối tượng' },
       { href: '/admin/import', label: 'Import dữ liệu' },
@@ -152,8 +151,8 @@ const menuItems: MenuItem[] = [
 export default function Sidebar({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) {
   const pathname = usePathname();
   const [expandedGroups, setExpandedGroups] = useState<string[]>(() => {
-    if (pathname.startsWith('/kpi/academic') || pathname.startsWith('/kpi/cycles') || pathname.startsWith('/admin/organization') || pathname.startsWith('/admin/positions') || pathname.startsWith('/admin/job-positions') || pathname.startsWith('/admin/shared-categories') || pathname.startsWith('/admin/kpi-catalogs') || pathname.startsWith('/admin/kpi-data')) return ['/setup'];
-    if (pathname.startsWith('/admin/school-indicators') || pathname.startsWith('/kpi/strategic') || pathname.startsWith('/kpi/kpi-templates') || pathname.startsWith('/admin/bsc') || pathname.startsWith('/admin/target-groups') || pathname.startsWith('/admin/import')) return ['/define'];
+    if (pathname.startsWith('/kpi/academic') || pathname.startsWith('/kpi/cycles') || pathname.startsWith('/admin/organization') || pathname.startsWith('/admin/positions') || pathname.startsWith('/admin/job-positions') || pathname.startsWith('/admin/shared-categories')) return ['/setup'];
+    if (pathname.startsWith('/admin/school-indicators') || pathname.startsWith('/kpi/strategic') || pathname.startsWith('/kpi/kpi-templates') || pathname.startsWith('/admin/bsc') || pathname.startsWith('/admin/target-groups') || pathname.startsWith('/admin/import') || pathname.startsWith('/admin/kpi-catalogs')) return ['/define'];
     if (pathname.startsWith('/kpi/cascade') || pathname.startsWith('/kpi/task-assignment') || pathname.startsWith('/kpi/annual-work-plan') || pathname.startsWith('/kpi/plans') || pathname.startsWith('/kpi/department') || pathname.startsWith('/kpi/my-kpi') || pathname.startsWith('/kpi/plan-versions')) return ['/deploy'];
     if (pathname.startsWith('/kpi/progress') || pathname.startsWith('/kpi/evidences') || pathname.startsWith('/kpi/personal-dashboard') || pathname.startsWith('/kpi/unit-dashboard') || pathname.startsWith('/kpi/executive-dashboard') || pathname.startsWith('/kpi/warnings')) return ['/execute'];
     if (pathname.startsWith('/kpi/evaluation') || pathname.startsWith('/kpi/council') || pathname.startsWith('/kpi/scoring') || pathname.startsWith('/kpi/approvals') || pathname.startsWith('/admin/complaints')) return ['/kpi/evaluation'];
