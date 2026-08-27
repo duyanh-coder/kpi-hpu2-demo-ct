@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect, useCallback } from 'react';
-import { Layers, Target, Building, Users, Plus, Edit, Trash2 } from 'lucide-react';
+import { Target, Building, Users, Plus, Edit, Trash2, Send } from 'lucide-react';
 import Modal from '@/components/ui/Modal';
 import { apiGet, apiPost, apiPut, apiDelete } from '@/lib/api';
 import { SchoolCatalogForm, UnitCatalogForm, IndividualCatalogForm } from '@/components/forms/kpi-catalog-forms';
@@ -139,10 +139,10 @@ export default function KPICatalogsPage() {
                   <tr key={u.id}>
                     <td><span className="badge badge-info">{u.code}</span></td>
                     <td className="font-medium">{u.name}</td>
-                    <td>{schoolCatalog.find(s => s.id === u.linkedCatalogId)?.code || '—'}</td>
+                    <td>{u.linkedCatalogId ? (schoolCatalog.find(s => s.id === u.linkedCatalogId)?.code || '—') : 'Riêng'}</td>
                     <td className="font-medium">{u.target || 'Theo kế hoạch giao'}</td>
                     <td>{u.cycle || 'Năm học'}</td>
-                    <td><Actions id={u.id} onEdit={() => { setEditId(u.id); setShowModal(true); }} onDelete={() => handleDelete(u.id)} /></td>
+                    <td><AssignButton /></td>
                   </tr>
                 ))}
                 {unitCatalog.length === 0 && <tr><td colSpan={6} className="text-center text-text-light text-sm py-8">Chưa có dữ liệu</td></tr>}
@@ -174,10 +174,18 @@ export default function KPICatalogsPage() {
       <Modal isOpen={showModal} onClose={() => { setShowModal(false); setEditId(null); }}
         title={`${editId ? 'Sửa' : 'Thêm'} ${tab === 'school-catalog' ? 'Chỉ tiêu Trường' : tab === 'unit-catalog' ? 'Chỉ tiêu đơn vị' : tab === 'individual-catalog' ? 'KPI cá nhân' : 'Bộ chỉ tiêu'}`} maxWidth="max-w-3xl">
         {tab === 'school-catalog' && <SchoolCatalogForm item={schoolCatalog.find(s => s.id === editId) || null} groups={groupCatalog} units={measurementUnits} onSubmit={handleSave} onCancel={() => { setShowModal(false); setEditId(null); }} />}
-        {tab === 'unit-catalog' && <UnitCatalogForm item={unitCatalog.find(u => u.id === editId) || null} units={measurementUnits} onSubmit={handleSave} onCancel={() => { setShowModal(false); setEditId(null); }} />}
+        {tab === 'unit-catalog' && <UnitCatalogForm item={unitCatalog.find(u => u.id === editId) || null} units={measurementUnits} schoolCatalog={schoolCatalog} onSubmit={handleSave} onCancel={() => { setShowModal(false); setEditId(null); }} />}
         {tab === 'individual-catalog' && <IndividualCatalogForm item={indCatalog.find(i => i.id === editId) || null} positionCodes={[...new Set(indCatalog.map(i => i.positionCode))]} units={measurementUnits} onSubmit={handleSave} onCancel={() => { setShowModal(false); setEditId(null); }} />}
       </Modal>
     </div>
+  );
+}
+
+function AssignButton() {
+  return (
+    <button className="px-2 py-1 text-xs rounded border border-primary text-primary hover:bg-primary-light flex items-center gap-1">
+      <Send size={12} /> Giao việc
+    </button>
   );
 }
 
