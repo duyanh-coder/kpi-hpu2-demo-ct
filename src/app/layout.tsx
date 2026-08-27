@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { K2D, Barlow } from "next/font/google";
+import { K2D, Readex_Pro } from "next/font/google";
 import "./globals.css";
 import ClientLayout from "@/components/layout/ClientLayout";
 import AuthProvider from "@/providers/AuthProvider";
@@ -10,9 +10,9 @@ const k2d = K2D({
   weight: ["300", "400", "500", "600", "700"],
 });
 
-const barlow = Barlow({
+const readex = Readex_Pro({
   subsets: ["latin"],
-  variable: "--font-barlow",
+  variable: "--font-readex",
   weight: ["300", "400", "500", "600", "700"],
 });
 
@@ -28,7 +28,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="vi">
-      <body className={`${k2d.variable} ${barlow.variable} antialiased`}>
+      <body className={`${k2d.variable} ${readex.variable} antialiased`}>
         <AuthProvider>
           <div className="flex min-h-screen">
             <ClientLayout>{children}</ClientLayout>

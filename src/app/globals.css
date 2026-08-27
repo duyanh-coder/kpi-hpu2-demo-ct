@@ -1,20 +1,20 @@
 @import "tailwindcss";
 
 @theme inline {
-  --color-primary: #0d47a1;
-  --color-primary-dark: #082d5e;
-  --color-primary-light: #d0e4f7;
-  --color-secondary: #e3bf00;
-  --color-secondary-light: #fff9db;
+  --color-primary: #1f5ca9;
+  --color-primary-dark: #174a86;
+  --color-primary-light: #dbe9f9;
+  --color-secondary: #00afef;
+  --color-secondary-light: #e6f7fe;
   --color-accent-red: #f70004;
   --color-accent-green: #4caf50;
   --color-accent-yellow: #ffc107;
-  --color-bg-cream: #ffffec;
+  --color-bg-cream: #f3f7fc;
   --color-text-dark: #353535;
-  --color-text-light: #666666;
-  --color-border: #e2dfdf;
-  --font-heading: "K2D", sans-serif;
-  --font-body: "Barlow", sans-serif;
+  --color-text-light: #5a6b80;
+  --color-border: #dde5ee;
+  --font-heading: var(--font-k2d);
+  --font-body: var(--font-readex);
 }
 
 :root {
@@ -70,7 +70,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .btn-secondary {
   background: var(--color-secondary);
-  color: var(--color-text-dark);
+  color: white;
   padding: 8px 16px;
   border-radius: 6px;
   font-weight: 500;
@@ -78,7 +78,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .btn-secondary:hover {
-  background: #d4b000;
+  background: #0094cc;
 }
 
 .btn-danger {
