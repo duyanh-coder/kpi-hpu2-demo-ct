@@ -35,8 +35,8 @@ const menuItems: MenuItem[] = [
     children: [
       { href: '/admin/bsc', label: 'Quản lý phối cảnh' },
       { href: '/kpi/strategic-objectives', label: 'Mục tiêu chiến lược' },
-      { href: '/admin/kpi-catalogs', label: 'Bộ chỉ tiêu KPI' },
       { href: '/admin/school-indicators', label: 'Chỉ tiêu Trường' },
+      { href: '/admin/kpi-catalogs', label: 'Bộ chỉ tiêu KPI' },
     ],
   },
 
