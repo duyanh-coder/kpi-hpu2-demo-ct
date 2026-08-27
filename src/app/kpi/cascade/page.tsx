@@ -19,6 +19,8 @@ interface KPICascadeAssignment {
   toUserId?: string;
   indicatorId: string;
   indicatorName: string;
+  parentIndicatorCode?: string;
+  taskName?: string;
   targetValue: number;
   unit: string;
   weight: number;
@@ -327,19 +329,20 @@ export default function CascadeAssignmentsPage() {
               <div className="overflow-x-auto">
                 <table className="table">
                   <thead>
-                    <tr><th>STT</th><th>Chỉ tiêu KPI</th><th>Đơn vị nhận</th><th>Mục tiêu</th><th>Trọng số</th><th>Hạn</th><th>Trạng thái</th><th>Thao tác</th></tr>
+                    <tr><th>STT</th><th>Nhiệm vụ</th><th>Nguồn chỉ tiêu (cha)</th><th>Đơn vị nhận</th><th>Mục tiêu</th><th>Trọng số</th><th>Hạn</th><th>Trạng thái</th><th>Thao tác</th></tr>
                   </thead>
                   <tbody>
                     {loading ? (
-                      <tr><td colSpan={8} className="text-center py-8">Đang tải...</td></tr>
+                      <tr><td colSpan={9} className="text-center py-8">Đang tải...</td></tr>
                     ) : filtered.length === 0 ? (
-                      <tr><td colSpan={8} className="text-center py-8">Chưa có phân bổ KPI nào</td></tr>
+                      <tr><td colSpan={9} className="text-center py-8">Chưa có phân bổ KPI nào</td></tr>
                     ) : filtered.map((item, idx) => {
                       const status = statusConfig[item.status] || statusConfig.draft;
                       return (
                         <tr key={item.id}>
                           <td className="text-sm text-text-light">{idx + 1}</td>
-                          <td className="text-sm font-medium">{item.indicatorName}</td>
+                          <td className="text-sm font-medium">{item.taskName || item.indicatorName}</td>
+                          <td className="text-sm text-text-light">{item.indicatorName}</td>
                           <td className="text-sm">{unitMap[item.toUnitId] || '-'}</td>
                           <td className="text-sm">{item.targetValue} {item.unit}</td>
                           <td className="text-sm">{item.weight}%</td>
@@ -512,7 +515,7 @@ function SuggestedDistribution({ cycleId, items, unitsData, onApply }: { cycleId
       {suggestions && (
         <div className="border border-border rounded-lg overflow-hidden">
           <table className="table text-sm">
-            <thead><tr><th>Chỉ tiêu</th><th>Giá trị cũ</th><th>Gợi ý</th></tr></thead>
+            <thead><tr><th>Nhiệm vụ</th><th>Giá trị cũ</th><th>Gợi ý</th></tr></thead>
             <tbody>
               {items.filter(i => i.status === 'draft').map(item => (
                 <tr key={item.id}>
