@@ -139,7 +139,7 @@ export default function KPICatalogsPage() {
                   <tr key={u.id}>
                     <td><span className="badge badge-info">{u.code}</span></td>
                     <td className="font-medium">{u.name}</td>
-                    <td>{u.linkedCatalogId ? (schoolCatalog.find(s => s.id === u.linkedCatalogId)?.code || '—') : 'Riêng'}</td>
+                    <td>{u.linkedCatalogId ? (schoolCatalog.find(s => s.id === u.linkedCatalogId)?.code || '—') : <span className="badge badge-info">Riêng</span>}</td>
                     <td className="font-medium">{u.target || 'Theo kế hoạch giao'}</td>
                     <td>{u.cycle || 'Năm học'}</td>
                     <td><AssignButton /></td>
