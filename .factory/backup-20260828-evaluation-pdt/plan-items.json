@@ -1,5 +1,85 @@
 [
   {
+    "id": "pi_DT-01_c001",
+    "planId": "plan_unit_pdt_c001",
+    "indicatorId": "HPU2-KPI-05",
+    "targetValue": 90,
+    "weight": 15,
+    "dueDate": "2026-08-31"
+  },
+  {
+    "id": "pi_DT-02_c001",
+    "planId": "plan_unit_pdt_c001",
+    "indicatorId": null,
+    "targetValue": 95,
+    "weight": 10,
+    "dueDate": "2026-08-31"
+  },
+  {
+    "id": "pi_DT-03_c001",
+    "planId": "plan_unit_pdt_c001",
+    "indicatorId": null,
+    "targetValue": 95,
+    "weight": 10,
+    "dueDate": "2026-08-31"
+  },
+  {
+    "id": "pi_DT-04_c001",
+    "planId": "plan_unit_pdt_c001",
+    "indicatorId": "HPU2-KPI-02",
+    "targetValue": 10,
+    "weight": 10,
+    "dueDate": "2026-08-31"
+  },
+  {
+    "id": "pi_DT-05_c001",
+    "planId": "plan_unit_pdt_c001",
+    "indicatorId": "HPU2-KPI-06",
+    "targetValue": 80,
+    "weight": 15,
+    "dueDate": "2026-08-31"
+  },
+  {
+    "id": "pi_DT-06_c001",
+    "planId": "plan_unit_pdt_c001",
+    "indicatorId": null,
+    "targetValue": 95,
+    "weight": 10,
+    "dueDate": "2026-08-31"
+  },
+  {
+    "id": "pi_DT-07_c001",
+    "planId": "plan_unit_pdt_c001",
+    "indicatorId": null,
+    "targetValue": 90,
+    "weight": 10,
+    "dueDate": "2026-08-31"
+  },
+  {
+    "id": "pi_DT-08_c001",
+    "planId": "plan_unit_pdt_c001",
+    "indicatorId": "HPU2-KPI-10",
+    "targetValue": 4,
+    "weight": 10,
+    "dueDate": "2026-08-31"
+  },
+  {
+    "id": "pi_DT-09_c001",
+    "planId": "plan_unit_pdt_c001",
+    "indicatorId": null,
+    "targetValue": 100,
+    "weight": 5,
+    "dueDate": "2026-08-31"
+  },
+  {
+    "id": "pi_DT-10_c001",
+    "planId": "plan_unit_pdt_c001",
+    "indicatorId": null,
+    "targetValue": 95,
+    "weight": 5,
+    "dueDate": "2026-08-31"
+  },
+  {
     "id": "pi_KHCN-01_c001",
     "planId": "plan_unit_khcn_c001",
     "indicatorId": "HPU2-KPI-13",
@@ -4710,461 +4790,5 @@
     "targetValue": 0,
     "weight": 10,
     "dueDate": ""
-  },
-  {
-    "id": "pi_DMST01_c001",
-    "planId": "plan_unit_pdt_c001",
-    "indicatorId": null,
-    "name": "ĐMST01 – Rà soát chuẩn đầu ra các CTĐT bổ sung năng lực số, AI, ĐMST",
-    "targetValue": 1,
-    "weight": 8,
-    "dueDate": "2026-08-31",
-    "children": [
-      {
-        "id": "ĐT-01.1",
-        "name": "Thành lập tổ công tác rà soát CĐR cho 15 CTĐT chính quy",
-        "owner": "Trần Văn A",
-        "dueDate": "2026-08-10",
-        "evidence": "Quyết định thành lập tổ công tác (Duyệt: Trưởng phòng Đào tạo)",
-        "ratio": 1,
-        "status": "ĐẠT"
-      },
-      {
-        "id": "ĐT-01.2",
-        "name": "Xây dựng khung tiêu chuẩn năng lực số, AI làm căn cứ cập nhật",
-        "owner": "Nguyễn Thị B",
-        "dueDate": "2026-08-15",
-        "evidence": "Khung tiêu chuẩn năng lực số (Duyệt: Trưởng phòng Đào tạo)",
-        "ratio": 1,
-        "status": "ĐẠT"
-      },
-      {
-        "id": "ĐT-01.3",
-        "name": "Thu thập và tổng hợp báo cáo đề xuất sửa đổi từ 13 khoa đào tạo",
-        "owner": "Lê Văn C",
-        "dueDate": "2026-08-25",
-        "evidence": "Báo cáo tổng hợp ý kiến khoa (Duyệt: Trưởng phòng Đào tạo)",
-        "ratio": 1,
-        "status": "ĐẠT"
-      },
-      {
-        "id": "ĐT-01.4",
-        "name": "Trình Hội đồng Khoa học phê duyệt danh mục CTĐT tích hợp số",
-        "owner": "Trần Văn A",
-        "dueDate": "2026-08-30",
-        "evidence": "Biên bản thông qua danh mục (Duyệt: Hiệu trưởng)",
-        "ratio": 1,
-        "status": "ĐẠT"
-      }
-    ]
-  },
-  {
-    "id": "pi_DT01_c001",
-    "planId": "plan_unit_pdt_c001",
-    "indicatorId": null,
-    "name": "ĐT01 – Rà soát, cập nhật đề cương chi tiết học phần HK1 tích hợp công nghệ số",
-    "targetValue": 1,
-    "weight": 9,
-    "dueDate": "2026-08-31",
-    "children": [
-      {
-        "id": "ĐT-02.1",
-        "name": "Ban hành văn bản hướng dẫn các khoa cập nhật đề cương HK1",
-        "owner": "Nguyễn Thị B",
-        "dueDate": "2026-08-08",
-        "evidence": "Hướng dẫn cập nhật đề cương (Duyệt: Trưởng phòng Đào tạo)",
-        "ratio": 1,
-        "status": "ĐẠT"
-      },
-      {
-        "id": "ĐT-02.2",
-        "name": "Kiểm duyệt đề cương học phần tích hợp AI, kỹ năng số",
-        "owner": "Lê Văn C",
-        "dueDate": "2026-08-20",
-        "evidence": "Danh sách đề cương đã duyệt (Duyệt: Trưởng phòng Đào tạo)",
-        "ratio": 1,
-        "status": "ĐẠT"
-      },
-      {
-        "id": "ĐT-02.3",
-        "name": "Đồng bộ đề cương chi tiết đã duyệt lên cổng thông tin",
-        "owner": "Phạm Văn D",
-        "dueDate": "2026-08-25",
-        "evidence": "Link cập nhật trên cổng học vụ (Duyệt: Trưởng phòng Đào tạo)",
-        "ratio": 0.95,
-        "status": "CHƯA ĐẠT"
-      }
-    ]
-  },
-  {
-    "id": "pi_DT02-lms_c001",
-    "planId": "plan_unit_pdt_c001",
-    "indicatorId": null,
-    "name": "ĐT02 – Xác định danh mục học phần triển khai trên hệ thống LMS HK1",
-    "targetValue": 0.6,
-    "weight": 9,
-    "dueDate": "2026-08-31",
-    "children": [
-      {
-        "id": "ĐT-03.1",
-        "name": "Trích xuất danh sách lớp học phần HK1 mở trực tiếp",
-        "owner": "Phạm Văn D",
-        "dueDate": "2026-08-10",
-        "evidence": "Danh sách lớp học phần xuất từ SIS (Duyệt: Trưởng phòng Đào tạo)",
-        "ratio": 1,
-        "status": "ĐẠT"
-      },
-      {
-        "id": "ĐT-03.2",
-        "name": "Khởi tạo lớp học phần ảo và phân quyền giảng viên trên LMS",
-        "owner": "Hoàng Văn E",
-        "dueDate": "2026-08-15",
-        "evidence": "Danh sách lớp học phần LMS sẵn sàng (Duyệt: Trưởng phòng Đào tạo)",
-        "ratio": 1,
-        "status": "ĐẠT"
-      },
-      {
-        "id": "ĐT-03.3",
-        "name": "Hỗ trợ giảng viên tải học liệu số tiêu chuẩn lên hệ thống",
-        "owner": "Hoàng Văn E",
-        "dueDate": "2026-08-25",
-        "evidence": "65% lớp LMS có đủ học liệu chuẩn (Duyệt: Trưởng phòng Đào tạo)",
-        "ratio": 0.9,
-        "status": "CHƯA ĐẠT"
-      }
-    ]
-  },
-  {
-    "id": "pi_TS02a_c001",
-    "planId": "plan_unit_pdt_c001",
-    "indicatorId": null,
-    "name": "TS02 – Xét tuyển và tiếp nhận học sinh, sinh viên khóa mới K52 nhập học",
-    "targetValue": 0.8,
-    "weight": 9,
-    "dueDate": "2026-08-31",
-    "children": [
-      {
-        "id": "ĐT-04.1",
-        "name": "Cấu hình cổng nhập học trực tuyến K52 trên phần mềm",
-        "owner": "Phạm Văn D",
-        "dueDate": "2026-08-05",
-        "evidence": "Cổng nhập học online hoạt động (Duyệt: Trưởng phòng Đào tạo)",
-        "ratio": 1,
-        "status": "ĐẠT"
-      },
-      {
-        "id": "ĐT-04.2",
-        "name": "Tích hợp cổng thanh toán trực tuyến lệ phí nhập học",
-        "owner": "Nguyễn Thị B",
-        "dueDate": "2026-08-12",
-        "evidence": "API gạch nợ học phí tự động liên thông (Duyệt: Trưởng phòng Đào tạo)",
-        "ratio": 1,
-        "status": "ĐẠT"
-      },
-      {
-        "id": "ĐT-04.3",
-        "name": "Hỗ trợ kỹ thuật và giải quyết vướng mắc nhập học số",
-        "owner": "Hoàng Văn E",
-        "dueDate": "2026-08-20",
-        "evidence": "Nhật ký hỗ trợ kỹ thuật online (Duyệt: Trưởng phòng Đào tạo)",
-        "ratio": 0.9,
-        "status": "CHƯA ĐẠT"
-      },
-      {
-        "id": "ĐT-04.4",
-        "name": "Tổng hợp và đối soát số liệu nhập học thực tế",
-        "owner": "Trần Văn A",
-        "dueDate": "2026-08-28",
-        "evidence": "Báo cáo sĩ số K52 thực tế đạt 83.5% (Duyệt: Hiệu trưởng)",
-        "ratio": 1,
-        "status": "ĐẠT"
-      }
-    ]
-  },
-  {
-    "id": "pi_TS07_c001",
-    "planId": "plan_unit_pdt_c001",
-    "indicatorId": null,
-    "name": "TS07 – Xét tuyển nghiên cứu sinh K16 đợt 2",
-    "targetValue": 0.05,
-    "weight": 8,
-    "dueDate": "2026-08-31",
-    "children": [
-      {
-        "id": "ĐT-05.1",
-        "name": "Tiếp nhận hồ sơ dự tuyển NCS K16 trực tuyến",
-        "owner": "Lê Văn C",
-        "dueDate": "2026-08-10",
-        "evidence": "Hồ sơ số hóa trên phân hệ SĐH (Duyệt: Trưởng phòng Đào tạo)",
-        "ratio": 0.95,
-        "status": "CHƯA ĐẠT"
-      },
-      {
-        "id": "ĐT-05.2",
-        "name": "Thành lập Hội đồng xét tuyển chuyên môn cho từng ngành",
-        "owner": "Trần Văn A",
-        "dueDate": "2026-08-15",
-        "evidence": "Quyết định thành lập hội đồng xét tuyển (Duyệt: Hiệu trưởng)",
-        "ratio": 1,
-        "status": "ĐẠT"
-      },
-      {
-        "id": "ĐT-05.3",
-        "name": "Tổ chức bảo vệ đề cương nghiên cứu và tổng hợp kết quả",
-        "owner": "Lê Văn C",
-        "dueDate": "2026-08-25",
-        "evidence": "Biên bản điểm xét tuyển NCS K16 (Duyệt: Hội đồng tuyển sinh)",
-        "ratio": 1,
-        "status": "ĐẠT"
-      }
-    ]
-  },
-  {
-    "id": "pi_TS02b_c001",
-    "planId": "plan_unit_pdt_c001",
-    "indicatorId": null,
-    "name": "TS02 – Nghiên cứu sinh K16 đợt 2 nhập học thực tế",
-    "targetValue": 0.8,
-    "weight": 8,
-    "dueDate": "2026-08-31",
-    "children": [
-      {
-        "id": "ĐT-06.1",
-        "name": "Hướng dẫn làm thủ tục nhập học và đóng học phí trực tuyến",
-        "owner": "Phạm Văn D",
-        "dueDate": "2026-08-26",
-        "evidence": "Email thông báo nhập học và gạch nợ tự động (Duyệt: Trưởng phòng Đào tạo)",
-        "ratio": 1,
-        "status": "ĐẠT"
-      },
-      {
-        "id": "ĐT-06.2",
-        "name": "Thu nhận hồ sơ gốc và bàn giao cho Phòng TCCB",
-        "owner": "Nguyễn Thị B",
-        "dueDate": "2026-08-30",
-        "evidence": "Biên bản bàn giao hồ sơ NCS (Duyệt: Trưởng phòng TCCB)",
-        "ratio": 1,
-        "status": "ĐẠT"
-      }
-    ]
-  },
-  {
-    "id": "pi_TS01_c001",
-    "planId": "plan_unit_pdt_c001",
-    "indicatorId": null,
-    "name": "TS01 – Thông báo tuyển sinh đào tạo trình độ tiến sĩ K16 đợt 3",
-    "targetValue": 1,
-    "weight": 8,
-    "dueDate": "2026-08-31",
-    "children": [
-      {
-        "id": "ĐT-07.1",
-        "name": "Xây dựng dự thảo thông báo tuyển sinh TS K16 đợt 3",
-        "owner": "Lê Văn C",
-        "dueDate": "2026-08-15",
-        "evidence": "Dự thảo thông báo tuyển sinh (Duyệt: Trưởng phòng Đào tạo)",
-        "ratio": 1,
-        "status": "ĐẠT"
-      },
-      {
-        "id": "ĐT-07.2",
-        "name": "Trình BGH phê duyệt và phát hành thông báo chính thức",
-        "owner": "Trần Văn A",
-        "dueDate": "2026-08-20",
-        "evidence": "Thông báo tuyển sinh đóng dấu ký số (Duyệt: Hiệu trưởng)",
-        "ratio": 1,
-        "status": "ĐẠT"
-      }
-    ]
-  },
-  {
-    "id": "pi_DT03a_c001",
-    "planId": "plan_unit_pdt_c001",
-    "indicatorId": null,
-    "name": "ĐT03 – Xét tốt nghiệp cho SV ĐH hệ chính quy đợt tháng 8",
-    "targetValue": 1,
-    "weight": 8,
-    "dueDate": "2026-08-31",
-    "children": [
-      {
-        "id": "ĐT-08.1",
-        "name": "Chạy công cụ tự động quét điều kiện tốt nghiệp của sinh viên",
-        "owner": "Phạm Văn D",
-        "dueDate": "2026-08-10",
-        "evidence": "Danh sách kết xuất đạt chuẩn tích lũy (Duyệt: Trưởng phòng Đào tạo)",
-        "ratio": 1,
-        "status": "ĐẠT"
-      },
-      {
-        "id": "ĐT-08.2",
-        "name": "Đối soát chuẩn đầu ra ngoại ngữ, tin học với tổ chức cấp chứng chỉ",
-        "owner": "Nguyễn Thị B",
-        "dueDate": "2026-08-15",
-        "evidence": "Báo cáo xác thực văn bằng chứng chỉ số (Duyệt: Trưởng phòng Đào tạo)",
-        "ratio": 0.9,
-        "status": "CHƯA ĐẠT"
-      },
-      {
-        "id": "ĐT-08.3",
-        "name": "Trình Hội đồng xét tốt nghiệp thông qua quyết định chính thức",
-        "owner": "Trần Văn A",
-        "dueDate": "2026-08-20",
-        "evidence": "Quyết định tốt nghiệp kèm danh sách SV (Duyệt: Hiệu trưởng)",
-        "ratio": 1,
-        "status": "ĐẠT"
-      }
-    ]
-  },
-  {
-    "id": "pi_DT03b_c001",
-    "planId": "plan_unit_pdt_c001",
-    "indicatorId": null,
-    "name": "ĐT03 – Xét tốt nghiệp cho học viên cao học đợt tháng 8",
-    "targetValue": 1,
-    "weight": 8,
-    "dueDate": "2026-08-31",
-    "children": [
-      {
-        "id": "ĐT-09.1",
-        "name": "Thu nhận và thẩm định hồ sơ luận văn/đề án thạc sĩ",
-        "owner": "Lê Văn C",
-        "dueDate": "2026-08-12",
-        "evidence": "Danh sách học viên đủ điều kiện bảo vệ (Duyệt: Trưởng phòng Đào tạo)",
-        "ratio": 1,
-        "status": "ĐẠT"
-      },
-      {
-        "id": "ĐT-09.2",
-        "name": "Tổ chức chấm luận văn thạc sĩ và tổng hợp điểm số",
-        "owner": "Trần Văn A",
-        "dueDate": "2026-08-22",
-        "evidence": "Biên bản điểm chấm Luận văn tốt nghiệp (Duyệt: Hội đồng đánh giá)",
-        "ratio": 0.95,
-        "status": "CHƯA ĐẠT"
-      },
-      {
-        "id": "ĐT-09.3",
-        "name": "Lập tờ trình công nhận tốt nghiệp và cấp bằng thạc sĩ",
-        "owner": "Lê Văn C",
-        "dueDate": "2026-08-28",
-        "evidence": "Tờ trình kèm danh sách học viên tốt nghiệp (Duyệt: Hiệu trưởng)",
-        "ratio": 1,
-        "status": "ĐẠT"
-      }
-    ]
-  },
-  {
-    "id": "pi_HT02_c001",
-    "planId": "plan_unit_pdt_c001",
-    "indicatorId": null,
-    "name": "HT02 – Triển khai kế hoạch công tác kiến tập, thực tập sư phạm (TTSP), thực tập chuyên ngành",
-    "targetValue": 1,
-    "weight": 8,
-    "dueDate": "2026-08-31",
-    "children": [
-      {
-        "id": "ĐT-10.1",
-        "name": "Xây dựng kế hoạch khung TTSP và liên hệ các trường phổ thông",
-        "owner": "Nguyễn Thị B",
-        "dueDate": "2026-08-15",
-        "evidence": "Kế hoạch phối hợp thực tập (Duyệt: Trưởng phòng Đào tạo)",
-        "ratio": 1,
-        "status": "ĐẠT"
-      },
-      {
-        "id": "ĐT-10.2",
-        "name": "Tổ chức phân đoàn thực tập và phân công giảng viên hướng dẫn",
-        "owner": "Phạm Văn D",
-        "dueDate": "2026-08-22",
-        "evidence": "Quyết định cử đoàn thực tập của Trường (Duyệt: Hiệu trưởng)",
-        "ratio": 0.9,
-        "status": "CHƯA ĐẠT"
-      },
-      {
-        "id": "ĐT-10.3",
-        "name": "Ban hành tài liệu hướng dẫn sinh viên rèn luyện nghiệp vụ sư phạm",
-        "owner": "Lê Văn C",
-        "dueDate": "2026-08-28",
-        "evidence": "Sổ tay hướng dẫn thực tập số hóa (Duyệt: Trưởng phòng Đào tạo)",
-        "ratio": 1,
-        "status": "ĐẠT"
-      }
-    ]
-  },
-  {
-    "id": "pi_DT02-hk2_c001",
-    "planId": "plan_unit_pdt_c001",
-    "indicatorId": null,
-    "name": "ĐT02 – Xét kết quả học tập học kỳ 2 năm học 2025-2026",
-    "targetValue": 1,
-    "weight": 9,
-    "dueDate": "2026-08-31",
-    "children": [
-      {
-        "id": "ĐT-11.1",
-        "name": "Đôn đốc các bộ môn hoàn thành nhập điểm học kỳ 2 trên hệ thống",
-        "owner": "Phạm Văn D",
-        "dueDate": "2026-08-05",
-        "evidence": "100% điểm học phần được nạp lên SIS (Duyệt: Trưởng phòng Đào tạo)",
-        "ratio": 1,
-        "status": "ĐẠT"
-      },
-      {
-        "id": "ĐT-11.2",
-        "name": "Chạy tính năng tự động tính điểm trung bình học kỳ và tích lũy",
-        "owner": "Hoàng Văn E",
-        "dueDate": "2026-08-10",
-        "evidence": "Bảng điểm tổng hợp học kỳ 2 (Duyệt: Trưởng phòng Đào tạo)",
-        "ratio": 0.9,
-        "status": "CHƯA ĐẠT"
-      },
-      {
-        "id": "ĐT-11.3",
-        "name": "Tổng hợp danh sách sinh viên thuộc diện cảnh báo học vụ",
-        "owner": "Phạm Văn D",
-        "dueDate": "2026-08-15",
-        "evidence": "Danh sách sinh viên bị cảnh báo học tập (Duyệt: Trưởng phòng Đào tạo)",
-        "ratio": 1,
-        "status": "ĐẠT"
-      }
-    ]
-  },
-  {
-    "id": "pi_DBCL09_c001",
-    "planId": "plan_unit_pdt_c001",
-    "indicatorId": null,
-    "name": "ĐBCL09 – Tổ chức thi học kỳ phụ bảo đảm đúng quy trình",
-    "targetValue": 1,
-    "weight": 8,
-    "dueDate": "2026-08-31",
-    "children": [
-      {
-        "id": "ĐT-12.1",
-        "name": "Tiếp nhận đơn đăng ký học kỳ phụ và phân lớp học trực tuyến",
-        "owner": "Phạm Văn D",
-        "dueDate": "2026-08-08",
-        "evidence": "Danh sách lớp học kỳ phụ (Duyệt: Trưởng phòng Đào tạo)",
-        "ratio": 1,
-        "status": "ĐẠT"
-      },
-      {
-        "id": "ĐT-12.2",
-        "name": "Lập lịch thi và phân công giám thị coi thi học kỳ phụ",
-        "owner": "Nguyễn Thị B",
-        "dueDate": "2026-08-15",
-        "evidence": "Lịch thi học kỳ phụ trên hệ thống (Duyệt: Trưởng phòng Đào tạo)",
-        "ratio": 0.9,
-        "status": "CHƯA ĐẠT"
-      },
-      {
-        "id": "ĐT-12.3",
-        "name": "Tổ chức coi thi, quét bài thi trắc nghiệm và nạp điểm lên hệ thống",
-        "owner": "Phạm Văn D",
-        "dueDate": "2026-08-25",
-        "evidence": "Kết quả thi học kỳ phụ hoàn tất (Duyệt: Trưởng phòng Đào tạo)",
-        "ratio": 1,
-        "status": "ĐẠT"
-      }
-    ]
   }
 ]

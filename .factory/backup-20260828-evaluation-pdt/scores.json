@@ -1,5 +1,85 @@
 [
   {
+    "id": "score_DT-01_c001",
+    "planItemId": "pi_DT-01_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_DT-02_c001",
+    "planItemId": "pi_DT-02_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_DT-03_c001",
+    "planItemId": "pi_DT-03_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_DT-04_c001",
+    "planItemId": "pi_DT-04_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_DT-05_c001",
+    "planItemId": "pi_DT-05_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_DT-06_c001",
+    "planItemId": "pi_DT-06_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_DT-07_c001",
+    "planItemId": "pi_DT-07_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_DT-08_c001",
+    "planItemId": "pi_DT-08_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_DT-09_c001",
+    "planItemId": "pi_DT-09_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_DT-10_c001",
+    "planItemId": "pi_DT-10_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
     "id": "score_KHCN-01_c001",
     "planItemId": "pi_KHCN-01_c001",
     "selfScore": null,
@@ -1061,6 +1141,86 @@
     "selfScore": null,
     "managerScore": null,
     "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_DT-01_c001",
+    "planItemId": "pi_DT-01_c001",
+    "selfScore": 82,
+    "managerScore": null,
+    "councilScore": 118,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_DT-02_c001",
+    "planItemId": "pi_DT-02_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_DT-03_c001",
+    "planItemId": "pi_DT-03_c001",
+    "selfScore": 100,
+    "managerScore": 89,
+    "councilScore": 76,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_DT-04_c001",
+    "planItemId": "pi_DT-04_c001",
+    "selfScore": 110,
+    "managerScore": null,
+    "councilScore": 95,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_DT-05_c001",
+    "planItemId": "pi_DT-05_c001",
+    "selfScore": 92,
+    "managerScore": null,
+    "councilScore": 68,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_DT-06_c001",
+    "planItemId": "pi_DT-06_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_DT-07_c001",
+    "planItemId": "pi_DT-07_c001",
+    "selfScore": 81,
+    "managerScore": 71,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_DT-08_c001",
+    "planItemId": "pi_DT-08_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_DT-09_c001",
+    "planItemId": "pi_DT-09_c001",
+    "selfScore": null,
+    "managerScore": null,
+    "councilScore": null,
+    "finalScore": null
+  },
+  {
+    "id": "score_pi_DT-10_c001",
+    "planItemId": "pi_DT-10_c001",
+    "selfScore": 120,
+    "managerScore": null,
+    "councilScore": 109,
     "finalScore": null
   },
   {
@@ -5774,101 +5934,5 @@
     "managerScore": 0,
     "councilScore": 0,
     "finalScore": 0
-  },
-  {
-    "id": "score_pi_DMST01_c001",
-    "planItemId": "pi_DMST01_c001",
-    "selfScore": null,
-    "managerScore": null,
-    "councilScore": null,
-    "finalScore": null
-  },
-  {
-    "id": "score_pi_DT01_c001",
-    "planItemId": "pi_DT01_c001",
-    "selfScore": null,
-    "managerScore": null,
-    "councilScore": null,
-    "finalScore": null
-  },
-  {
-    "id": "score_pi_DT02-lms_c001",
-    "planItemId": "pi_DT02-lms_c001",
-    "selfScore": null,
-    "managerScore": null,
-    "councilScore": null,
-    "finalScore": null
-  },
-  {
-    "id": "score_pi_TS02a_c001",
-    "planItemId": "pi_TS02a_c001",
-    "selfScore": null,
-    "managerScore": null,
-    "councilScore": null,
-    "finalScore": null
-  },
-  {
-    "id": "score_pi_TS07_c001",
-    "planItemId": "pi_TS07_c001",
-    "selfScore": null,
-    "managerScore": null,
-    "councilScore": null,
-    "finalScore": null
-  },
-  {
-    "id": "score_pi_TS02b_c001",
-    "planItemId": "pi_TS02b_c001",
-    "selfScore": null,
-    "managerScore": null,
-    "councilScore": null,
-    "finalScore": null
-  },
-  {
-    "id": "score_pi_TS01_c001",
-    "planItemId": "pi_TS01_c001",
-    "selfScore": null,
-    "managerScore": null,
-    "councilScore": null,
-    "finalScore": null
-  },
-  {
-    "id": "score_pi_DT03a_c001",
-    "planItemId": "pi_DT03a_c001",
-    "selfScore": null,
-    "managerScore": null,
-    "councilScore": null,
-    "finalScore": null
-  },
-  {
-    "id": "score_pi_DT03b_c001",
-    "planItemId": "pi_DT03b_c001",
-    "selfScore": null,
-    "managerScore": null,
-    "councilScore": null,
-    "finalScore": null
-  },
-  {
-    "id": "score_pi_HT02_c001",
-    "planItemId": "pi_HT02_c001",
-    "selfScore": null,
-    "managerScore": null,
-    "councilScore": null,
-    "finalScore": null
-  },
-  {
-    "id": "score_pi_DT02-hk2_c001",
-    "planItemId": "pi_DT02-hk2_c001",
-    "selfScore": null,
-    "managerScore": null,
-    "councilScore": null,
-    "finalScore": null
-  },
-  {
-    "id": "score_pi_DBCL09_c001",
-    "planItemId": "pi_DBCL09_c001",
-    "selfScore": null,
-    "managerScore": null,
-    "councilScore": null,
-    "finalScore": null
   }
 ]

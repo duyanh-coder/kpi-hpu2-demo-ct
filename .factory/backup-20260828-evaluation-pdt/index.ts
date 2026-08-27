@@ -111,24 +111,12 @@ export interface KPIPlan {
   approvedAt?: string;
 }
 
-export interface PlanItemSubTask {
-  id: string;
-  name: string;
-  owner: string;
-  dueDate: string;
-  evidence: string;
-  ratio: number | null;
-  status: 'ĐẠT' | 'CHƯA ĐẠT';
-}
-
 export interface KPIPlanItem {
   id: string;
-  indicatorId: string | null;
-  name?: string;
+  indicatorId: string;
   targetValue: number;
   weight: number;
   dueDate: string;
-  children?: PlanItemSubTask[];
 }
 
 export interface KPIProgress {

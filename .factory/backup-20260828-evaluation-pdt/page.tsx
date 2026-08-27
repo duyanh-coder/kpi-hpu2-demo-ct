@@ -1,6 +1,6 @@
 'use client';
 
-import { Fragment, useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { CheckCircle, Clock, Search, Award, Eye, Lock, Star, Edit, MessageSquare } from 'lucide-react';
 import Modal from '@/components/ui/Modal';
 import { apiGet, apiPut, apiPost } from '@/lib/api';
@@ -37,25 +37,13 @@ interface PlanRecord {
   status: string;
 }
 
-interface PlanItemSubTask {
-  id: string;
-  name: string;
-  owner: string;
-  dueDate: string;
-  evidence: string;
-  ratio: number | null;
-  status: 'ĐẠT' | 'CHƯA ĐẠT';
-}
-
 interface PlanItemRecord {
   id: string;
   planId: string;
-  indicatorId: string | null;
-  name?: string;
+  indicatorId: string;
   targetValue: number;
   weight: number;
   dueDate: string;
-  children?: PlanItemSubTask[];
 }
 
 interface ScoreRecord {
@@ -112,7 +100,6 @@ export default function EvaluationPage() {
   const [complaintContent, setComplaintContent] = useState('');
   const [selectedEval, setSelectedEval] = useState<Evaluation | null>(null);
   const [editScores, setEditScores] = useState<Record<string, { selfScore: number; managerScore: number; councilScore: number }>>({});
-  const [editChildren, setEditChildren] = useState<Record<string, PlanItemSubTask[]>>({});
   const [loading, setLoading] = useState(true);
 
   const loadData = useCallback(async () => {
@@ -165,18 +152,14 @@ export default function EvaluationPage() {
     const data = await apiGet<ScoreRecord[]>(`/api/scores?planId=${planId}`);
     setScores(data);
     const initEditScores: Record<string, { selfScore: number; managerScore: number; councilScore: number }> = {};
-    const initEditChildren: Record<string, PlanItemSubTask[]> = {};
     data.forEach(s => {
       initEditScores[s.planItemId] = {
         selfScore: s.selfScore ?? 0,
         managerScore: s.managerScore ?? 0,
         councilScore: s.councilScore ?? 0,
       };
-      const pi = planItemMap.get(s.planItemId);
-      if (pi?.children) initEditChildren[s.planItemId] = pi.children;
     });
     setEditScores(initEditScores);
-    setEditChildren(initEditChildren);
   };
 
   const handleOpenScoreModal = async (ev: Evaluation) => {
@@ -200,9 +183,6 @@ export default function EvaluationPage() {
           await apiPut(`/api/scores/${score.id}`, payload);
         }
       }
-    }
-    for (const [planItemId, children] of Object.entries(editChildren)) {
-      await apiPut(`/api/plan-items/${planItemId}`, { children });
     }
     setShowScoreModal(false);
     setSelectedEval(null);
@@ -330,54 +310,29 @@ export default function EvaluationPage() {
             </div>
             <div className="overflow-x-auto"><table className="table">
               <thead>
-                <tr><th>Chỉ tiêu & Nhiệm vụ con</th><th>Tự ĐG</th><th>Cấp trên</th><th>Hội đồng</th><th>Tổng</th><th>Tỷ lệ đạt</th></tr>
+                <tr><th>Chỉ tiêu</th><th>Tự ĐG</th><th>Cấp trên</th><th>Hội đồng</th><th>Tổng</th></tr>
               </thead>
               <tbody>
                 {scores.map((score) => {
                   const pi = planItemMap.get(score.planItemId);
                   const edits = editScores[score.planItemId] || { selfScore: 0, managerScore: 0, councilScore: 0 };
-                  const children = editChildren[score.planItemId];
                   return (
-                    <Fragment key={score.id}>
-                      <tr>
-                        <td className="font-medium text-sm">{pi?.name || pi?.indicatorId || score.planItemId}</td>
-                        <td>
-                          <input type="number" value={edits.selfScore} onChange={(e) => setEditScores(prev => ({ ...prev, [score.planItemId]: { ...prev[score.planItemId], selfScore: Number(e.target.value) } }))}
-                            className="w-20 px-2 py-1 rounded border border-border text-sm text-center" min={0} max={120} />
-                        </td>
-                        <td>
-                          <input type="number" value={edits.managerScore} onChange={(e) => setEditScores(prev => ({ ...prev, [score.planItemId]: { ...prev[score.planItemId], managerScore: Number(e.target.value) } }))}
-                            className="w-20 px-2 py-1 rounded border border-border text-sm text-center" min={0} max={120} />
-                        </td>
-                        <td>
-                          <input type="number" value={edits.councilScore} onChange={(e) => setEditScores(prev => ({ ...prev, [score.planItemId]: { ...prev[score.planItemId], councilScore: Number(e.target.value) } }))}
-                            className="w-20 px-2 py-1 rounded border border-border text-sm text-center" min={0} max={120} />
-                        </td>
-                        <td className="text-center font-bold text-primary">{score.finalScore ?? '-'}</td>
-                        <td className="text-center text-text-light text-xs">-</td>
-                      </tr>
-                      {children?.map((child, idx) => (
-                        <tr key={child.id} className="bg-bg-cream/40">
-                          <td colSpan={5} className="text-xs pl-6 pr-2 align-top">
-                            <div className="flex flex-wrap items-center gap-x-3 gap-y-0.5">
-                              <span className="font-medium text-text-dark">{child.id}</span>
-                              <span className="text-text-dark">{child.name}</span>
-                              <span className="text-text-light">• {child.owner}</span>
-                              <span className="text-text-light">• hạn {child.dueDate}</span>
-                              {child.evidence && <span className="text-primary/80 max-w-xs truncate" title={child.evidence}>• {child.evidence}</span>}
-                            </div>
-                          </td>
-                          <td className="text-xs align-top">
-                            <div className="flex items-center gap-1.5">
-                              <input type="number" value={child.ratio ?? ''} min={0} max={2} step={0.01}
-                                onChange={(e) => { const ratio = e.target.value === '' ? null : Number(e.target.value); setEditChildren(prev => ({ ...prev, [score.planItemId]: (prev[score.planItemId] || []).map((c, i) => i === idx ? { ...c, ratio, status: ratio !== null && ratio >= 1 ? 'ĐẠT' : 'CHƯA ĐẠT' } : c) })); }}
-                                className="w-16 px-1 py-0.5 rounded border border-border text-sm text-center" />
-                              <span className={`px-1.5 py-0.5 rounded text-[10px] font-medium ${child.status === 'ĐẠT' ? 'bg-accent-green/20 text-accent-green' : 'bg-accent-red/20 text-accent-red'}`}>{child.status}</span>
-                            </div>
-                          </td>
-                        </tr>
-                      ))}
-                    </Fragment>
+                    <tr key={score.id}>
+                      <td className="font-medium text-sm">{pi ? pi.indicatorId : score.planItemId}</td>
+                      <td>
+                        <input type="number" value={edits.selfScore} onChange={(e) => setEditScores(prev => ({ ...prev, [score.planItemId]: { ...prev[score.planItemId], selfScore: Number(e.target.value) } }))}
+                          className="w-20 px-2 py-1 rounded border border-border text-sm text-center" min={0} max={120} />
+                      </td>
+                      <td>
+                        <input type="number" value={edits.managerScore} onChange={(e) => setEditScores(prev => ({ ...prev, [score.planItemId]: { ...prev[score.planItemId], managerScore: Number(e.target.value) } }))}
+                          className="w-20 px-2 py-1 rounded border border-border text-sm text-center" min={0} max={120} />
+                      </td>
+                      <td>
+                        <input type="number" value={edits.councilScore} onChange={(e) => setEditScores(prev => ({ ...prev, [score.planItemId]: { ...prev[score.planItemId], councilScore: Number(e.target.value) } }))}
+                          className="w-20 px-2 py-1 rounded border border-border text-sm text-center" min={0} max={120} />
+                      </td>
+                      <td className="text-center font-bold text-primary">{score.finalScore ?? '-'}</td>
+                    </tr>
                   );
                 })}
               </tbody>

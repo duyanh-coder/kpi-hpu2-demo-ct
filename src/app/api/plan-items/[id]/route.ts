@@ -1,13 +1,25 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { readDb, writeDb } from '@/lib/db';
 
+interface PlanItemSubTask {
+  id: string;
+  name: string;
+  owner: string;
+  dueDate: string;
+  evidence: string;
+  ratio: number | null;
+  status: 'ĐẠT' | 'CHƯA ĐẠT';
+}
+
 interface PlanItemRecord {
   id: string;
   planId: string;
-  indicatorId: string;
+  indicatorId: string | null;
+  name?: string;
   targetValue: number;
   weight: number;
   dueDate: string;
+  children?: PlanItemSubTask[];
 }
 
 export async function GET(
