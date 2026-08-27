@@ -46,7 +46,6 @@ const menuItems: MenuItem[] = [
     icon: GitBranch,
     children: [
       { href: '/kpi/cascade', label: 'Phân rã MBO Cascade' },
-      { href: '/kpi/task-assignment', label: 'Giao việc & Thực hiện' },
       { href: '/kpi/annual-work-plan', label: 'Kế hoạch công tác năm' },
       { href: '/kpi/plans', label: 'Kế hoạch KPI đơn vị' },
       { href: '/kpi/department-plans', label: 'Kế hoạch KPI bộ môn' },
@@ -153,7 +152,7 @@ export default function Sidebar({ isOpen, onClose }: { isOpen: boolean; onClose:
   const [expandedGroups, setExpandedGroups] = useState<string[]>(() => {
     if (pathname.startsWith('/kpi/academic') || pathname.startsWith('/kpi/cycles') || pathname.startsWith('/admin/organization') || pathname.startsWith('/admin/positions') || pathname.startsWith('/admin/job-positions') || pathname.startsWith('/admin/shared-categories')) return ['/setup'];
     if (pathname.startsWith('/admin/school-indicators') || pathname.startsWith('/kpi/strategic') || pathname.startsWith('/kpi/kpi-templates') || pathname.startsWith('/admin/bsc') || pathname.startsWith('/admin/target-groups') || pathname.startsWith('/admin/import') || pathname.startsWith('/admin/kpi-catalogs')) return ['/define'];
-    if (pathname.startsWith('/kpi/cascade') || pathname.startsWith('/kpi/task-assignment') || pathname.startsWith('/kpi/annual-work-plan') || pathname.startsWith('/kpi/plans') || pathname.startsWith('/kpi/department') || pathname.startsWith('/kpi/my-kpi') || pathname.startsWith('/kpi/plan-versions')) return ['/deploy'];
+    if (pathname.startsWith('/kpi/cascade') || pathname.startsWith('/kpi/annual-work-plan') || pathname.startsWith('/kpi/plans') || pathname.startsWith('/kpi/department') || pathname.startsWith('/kpi/my-kpi') || pathname.startsWith('/kpi/plan-versions')) return ['/deploy'];
     if (pathname.startsWith('/kpi/progress') || pathname.startsWith('/kpi/evidences') || pathname.startsWith('/kpi/personal-dashboard') || pathname.startsWith('/kpi/unit-dashboard') || pathname.startsWith('/kpi/executive-dashboard') || pathname.startsWith('/kpi/warnings')) return ['/execute'];
     if (pathname.startsWith('/kpi/evaluation') || pathname.startsWith('/kpi/council') || pathname.startsWith('/kpi/scoring') || pathname.startsWith('/kpi/approvals') || pathname.startsWith('/admin/complaints')) return ['/kpi/evaluation'];
     if (pathname.startsWith('/reports') || pathname.startsWith('/kpi/trends') || pathname.startsWith('/kpi/archive') || pathname.startsWith('/admin/scheduled-reports')) return ['/reporting'];
