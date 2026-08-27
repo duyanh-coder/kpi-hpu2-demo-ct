@@ -29,25 +29,6 @@ const menuItems: MenuItem[] = [
   { href: '/', label: 'Tổng quan', icon: Home },
 
   {
-    href: '/setup',
-    label: '① Thiết lập',
-    icon: Settings,
-    children: [
-      { href: '/kpi/academic-years', label: 'Năm học' },
-      { href: '/kpi/cycles', label: 'Chu kỳ KPI' },
-      { href: '/admin/organization', label: 'Cơ cấu tổ chức' },
-      { href: '/admin/positions', label: 'Chức vụ / Chức danh' },
-      { href: '/admin/job-positions', label: 'Vị trí việc làm' },
-      { href: '/admin/shared-categories', label: 'Danh mục dùng chung' },
-      { href: '/admin/kpi-catalogs', label: 'Danh mục chỉ tiêu KPI' },
-      { href: '/admin/kpi-data', label: 'Bộ chỉ tiêu KPI' },
-      { href: '/kpi/kpi-templates', label: 'Bộ KPI mẫu' },
-      { href: '/admin/target-groups', label: 'Nhóm đối tượng' },
-      { href: '/admin/import', label: 'Import dữ liệu' },
-    ],
-  },
-
-  {
     href: '/define',
     label: '② Mục tiêu & KPI',
     icon: Target,
@@ -145,6 +126,25 @@ const menuItems: MenuItem[] = [
       { href: '/admin/support-tickets', label: 'Yêu cầu hỗ trợ' },
       { href: '/kpi/architecture', label: 'Kiến trúc hệ thống' },
       { href: '/kpi/roles-guide', label: 'Hướng dẫn vai trò' },
+    ],
+  },
+
+  {
+    href: '/setup',
+    label: '① Thiết lập',
+    icon: Settings,
+    children: [
+      { href: '/kpi/academic-years', label: 'Năm học' },
+      { href: '/kpi/cycles', label: 'Chu kỳ KPI' },
+      { href: '/admin/organization', label: 'Cơ cấu tổ chức' },
+      { href: '/admin/positions', label: 'Chức vụ / Chức danh' },
+      { href: '/admin/job-positions', label: 'Vị trí việc làm' },
+      { href: '/admin/shared-categories', label: 'Danh mục dùng chung' },
+      { href: '/admin/kpi-catalogs', label: 'Danh mục chỉ tiêu KPI' },
+      { href: '/admin/kpi-data', label: 'Bộ chỉ tiêu KPI' },
+      { href: '/kpi/kpi-templates', label: 'Bộ KPI mẫu' },
+      { href: '/admin/target-groups', label: 'Nhóm đối tượng' },
+      { href: '/admin/import', label: 'Import dữ liệu' },
     ],
   },
 ];
