@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useMemo, useCallback, Fragment } from 'react';
 import { Target, Building, Plus, Edit, Trash2 } from 'lucide-react';
 import Modal from '@/components/ui/Modal';
 import { apiGet, apiPost, apiPut, apiDelete } from '@/lib/api';
@@ -67,6 +67,17 @@ export default function KPICatalogsPage() {
 
   const orgUnitName = (id?: string) => orgUnits.find(o => o.id === id)?.name || id || '—';
 
+  const groupedUnit = useMemo(() => {
+    const map = new Map<string, UnitKPICatalog[]>();
+    for (const u of unitCatalog) {
+      const catId = u.linkedCatalogId ? (schoolCatalog.find(s => s.id === u.linkedCatalogId)?.categoryId || '') : '';
+      const g = u.linkedCatalogId ? (kpiGroups.find(g => g.id === catId)?.name || 'Khác') : 'KPI riêng';
+      if (!map.has(g)) map.set(g, []);
+      map.get(g)!.push(u);
+    }
+    return map;
+  }, [unitCatalog, schoolCatalog, kpiGroups]);
+
   return (
     <div className="space-y-6">
       <div className="flex items-center justify-between">
@@ -127,21 +138,27 @@ export default function KPICatalogsPage() {
           )}
           {tab === 'unit-catalog' && (
             <table className="table table-fixed">
-              <thead><tr><th className="w-[4%]">STT</th><th className="w-[20%]">Đơn vị</th><th className="w-[25%]">KPI</th><th className="w-[15%]">Nhóm</th><th className="w-[10%]">Loại</th><th className="w-[9%]">ĐVT</th><th className="w-[10%]">Chỉ tiêu năm</th><th className="w-[7%]">Chu kỳ</th></tr></thead>
+              <thead><tr><th className="w-[4%]">STT</th><th className="w-[20%]">Đơn vị</th><th className="w-[31%]">KPI</th><th className="w-[12%]">Loại</th><th className="w-[10%]">ĐVT</th><th className="w-[13%]">Chỉ tiêu năm</th><th className="w-[10%]">Chu kỳ</th></tr></thead>
               <tbody>
-                {unitCatalog.map((u, idx) => (
-                  <tr key={u.id}>
-                    <td>{idx + 1}</td>
-                    <td className="font-medium break-words">{orgUnitName(u.orgUnitId)}</td>
-                    <td className="break-words">{u.name}</td>
-                    <td className="break-words">{u.linkedCatalogId ? (kpiGroups.find(g => g.id === (schoolCatalog.find(s => s.id === u.linkedCatalogId)?.categoryId || ''))?.name || '—') : '—'}</td>
-                    <td><span className={`badge whitespace-nowrap ${u.linkedCatalogId ? 'badge-info' : 'badge-warning'}`}>{u.linkedCatalogId ? 'Phân bổ' : 'Riêng'}</span></td>
-                    <td>{measurementUnits.find(m => m.id === u.unitId)?.name || u.unitId}</td>
-                    <td className="font-medium">{u.target || '—'}</td>
-                    <td>Học kỳ</td>
-                  </tr>
+                {Array.from(groupedUnit).map(([groupName, items]) => (
+                  <Fragment key={groupName}>
+                    <tr>
+                      <td colSpan={7} className="bg-bg-cream font-semibold text-primary">{groupName}</td>
+                    </tr>
+                    {items.map((u, idx) => (
+                      <tr key={u.id}>
+                        <td>{idx + 1}</td>
+                        <td className="font-medium break-words">{orgUnitName(u.orgUnitId)}</td>
+                        <td className="break-words">{u.name}</td>
+                        <td><span className={`badge whitespace-nowrap ${u.linkedCatalogId ? 'badge-info' : 'badge-warning'}`}>{u.linkedCatalogId ? 'Phân bổ' : 'Riêng'}</span></td>
+                        <td>{measurementUnits.find(m => m.id === u.unitId)?.name || u.unitId}</td>
+                        <td className="font-medium">{u.target || '—'}</td>
+                        <td>Học kỳ</td>
+                      </tr>
+                    ))}
+                  </Fragment>
                 ))}
-                {unitCatalog.length === 0 && <tr><td colSpan={8} className="text-center text-text-light text-sm py-8">Chưa có dữ liệu</td></tr>}
+                {unitCatalog.length === 0 && <tr><td colSpan={7} className="text-center text-text-light text-sm py-8">Chưa có dữ liệu</td></tr>}
               </tbody>
             </table>
           )}
