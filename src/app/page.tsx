@@ -101,6 +101,18 @@ kpiGroupsData.forEach((g) => {
   if (groupConfig[g.id]) groupConfigByName[g.name] = groupConfig[g.id];
 });
 
+// Palette biểu đồ theo theme CTU: xanh dương (#1f5ca9) + xanh ngọc (#00afef)
+const CTU_BLUE = "#1f5ca9";
+const CTU_TEAL = "#00afef";
+const chartPalette = [
+  CTU_BLUE,
+  CTU_TEAL,
+  "#174a86",
+  "#5b93d1",
+  "#66c6ea",
+  "#0094cc",
+];
+
 const gradeColors: Record<string, string> = {
   "Xuất sắc": "#4caf50",
   Tốt: "#2196f3",
@@ -285,15 +297,15 @@ export default function DashboardPage() {
     .filter((g) => g.items.length > 0);
 
   const pieData = [
-    { name: "Đạt", value: achieved, color: "#4caf50" },
-    { name: "Cần cải thiện", value: warning, color: "#ffc107" },
-    { name: "Chưa đạt", value: notAchieved, color: "#f44336" },
+    { name: "Đạt", value: achieved, color: CTU_TEAL },
+    { name: "Cần cải thiện", value: warning, color: CTU_BLUE },
+    { name: "Chưa đạt", value: notAchieved, color: "#174a86" },
   ].filter((d) => d.value > 0);
 
-  const barData = groupStats.map((g) => ({
+  const barData = groupStats.map((g, i) => ({
     name: g.short,
     rate: g.rate,
-    fill: g.color,
+    fill: chartPalette[i % chartPalette.length],
   }));
 
   const radarData = groupStats.map((g) => ({
