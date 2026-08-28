@@ -15,12 +15,11 @@ export async function POST(request: NextRequest) {
   const items = readDb<KPIGroup>('kpi-groups');
   const newItem: KPIGroup = {
     id: `grp_${generateId()}`,
-    academicYearId: body.academicYearId,
-    name: body.name,
     code: body.code,
-    defaultWeight: body.defaultWeight,
-    targetLevel: body.targetLevel || 'school',
-  };
+    name: body.name,
+    description: body.description || '',
+    status: body.status || 'active',
+  } as unknown as KPIGroup;
   items.push(newItem);
   writeDb('kpi-groups', items);
   return NextResponse.json(newItem, { status: 201 });
