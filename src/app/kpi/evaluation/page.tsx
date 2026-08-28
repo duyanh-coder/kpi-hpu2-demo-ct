@@ -1,7 +1,7 @@
 'use client';
 
 import { Fragment, useState, useEffect, useCallback, useMemo } from 'react';
-import { CheckCircle, Clock, Search, Award, Eye, Lock, Star, MessageSquare, Info } from 'lucide-react';
+import { CheckCircle, Clock, Search, Award, Eye, Lock, Star, MessageSquare, PencilLine } from 'lucide-react';
 import Modal from '@/components/ui/Modal';
 import { apiGet, apiPut, apiPost } from '@/lib/api';
 import unitKpisData from '@/data/unit-kpis.json';
@@ -291,9 +291,14 @@ export default function EvaluationPage() {
         <div>
           <div className="flex items-center gap-2">
             <h1 className="text-2xl font-heading font-bold text-text-dark">Đánh giá KPI Đơn vị</h1>
-            <span title="Cập nhật thông tin kết quả đánh giá" className="inline-flex text-primary shrink-0 cursor-help">
-              <Info size={18} />
-            </span>
+            <button
+              type="button"
+              title="Cập nhật thông tin kết quả đánh giá"
+              aria-label="Cập nhật thông tin kết quả đánh giá"
+              className="inline-flex p-1 text-primary hover:bg-primary-light rounded-lg cursor-pointer"
+            >
+              <PencilLine size={18} />
+            </button>
           </div>
           <p className="text-text-light mt-1">Tự đánh giá → Cấp trên → Hội đồng → Khóa</p>
         </div>
