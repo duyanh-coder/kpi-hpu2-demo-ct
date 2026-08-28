@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect, useMemo, useCallback, Fragment } from 'react';
-import { Target, Building, Plus, Edit, Trash2 } from 'lucide-react';
+import { Target, Building, Plus, Edit, Trash2, CalendarPlus, FileText, FileSpreadsheet, FileOutput } from 'lucide-react';
 import Modal from '@/components/ui/Modal';
 import { apiGet, apiPost, apiPut, apiDelete } from '@/lib/api';
 import { SchoolCatalogForm, UnitCatalogForm } from '@/components/forms/kpi-catalog-forms';
@@ -65,27 +65,31 @@ export default function KPICatalogsPage() {
     { id: 'unit-catalog' as TabKey, label: 'KPI đơn vị', icon: Building, count: unitCatalog.length },
   ];
 
-  const orgUnitName = (id?: string) => orgUnits.find(o => o.id === id)?.name || id || '—';
-
-  const groupedUnit = useMemo(() => {
+  const filteredUnitGroups = useMemo(() => {
+    const visible = catalogGroupFilter
+      ? unitCatalog.filter(u => {
+          const catId = (schoolCatalog.find(s => s.id === u.linkedCatalogId)?.categoryId || '');
+          return catId === catalogGroupFilter;
+        })
+      : unitCatalog;
     const map = new Map<string, UnitKPICatalog[]>();
-    for (const u of unitCatalog) {
+    for (const u of visible) {
       const catId = u.linkedCatalogId ? (schoolCatalog.find(s => s.id === u.linkedCatalogId)?.categoryId || '') : '';
       const g = u.linkedCatalogId ? (kpiGroups.find(g => g.id === catId)?.name || 'Khác') : 'KPI riêng';
       if (!map.has(g)) map.set(g, []);
       map.get(g)!.push(u);
     }
     return map;
-  }, [unitCatalog, schoolCatalog, kpiGroups]);
+  }, [unitCatalog, schoolCatalog, kpiGroups, catalogGroupFilter]);
+
+  const visibleSchool = useMemo(
+    () => (catalogGroupFilter ? schoolCatalog.filter(s => s.categoryId === catalogGroupFilter) : schoolCatalog),
+    [schoolCatalog, catalogGroupFilter]
+  );
 
   return (
-    <div className="space-y-6">
-      <div className="flex items-center justify-between">
-        <div>
-          <h1 className="text-2xl font-heading font-bold text-text-dark">Bộ chỉ tiêu KPI</h1>
-          <p className="text-text-light mt-1">Quản lý chỉ tiêu cấp Trường và bộ KPI được phân rã cho đơn vị.</p>
-        </div>
-      </div>
+    <div className="space-y-4">
+      <h1 className="text-2xl font-heading font-bold text-text-dark">Bộ chỉ tiêu KPI</h1>
 
       <div className="flex gap-2 border-b border-border">
         {tabs.map(t => {
@@ -100,65 +104,72 @@ export default function KPICatalogsPage() {
         })}
       </div>
 
+      <div className="card p-3 flex flex-wrap items-center gap-2">
+        <select value={catalogGroupFilter || ''} onChange={e => setCatalogGroupFilter(e.target.value || null)}
+          className="px-3 py-2 rounded-lg border border-border bg-white text-text-dark text-sm focus:outline-none focus:border-primary">
+          <option value="">Tất cả lĩnh vực</option>
+          {kpiGroups.map(g => <option key={g.id} value={g.id}>{g.name}</option>)}
+        </select>
+        <div className="flex-1" />
+        <button onClick={() => { setEditId(null); setShowModal(true); }} className="btn-primary text-sm flex items-center gap-1">
+          <Plus size={15} /> Thêm
+        </button>
+        <button className="btn-secondary text-sm flex items-center gap-1" onClick={() => {}}>
+          <CalendarPlus size={15} /> Lập kế hoạch
+        </button>
+        <button className="btn-secondary text-sm flex items-center gap-1" onClick={() => {}}>
+          <FileText size={15} /> Xuất word
+        </button>
+        <button className="btn-secondary text-sm flex items-center gap-1" onClick={() => {}}>
+          <FileSpreadsheet size={15} /> Xuất excel
+        </button>
+        <button className="btn-secondary text-sm flex items-center gap-1" onClick={() => {}}>
+          <FileOutput size={15} /> Xuất pdf
+        </button>
+      </div>
+
       <div className="card">
-        <div className="card-header flex items-center justify-between">
-          <h3 className="text-white">{tabs.find(t => t.id === tab)?.label || 'Danh mục'}</h3>
-          <div className="flex items-center gap-2">
-            {tab === 'school-catalog' && (
-              <select value={catalogGroupFilter || ''} onChange={e => setCatalogGroupFilter(e.target.value || null)}
-                className="px-2 py-1 rounded border border-border bg-white text-text-dark text-xs focus:outline-none">
-                <option value="">Tất cả nhóm</option>
-                {groupCatalog.map(g => <option key={g.id} value={g.id}>{g.name}</option>)}
-              </select>
-            )}
-            <button onClick={() => { setEditId(null); setShowModal(true); }} className="btn-primary text-xs flex items-center gap-1">
-              <Plus size={14} /> Thêm
-            </button>
-          </div>
-        </div>
         <div className="p-0">
           {tab === 'school-catalog' && (
-            <table className="table">
-              <thead><tr><th>Mã</th><th>Nội dung chỉ tiêu</th><th>Nhóm</th><th>ĐVT</th><th>Chỉ tiêu năm</th><th>Chu kỳ</th><th>Thao tác</th></tr></thead>
+            <table className="table table-fixed">
+              <thead><tr><th className="w-[5%]">STT</th><th className="w-[30%]">Nội dung chỉ tiêu</th><th className="w-[16%]">Chỉ tiêu năm</th><th className="w-[12%]">ĐVT</th><th className="w-[12%]">Chu kỳ</th><th className="w-[25%]">Thao tác</th></tr></thead>
               <tbody>
-                {(catalogGroupFilter ? schoolCatalog.filter(s => s.categoryId === catalogGroupFilter) : schoolCatalog).map(s => (
+                {visibleSchool.map((s, idx) => (
                   <tr key={s.id}>
-                    <td><span className="badge badge-info">{s.code}</span></td>
-                    <td className="font-medium max-w-[250px] truncate" title={s.name}>{s.name}</td>
-                    <td>{groupCatalog.find(g => g.id === s.categoryId)?.name || s.categoryId}</td>
-                    <td>{measurementUnits.find(m => m.id === s.unitId)?.name || s.unitId}</td>
+                    <td>{idx + 1}</td>
+                    <td className="font-medium break-words">{s.name}</td>
                     <td className="font-medium">{s.target || 'Theo QĐ'}</td>
+                    <td>{measurementUnits.find(m => m.id === s.unitId)?.name || s.unitId}</td>
                     <td>{s.cycle || 'Năm học'}</td>
                     <td><Actions id={s.id} onEdit={() => { setEditId(s.id); setShowModal(true); }} onDelete={() => handleDelete(s.id)} /></td>
                   </tr>
                 ))}
-                {schoolCatalog.length === 0 && <tr><td colSpan={7} className="text-center text-text-light text-sm py-8">Chưa có dữ liệu</td></tr>}
+                {visibleSchool.length === 0 && <tr><td colSpan={6} className="text-center text-text-light text-sm py-8">Chưa có dữ liệu</td></tr>}
               </tbody>
             </table>
           )}
           {tab === 'unit-catalog' && (
             <table className="table table-fixed">
-              <thead><tr><th className="w-[4%]">STT</th><th className="w-[20%]">Đơn vị</th><th className="w-[31%]">KPI</th><th className="w-[12%]">Loại</th><th className="w-[10%]">ĐVT</th><th className="w-[13%]">Chỉ tiêu năm</th><th className="w-[10%]">Chu kỳ</th></tr></thead>
+              <thead><tr><th className="w-[5%]">STT</th><th className="w-[30%]">Nội dung chỉ tiêu</th><th className="w-[16%]">Chỉ tiêu năm</th><th className="w-[12%]">ĐVT</th><th className="w-[12%]">Chu kỳ</th><th className="w-[25%]">Loại</th></tr></thead>
               <tbody>
-                {Array.from(groupedUnit).map(([groupName, items]) => (
+                {Array.from(filteredUnitGroups).map(([groupName, items]) => (
                   <Fragment key={groupName}>
                     <tr>
-                      <td colSpan={7} className="bg-bg-cream font-semibold text-primary">{groupName}</td>
+                      <td colSpan={6} className="bg-bg-cream font-semibold text-primary">{groupName}</td>
                     </tr>
                     {items.map((u, idx) => (
                       <tr key={u.id}>
                         <td>{idx + 1}</td>
-                        <td className="font-medium break-words">{orgUnitName(u.orgUnitId)}</td>
-                        <td className="break-words">{u.name}</td>
-                        <td><span className={`badge whitespace-nowrap ${u.linkedCatalogId ? 'badge-info' : 'badge-warning'}`}>{u.linkedCatalogId ? 'Phân bổ' : 'Riêng'}</span></td>
-                        <td>{measurementUnits.find(m => m.id === u.unitId)?.name || u.unitId}</td>
+                        <td className="font-medium break-words">{u.name}</td>
                         <td className="font-medium">{u.target || '—'}</td>
+                        <td>{measurementUnits.find(m => m.id === u.unitId)?.name || u.unitId}</td>
                         <td>Học kỳ</td>
+                        <td><span className={`badge whitespace-nowrap ${u.linkedCatalogId ? 'badge-info' : 'badge-warning'}`}>{u.linkedCatalogId ? 'Phân bổ' : 'Riêng'}</span></td>
                       </tr>
                     ))}
                   </Fragment>
                 ))}
-                {unitCatalog.length === 0 && <tr><td colSpan={7} className="text-center text-text-light text-sm py-8">Chưa có dữ liệu</td></tr>}
+                {filteredUnitGroups.size === 0 && <tr><td colSpan={6} className="text-center text-text-light text-sm py-8">Chưa có dữ liệu</td></tr>}
               </tbody>
             </table>
           )}
