@@ -363,21 +363,21 @@ export default function EvaluationPage() {
         <div className="p-0">
           <div className="overflow-x-auto"><table className="table">
             <thead>
-              <tr><th>Mã</th><th>Đơn vị</th><th>Năm học</th><th>Điểm</th><th>Xếp loại</th><th>Trạng thái</th><th>Thao tác</th></tr>
+              <tr><th>STT</th><th>Đơn vị</th><th>Năm học</th><th>Điểm</th><th>Xếp loại</th><th>Trạng thái</th><th>Thao tác</th></tr>
             </thead>
             <tbody>
               {loading ? (
                 <tr><td colSpan={7} className="text-center text-text-light py-6">Đang tải...</td></tr>
               ) : filtered.length === 0 ? (
                 <tr><td colSpan={7} className="text-center text-text-light py-6">Không có dữ liệu</td></tr>
-              ) : filtered.map((ev) => {
+              ) : filtered.map((ev, idx) => {
                 const status = statusConfig[ev.status] || statusConfig.pending;
                 const StatusIcon = status.icon;
                 const avg = unitAvgScore(ev);
                 const grade = avg != null ? gradeForScore(avg) : null;
                 return (
                   <tr key={ev.id}>
-                    <td><span className="badge badge-info">{ev.id.replace(/^EVL_/, '')}</span></td>
+                    <td className="text-text-light">{idx + 1}</td>
                     <td className="font-medium">{ev.unitName}</td>
                     <td className="text-sm">{ev.yearId ? getYearName(ev.yearId) : '—'}</td>
                     <td className={`text-sm font-bold ${avg != null ? 'text-primary' : 'text-text-light'}`}>{avg != null ? avg.toFixed(1) : '-'}</td>
