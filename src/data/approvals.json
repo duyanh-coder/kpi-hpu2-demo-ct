@@ -1,43 +1,5 @@
 [
   {
-    "id": "AP001",
-    "objectType": "plan",
-    "objectId": "PL001",
-    "objectTitle": "Kế hoạch KPI Phòng Đào tạo",
-    "unitName": "Phòng Đào tạo",
-    "submitter": "Trần Thị B",
-    "status": "approved",
-    "approverId": "u013",
-    "approverName": "PGS.TS Nguyễn Mạnh Hùng",
-    "note": "Kế hoạch đầy đủ",
-    "submittedAt": "2025-10-15T08:00:00Z",
-    "decidedAt": "2025-10-20T14:00:00Z"
-  },
-  {
-    "id": "AP002",
-    "objectType": "plan",
-    "objectId": "PL002",
-    "objectTitle": "Kế hoạch KPI Phòng KHCN, CĐMST",
-    "unitName": "Phòng KHCN, CĐMST",
-    "submitter": "Chuyên viên KHCN",
-    "status": "approved",
-    "approverId": "u013",
-    "approverName": "PGS.TS Nguyễn Mạnh Hùng",
-    "note": "Phê duyệt",
-    "submittedAt": "2025-10-20T08:00:00Z",
-    "decidedAt": "2025-10-25T14:00:00Z"
-  },
-  {
-    "id": "AP003",
-    "objectType": "plan",
-    "objectId": "PL004",
-    "objectTitle": "Kế hoạch KPI Trường CNTT & Truyền thông",
-    "unitName": "Trường CNTT & Truyền thông",
-    "submitter": "Lê Hoàng D",
-    "status": "pending",
-    "submittedAt": "2025-10-25T08:00:00Z"
-  },
-  {
     "id": "AP004",
     "objectType": "evidence",
     "objectId": "EV002",
@@ -59,46 +21,6 @@
     "submitter": "Chuyên viên KHCN",
     "status": "pending",
     "submittedAt": "2026-06-05T08:00:00Z"
-  },
-  {
-    "id": "APmqj5l4hnm1fuce6oaf",
-    "objectType": "plan",
-    "objectId": "PLmqj5kx9xnnuf0ka1aa",
-    "objectTitle": "Kế hoạch KPI Khoa Toán",
-    "unitName": "Khoa Toán",
-    "submitter": "Khoa Toán",
-    "status": "pending",
-    "submittedAt": "2026-06-18T07:03:11.867Z"
-  },
-  {
-    "id": "APmqj5l4ym37asmwo0xqo",
-    "objectType": "plan",
-    "objectId": "PLmqj5kx9xnnuf0ka1aa",
-    "objectTitle": "Kế hoạch KPI Khoa Toán",
-    "unitName": "Khoa Toán",
-    "submitter": "Khoa Toán",
-    "status": "pending",
-    "submittedAt": "2026-06-18T07:03:12.478Z"
-  },
-  {
-    "id": "APmqj9skrrwnhdkivyvak",
-    "objectType": "plan",
-    "objectId": "PLmqj9sarv3y0s67otm4i",
-    "objectTitle": "Kế hoạch KPI Khoa Luật",
-    "unitName": "Khoa Luật",
-    "submitter": "Khoa Luật",
-    "status": "pending",
-    "submittedAt": "2026-06-18T09:00:58.023Z"
-  },
-  {
-    "id": "APmqjan2c26sv6y5cxkjd",
-    "objectType": "plan",
-    "objectId": "PLmqjalvj9r7ysab97ky",
-    "objectTitle": "Kế hoạch KPI Trường Kinh tế",
-    "unitName": "Trường Kinh tế",
-    "submitter": "Trường Kinh tế",
-    "status": "pending",
-    "submittedAt": "2026-06-18T09:24:40.466Z"
   },
   {
     "id": "AP_plan_plan_unit_pdt_c001",
@@ -787,20 +709,6 @@
     "decidedAt": "2024-06-07T14:8:7Z"
   },
   {
-    "id": "AP_ev_EV001",
-    "objectType": "evidence",
-    "objectId": "EV001",
-    "objectTitle": "Minh chứng Danh_sach_tuyen_sinh_2026.xlsx",
-    "unitName": "Trần Thị B",
-    "submitter": "Trần Thị B",
-    "status": "approved",
-    "approverId": "u013",
-    "approverName": "PGS.TS Nguyễn Mạnh Hùng",
-    "note": "Hợp lệ",
-    "submittedAt": "2026-06-10T08:00:00Z",
-    "decidedAt": "2026-06-10T10:00:00Z"
-  },
-  {
     "id": "AP_ev_EV003",
     "objectType": "evidence",
     "objectId": "EV003",
@@ -897,20 +805,6 @@
     "note": "Phê duyệt",
     "submittedAt": "2024-07-09T10:10:15Z",
     "decidedAt": "2024-08-15T10:16:20Z"
-  },
-  {
-    "id": "AP_ev_EVmqkowakd",
-    "objectType": "evidence",
-    "objectId": "EVmqkowakd",
-    "objectTitle": "Minh chứng Bao_cao_NCKH.docx",
-    "unitName": "Đặng Phúc H",
-    "submitter": "Đặng Phúc H",
-    "status": "approved",
-    "approverId": "u013",
-    "approverName": "PGS.TS Nguyễn Mạnh Hùng",
-    "note": "Hợp lệ",
-    "submittedAt": "2025-07-21T8:29:18Z",
-    "decidedAt": "2025-08-15T15:13:39Z"
   },
   {
     "id": "AP_ev_EVmqkowake",
