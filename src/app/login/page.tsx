@@ -3,8 +3,31 @@
 import { Suspense, useState } from 'react';
 import { signIn } from 'next-auth/react';
 import { useRouter, useSearchParams } from 'next/navigation';
-import { Eye, EyeOff, Loader2, Mail, X } from 'lucide-react';
+import { Eye, EyeOff, Loader2, Mail, Shield, Users, CheckCircle, Building, FileText, X } from 'lucide-react';
 import usersData from '@/data/users.json';
+import rolesData from '@/data/roles.json';
+import userRolesData from '@/data/user-roles.json';
+
+const roleNameById: Record<string, string> = {};
+(rolesData as { id: string; name: string }[]).forEach((r) => { roleNameById[r.id] = r.name; });
+
+const roleByUserId: Record<string, string> = {};
+(userRolesData as { userId: string; roleId: string }[]).forEach((ur) => { roleByUserId[ur.userId] = ur.roleId; });
+
+const roleKeyByUsername: Record<string, string> = {};
+(usersData as any[]).forEach((u) => {
+  const roleId = roleByUserId[u.id];
+  if (roleId) roleKeyByUsername[u.username] = roleNameById[roleId];
+});
+
+const demoAccounts = [
+  { username: 'admin', label: 'Quản trị viên', desc: 'Toàn quyền hệ thống', icon: Shield, color: '#f44336' },
+  { username: 'bgh01', label: 'Ban Giám hiệu', desc: 'Xem toàn trường, phê duyệt', icon: Users, color: '#9c27b0' },
+  { username: 'hdkpi01', label: 'Hội đồng KPI', desc: 'Rà soát, khóa kết quả', icon: CheckCircle, color: '#2196f3' },
+  { username: 'pdt01', label: 'Trưởng đơn vị', desc: 'Quản lý KPI đơn vị', icon: Building, color: '#ff9800' },
+  { username: 'cbkpi01', label: 'Cán bộ KPI', desc: 'Cập nhật tiến độ, minh chứng', icon: FileText, color: '#4caf50' },
+  { username: 'gvtoan', label: 'Nhân viên', desc: 'KPI cá nhân, tự đánh giá', icon: Users, color: '#607d8b' },
+];
 
 function LoginForm() {
   const router = useRouter();
@@ -25,6 +48,32 @@ function LoginForm() {
   const [forgotEmail, setForgotEmail] = useState('');
   const [forgotMessage, setForgotMessage] = useState<{ type: 'success' | 'error'; text: string } | null>(null);
   const [forgotLoading, setForgotLoading] = useState(false);
+  const [demoLoading, setDemoLoading] = useState('');
+
+  const handleDemoLogin = async (acc: { username: string; label: string }) => {
+    const user = (usersData as any[]).find((u) => u.username === acc.username);
+    if (!user) return;
+    setError('');
+    setDemoLoading(acc.username);
+    try {
+      const result = await signIn('credentials', {
+        username: user.username,
+        password: user.password,
+        redirect: false,
+      });
+      if (result?.error) {
+        setError('Tên đăng nhập hoặc mật khẩu không đúng');
+      } else {
+        localStorage.setItem('activeRole', roleKeyByUsername[acc.username] || 'staff');
+        router.push(callbackUrl);
+        router.refresh();
+      }
+    } catch {
+      setError('Đã có lỗi xảy ra, vui lòng thử lại');
+    } finally {
+      setDemoLoading('');
+    }
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -133,6 +182,36 @@ function LoginForm() {
               )}
             </button>
           </form>
+
+          <div className="my-6 flex items-center gap-3">
+            <span className="flex-1 h-px bg-border"></span>
+            <span className="text-xs text-text-light">hoặc</span>
+            <span className="flex-1 h-px bg-border"></span>
+          </div>
+
+          <div>
+            <p className="text-sm font-medium text-text-dark mb-2">Demo vai trò</p>
+            <p className="text-xs text-text-light mb-3">Mật khẩu chung cho mọi tài khoản: <span className="font-mono">hpu2@2026</span></p>
+            <div className="grid grid-cols-2 gap-2">
+              {demoAccounts.map((acc) => (
+                <button
+                  key={acc.username}
+                  type="button"
+                  disabled={!!demoLoading}
+                  onClick={() => handleDemoLogin(acc)}
+                  className="flex items-center gap-2 p-3 rounded-lg border border-border text-left hover:border-primary hover:bg-primary-light/10 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                >
+                  <div className="p-2 rounded-lg shrink-0" style={{ backgroundColor: `${acc.color}20` }}>
+                    {demoLoading === acc.username ? <Loader2 size={16} className="animate-spin" style={{ color: acc.color }} /> : <acc.icon size={16} style={{ color: acc.color }} />}
+                  </div>
+                  <div className="min-w-0">
+                    <div className="text-sm font-medium text-text-dark truncate">{acc.label}</div>
+                    <div className="text-xs text-text-light truncate">{acc.username}</div>
+                  </div>
+                </button>
+              ))}
+            </div>
+          </div>
 
           <div className="mt-4 text-center">
             <button onClick={() => { setShowForgotModal(true); setForgotEmail(''); setForgotMessage(null); }} className="text-sm text-primary hover:text-primary-dark underline">

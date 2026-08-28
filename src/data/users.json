@@ -58,5 +58,41 @@
     "positionId": "p004",
     "status": "active",
     "createdAt": "2026-08-14T00:00:00Z"
+  },
+  {
+    "id": "u006",
+    "username": "bgh01",
+    "password": "hpu2@2026",
+    "fullName": "Nguyễn Văn Đức",
+    "email": "ducnv@hpu2.edu.vn",
+    "employeeCode": "HPU2-005",
+    "unitId": "u001",
+    "positionId": "p002",
+    "status": "active",
+    "createdAt": "2026-08-14T00:00:00Z"
+  },
+  {
+    "id": "u007",
+    "username": "hdkpi01",
+    "password": "hpu2@2026",
+    "fullName": "Phạm Thị Lan",
+    "email": "lanpt@hpu2.edu.vn",
+    "employeeCode": "HPU2-006",
+    "unitId": "u101",
+    "positionId": "p003",
+    "status": "active",
+    "createdAt": "2026-08-14T00:00:00Z"
+  },
+  {
+    "id": "u008",
+    "username": "cbkpi01",
+    "password": "hpu2@2026",
+    "fullName": "Đỗ Minh Châu",
+    "email": "chaudm@hpu2.edu.vn",
+    "employeeCode": "HPU2-007",
+    "unitId": "u101",
+    "positionId": "p003",
+    "status": "active",
+    "createdAt": "2026-08-14T00:00:00Z"
   }
 ]

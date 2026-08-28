@@ -16,5 +16,21 @@
   {
     "userId": "u004",
     "roleId": "r004"
+  },
+  {
+    "userId": "u005",
+    "roleId": "r005"
+  },
+  {
+    "userId": "u006",
+    "roleId": "r002"
+  },
+  {
+    "userId": "u007",
+    "roleId": "r003"
+  },
+  {
+    "userId": "u008",
+    "roleId": "r006"
   }
 ]
