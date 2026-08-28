@@ -126,19 +126,19 @@ export default function KPICatalogsPage() {
             </table>
           )}
           {tab === 'unit-catalog' && (
-            <table className="table">
-              <thead><tr><th>STT</th><th>Đơn vị</th><th>KPI</th><th>Nhóm</th><th>Loại</th><th>ĐVT</th><th>Chỉ tiêu năm</th><th>Chu kỳ</th></tr></thead>
+            <table className="table table-fixed">
+              <thead><tr><th className="w-[4%]">STT</th><th className="w-[20%]">Đơn vị</th><th className="w-[25%]">KPI</th><th className="w-[15%]">Nhóm</th><th className="w-[10%]">Loại</th><th className="w-[9%]">ĐVT</th><th className="w-[10%]">Chỉ tiêu năm</th><th className="w-[7%]">Chu kỳ</th></tr></thead>
               <tbody>
                 {unitCatalog.map((u, idx) => (
                   <tr key={u.id}>
                     <td>{idx + 1}</td>
-                    <td className="font-medium">{orgUnitName(u.orgUnitId)}</td>
-                    <td className="max-w-[280px] truncate" title={u.name}>{u.name}</td>
-                    <td>{u.linkedCatalogId ? (kpiGroups.find(g => g.id === (schoolCatalog.find(s => s.id === u.linkedCatalogId)?.categoryId || ''))?.name || '—') : '—'}</td>
-                    <td><span className={`badge ${u.linkedCatalogId ? 'badge-info' : 'badge-warning'}`}>{u.linkedCatalogId ? 'Phân bổ' : 'Riêng'}</span></td>
+                    <td className="font-medium break-words">{orgUnitName(u.orgUnitId)}</td>
+                    <td className="break-words">{u.name}</td>
+                    <td className="break-words">{u.linkedCatalogId ? (kpiGroups.find(g => g.id === (schoolCatalog.find(s => s.id === u.linkedCatalogId)?.categoryId || ''))?.name || '—') : '—'}</td>
+                    <td><span className={`badge whitespace-nowrap ${u.linkedCatalogId ? 'badge-info' : 'badge-warning'}`}>{u.linkedCatalogId ? 'Phân bổ' : 'Riêng'}</span></td>
                     <td>{measurementUnits.find(m => m.id === u.unitId)?.name || u.unitId}</td>
                     <td className="font-medium">{u.target || '—'}</td>
-                    <td>{u.cycle || 'Năm học'}</td>
+                    <td>Học kỳ</td>
                   </tr>
                 ))}
                 {unitCatalog.length === 0 && <tr><td colSpan={8} className="text-center text-text-light text-sm py-8">Chưa có dữ liệu</td></tr>}
