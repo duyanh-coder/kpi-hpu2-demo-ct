@@ -591,6 +591,7 @@ export interface UnitKPICatalog {
   code: string;
   name: string;
   unitId: string;
+  orgUnitId?: string;
   linkedCatalogId: string | null;
   target?: string;
   cycle?: string;

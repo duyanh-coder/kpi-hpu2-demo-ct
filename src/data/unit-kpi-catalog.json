@@ -7,7 +7,8 @@
     "linkedCatalogId": "HPU2-DMST01",
     "target": "1",
     "cycle": "Tháng",
-    "status": "active"
+    "status": "active",
+    "orgUnitId": "u102"
   },
   {
     "id": "HPU2-UNIT-02",
@@ -17,7 +18,8 @@
     "linkedCatalogId": "HPU2-DT01",
     "target": "1",
     "cycle": "Tháng",
-    "status": "active"
+    "status": "active",
+    "orgUnitId": "u101"
   },
   {
     "id": "HPU2-UNIT-03",
@@ -27,7 +29,8 @@
     "linkedCatalogId": "HPU2-DT02",
     "target": "0.6",
     "cycle": "Tháng",
-    "status": "active"
+    "status": "active",
+    "orgUnitId": "u101"
   },
   {
     "id": "HPU2-UNIT-04",
@@ -37,7 +40,8 @@
     "linkedCatalogId": "HPU2-TS02",
     "target": "0.8",
     "cycle": "Tháng",
-    "status": "active"
+    "status": "active",
+    "orgUnitId": "u101"
   },
   {
     "id": "HPU2-UNIT-05",
@@ -47,7 +51,8 @@
     "linkedCatalogId": "HPU2-TS07",
     "target": "0.05",
     "cycle": "Tháng",
-    "status": "active"
+    "status": "active",
+    "orgUnitId": "u101"
   },
   {
     "id": "HPU2-UNIT-06",
@@ -57,7 +62,8 @@
     "linkedCatalogId": "HPU2-TS02",
     "target": "0.8",
     "cycle": "Tháng",
-    "status": "active"
+    "status": "active",
+    "orgUnitId": "u101"
   },
   {
     "id": "HPU2-UNIT-07",
@@ -67,7 +73,8 @@
     "linkedCatalogId": "HPU2-TS01",
     "target": "1",
     "cycle": "Tháng",
-    "status": "active"
+    "status": "active",
+    "orgUnitId": "u101"
   },
   {
     "id": "HPU2-UNIT-08",
@@ -77,7 +84,8 @@
     "linkedCatalogId": "HPU2-DT03",
     "target": "1",
     "cycle": "Tháng",
-    "status": "active"
+    "status": "active",
+    "orgUnitId": "u101"
   },
   {
     "id": "HPU2-UNIT-09",
@@ -87,7 +95,8 @@
     "linkedCatalogId": "HPU2-DT03",
     "target": "1",
     "cycle": "Tháng",
-    "status": "active"
+    "status": "active",
+    "orgUnitId": "u101"
   },
   {
     "id": "HPU2-UNIT-10",
@@ -97,7 +106,8 @@
     "linkedCatalogId": "HPU2-HT02",
     "target": "1",
     "cycle": "Tháng",
-    "status": "active"
+    "status": "active",
+    "orgUnitId": "u102"
   },
   {
     "id": "HPU2-UNIT-11",
@@ -107,7 +117,8 @@
     "linkedCatalogId": "HPU2-DT02",
     "target": "1",
     "cycle": "Tháng",
-    "status": "active"
+    "status": "active",
+    "orgUnitId": "u101"
   },
   {
     "id": "HPU2-UNIT-12",
@@ -117,7 +128,8 @@
     "linkedCatalogId": "HPU2-DBCL09",
     "target": "1",
     "cycle": "Tháng",
-    "status": "active"
+    "status": "active",
+    "orgUnitId": "u401"
   },
   {
     "id": "HPU2-UNIT-13",
@@ -127,7 +139,8 @@
     "linkedCatalogId": null,
     "target": "100%",
     "cycle": "Tháng",
-    "status": "active"
+    "status": "active",
+    "orgUnitId": "u101"
   },
   {
     "id": "HPU2-UNIT-14",
@@ -137,7 +150,8 @@
     "linkedCatalogId": null,
     "target": "≥1",
     "cycle": "Tháng",
-    "status": "active"
+    "status": "active",
+    "orgUnitId": "u101"
   },
   {
     "id": "HPU2-UNIT-15",
@@ -147,6 +161,7 @@
     "linkedCatalogId": null,
     "target": "100%",
     "cycle": "Tháng",
-    "status": "active"
+    "status": "active",
+    "orgUnitId": "u101"
   }
 ]

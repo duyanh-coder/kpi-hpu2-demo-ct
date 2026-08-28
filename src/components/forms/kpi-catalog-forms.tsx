@@ -44,21 +44,19 @@ export function SchoolCatalogForm({ item, groups, units, onSubmit, onCancel }: {
   </form>;
 }
 
-export function UnitCatalogForm({ item, units, schoolCatalog, onSubmit, onCancel }: { item: UnitKPICatalog | null; units: { id: string; name: string }[]; schoolCatalog: SchoolKPICatalog[]; onSubmit: (data: any) => void; onCancel: () => void }) {
+export function UnitCatalogForm({ item, orgUnits, units, onSubmit, onCancel }: { item: UnitKPICatalog | null; orgUnits: { id: string; name: string }[]; units: { id: string; name: string }[]; onSubmit: (data: any) => void; onCancel: () => void }) {
   const [name, setName] = useState(item?.name || '');
   const [code, setCode] = useState(item?.code || '');
+  const [orgUnitId, setOrgUnitId] = useState(item?.orgUnitId || orgUnits[0]?.id || '');
   const [unitId, setUnitId] = useState(item?.unitId || 'mu001');
   const [target, setTarget] = useState(item?.target || '');
   const [cycle, setCycle] = useState(item?.cycle || 'Năm học');
-  const [kind, setKind] = useState<'link' | 'own'>(item?.linkedCatalogId ? 'link' : 'own');
-  const [linkedCatalogId, setLinkedCatalogId] = useState(item?.linkedCatalogId || '');
-  const handle = (e: React.FormEvent) => { e.preventDefault(); onSubmit({ name, code, unitId, target, cycle, linkedCatalogId: kind === 'link' ? linkedCatalogId || null : null }); };
+  const handle = (e: React.FormEvent) => { e.preventDefault(); onSubmit({ name, code, orgUnitId, unitId, target, cycle, linkedCatalogId: null }); };
   return <form onSubmit={handle} className="space-y-4">
-    <div className="grid grid-cols-2 gap-4"><div><label className="block text-sm font-medium mb-1">KPI đơn vị *</label><input value={name} onChange={e => setName(e.target.value)} required className={field} /></div><div><label className="block text-sm font-medium mb-1">Mã *</label><input value={code} onChange={e => setCode(e.target.value)} required className={field} /></div></div>
-    <div><label className="block text-sm font-medium mb-1">Loại KPI</label><select value={kind} onChange={e => setKind(e.target.value as 'link' | 'own')} className={field}><option value="link">Gắn chỉ tiêu Trường</option><option value="own">KPI riêng</option></select></div>
-    {kind === 'link' && <div><label className="block text-sm font-medium mb-1">Chỉ tiêu Trường liên kết</label><select value={linkedCatalogId} onChange={e => setLinkedCatalogId(e.target.value)} className={field}>{schoolCatalog.map(s => <option key={s.id} value={s.id}>{s.code} — {s.name}</option>)}</select></div>}
-    <div className="grid grid-cols-3 gap-4"><div><label className="block text-sm font-medium mb-1">Đơn vị đo</label><select value={unitId} onChange={e => setUnitId(e.target.value)} className={field}>{units.map(u => <option key={u.id} value={u.id}>{u.name}</option>)}</select></div><div><label className="block text-sm font-medium mb-1">Chỉ tiêu</label><input value={target} onChange={e => setTarget(e.target.value)} className={field} /></div><div><label className="block text-sm font-medium mb-1">Chu kỳ</label><select value={cycle} onChange={e => setCycle(e.target.value)} className={field}><option>Năm học</option><option>Học kỳ</option><option>Tháng/Học kỳ</option></select></div></div>
-    <div className="flex justify-end gap-2 pt-4 border-t"><button type="button" onClick={onCancel} className="btn-secondary">Hủy</button><button type="submit" className="btn-primary">{item ? 'Cập nhật' : 'Thêm mới'}</button></div>
+    <div className="grid grid-cols-2 gap-4"><div><label className="block text-sm font-medium mb-1">Đơn vị *</label><select value={orgUnitId} onChange={e => setOrgUnitId(e.target.value)} required className={field}>{orgUnits.map(o => <option key={o.id} value={o.id}>{o.name}</option>)}</select></div><div><label className="block text-sm font-medium mb-1">Mã KPI</label><input value={code} onChange={e => setCode(e.target.value)} className={field} placeholder="VD: DV-PDT-04" /></div></div>
+    <div><label className="block text-sm font-medium mb-1">KPI đơn vị *</label><input value={name} onChange={e => setName(e.target.value)} required className={field} /></div>
+    <div className="grid grid-cols-3 gap-4"><div><label className="block text-sm font-medium mb-1">Đơn vị đo</label><select value={unitId} onChange={e => setUnitId(e.target.value)} className={field}>{units.map(u => <option key={u.id} value={u.id}>{u.name}</option>)}</select></div><div><label className="block text-sm font-medium mb-1">Chỉ tiêu năm học</label><input value={target} onChange={e => setTarget(e.target.value)} className={field} /></div><div><label className="block text-sm font-medium mb-1">Chu kỳ</label><select value={cycle} onChange={e => setCycle(e.target.value)} className={field}><option>Năm học</option><option>Học kỳ</option><option>Tháng</option></select></div></div>
+    <div className="flex justify-end gap-2 pt-4 border-t"><button type="button" onClick={onCancel} className="btn-secondary">Hủy</button><button type="submit" className="btn-primary">Thêm mới</button></div>
   </form>;
 }
 

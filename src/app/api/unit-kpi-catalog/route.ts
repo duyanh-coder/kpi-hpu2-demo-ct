@@ -13,14 +13,15 @@ export async function GET(request: NextRequest) {
 export async function POST(request: NextRequest) {
   const body = await request.json();
   const items = readDb<UnitKPICatalog>('unit-kpi-catalog');
-  const newItem: UnitKPICatalog = {
+const newItem: UnitKPICatalog = {
     id: `catuk_${generateId()}`,
     code: body.code,
     name: body.name,
     unitId: body.unitId,
+    orgUnitId: body.orgUnitId,
     linkedCatalogId: body.linkedCatalogId || null,
     target: body.target || '',
-    cycle: body.cycle || 'Năm học',
+    cycle: body.cycle || 'Nam h?c',
     status: 'active',
   };
   items.push(newItem);

@@ -1,37 +1,38 @@
 'use client';
 
 import { useState, useEffect, useCallback } from 'react';
-import { Target, Building, Users, Plus, Edit, Trash2, Send } from 'lucide-react';
+import { Target, Building, Plus, Edit, Trash2 } from 'lucide-react';
 import Modal from '@/components/ui/Modal';
 import { apiGet, apiPost, apiPut, apiDelete } from '@/lib/api';
-import { SchoolCatalogForm, UnitCatalogForm, IndividualCatalogForm } from '@/components/forms/kpi-catalog-forms';
-import type { SchoolKPICatalog, KPIGroupCatalog, UnitKPICatalog, IndividualKPICatalog } from '@/types';
+import { SchoolCatalogForm, UnitCatalogForm } from '@/components/forms/kpi-catalog-forms';
+import type { SchoolKPICatalog, KPIGroupCatalog, UnitKPICatalog } from '@/types';
 
-type TabKey = 'school-catalog' | 'unit-catalog' | 'individual-catalog';
+type TabKey = 'school-catalog' | 'unit-catalog';
 
 export default function KPICatalogsPage() {
   const [tab, setTab] = useState<TabKey>('school-catalog');
 
   const [schoolCatalog, setSchoolCatalog] = useState<SchoolKPICatalog[]>([]);
   const [unitCatalog, setUnitCatalog] = useState<UnitKPICatalog[]>([]);
-  const [indCatalog, setIndCatalog] = useState<IndividualKPICatalog[]>([]);
   const [groupCatalog, setGroupCatalog] = useState<KPIGroupCatalog[]>([]);
+  const [kpiGroups, setKpiGroups] = useState<{ id: string; name: string }[]>([]);
+  const [orgUnits, setOrgUnits] = useState<{ id: string; name: string }[]>([]);
   const [measurementUnits, setMeasurementUnits] = useState<{ id: string; name: string }[]>([]);
 
   const [showModal, setShowModal] = useState(false);
   const [editId, setEditId] = useState<string | null>(null);
   const [catalogGroupFilter, setCatalogGroupFilter] = useState<string | null>(null);
-  const [catalogPosFilter, setCatalogPosFilter] = useState<string | null>(null);
 
   const loadData = useCallback(async () => {
-    const [sc, uc, ic, gc, mu] = await Promise.all([
+    const [sc, uc, gc, kg, ou, mu] = await Promise.all([
       apiGet<SchoolKPICatalog[]>('/api/school-kpi-catalog'),
       apiGet<UnitKPICatalog[]>('/api/unit-kpi-catalog'),
-      apiGet<IndividualKPICatalog[]>('/api/individual-kpi-catalog'),
       apiGet<KPIGroupCatalog[]>('/api/kpi-group-catalog'),
+      apiGet<{ id: string; name: string }[]>('/api/kpi-groups'),
+      apiGet<{ id: string; name: string }[]>('/api/units'),
       apiGet<{ id: string; name: string }[]>('/api/measurement-units'),
     ]);
-    setSchoolCatalog(sc); setUnitCatalog(uc); setIndCatalog(ic); setGroupCatalog(gc); setMeasurementUnits(mu);
+    setSchoolCatalog(sc); setUnitCatalog(uc); setGroupCatalog(gc); setKpiGroups(kg); setOrgUnits(ou); setMeasurementUnits(mu);
   }, []);
 
   useEffect(() => { loadData(); }, [loadData]);
@@ -39,7 +40,6 @@ export default function KPICatalogsPage() {
   const apiEntity = (t: TabKey) => {
     if (t === 'school-catalog') return 'school-kpi-catalog';
     if (t === 'unit-catalog') return 'unit-kpi-catalog';
-    if (t === 'individual-catalog') return 'individual-kpi-catalog';
     return 'school-kpi-catalog';
   };
 
@@ -63,15 +63,16 @@ export default function KPICatalogsPage() {
   const tabs = [
     { id: 'school-catalog' as TabKey, label: 'Chỉ tiêu Trường', icon: Target, count: schoolCatalog.length },
     { id: 'unit-catalog' as TabKey, label: 'KPI đơn vị', icon: Building, count: unitCatalog.length },
-    { id: 'individual-catalog' as TabKey, label: 'KPI cá nhân', icon: Users, count: indCatalog.length },
   ];
+
+  const orgUnitName = (id?: string) => orgUnits.find(o => o.id === id)?.name || id || '—';
 
   return (
     <div className="space-y-6">
       <div className="flex items-center justify-between">
         <div>
           <h1 className="text-2xl font-heading font-bold text-text-dark">Bộ chỉ tiêu KPI</h1>
-          <p className="text-text-light mt-1">Quản lý chỉ tiêu cấp Trường và bộ KPI được phân rã cho đơn vị, cá nhân.</p>
+          <p className="text-text-light mt-1">Quản lý chỉ tiêu cấp Trường và bộ KPI được phân rã cho đơn vị.</p>
         </div>
       </div>
 
@@ -79,7 +80,7 @@ export default function KPICatalogsPage() {
         {tabs.map(t => {
           const Icon = t.icon;
           return (
-            <button key={t.id} onClick={() => { setTab(t.id); setEditId(null); setShowModal(false); setCatalogGroupFilter(null); setCatalogPosFilter(null); }}
+            <button key={t.id} onClick={() => { setTab(t.id); setEditId(null); setShowModal(false); setCatalogGroupFilter(null); }}
               className={`flex items-center gap-2 px-4 py-3 font-medium text-sm border-b-2 transition-colors ${tab === t.id ? 'border-primary text-primary' : 'border-transparent text-text-light hover:text-text-dark'}`}>
               <Icon size={16} /> {t.label}
               <span className="badge badge-info ml-1">{t.count}</span>
@@ -97,13 +98,6 @@ export default function KPICatalogsPage() {
                 className="px-2 py-1 rounded border border-border bg-white text-text-dark text-xs focus:outline-none">
                 <option value="">Tất cả nhóm</option>
                 {groupCatalog.map(g => <option key={g.id} value={g.id}>{g.name}</option>)}
-              </select>
-            )}
-            {tab === 'individual-catalog' && (
-              <select value={catalogPosFilter || ''} onChange={e => setCatalogPosFilter(e.target.value || null)}
-                className="px-2 py-1 rounded border border-border bg-white text-text-dark text-xs focus:outline-none">
-                <option value="">Tất cả vị trí</option>
-                {[...new Set(indCatalog.map(i => i.positionCode))].map(pc => <option key={pc} value={pc}>{({ QL: 'Cán bộ quản lý', GV: 'Giảng viên', CV: 'Chuyên viên' } as Record<string,string>)[pc] || pc}</option>)}
               </select>
             )}
             <button onClick={() => { setEditId(null); setShowModal(true); }} className="btn-primary text-xs flex items-center gap-1">
@@ -133,38 +127,21 @@ export default function KPICatalogsPage() {
           )}
           {tab === 'unit-catalog' && (
             <table className="table">
-              <thead><tr><th>Mã</th><th>KPI đơn vị</th><th>Liên kết chỉ tiêu Trường</th><th>Chỉ tiêu</th><th>Chu kỳ</th><th>Thao tác</th></tr></thead>
+              <thead><tr><th>STT</th><th>Đơn vị</th><th>KPI</th><th>Nhóm</th><th>Loại</th><th>ĐVT</th><th>Chỉ tiêu năm</th><th>Chu kỳ</th></tr></thead>
               <tbody>
-                {unitCatalog.map(u => (
+                {unitCatalog.map((u, idx) => (
                   <tr key={u.id}>
-                    <td><span className="badge badge-info">{u.code}</span></td>
-                    <td className="font-medium">{u.name}</td>
-                    <td>{u.linkedCatalogId ? (schoolCatalog.find(s => s.id === u.linkedCatalogId)?.code || '—') : <span className="badge badge-info">Riêng</span>}</td>
-                    <td className="font-medium">{u.target || 'Theo kế hoạch giao'}</td>
+                    <td>{idx + 1}</td>
+                    <td className="font-medium">{orgUnitName(u.orgUnitId)}</td>
+                    <td className="max-w-[280px] truncate" title={u.name}>{u.name}</td>
+                    <td>{u.linkedCatalogId ? (kpiGroups.find(g => g.id === (schoolCatalog.find(s => s.id === u.linkedCatalogId)?.categoryId || ''))?.name || '—') : '—'}</td>
+                    <td><span className={`badge ${u.linkedCatalogId ? 'badge-info' : 'badge-warning'}`}>{u.linkedCatalogId ? 'Phân bổ' : 'Riêng'}</span></td>
+                    <td>{measurementUnits.find(m => m.id === u.unitId)?.name || u.unitId}</td>
+                    <td className="font-medium">{u.target || '—'}</td>
                     <td>{u.cycle || 'Năm học'}</td>
-                    <td><AssignButton /></td>
                   </tr>
                 ))}
-                {unitCatalog.length === 0 && <tr><td colSpan={6} className="text-center text-text-light text-sm py-8">Chưa có dữ liệu</td></tr>}
-              </tbody>
-            </table>
-          )}
-          {tab === 'individual-catalog' && (
-            <table className="table">
-              <thead><tr><th>Mã</th><th>KPI cá nhân</th><th>Nhóm đối tượng</th><th>Liên kết chỉ tiêu Trường</th><th>Chỉ tiêu</th><th>Chu kỳ</th><th>Thao tác</th></tr></thead>
-              <tbody>
-                {(catalogPosFilter ? indCatalog.filter(i => i.positionCode === catalogPosFilter) : indCatalog).map(i => (
-                  <tr key={i.id}>
-                    <td><span className="badge badge-info">{i.code}</span></td>
-                    <td className="font-medium">{i.name}</td>
-                    <td>{({ QL: 'Cán bộ quản lý', GV: 'Giảng viên', CV: 'Chuyên viên' } as Record<string,string>)[i.positionCode] || i.positionCode}</td>
-                    <td>{schoolCatalog.find(s => s.id === i.linkedCatalogId)?.code || '—'}</td>
-                    <td className="font-medium">{i.target || 'Theo chỉ tiêu giao'}</td>
-                    <td>{i.cycle || 'Năm học'}</td>
-                    <td><Actions id={i.id} onEdit={() => { setEditId(i.id); setShowModal(true); }} onDelete={() => handleDelete(i.id)} /></td>
-                  </tr>
-                ))}
-                {indCatalog.length === 0 && <tr><td colSpan={7} className="text-center text-text-light text-sm py-8">Chưa có dữ liệu</td></tr>}
+                {unitCatalog.length === 0 && <tr><td colSpan={8} className="text-center text-text-light text-sm py-8">Chưa có dữ liệu</td></tr>}
               </tbody>
             </table>
           )}
@@ -172,23 +149,11 @@ export default function KPICatalogsPage() {
       </div>
 
       <Modal isOpen={showModal} onClose={() => { setShowModal(false); setEditId(null); }}
-        title={`${editId ? 'Sửa' : 'Thêm'} ${tab === 'school-catalog' ? 'Chỉ tiêu Trường' : tab === 'unit-catalog' ? 'Chỉ tiêu đơn vị' : tab === 'individual-catalog' ? 'KPI cá nhân' : 'Bộ chỉ tiêu'}`} maxWidth="max-w-3xl">
-        {tab === 'school-catalog' && <SchoolCatalogForm item={schoolCatalog.find(s => s.id === editId) || null} groups={groupCatalog} units={measurementUnits} onSubmit={handleSave} onCancel={() => { setShowModal(false); setEditId(null); }} />}
-        {tab === 'unit-catalog' && <UnitCatalogForm item={unitCatalog.find(u => u.id === editId) || null} units={measurementUnits} schoolCatalog={schoolCatalog} onSubmit={handleSave} onCancel={() => { setShowModal(false); setEditId(null); }} />}
-        {tab === 'individual-catalog' && <IndividualCatalogForm item={indCatalog.find(i => i.id === editId) || null} positionCodes={[...new Set(indCatalog.map(i => i.positionCode))]} units={measurementUnits} onSubmit={handleSave} onCancel={() => { setShowModal(false); setEditId(null); }} />}
+        title={tab === 'school-catalog' ? `${editId ? 'Sửa' : 'Thêm'} Chỉ tiêu Trường` : 'Thêm KPI riêng của đơn vị'} maxWidth="max-w-3xl">
+        {tab === 'school-catalog' && <SchoolCatalogForm item={editId ? (schoolCatalog.find(s => s.id === editId) || null) : null} groups={groupCatalog} units={measurementUnits} onSubmit={handleSave} onCancel={() => { setShowModal(false); setEditId(null); }} />}
+        {tab === 'unit-catalog' && <UnitCatalogForm item={null} orgUnits={orgUnits.filter(o => o.id !== 'u001')} units={measurementUnits} onSubmit={handleSave} onCancel={() => { setShowModal(false); setEditId(null); }} />}
       </Modal>
     </div>
-  );
-}
-
-function AssignButton() {
-  return (
-    <button
-      onClick={() => confirm('Chuyển qua chức năng Giao việc của eOffice để phân công nhiệm vụ này?')}
-      className="px-2 py-1 text-xs rounded border border-primary text-primary hover:bg-primary-light flex items-center gap-1"
-    >
-      <Send size={12} /> Giao việc
-    </button>
   );
 }
 
