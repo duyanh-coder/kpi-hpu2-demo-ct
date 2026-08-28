@@ -1,7 +1,7 @@
 'use client';
 
 import { Fragment, useState, useEffect, useCallback, useMemo } from 'react';
-import { CheckCircle, Clock, Search, Award, Eye, Lock, Star, MessageSquare, PencilLine } from 'lucide-react';
+import { CheckCircle, Clock, Search, Award, Eye, Lock, Star, MessageSquare, RefreshCw } from 'lucide-react';
 import Modal from '@/components/ui/Modal';
 import { apiGet, apiPut, apiPost } from '@/lib/api';
 import unitKpisData from '@/data/unit-kpis.json';
@@ -297,7 +297,7 @@ export default function EvaluationPage() {
               aria-label="Cập nhật thông tin kết quả đánh giá"
               className="inline-flex p-1 text-primary hover:bg-primary-light rounded-lg cursor-pointer"
             >
-              <PencilLine size={18} />
+              <RefreshCw size={18} />
             </button>
           </div>
           <p className="text-text-light mt-1">Tự đánh giá → Cấp trên → Hội đồng → Khóa</p>
