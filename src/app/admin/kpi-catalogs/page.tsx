@@ -132,7 +132,7 @@ export default function KPICatalogsPage() {
         <div className="p-0">
           {tab === 'school-catalog' && (
             <table className="table table-fixed">
-              <thead><tr><th className="w-[5%]">STT</th><th className="w-[30%]">Nội dung chỉ tiêu</th><th className="w-[16%]">Chỉ tiêu năm</th><th className="w-[12%]">ĐVT</th><th className="w-[12%]">Chu kỳ</th><th className="w-[25%]">Thao tác</th></tr></thead>
+              <thead><tr><th className="w-[4%]">STT</th><th className="w-[38%]">Nội dung chỉ tiêu</th><th className="w-[16%]">Chỉ tiêu năm</th><th className="w-[12%]">ĐVT</th><th className="w-[12%]">Chu kỳ</th><th className="w-[8%]">Thao tác</th></tr></thead>
               <tbody>
                 {visibleSchool.map((s, idx) => (
                   <tr key={s.id}>
@@ -150,12 +150,13 @@ export default function KPICatalogsPage() {
           )}
           {tab === 'unit-catalog' && (
             <table className="table table-fixed">
-              <thead><tr><th className="w-[5%]">STT</th><th className="w-[30%]">Nội dung chỉ tiêu</th><th className="w-[16%]">Chỉ tiêu năm</th><th className="w-[12%]">ĐVT</th><th className="w-[12%]">Chu kỳ</th><th className="w-[25%]">Loại</th></tr></thead>
+              <thead><tr><th className="w-[4%]">STT</th><th className="w-[38%]">Nội dung chỉ tiêu</th><th className="w-[16%]">Chỉ tiêu năm</th><th className="w-[12%]">ĐVT</th><th className="w-[12%]">Chu kỳ</th><th className="w-[10%]">Loại</th></tr></thead>
               <tbody>
                 {Array.from(filteredUnitGroups).map(([groupName, items]) => (
                   <Fragment key={groupName}>
-                    <tr>
-                      <td colSpan={6} className="bg-bg-cream font-semibold text-primary">{groupName}</td>
+                    <tr className="bg-bg-cream">
+                      <td></td>
+                      <td colSpan={5} className="font-semibold text-primary">{groupName}</td>
                     </tr>
                     {items.map((u, idx) => (
                       <tr key={u.id}>
@@ -187,7 +188,7 @@ export default function KPICatalogsPage() {
 
 function Actions({ id, onEdit, onDelete }: { id: string; onEdit: () => void; onDelete: () => void }) {
   return (
-    <div className="flex gap-1">
+    <div className="flex justify-end gap-1">
       <button onClick={onEdit} className="p-1 text-accent-yellow hover:bg-accent-yellow/10 rounded"><Edit size={14} /></button>
       <button onClick={onDelete} className="p-1 text-accent-red hover:bg-accent-red/10 rounded"><Trash2 size={14} /></button>
     </div>
