@@ -1,35 +1,123 @@
-import CrudTable from '@/components/admin/CrudTable';
+'use client';
 
-export const metadata = { title: 'Danh mục điều kiện đánh giá' };
+import { useState, useEffect, useCallback } from 'react';
+import { Plus, Edit, Trash2 } from 'lucide-react';
+import Modal from '@/components/ui/Modal';
+import { apiGet, apiPost, apiPut, apiDelete } from '@/lib/api';
+
+interface GradingLevel { id: string; name: string; code: string; minScore: number; maxScore: number; color: string; description: string; status: string; }
 
 export default function DieuKienDanhGiaPage() {
+  const [rows, setRows] = useState<GradingLevel[]>([]);
+  const [showModal, setShowModal] = useState(false);
+  const [editItem, setEditItem] = useState<GradingLevel | null>(null);
+  const [loading, setLoading] = useState(true);
+
+  const load = useCallback(async () => {
+    setLoading(true);
+    try { setRows(await apiGet<GradingLevel[]>('/api/grading-levels')); }
+    catch { /* empty */ } finally { setLoading(false); }
+  }, []);
+
+  useEffect(() => { load(); }, [load]);
+
+  const handleSave = async (data: GradingLevel) => {
+    if (editItem) await apiPut(`/api/grading-levels/${editItem.id}`, data);
+    else await apiPost('/api/grading-levels', data);
+    setShowModal(false); setEditItem(null); load();
+  };
+
+  const handleDelete = async (id: string) => {
+    if (!confirm('Xóa mục này?')) return;
+    await apiDelete(`/api/grading-levels/${id}`);
+    load();
+  };
+
   return (
-    <CrudTable
-      title="Danh mục điều kiện đánh giá"
-      description="Các mức xếp loại chất lượng theo điểm số"
-      endpoint="grading-levels"
-      columns={[
-        { key: 'code', label: 'Mã' },
-        { key: 'name', label: 'Mức xếp loại' },
-        { key: 'minScore', label: 'Điểm tối thiểu' },
-        { key: 'maxScore', label: 'Điểm tối đa' },
-        {
-          key: 'color', label: 'Màu',
-          render: (row) => <span className="inline-block w-5 h-5 rounded" style={{ backgroundColor: String(row.color || '#ccc') }} title={String(row.color)} />,
-        },
-        {
-          key: 'status', label: 'Trạng thái',
-          render: (row) => <span className={`badge ${row.status === 'active' ? 'badge-success' : 'badge-danger'}`}>{row.status === 'active' ? 'Đang dùng' : 'Ngừng'}</span>,
-        },
-      ]}
-      fields={[
-        { key: 'code', label: 'Mã', required: true },
-        { key: 'name', label: 'Tên mức xếp loại', required: true },
-        { key: 'minScore', label: 'Điểm tối thiểu', type: 'number', required: true },
-        { key: 'maxScore', label: 'Điểm tối đa', type: 'number', required: true },
-        { key: 'color', label: 'Màu', type: 'color' },
-        { key: 'description', label: 'Mô tả', type: 'textarea' },
-      ]}
-    />
+    <div className="space-y-6">
+      <div className="flex items-center justify-between">
+        <div>
+          <h1 className="text-2xl font-heading font-bold text-text-dark">Danh mục điều kiện đánh giá</h1>
+          <p className="text-text-light mt-1">Các mức xếp loại chất lượng theo điểm số</p>
+        </div>
+        <button onClick={() => { setEditItem(null); setShowModal(true); }} className="btn-primary text-xs flex items-center gap-1">
+          <Plus size={14} /> Thêm mới
+        </button>
+      </div>
+
+      <div className="card">
+        <div className="card-header"><h3 className="text-white">Mức xếp loại</h3></div>
+        <div className="overflow-x-auto">
+          {loading ? <div className="p-8 text-center text-text-light">Đang tải...</div> :
+            rows.length === 0 ? <div className="p-8 text-center text-text-light">Chưa có dữ liệu</div> : (
+            <table className="table"><thead><tr><th>STT</th><th>Mã</th><th>Mức xếp loại</th><th>Điểm từ</th><th>Điểm đến</th><th>Màu</th><th>Mô tả</th><th>Thao tác</th></tr></thead>
+              <tbody>
+                {rows.map((g, i) => (
+                  <tr key={g.id}>
+                    <td>{i + 1}</td>
+                    <td className="font-mono text-xs">{g.code}</td>
+                    <td className="font-medium"><span className="inline-flex items-center gap-2"><span className="w-3 h-3 rounded-full" style={{ backgroundColor: g.color }} />{g.name}</span></td>
+                    <td>{g.minScore}</td>
+                    <td>{g.maxScore}</td>
+                    <td><span className="w-6 h-6 rounded inline-block border" style={{ backgroundColor: g.color }} /></td>
+                    <td className="text-sm text-text-light">{g.description}</td>
+                    <td>
+                      <div className="flex gap-1">
+                        <button onClick={() => { setEditItem(g); setShowModal(true); }} className="p-1 hover:bg-blue-50 rounded"><Edit size={12} className="text-blue-600" /></button>
+                        <button onClick={() => handleDelete(g.id)} className="p-1 hover:bg-red-50 rounded"><Trash2 size={12} className="text-red-600" /></button>
+                      </div>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          )}
+        </div>
+      </div>
+
+      <Modal isOpen={showModal} onClose={() => { setShowModal(false); setEditItem(null); }} title={editItem ? 'Chỉnh sửa' : 'Thêm mới'}>
+        <GradeForm initial={editItem} onSubmit={handleSave} onCancel={() => { setShowModal(false); setEditItem(null); }} />
+      </Modal>
+    </div>
+  );
+}
+
+function GradeForm({ initial, onSubmit, onCancel }: { initial?: GradingLevel | null; onSubmit: (d: GradingLevel) => void; onCancel: () => void }) {
+  const [f, setF] = useState(initial || ({ name: '', code: '', minScore: 0, maxScore: 100, color: '#4caf50', description: '', status: 'active' } as GradingLevel));
+  return (
+    <form onSubmit={e => { e.preventDefault(); onSubmit(f); }} className="space-y-4">
+      <div>
+        <label className="block text-sm font-medium mb-1">Tên mức xếp loại *</label>
+        <input type="text" value={f.name} onChange={e => setF({ ...f, name: e.target.value })} required className="w-full px-3 py-2 border border-border rounded-lg text-sm focus:outline-none focus:border-primary" />
+      </div>
+      <div className="grid grid-cols-2 gap-4">
+        <div>
+          <label className="block text-sm font-medium mb-1">Mã *</label>
+          <input type="text" value={f.code} onChange={e => setF({ ...f, code: e.target.value })} required className="w-full px-3 py-2 border border-border rounded-lg text-sm focus:outline-none focus:border-primary" />
+        </div>
+        <div>
+          <label className="block text-sm font-medium mb-1">Màu sắc</label>
+          <input type="color" value={f.color} onChange={e => setF({ ...f, color: e.target.value })} className="w-full h-9 px-1 py-1 border rounded-lg" />
+        </div>
+      </div>
+      <div className="grid grid-cols-2 gap-4">
+        <div>
+          <label className="block text-sm font-medium mb-1">Điểm từ *</label>
+          <input type="number" value={f.minScore} onChange={e => setF({ ...f, minScore: Number(e.target.value) })} required className="w-full px-3 py-2 border border-border rounded-lg text-sm focus:outline-none focus:border-primary" />
+        </div>
+        <div>
+          <label className="block text-sm font-medium mb-1">Điểm đến *</label>
+          <input type="number" value={f.maxScore} onChange={e => setF({ ...f, maxScore: Number(e.target.value) })} required className="w-full px-3 py-2 border border-border rounded-lg text-sm focus:outline-none focus:border-primary" />
+        </div>
+      </div>
+      <div>
+        <label className="block text-sm font-medium mb-1">Mô tả</label>
+        <textarea value={f.description} onChange={e => setF({ ...f, description: e.target.value })} className="w-full px-3 py-2 border border-border rounded-lg text-sm h-20 focus:outline-none focus:border-primary" />
+      </div>
+      <div className="flex justify-end gap-2 pt-2">
+        <button type="button" onClick={onCancel} className="px-4 py-2 border border-border rounded-lg text-sm hover:bg-bg-cream">Hủy</button>
+        <button type="submit" className="btn-primary text-xs">Lưu</button>
+      </div>
+    </form>
   );
 }
