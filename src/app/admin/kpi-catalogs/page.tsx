@@ -188,7 +188,7 @@ export default function KPICatalogsPage() {
 
 function Actions({ id, onEdit, onDelete }: { id: string; onEdit: () => void; onDelete: () => void }) {
   return (
-    <div className="flex justify-end gap-1">
+    <div className="flex justify-center gap-1">
       <button onClick={onEdit} className="p-1 text-accent-yellow hover:bg-accent-yellow/10 rounded"><Edit size={14} /></button>
       <button onClick={onDelete} className="p-1 text-accent-red hover:bg-accent-red/10 rounded"><Trash2 size={14} /></button>
     </div>
