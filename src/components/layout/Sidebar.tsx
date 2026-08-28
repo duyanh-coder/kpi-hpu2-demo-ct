@@ -107,8 +107,8 @@ function activeInGroup(item: MenuItem, pathname: string): boolean {
 export default function Sidebar({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) {
   const pathname = usePathname();
   const [expandedGroups, setExpandedGroups] = useState<string[]>(() => {
-    const active = menuItems.filter(i => activeInGroup(i, pathname) || (i.href === '/' && pathname === '/'));
-    return active.map(i => i.href);
+    if (pathname === '/') return ['/target', '/quality'];
+    return menuItems.filter(i => activeInGroup(i, pathname)).map(i => i.href);
   });
   const [expandedSub, setExpandedSub] = useState<string[]>(() => {
     const subs: string[] = [];
