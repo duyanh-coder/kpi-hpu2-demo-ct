@@ -164,7 +164,7 @@ export default function KPICatalogsPage() {
                         <td className="font-medium break-words">{u.name}</td>
                         <td className="font-medium">{u.target || '—'}</td>
                         <td>{measurementUnits.find(m => m.id === u.unitId)?.name || u.unitId}</td>
-                        <td>Học kỳ</td>
+                        <td>{u.cycle || 'Học kỳ'}</td>
                         <td><span className={`badge whitespace-nowrap ${u.linkedCatalogId ? 'badge-info' : 'badge-warning'}`}>{u.linkedCatalogId ? 'Phân bổ' : 'Riêng'}</span></td>
                       </tr>
                     ))}

@@ -6,7 +6,7 @@
     "unitId": "mu001",
     "linkedCatalogId": "HPU2-ĐMST01",
     "target": "1",
-    "cycle": "Tháng",
+    "cycle": "Học kỳ",
     "status": "active",
     "orgUnitId": "u102"
   },
@@ -17,7 +17,7 @@
     "unitId": "mu001",
     "linkedCatalogId": "HPU2-ĐT01",
     "target": "1",
-    "cycle": "Tháng",
+    "cycle": "Học kỳ",
     "status": "active",
     "orgUnitId": "u101"
   },
@@ -28,7 +28,7 @@
     "unitId": "mu001",
     "linkedCatalogId": "HPU2-ĐT02",
     "target": "0.6",
-    "cycle": "Tháng",
+    "cycle": "Học kỳ",
     "status": "active",
     "orgUnitId": "u101"
   },
@@ -39,7 +39,7 @@
     "unitId": "mu001",
     "linkedCatalogId": "HPU2-TS02",
     "target": "0.8",
-    "cycle": "Tháng",
+    "cycle": "Học kỳ",
     "status": "active",
     "orgUnitId": "u101"
   },
@@ -50,7 +50,7 @@
     "unitId": "mu001",
     "linkedCatalogId": "HPU2-TS07",
     "target": "0.05",
-    "cycle": "Tháng",
+    "cycle": "Học kỳ",
     "status": "active",
     "orgUnitId": "u101"
   },
@@ -61,7 +61,7 @@
     "unitId": "mu001",
     "linkedCatalogId": "HPU2-TS02",
     "target": "0.8",
-    "cycle": "Tháng",
+    "cycle": "Học kỳ",
     "status": "active",
     "orgUnitId": "u101"
   },
@@ -72,7 +72,7 @@
     "unitId": "mu001",
     "linkedCatalogId": "HPU2-TS01",
     "target": "1",
-    "cycle": "Tháng",
+    "cycle": "Học kỳ",
     "status": "active",
     "orgUnitId": "u101"
   },
@@ -83,7 +83,7 @@
     "unitId": "mu001",
     "linkedCatalogId": "HPU2-ĐT03",
     "target": "1",
-    "cycle": "Tháng",
+    "cycle": "Học kỳ",
     "status": "active",
     "orgUnitId": "u101"
   },
@@ -94,7 +94,7 @@
     "unitId": "mu001",
     "linkedCatalogId": "HPU2-ĐT03",
     "target": "1",
-    "cycle": "Tháng",
+    "cycle": "Học kỳ",
     "status": "active",
     "orgUnitId": "u101"
   },
@@ -105,7 +105,7 @@
     "unitId": "mu016",
     "linkedCatalogId": "HPU2-HT02",
     "target": "1",
-    "cycle": "Tháng",
+    "cycle": "Học kỳ",
     "status": "active",
     "orgUnitId": "u102"
   },
@@ -116,7 +116,7 @@
     "unitId": "mu001",
     "linkedCatalogId": "HPU2-ĐT02",
     "target": "1",
-    "cycle": "Tháng",
+    "cycle": "Học kỳ",
     "status": "active",
     "orgUnitId": "u101"
   },
@@ -127,7 +127,7 @@
     "unitId": "mu001",
     "linkedCatalogId": "HPU2-ĐBCL09",
     "target": "1",
-    "cycle": "Tháng",
+    "cycle": "Học kỳ",
     "status": "active",
     "orgUnitId": "u401"
   },
@@ -138,7 +138,7 @@
     "unitId": "mu001",
     "linkedCatalogId": null,
     "target": "100%",
-    "cycle": "Tháng",
+    "cycle": "Học kỳ",
     "status": "active",
     "orgUnitId": "u101"
   },
@@ -149,7 +149,7 @@
     "unitId": "mu009",
     "linkedCatalogId": null,
     "target": "≥1",
-    "cycle": "Tháng",
+    "cycle": "Học kỳ",
     "status": "active",
     "orgUnitId": "u101"
   },
@@ -160,7 +160,7 @@
     "unitId": "mu001",
     "linkedCatalogId": null,
     "target": "100%",
-    "cycle": "Tháng",
+    "cycle": "Học kỳ",
     "status": "active",
     "orgUnitId": "u101"
   }
