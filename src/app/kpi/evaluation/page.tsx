@@ -1,7 +1,7 @@
 'use client';
 
-import { Fragment, useState, useEffect, useCallback } from 'react';
-import { CheckCircle, Clock, Search, Award, Eye, Lock, Star, Edit, MessageSquare } from 'lucide-react';
+import { Fragment, useState, useEffect, useCallback, useMemo } from 'react';
+import { CheckCircle, Clock, Search, Award, Eye, Lock, Star, MessageSquare } from 'lucide-react';
 import Modal from '@/components/ui/Modal';
 import { apiGet, apiPut, apiPost } from '@/lib/api';
 import unitKpisData from '@/data/unit-kpis.json';
@@ -74,18 +74,43 @@ interface UnitKpi {
   kpis: { id: string; name: string; indicatorId: string | null }[];
 }
 
+interface EnrichedEvaluation extends Evaluation {
+  unitName: string;
+  cycleId: string;
+  yearId: string;
+}
+
+// Dữ liệu plans.json dùng chu kỳ legacy (c001..c004), không có trong cycles.json.
+// Map sang năm học hiện tại của HPU2; c002/c003 thuộc 2024-2025 nên không hiển thị tab.
+const LEGACY_CYCLE_YEAR_MAP: Record<string, string> = {
+  c001: 'ay_hpu2_2025_2026',
+  c004: 'ay_hpu2_2026_2027',
+};
+
+const STATUS_OPTIONS = ['all', 'pending', 'submitted', 'approved'];
+
 function getUnitName(unitId: string): string {
   const unit = (unitKpisData as UnitKpi[]).find(u => u.id === unitId);
   return unit?.name || unitId;
 }
 
+function getYearName(yearId: string): string {
+  const ay = academicYears.find(a => a.id === yearId);
+  return ay?.name ?? yearId;
+}
+
+function gradeForScore(score: number): string {
+  if (score >= 90) return 'Xuất sắc';
+  if (score >= 75) return 'Tốt';
+  if (score >= 60) return 'Đạt';
+  if (score >= 40) return 'Cần cải thiện';
+  return 'Không đạt';
+}
+
 const statusConfig: Record<string, { label: string; color: string; icon: typeof Clock }> = {
   pending: { label: 'Chưa bắt đầu', color: '#9e9e9e', icon: Clock },
-  self_evaluated: { label: 'Tự đánh giá', color: '#2196f3', icon: Star },
-  manager_review: { label: 'Cấp trên đánh giá', color: '#ff9800', icon: Eye },
-  council_review: { label: 'Hội đồng rà soát', color: '#9c27b0', icon: Award },
-  evaluated: { label: 'Đã đánh giá', color: '#4caf50', icon: CheckCircle },
-  locked: { label: 'Đã khóa', color: '#607d8b', icon: Lock },
+  submitted: { label: 'Đã nộp', color: '#2196f3', icon: Star },
+  approved: { label: 'Đã phê duyệt', color: '#4caf50', icon: CheckCircle },
 };
 
 const gradeConfig: Record<string, { color: string; bg: string }> = {
@@ -97,7 +122,7 @@ const gradeConfig: Record<string, { color: string; bg: string }> = {
 };
 
 export default function EvaluationPage() {
-  const [selectedYearId, setSelectedYearId] = useState('ay002');
+  const [selectedYearId, setSelectedYearId] = useState(() => academicYears[0]?.id ?? 'ay_hpu2_2025_2026');
   const [cycles, setCycles] = useState<CycleRecord[]>([]);
   const [evaluations, setEvaluations] = useState<Evaluation[]>([]);
   const [plans, setPlans] = useState<PlanRecord[]>([]);
@@ -105,7 +130,6 @@ export default function EvaluationPage() {
   const [scores, setScores] = useState<ScoreRecord[]>([]);
   const [searchTerm, setSearchTerm] = useState('');
   const [statusFilter, setStatusFilter] = useState('all');
-  const [showDetail, setShowDetail] = useState(false);
   const [showScoreModal, setShowScoreModal] = useState(false);
   const [showLock, setShowLock] = useState(false);
   const [showComplaint, setShowComplaint] = useState(false);
@@ -117,14 +141,16 @@ export default function EvaluationPage() {
 
   const loadData = useCallback(async () => {
     try {
-      const [evalsData, plansData, planItemsData] = await Promise.all([
-        apiGet<Evaluation[]>('/api/evaluation'),
+      const [evalsData, plansData, planItemsData, scoresData] = await Promise.all([
+        apiGet<Evaluation[]>('/api/evaluation?level=unit'),
         apiGet<PlanRecord[]>('/api/plans'),
         apiGet<PlanItemRecord[]>('/api/plan-items'),
+        apiGet<ScoreRecord[]>('/api/scores'),
       ]);
       setEvaluations(evalsData);
       setPlans(plansData);
       setPlanItems(planItemsData);
+      setScores(scoresData);
     } catch { /* empty */ } finally { setLoading(false); }
   }, []);
 
@@ -137,36 +163,73 @@ export default function EvaluationPage() {
 
   useEffect(() => { loadData(); }, [loadData]);
 
-  const cycleYearMap = new Map(cycles.map(c => [c.id, c.academicYearId]));
+  const cycleYearMap = useMemo(() => {
+    const map = new Map<string, string>();
+    cycles.forEach(c => map.set(c.id, c.academicYearId));
+    Object.entries(LEGACY_CYCLE_YEAR_MAP).forEach(([cycleId, yearId]) => {
+      if (!map.has(cycleId)) map.set(cycleId, yearId);
+    });
+    return map;
+  }, [cycles]);
+
   const planMap = new Map(plans.map(p => [p.id, p]));
   const planItemMap = new Map(planItems.map(pi => [pi.id, pi]));
+  const planItemsByPlan = useMemo(() => {
+    const m = new Map<string, PlanItemRecord[]>();
+    planItems.forEach(pi => {
+      const list = m.get(pi.planId) ?? [];
+      list.push(pi);
+      m.set(pi.planId, list);
+    });
+    return m;
+  }, [planItems]);
 
-  const enrichedEvals = evaluations.map(ev => {
+  const enrichedEvals: EnrichedEvaluation[] = useMemo(() => evaluations.map(ev => {
     const plan = planMap.get(ev.planId);
+    const cycleId = plan?.cycleId ?? '';
     return {
       ...ev,
-      unitName: plan ? getUnitName(plan.ownerId) : '',
-      cycleId: plan?.cycleId ?? '',
+      unitName: plan ? getUnitName(plan.ownerId) : ev.unitName ?? '',
+      cycleId,
+      yearId: cycleYearMap.get(cycleId) ?? '',
     };
-  });
+  }), [evaluations, plans, cycleYearMap]);
 
-  const yearFilteredEvals = enrichedEvals.filter(ev => {
-    const yearId = cycleYearMap.get(ev.cycleId);
-    return !yearId || yearId === selectedYearId;
-  });
+  const yearFilteredEvals = useMemo(() => enrichedEvals.filter(ev => ev.yearId === selectedYearId), [enrichedEvals, selectedYearId]);
 
-  const filtered = yearFilteredEvals.filter((ev) => {
+  const filtered = useMemo(() => yearFilteredEvals.filter(ev => {
     const matchesSearch = ev.unitName.toLowerCase().includes(searchTerm.toLowerCase());
     const matchesStatus = statusFilter === 'all' || ev.status === statusFilter;
     return matchesSearch && matchesStatus;
-  });
+  }), [yearFilteredEvals, searchTerm, statusFilter]);
 
-  const loadScores = async (planId: string) => {
-    const data = await apiGet<ScoreRecord[]>(`/api/scores?planId=${planId}`);
-    setScores(data);
+  const itemScore = useCallback((score: ScoreRecord): number | null => {
+    if (score.finalScore != null) return score.finalScore;
+    if (score.councilScore != null) return score.councilScore;
+    if (score.managerScore != null) return score.managerScore;
+    if (score.selfScore != null) return score.selfScore;
+    return null;
+  }, []);
+
+  const unitAvgScore = useCallback((ev: EnrichedEvaluation): number | null => {
+    const items = planItemsByPlan.get(ev.planId) ?? [];
+    const itemIds = new Set(items.map(i => i.id));
+    const values = scores
+      .filter(s => itemIds.has(s.planItemId))
+      .map(itemScore)
+      .filter((v): v is number => v != null);
+    if (values.length === 0) return null;
+    return values.reduce((sum, v) => sum + v, 0) / values.length;
+  }, [scores, planItemsByPlan, itemScore]);
+
+  const handleOpenScoreModal = (ev: Evaluation) => {
+    setSelectedEval(ev);
+    const items = planItemsByPlan.get(ev.planId) ?? [];
+    const itemIds = new Set(items.map(i => i.id));
+    const modalScores = scores.filter(s => itemIds.has(s.planItemId));
     const initEditScores: Record<string, { selfScore: number; managerScore: number; councilScore: number }> = {};
     const initEditChildren: Record<string, PlanItemSubTask[]> = {};
-    data.forEach(s => {
+    modalScores.forEach(s => {
       initEditScores[s.planItemId] = {
         selfScore: s.selfScore ?? 0,
         managerScore: s.managerScore ?? 0,
@@ -177,22 +240,21 @@ export default function EvaluationPage() {
     });
     setEditScores(initEditScores);
     setEditChildren(initEditChildren);
-  };
-
-  const handleOpenScoreModal = async (ev: Evaluation) => {
-    setSelectedEval(ev);
-    await loadScores(ev.planId);
     setShowScoreModal(true);
   };
 
   const handleSaveScores = async () => {
-    for (const score of scores) {
+    if (!selectedEval) return;
+    const items = planItemsByPlan.get(selectedEval.planId) ?? [];
+    const itemIds = new Set(items.map(i => i.id));
+    const modalScores = scores.filter(s => itemIds.has(s.planItemId));
+    for (const score of modalScores) {
       const edits = editScores[score.planItemId];
       if (edits) {
         const payload: Record<string, number | null> = {};
-        const isSelf = selectedEval?.evaluationType === 'self' || selectedEval?.status === 'pending' || selectedEval?.status === 'self_evaluated';
-        const isManager = selectedEval?.evaluationType === 'manager' || selectedEval?.status === 'manager_review';
-        const isCouncil = selectedEval?.evaluationType === 'council' || selectedEval?.status === 'council_review';
+        const isSelf = selectedEval.evaluationType === 'self' || selectedEval.status === 'pending';
+        const isManager = selectedEval.evaluationType === 'manager' || selectedEval.status === 'submitted';
+        const isCouncil = selectedEval.evaluationType === 'council' || selectedEval.status === 'approved';
         if (edits.selfScore !== score.selfScore && (isSelf || score.selfScore !== null || edits.selfScore !== 0)) payload.selfScore = edits.selfScore;
         if (edits.managerScore !== score.managerScore && (isManager || score.managerScore !== null || edits.managerScore !== 0)) payload.managerScore = edits.managerScore;
         if (edits.councilScore !== score.councilScore && (isCouncil || score.councilScore !== null || edits.councilScore !== 0)) payload.councilScore = edits.councilScore;
@@ -218,8 +280,10 @@ export default function EvaluationPage() {
   };
 
   const totalEval = yearFilteredEvals.length;
-  const lockedCount = yearFilteredEvals.filter((e) => e.status === 'locked').length;
-  const pendingCount = yearFilteredEvals.filter((e) => e.status === 'pending' || e.status === 'self_evaluated').length;
+  const lockedCount = yearFilteredEvals.filter(e => e.status === 'approved').length;
+  const pendingCount = yearFilteredEvals.filter(e => e.status === 'pending').length;
+  const avgScores = yearFilteredEvals.map(unitAvgScore).filter((v): v is number => v != null);
+  const avgTotal = avgScores.length > 0 ? (avgScores.reduce((sum, v) => sum + v, 0) / avgScores.length).toFixed(1) : null;
 
   return (
     <div className="space-y-6">
@@ -251,7 +315,7 @@ export default function EvaluationPage() {
         <div className="card p-4">
           <div className="flex items-center gap-3">
             <div className="p-2 bg-accent-green/20 rounded-lg"><Lock size={20} className="text-accent-green" /></div>
-            <div><p className="text-text-light text-sm">Đã khóa</p><p className="text-xl font-bold">{lockedCount}</p></div>
+            <div><p className="text-text-light text-sm">Đã phê duyệt</p><p className="text-xl font-bold">{lockedCount}</p></div>
           </div>
         </div>
         <div className="card p-4">
@@ -263,7 +327,7 @@ export default function EvaluationPage() {
         <div className="card p-4">
           <div className="flex items-center gap-3">
             <div className="p-2 bg-accent-red/20 rounded-lg"><Star size={20} className="text-accent-red" /></div>
-            <div><p className="text-text-light text-sm">Điểm TB</p>            <p className="text-xl font-bold">{scores.length > 0 ? (scores.reduce((sum, s) => sum + (s.finalScore ?? 0), 0) / scores.length).toFixed(1) : '-'}</p></div>
+            <div><p className="text-text-light text-sm">Điểm TB</p><p className="text-xl font-bold">{avgTotal ?? '-'}</p></div>
           </div>
         </div>
       </div>
@@ -275,10 +339,10 @@ export default function EvaluationPage() {
             className="w-full pl-10 pr-4 py-2 rounded-lg border border-border bg-white text-sm focus:outline-none focus:border-primary" />
         </div>
         <div className="flex flex-wrap gap-2">
-          {['all', 'pending', 'self_evaluated', 'manager_review', 'evaluated', 'locked'].map((status) => (
+          {STATUS_OPTIONS.map((status) => (
             <button key={status} onClick={() => setStatusFilter(status)}
               className={`px-3 py-2 rounded-lg text-xs font-medium transition-colors ${statusFilter === status ? 'bg-primary text-white' : 'bg-white border border-border text-text-dark hover:bg-bg-cream'}`}>
-              {status === 'all' ? 'Tất cả' : statusConfig[status]?.label}
+              {status === 'all' ? 'Tất cả' : (statusConfig[status]?.label ?? status)}
             </button>
           ))}
         </div>
@@ -289,29 +353,43 @@ export default function EvaluationPage() {
         <div className="p-0">
           <div className="overflow-x-auto"><table className="table">
             <thead>
-              <tr><th>Mã</th><th>Đơn vị</th><th>Chu kỳ</th><th>Trạng thái</th><th>Thao tác</th></tr>
+              <tr><th>Mã</th><th>Đơn vị</th><th>Năm học</th><th>Điểm</th><th>Xếp loại</th><th>Trạng thái</th><th>Thao tác</th></tr>
             </thead>
             <tbody>
-              {filtered.map((ev) => {
+              {loading ? (
+                <tr><td colSpan={7} className="text-center text-text-light py-6">Đang tải...</td></tr>
+              ) : filtered.length === 0 ? (
+                <tr><td colSpan={7} className="text-center text-text-light py-6">Không có dữ liệu</td></tr>
+              ) : filtered.map((ev) => {
                 const status = statusConfig[ev.status] || statusConfig.pending;
                 const StatusIcon = status.icon;
+                const avg = unitAvgScore(ev);
+                const grade = avg != null ? gradeForScore(avg) : null;
                 return (
                   <tr key={ev.id}>
-                    <td><span className="badge badge-info">{ev.id}</span></td>
+                    <td><span className="badge badge-info">{ev.id.replace(/^EVL_/, '')}</span></td>
                     <td className="font-medium">{ev.unitName}</td>
-                    <td className="text-sm">{ev.cycleId}</td>
+                    <td className="text-sm">{ev.yearId ? getYearName(ev.yearId) : '—'}</td>
+                    <td className={`text-sm font-bold ${avg != null ? 'text-primary' : 'text-text-light'}`}>{avg != null ? avg.toFixed(1) : '-'}</td>
+                    <td>
+                      {grade ? (
+                        <span className="px-2 py-0.5 rounded text-xs font-medium" style={{ color: gradeConfig[grade]?.color ?? '#333', backgroundColor: gradeConfig[grade]?.bg ?? 'transparent' }}>
+                          {grade}
+                        </span>
+                      ) : <span className="text-text-light text-sm">-</span>}
+                    </td>
                     <td>
                       <span className="badge flex items-center gap-1 w-fit" style={{ backgroundColor: `${status.color}20`, color: status.color }}>
                         <StatusIcon size={12} />{status.label}
                       </span>
                     </td>
                     <td>
-                      <div className="flex gap-1">
-                        <button onClick={() => handleOpenScoreModal(ev)} className="p-1 text-primary hover:bg-primary-light rounded" title="Đánh giá"><Eye size={14} /></button>
-                        {ev.status === 'evaluated' && (
-                          <button onClick={() => { setSelectedEval(ev); setShowLock(true); }} className="p-1 text-primary hover:bg-primary-light rounded" title="Khóa kết quả"><Lock size={14} /></button>
+                      <div className="flex flex-wrap gap-1.5">
+                        <button onClick={() => handleOpenScoreModal(ev)} className="inline-flex items-center gap-1 px-2 py-1 text-xs text-primary hover:bg-primary-light rounded border border-primary/30" title="Đánh giá"><Eye size={12} /> Đánh giá</button>
+                        {ev.status !== 'approved' && (
+                          <button onClick={() => { setSelectedEval(ev); setShowLock(true); }} className="inline-flex items-center gap-1 px-2 py-1 text-xs text-primary hover:bg-primary-light rounded border border-primary/30" title="Phê duyệt"><Lock size={12} /> Phê duyệt</button>
                         )}
-                        <button onClick={() => { setSelectedEval(ev); setComplaintContent(''); setShowComplaint(true); }} className="p-1 text-orange-600 hover:bg-orange-50 rounded" title="Khiếu nại"><MessageSquare size={14} /></button>
+                        <button onClick={() => { setSelectedEval(ev); setComplaintContent(''); setShowComplaint(true); }} className="inline-flex items-center gap-1 px-2 py-1 text-xs text-orange-600 hover:bg-orange-50 rounded border border-orange-300" title="Khiếu nại"><MessageSquare size={12} /> Khiếu nại</button>
                       </div>
                     </td>
                   </tr>
@@ -323,82 +401,91 @@ export default function EvaluationPage() {
       </div>
 
       <Modal isOpen={showScoreModal} onClose={() => { setShowScoreModal(false); setSelectedEval(null); }} title="Đánh giá chi tiết" maxWidth="max-w-4xl">
-        {selectedEval && (
-          <div className="space-y-4">
-            <div className="flex items-center justify-between">
-              <span className="text-xs text-text-light">{getUnitName(planMap.get(selectedEval.planId)?.ownerId ?? '')} • {planMap.get(selectedEval.planId)?.cycleId ?? ''}</span>
-            </div>
-            <div className="overflow-x-auto"><table className="table">
-              <thead>
-                <tr><th>Chỉ tiêu & Nhiệm vụ con</th><th>Tự ĐG</th><th>Cấp trên</th><th>Hội đồng</th><th>Tổng</th><th>Tỷ lệ đạt</th></tr>
-              </thead>
-              <tbody>
-                {scores.map((score) => {
-                  const pi = planItemMap.get(score.planItemId);
-                  const edits = editScores[score.planItemId] || { selfScore: 0, managerScore: 0, councilScore: 0 };
-                  const children = editChildren[score.planItemId];
-                  return (
-                    <Fragment key={score.id}>
-                      <tr>
-                        <td className="font-medium text-sm">{pi?.name || pi?.indicatorId || score.planItemId}</td>
-                        <td>
-                          <input type="number" value={edits.selfScore} onChange={(e) => setEditScores(prev => ({ ...prev, [score.planItemId]: { ...prev[score.planItemId], selfScore: Number(e.target.value) } }))}
-                            className="w-20 px-2 py-1 rounded border border-border text-sm text-center" min={0} max={120} />
-                        </td>
-                        <td>
-                          <input type="number" value={edits.managerScore} onChange={(e) => setEditScores(prev => ({ ...prev, [score.planItemId]: { ...prev[score.planItemId], managerScore: Number(e.target.value) } }))}
-                            className="w-20 px-2 py-1 rounded border border-border text-sm text-center" min={0} max={120} />
-                        </td>
-                        <td>
-                          <input type="number" value={edits.councilScore} onChange={(e) => setEditScores(prev => ({ ...prev, [score.planItemId]: { ...prev[score.planItemId], councilScore: Number(e.target.value) } }))}
-                            className="w-20 px-2 py-1 rounded border border-border text-sm text-center" min={0} max={120} />
-                        </td>
-                        <td className="text-center font-bold text-primary">{score.finalScore ?? '-'}</td>
-                        <td className="text-center text-text-light text-xs">-</td>
-                      </tr>
-                      {children?.map((child, idx) => (
-                        <tr key={child.id} className="bg-bg-cream/40">
-                          <td colSpan={5} className="text-xs pl-6 pr-2 align-top">
-                            <div className="flex flex-wrap items-center gap-x-3 gap-y-0.5">
-                              <span className="font-medium text-text-dark">{child.id}</span>
-                              <span className="text-text-dark">{child.name}</span>
-                              <span className="text-text-light">• {child.owner}</span>
-                              <span className="text-text-light">• hạn {child.dueDate}</span>
-                              {child.evidence && <span className="text-primary/80 max-w-xs truncate" title={child.evidence}>• {child.evidence}</span>}
-                            </div>
+        {selectedEval && (() => {
+          const plan = planMap.get(selectedEval.planId);
+          const items = planItemsByPlan.get(selectedEval.planId) ?? [];
+          const itemIds = new Set(items.map(i => i.id));
+          const modalScores = scores.filter(s => itemIds.has(s.planItemId));
+          return (
+            <div className="space-y-4">
+              <div className="flex items-center justify-between">
+                <span className="text-xs text-text-light">{getUnitName(plan?.ownerId ?? '')} • {plan ? getYearName(cycleYearMap.get(plan.cycleId) ?? '') || plan.cycleId : selectedEval.planId}</span>
+              </div>
+              <div className="overflow-x-auto"><table className="table">
+                <thead>
+                  <tr><th>Chỉ tiêu & Nhiệm vụ con</th><th>Tự ĐG</th><th>Cấp trên</th><th>Hội đồng</th><th>Tổng</th><th>Tỷ lệ đạt</th></tr>
+                </thead>
+                <tbody>
+                  {modalScores.map((score) => {
+                    const pi = planItemMap.get(score.planItemId);
+                    const edits = editScores[score.planItemId] || { selfScore: 0, managerScore: 0, councilScore: 0 };
+                    const children = editChildren[score.planItemId];
+                    const total = itemScore(score);
+                    const doneCount = (pi?.children ?? []).filter(c => c.status === 'ĐẠT').length;
+                    const ratioPct = pi?.children?.length ? `${Math.round((doneCount / pi.children.length) * 100)}%` : '-';
+                    return (
+                      <Fragment key={score.id}>
+                        <tr>
+                          <td className="font-medium text-sm">{pi?.name || pi?.indicatorId || score.planItemId}</td>
+                          <td>
+                            <input type="number" value={edits.selfScore} onChange={(e) => setEditScores(prev => ({ ...prev, [score.planItemId]: { ...prev[score.planItemId], selfScore: Number(e.target.value) } }))}
+                              className="w-20 px-2 py-1 rounded border border-border text-sm text-center" min={0} max={120} />
                           </td>
-                          <td className="text-xs align-top">
-                            <div className="flex items-center gap-1.5">
-                              <input type="number" value={child.ratio ?? ''} min={0} max={2} step={0.01}
-                                onChange={(e) => { const ratio = e.target.value === '' ? null : Number(e.target.value); setEditChildren(prev => ({ ...prev, [score.planItemId]: (prev[score.planItemId] || []).map((c, i) => i === idx ? { ...c, ratio, status: ratio !== null && ratio >= 1 ? 'ĐẠT' : 'CHƯA ĐẠT' } : c) })); }}
-                                className="w-16 px-1 py-0.5 rounded border border-border text-sm text-center" />
-                              <span className={`px-1.5 py-0.5 rounded text-[10px] font-medium ${child.status === 'ĐẠT' ? 'bg-accent-green/20 text-accent-green' : 'bg-accent-red/20 text-accent-red'}`}>{child.status}</span>
-                            </div>
+                          <td>
+                            <input type="number" value={edits.managerScore} onChange={(e) => setEditScores(prev => ({ ...prev, [score.planItemId]: { ...prev[score.planItemId], managerScore: Number(e.target.value) } }))}
+                              className="w-20 px-2 py-1 rounded border border-border text-sm text-center" min={0} max={120} />
                           </td>
+                          <td>
+                            <input type="number" value={edits.councilScore} onChange={(e) => setEditScores(prev => ({ ...prev, [score.planItemId]: { ...prev[score.planItemId], councilScore: Number(e.target.value) } }))}
+                              className="w-20 px-2 py-1 rounded border border-border text-sm text-center" min={0} max={120} />
+                          </td>
+                          <td className="text-center font-bold text-primary">{total != null ? total : '-'}</td>
+                          <td className="text-center text-text-light text-xs">{ratioPct}</td>
                         </tr>
-                      ))}
-                    </Fragment>
-                  );
-                })}
-              </tbody>
-            </table></div>
-            <div className="flex justify-end gap-2 pt-4 border-t">
-              <button onClick={() => { setShowScoreModal(false); setSelectedEval(null); }} className="btn-secondary">Hủy</button>
-              <button onClick={handleSaveScores} className="btn-primary">Lưu điểm số</button>
+                        {children?.map((child, idx) => (
+                          <tr key={child.id} className="bg-bg-cream/40">
+                            <td colSpan={5} className="text-xs pl-6 pr-2 align-top">
+                              <div className="flex flex-wrap items-center gap-x-3 gap-y-0.5">
+                                <span className="font-medium text-text-dark">{child.id}</span>
+                                <span className="text-text-dark">{child.name}</span>
+                                <span className="text-text-light">• {child.owner}</span>
+                                <span className="text-text-light">• hạn {child.dueDate}</span>
+                                {child.evidence && <span className="text-primary/80 max-w-xs truncate" title={child.evidence}>• {child.evidence}</span>}
+                              </div>
+                            </td>
+                            <td className="text-xs align-top">
+                              <div className="flex items-center gap-1.5">
+                                <input type="number" value={child.ratio ?? ''} min={0} max={2} step={0.01}
+                                  onChange={(e) => { const ratio = e.target.value === '' ? null : Number(e.target.value); setEditChildren(prev => ({ ...prev, [score.planItemId]: (prev[score.planItemId] || []).map((c, i) => i === idx ? { ...c, ratio, status: ratio !== null && ratio >= 1 ? 'ĐẠT' : 'CHƯA ĐẠT' } : c) })); }}
+                                  className="w-16 px-1 py-0.5 rounded border border-border text-sm text-center" />
+                                <span className={`px-1.5 py-0.5 rounded text-[10px] font-medium ${child.status === 'ĐẠT' ? 'bg-accent-green/20 text-accent-green' : 'bg-accent-red/20 text-accent-red'}`}>{child.status}</span>
+                              </div>
+                            </td>
+                          </tr>
+                        ))}
+                      </Fragment>
+                    );
+                  })}
+                </tbody>
+              </table></div>
+              <div className="flex justify-end gap-2 pt-4 border-t">
+                <button onClick={() => { setShowScoreModal(false); setSelectedEval(null); }} className="btn-secondary">Hủy</button>
+                <button onClick={handleSaveScores} className="btn-primary">Lưu điểm số</button>
+              </div>
             </div>
-          </div>
-        )}
+          );
+        })()}
       </Modal>
 
-      <Modal isOpen={showLock} onClose={() => { setShowLock(false); setSelectedEval(null); }} title="Khóa kết quả đánh giá">
+      <Modal isOpen={showLock} onClose={() => { setShowLock(false); setSelectedEval(null); }} title="Phê duyệt kết quả đánh giá">
         <div className="space-y-4">
           <div className="p-4 bg-bg-cream rounded-lg border border-border">
-            <div className="font-medium text-sm mb-2">Xác nhận khóa kết quả</div>
-            <div className="text-xs text-text-light">Sau khi khóa, kết quả đánh giá không thể chỉnh sửa.</div>
+            <div className="font-medium text-sm mb-2">Xác nhận phê duyệt kết quả</div>
+            <div className="text-xs text-text-light">Sau khi phê duyệt, kết quả chuyển trạng thái Đã phê duyệt.</div>
           </div>
           <div className="flex justify-end gap-2 pt-4 border-t">
             <button onClick={() => { setShowLock(false); setSelectedEval(null); }} className="btn-secondary">Hủy</button>
-            <button onClick={handleLock} className="btn-primary flex items-center gap-2"><Lock size={14} /> Khóa kết quả</button>
+            <button onClick={handleLock} className="btn-primary flex items-center gap-2"><Lock size={14} /> Phê duyệt</button>
           </div>
         </div>
       </Modal>
