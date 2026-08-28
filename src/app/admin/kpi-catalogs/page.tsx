@@ -183,7 +183,10 @@ export default function KPICatalogsPage() {
 
 function AssignButton() {
   return (
-    <button className="px-2 py-1 text-xs rounded border border-primary text-primary hover:bg-primary-light flex items-center gap-1">
+    <button
+      onClick={() => confirm('Chuyển qua chức năng Giao việc của eOffice để phân công nhiệm vụ này?')}
+      className="px-2 py-1 text-xs rounded border border-primary text-primary hover:bg-primary-light flex items-center gap-1"
+    >
       <Send size={12} /> Giao việc
     </button>
   );
