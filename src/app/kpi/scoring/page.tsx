@@ -9,6 +9,7 @@ import planItemsData from '@/data/plan-items.json';
 import plansData from '@/data/plans.json';
 import individualEvalsData from '@/data/individual-evaluations.json';
 import unitsData from '@/data/units.json';
+import unitKpisData from '@/data/unit-kpis.json';
 import usersData from '@/data/users.json';
 import gradingLevelsData from '@/data/grading-levels.json';
 import exemptionCoefficients from '@/data/exemption-coefficients.json';
@@ -43,7 +44,8 @@ interface IndividualScore {
 }
 
 const unitMap: Record<string, string> = {};
-(unitsData as { id: string; name: string; type: string }[]).forEach(u => { unitMap[u.id] = u.name; });
+(unitsData as { id: string; name: string; type: string }[]).forEach(u => { if (!unitMap[u.id]) unitMap[u.id] = u.name; });
+(unitKpisData as { id: string; name: string }[]).forEach(u => { if (!unitMap[u.id]) unitMap[u.id] = u.name; });
 
 const gradeConfig: Record<string, { label: string; color: string; bg: string }> = {};
 (gradingLevelsData as { name: string; color: string }[]).forEach(g => { gradeConfig[g.name] = { label: g.name, color: g.color, bg: `${g.color}20` }; });
