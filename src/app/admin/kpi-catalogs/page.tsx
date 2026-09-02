@@ -93,7 +93,7 @@ export default function KPICatalogsPage() {
   const schoolColumns = [
     { key: 'code', label: 'Mã', width: 'w-[8%]', render: (s: SchoolKPICatalog) => s.code },
     { key: 'name', label: 'Nội dung chỉ tiêu', width: 'w-[34%]', render: (s: SchoolKPICatalog) => <span className="font-medium break-words">{s.name}</span> },
-    { key: 'target', label: 'Chỉ tiêu năm', width: 'w-[16%]', render: (s: SchoolKPICatalog) => <span className="font-medium">{s.target || 'Theo QĐ'}</span> },
+    { key: 'target', label: 'Chỉ tiêu năm', width: 'w-[16%]', render: (s: SchoolKPICatalog) => <span className="font-medium">{s.target || 'Theo QĐ 1480/QĐ-ĐHSPHN2'}</span> },
     { key: 'unitId', label: 'ĐVT', width: 'w-[12%]', render: (s: SchoolKPICatalog) => unitName(s.unitId) },
     { key: 'cycle', label: 'Chu kỳ', width: 'w-[12%]', render: (s: SchoolKPICatalog) => s.cycle || 'Năm học' },
     { key: 'actions', label: 'Thao tác', width: 'w-[8%]', render: (s: SchoolKPICatalog) => (
