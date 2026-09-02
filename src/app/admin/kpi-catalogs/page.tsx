@@ -1,8 +1,9 @@
 'use client';
 
-import { useState, useEffect, useMemo, useCallback, Fragment } from 'react';
-import { Target, Building, Plus, Edit, Trash2, CalendarPlus, FileText, FileSpreadsheet, FileOutput } from 'lucide-react';
+import { useState, useEffect, useMemo, useCallback } from 'react';
+import { Target, Building, Plus, Edit, Trash2, CalendarPlus } from 'lucide-react';
 import Modal from '@/components/ui/Modal';
+import PagedTable from '@/components/ui/PagedTable';
 import { apiGet, apiPost, apiPut, apiDelete } from '@/lib/api';
 import { SchoolCatalogForm, UnitCatalogForm } from '@/components/forms/kpi-catalog-forms';
 import type { SchoolKPICatalog, KPIGroupCatalog, UnitKPICatalog } from '@/types';
@@ -87,6 +88,33 @@ export default function KPICatalogsPage() {
     [schoolCatalog, catalogGroupFilter]
   );
 
+  const unitName = (id?: string) => measurementUnits.find(m => m.id === id)?.name || id || '—';
+
+  const schoolColumns = [
+    { key: 'code', label: 'Mã', width: 'w-[8%]', render: (s: SchoolKPICatalog) => s.code },
+    { key: 'name', label: 'Nội dung chỉ tiêu', width: 'w-[34%]', render: (s: SchoolKPICatalog) => <span className="font-medium break-words">{s.name}</span> },
+    { key: 'target', label: 'Chỉ tiêu năm', width: 'w-[16%]', render: (s: SchoolKPICatalog) => <span className="font-medium">{s.target || 'Theo QĐ'}</span> },
+    { key: 'unitId', label: 'ĐVT', width: 'w-[12%]', render: (s: SchoolKPICatalog) => unitName(s.unitId) },
+    { key: 'cycle', label: 'Chu kỳ', width: 'w-[12%]', render: (s: SchoolKPICatalog) => s.cycle || 'Năm học' },
+    { key: 'actions', label: 'Thao tác', width: 'w-[8%]', render: (s: SchoolKPICatalog) => (
+      <div className="flex justify-center gap-1">
+        <button onClick={() => { setEditId(s.id); setShowModal(true); }} className="p-1 text-accent-yellow hover:bg-accent-yellow/10 rounded"><Edit size={14} /></button>
+        <button onClick={() => handleDelete(s.id)} className="p-1 text-accent-red hover:bg-accent-red/10 rounded"><Trash2 size={14} /></button>
+      </div>
+    ) },
+  ];
+
+  const unitColumns = [
+    { key: 'code', label: 'Mã', width: 'w-[8%]', render: (u: UnitKPICatalog) => u.code },
+    { key: 'name', label: 'Nội dung chỉ tiêu', width: 'w-[34%]', render: (u: UnitKPICatalog) => <span className="font-medium break-words">{u.name}</span> },
+    { key: 'target', label: 'Chỉ tiêu năm', width: 'w-[16%]', render: (u: UnitKPICatalog) => <span className="font-medium">{u.target || '—'}</span> },
+    { key: 'unitId', label: 'ĐVT', width: 'w-[12%]', render: (u: UnitKPICatalog) => unitName(u.unitId) },
+    { key: 'cycle', label: 'Chu kỳ', width: 'w-[12%]', render: (u: UnitKPICatalog) => u.cycle || 'Học kỳ' },
+    { key: 'type', label: 'Loại', width: 'w-[10%]', render: (u: UnitKPICatalog) => (
+      <span className={`badge whitespace-nowrap ${u.linkedCatalogId ? 'badge-info' : 'badge-warning'}`}>{u.linkedCatalogId ? 'Phân bổ' : 'Riêng'}</span>
+    ) },
+  ];
+
   return (
     <div className="space-y-4">
       <h1 className="text-2xl font-heading font-bold text-text-dark">Bộ chỉ tiêu KPI</h1>
@@ -105,74 +133,55 @@ export default function KPICatalogsPage() {
       </div>
 
       <div className="card p-3 flex flex-wrap items-center gap-2">
-        <select value={catalogGroupFilter || ''} onChange={e => setCatalogGroupFilter(e.target.value || null)}
-          className="px-3 py-2 rounded-lg border border-border bg-white text-text-dark text-sm focus:outline-none focus:border-primary">
-          <option value="">Tất cả lĩnh vực</option>
-          {kpiGroups.map(g => <option key={g.id} value={g.id}>{g.name}</option>)}
-        </select>
+        <div className="flex items-center gap-2">
+          <select value={catalogGroupFilter || ''} onChange={e => setCatalogGroupFilter(e.target.value || null)}
+            className="px-3 py-2 rounded-lg border border-border bg-white text-text-dark text-sm focus:outline-none focus:border-primary">
+            <option value="">Tất cả lĩnh vực</option>
+            {kpiGroups.map(g => <option key={g.id} value={g.id}>{g.name}</option>)}
+          </select>
+          <button onClick={() => { setEditId(null); setShowModal(true); }} className="btn-primary text-sm flex items-center gap-1">
+            <Plus size={15} /> Thêm
+          </button>
+          <button className="btn-primary text-sm flex items-center gap-1" onClick={() => {}}>
+            <CalendarPlus size={15} /> Lập kế hoạch
+          </button>
+        </div>
         <div className="flex-1" />
-        <button onClick={() => { setEditId(null); setShowModal(true); }} className="btn-primary text-sm flex items-center gap-1">
-          <Plus size={15} /> Thêm
-        </button>
-        <button className="btn-secondary text-sm flex items-center gap-1" onClick={() => {}}>
-          <CalendarPlus size={15} /> Lập kế hoạch
-        </button>
-        <button className="btn-secondary text-sm flex items-center gap-1" onClick={() => {}}>
-          <FileText size={15} /> Xuất word
-        </button>
-        <button className="btn-secondary text-sm flex items-center gap-1" onClick={() => {}}>
-          <FileSpreadsheet size={15} /> Xuất excel
-        </button>
-        <button className="btn-secondary text-sm flex items-center gap-1" onClick={() => {}}>
-          <FileOutput size={15} /> Xuất pdf
-        </button>
+        <div className="flex items-center gap-2">
+          <button className="btn-primary text-sm flex items-center gap-1" onClick={() => {}}>
+            <img src="/images/word.png" alt="Word" className="h-4 w-4 object-contain" /> Xuất word
+          </button>
+          <button className="btn-primary text-sm flex items-center gap-1" onClick={() => {}}>
+            <img src="/images/excel.png" alt="Excel" className="h-4 w-4 object-contain" /> Xuất excel
+          </button>
+          <button className="btn-primary text-sm flex items-center gap-1" onClick={() => {}}>
+            <img src="/images/pdf.png" alt="PDF" className="h-4 w-4 object-contain" /> Xuất pdf
+          </button>
+        </div>
       </div>
 
       <div className="card">
         <div className="p-0">
           {tab === 'school-catalog' && (
-            <table className="table table-fixed">
-              <thead><tr><th className="w-[4%]">STT</th><th className="w-[38%]">Nội dung chỉ tiêu</th><th className="w-[16%]">Chỉ tiêu năm</th><th className="w-[12%]">ĐVT</th><th className="w-[12%]">Chu kỳ</th><th className="w-[8%]">Thao tác</th></tr></thead>
-              <tbody>
-                {visibleSchool.map((s, idx) => (
-                  <tr key={s.id}>
-                    <td>{idx + 1}</td>
-                    <td className="font-medium break-words">{s.name}</td>
-                    <td className="font-medium">{s.target || 'Theo QĐ'}</td>
-                    <td>{measurementUnits.find(m => m.id === s.unitId)?.name || s.unitId}</td>
-                    <td>{s.cycle || 'Năm học'}</td>
-                    <td><Actions id={s.id} onEdit={() => { setEditId(s.id); setShowModal(true); }} onDelete={() => handleDelete(s.id)} /></td>
-                  </tr>
-                ))}
-                {visibleSchool.length === 0 && <tr><td colSpan={6} className="text-center text-text-light text-sm py-8">Chưa có dữ liệu</td></tr>}
-              </tbody>
-            </table>
+            <PagedTable
+              data={visibleSchool}
+              rowKey={s => s.id}
+              pageSize={10}
+              groupBy={s => kpiGroups.find(g => g.id === s.categoryId)?.name || 'Khác'}
+              columns={schoolColumns}
+            />
           )}
           {tab === 'unit-catalog' && (
-            <table className="table table-fixed">
-              <thead><tr><th className="w-[4%]">STT</th><th className="w-[38%]">Nội dung chỉ tiêu</th><th className="w-[16%]">Chỉ tiêu năm</th><th className="w-[12%]">ĐVT</th><th className="w-[12%]">Chu kỳ</th><th className="w-[10%]">Loại</th></tr></thead>
-              <tbody>
-                {Array.from(filteredUnitGroups).map(([groupName, items]) => (
-                  <Fragment key={groupName}>
-                    <tr className="bg-bg-cream">
-                      <td></td>
-                      <td colSpan={5} className="font-semibold text-primary">{groupName}</td>
-                    </tr>
-                    {items.map((u, idx) => (
-                      <tr key={u.id}>
-                        <td>{idx + 1}</td>
-                        <td className="font-medium break-words">{u.name}</td>
-                        <td className="font-medium">{u.target || '—'}</td>
-                        <td>{measurementUnits.find(m => m.id === u.unitId)?.name || u.unitId}</td>
-                        <td>{u.cycle || 'Học kỳ'}</td>
-                        <td><span className={`badge whitespace-nowrap ${u.linkedCatalogId ? 'badge-info' : 'badge-warning'}`}>{u.linkedCatalogId ? 'Phân bổ' : 'Riêng'}</span></td>
-                      </tr>
-                    ))}
-                  </Fragment>
-                ))}
-                {filteredUnitGroups.size === 0 && <tr><td colSpan={6} className="text-center text-text-light text-sm py-8">Chưa có dữ liệu</td></tr>}
-              </tbody>
-            </table>
+            <PagedTable
+              data={Array.from(filteredUnitGroups).flatMap(([, items]) => items)}
+              rowKey={u => u.id}
+              pageSize={10}
+              groupBy={u => {
+                const catId = u.linkedCatalogId ? (schoolCatalog.find(s => s.id === u.linkedCatalogId)?.categoryId || '') : '';
+                return u.linkedCatalogId ? (kpiGroups.find(g => g.id === catId)?.name || 'Khác') : 'KPI riêng';
+              }}
+              columns={unitColumns}
+            />
           )}
         </div>
       </div>
@@ -182,15 +191,6 @@ export default function KPICatalogsPage() {
         {tab === 'school-catalog' && <SchoolCatalogForm item={editId ? (schoolCatalog.find(s => s.id === editId) || null) : null} groups={groupCatalog} units={measurementUnits} onSubmit={handleSave} onCancel={() => { setShowModal(false); setEditId(null); }} />}
         {tab === 'unit-catalog' && <UnitCatalogForm item={null} orgUnits={orgUnits.filter(o => o.id !== 'u001')} units={measurementUnits} onSubmit={handleSave} onCancel={() => { setShowModal(false); setEditId(null); }} />}
       </Modal>
-    </div>
-  );
-}
-
-function Actions({ id, onEdit, onDelete }: { id: string; onEdit: () => void; onDelete: () => void }) {
-  return (
-    <div className="flex justify-center gap-1">
-      <button onClick={onEdit} className="p-1 text-accent-yellow hover:bg-accent-yellow/10 rounded"><Edit size={14} /></button>
-      <button onClick={onDelete} className="p-1 text-accent-red hover:bg-accent-red/10 rounded"><Trash2 size={14} /></button>
     </div>
   );
 }
