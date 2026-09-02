@@ -1,57 +1,105 @@
 [
   {
+    "id": "grp_quan_tri",
+    "code": "QT",
+    "name": "Quản trị",
+    "defaultWeight": 8,
+    "targetLevel": "school",
+    "status": "active"
+  },
+  {
+    "id": "grp_cchc",
+    "code": "CCHC",
+    "name": "Cải cách hành chính",
+    "defaultWeight": 6,
+    "targetLevel": "school",
+    "status": "active"
+  },
+  {
+    "id": "grp_tuyen_sinh",
+    "code": "TS",
+    "name": "Tuyển sinh",
+    "defaultWeight": 8,
+    "targetLevel": "school",
+    "status": "active"
+  },
+  {
     "id": "grp_dao_tao",
     "code": "DT",
-    "name": "Đào tạo và đảm bảo chất lượng giáo dục",
-    "defaultWeight": 30,
+    "name": "Đào tạo",
+    "defaultWeight": 12,
+    "targetLevel": "school",
+    "status": "active"
+  },
+  {
+    "id": "grp_khao_thi",
+    "code": "KTDBCL",
+    "name": "Khảo thí và đảm bảo chất lượng giáo dục",
+    "defaultWeight": 10,
+    "targetLevel": "school",
+    "status": "active"
+  },
+  {
+    "id": "grp_quoc_te",
+    "code": "QTH",
+    "name": "Quốc tế hóa giáo dục đại học",
+    "defaultWeight": 8,
     "targetLevel": "school",
     "status": "active"
   },
   {
     "id": "grp_khcn",
     "code": "KHCN",
-    "name": "KHCN, đổi mới sáng tạo và sở hữu trí tuệ",
-    "defaultWeight": 20,
+    "name": "Nghiên cứu khoa học, đổi mới sáng tạo và chuyển giao công nghệ",
+    "defaultWeight": 12,
     "targetLevel": "school",
     "status": "active"
   },
   {
-    "id": "grp_doi_ngu",
-    "code": "DN",
-    "name": "Đội ngũ, nhân lực và phát triển giảng viên",
-    "defaultWeight": 15,
-    "targetLevel": "school",
-    "status": "active"
-  },
-  {
-    "id": "grp_quoc_te",
-    "code": "QT",
-    "name": "Hợp tác quốc tế và trao đổi học thuật",
-    "defaultWeight": 10,
-    "targetLevel": "school",
-    "status": "active"
-  },
-  {
-    "id": "grp_quan_tri",
-    "code": "QT",
-    "name": "Quản trị đại học, tài chính và phát triển bền vững",
-    "defaultWeight": 10,
+    "id": "grp_khoi_nghiep",
+    "code": "DKST",
+    "name": "Đổi mới sáng tạo, khởi nghiệp và hệ sinh thái EdTech",
+    "defaultWeight": 6,
     "targetLevel": "school",
     "status": "active"
   },
   {
     "id": "grp_chuyen_so",
     "code": "CDS",
-    "name": "Chuyển đổi số và quản trị số",
-    "defaultWeight": 10,
+    "name": "Chuyển đổi số và dữ liệu",
+    "defaultWeight": 8,
+    "targetLevel": "school",
+    "status": "active"
+  },
+  {
+    "id": "grp_hoc_lieu_so",
+    "code": "BDHVS",
+    "name": "Bình dân học vụ số và học liệu số",
+    "defaultWeight": 5,
+    "targetLevel": "school",
+    "status": "active"
+  },
+  {
+    "id": "grp_doi_ngu",
+    "code": "DN",
+    "name": "Chất lượng giảng viên và nguồn nhân lực",
+    "defaultWeight": 8,
     "targetLevel": "school",
     "status": "active"
   },
   {
     "id": "grp_phuc_vu",
-    "code": "PV",
-    "name": "Phục vụ cộng đồng và gắn kết địa phương/doanh nghiệp",
+    "code": "HTDN",
+    "name": "Hợp tác với doanh nghiệp, Sở GD&ĐT, cơ sở giáo dục, đào tạo",
     "defaultWeight": 5,
+    "targetLevel": "school",
+    "status": "active"
+  },
+  {
+    "id": "grp_thi_dua",
+    "code": "TDKT",
+    "name": "Thi đua, khen thưởng và nhân rộng mô hình",
+    "defaultWeight": 4,
     "targetLevel": "school",
     "status": "active"
   }
