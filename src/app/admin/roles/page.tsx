@@ -65,7 +65,6 @@ export default function RolesPage() {
       <div className="flex items-center justify-between">
         <div>
           <h1 className="text-2xl font-heading font-bold text-text-dark">Phân quyền hệ thống</h1>
-          <p className="text-text-light mt-1">Quản lý vai trò và ma trận quyền hạn</p>
         </div>
       </div>
 

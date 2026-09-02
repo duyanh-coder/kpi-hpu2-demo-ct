@@ -10,7 +10,6 @@ export default function ResearcherPage() {
         <div className="p-2 bg-primary-light rounded-lg"><Microscope size={24} className="text-primary" /></div>
         <div>
           <h1 className="text-2xl font-heading font-bold text-text-dark">Quản lý KPI nghiên cứu viên</h1>
-          <p className="text-text-light text-sm">XX.13 — Quản lý bộ chỉ tiêu KPI cho nghiên cứu viên</p>
         </div>
       </div>
       <PositionKPIPage config={{

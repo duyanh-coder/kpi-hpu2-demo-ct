@@ -85,7 +85,6 @@ export default function NotificationsPage() {
           <h1 className="text-2xl font-heading font-bold text-text-dark flex items-center gap-2">
             <Bell size={24} /> Thông báo hệ thống
           </h1>
-          <p className="text-text-light mt-1">Quản lý thông báo, nhắc việc và cảnh báo (XIX.1-XIX.5)</p>
         </div>
         <div className="flex gap-2">
           <button onClick={handleMarkAllRead} className="px-3 py-2 border rounded-lg text-sm flex items-center gap-1 hover:bg-bg-cream">

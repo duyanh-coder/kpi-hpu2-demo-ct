@@ -215,7 +215,6 @@ export default function EvidencesPage() {
       <div className="flex items-center justify-between flex-wrap gap-4">
         <div>
           <h1 className="text-2xl font-heading font-bold text-text-dark">Quản lý Minh chứng số</h1>
-          <p className="text-text-light mt-1">Tải lên, liên kết, kiểm tra và quản lý kho minh chứng (XI.1-XI.6)</p>
         </div>
         <div className="flex gap-2">
           <button onClick={() => setShowIntegration(true)} className="px-4 py-2 border border-border rounded-lg text-sm hover:bg-bg-cream flex items-center gap-2"><Server size={16} /> Lấy từ hệ thống tích hợp</button>

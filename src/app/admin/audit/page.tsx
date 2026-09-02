@@ -81,7 +81,6 @@ export default function AuditPage() {
       <div className="flex items-center justify-between">
         <div>
           <h1 className="text-2xl font-heading font-bold text-text-dark">Nhật ký hệ thống</h1>
-          <p className="text-text-light mt-1">Theo dõi và truy vết mọi thao tác trên hệ thống</p>
         </div>
         <button className="btn-secondary flex items-center gap-2">
           <Download size={16} />

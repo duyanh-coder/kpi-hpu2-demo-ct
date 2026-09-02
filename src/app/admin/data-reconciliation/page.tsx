@@ -69,7 +69,6 @@ export default function DataReconciliationPage() {
       <div className="flex items-center justify-between">
         <div>
           <h1 className="text-2xl font-heading font-bold text-text-dark">Đối soát dữ liệu nguồn</h1>
-          <p className="text-text-light mt-1">So sánh chỉ tiêu KPI giữa kế hoạch và thực tế (XXI.16)</p>
         </div>
       </div>
 

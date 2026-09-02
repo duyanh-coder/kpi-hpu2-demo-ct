@@ -10,7 +10,6 @@ export default function DigitalTransformationPage() {
         <div className="p-2 bg-primary-light rounded-lg"><Monitor size={24} className="text-primary" /></div>
         <div>
           <h1 className="text-2xl font-heading font-bold text-text-dark">Quản lý KPI chuyển đổi số</h1>
-          <p className="text-text-light text-sm">XX.9 — Theo dõi chỉ tiêu quy trình mạng, ký số, giảng dạy trực tuyến</p>
         </div>
       </div>
       <DomainKPIPage config={{

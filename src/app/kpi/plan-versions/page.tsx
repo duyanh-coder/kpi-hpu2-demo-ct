@@ -80,7 +80,6 @@ export default function PlanVersionsPage() {
       <div className="flex items-center justify-between">
         <div>
           <h1 className="text-2xl font-heading font-bold text-text-dark">Lịch sử phiên bản</h1>
-          <p className="text-text-light mt-1">Theo dõi thay đổi và so sánh phiên bản kế hoạch</p>
         </div>
         {selectedIds.length === 2 && (
           <div className="flex items-center gap-2 text-sm text-primary font-medium">

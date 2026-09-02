@@ -116,7 +116,6 @@ export default function CyclesPage() {
           <h1 className="text-2xl font-heading font-bold text-text-dark flex items-center gap-2">
             <Clock size={24} /> Chu kỳ KPI
           </h1>
-          <p className="text-text-light mt-1">Quản lý chu kỳ đánh giá KPI theo năm học</p>
         </div>
         <button onClick={() => { setEditCycle(null); setShowModal(true); }} className="btn-primary text-xs flex items-center gap-1">
           <Plus size={14} /> Thêm chu kỳ

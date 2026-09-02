@@ -41,7 +41,6 @@ export default function DanhMucDonViPage() {
   return (
     <CrudTable
       title="Danh mục đơn vị"
-      description="Các đơn vị, phòng ban trong trường"
       endpoint="units"
       extraSelects={{ parentId: parentOptions }}
       columns={[

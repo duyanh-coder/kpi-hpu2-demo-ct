@@ -75,7 +75,6 @@ export default function ComplaintsPage() {
       <div className="flex items-center justify-between">
         <div>
           <h1 className="text-2xl font-heading font-bold text-text-dark">Khiếu nại / Giải trình</h1>
-          <p className="text-text-light mt-1">Quản lý khiếu nại và giải trình kết quả KPI (XIV.3, XXI.12)</p>
         </div>
         <button onClick={() => { setEditItem(null); setShowModal(true); }} className="btn-primary text-xs flex items-center gap-1">
           <Plus size={14} /> Thêm mới

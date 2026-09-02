@@ -88,7 +88,6 @@ export default function WarningsPage() {
       <div className="flex items-center justify-between flex-wrap gap-4">
         <div>
           <h1 className="text-2xl font-heading font-bold text-text-dark">Cảnh báo & Theo dõi tiến độ</h1>
-          <p className="text-text-light mt-1">So sánh tiến độ với chỉ tiêu, cảnh báo KPI chậm tiến độ, sắp đến hạn (X.3-X.5)</p>
         </div>
       </div>
 

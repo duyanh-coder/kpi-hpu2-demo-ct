@@ -88,7 +88,6 @@ export default function ProgressPage() {
       <div className="flex items-center justify-between flex-wrap gap-4">
         <div>
           <h1 className="text-2xl font-heading font-bold text-text-dark">Cập nhật tiến độ KPI</h1>
-          <p className="text-text-light mt-1">Theo dõi và cập nhật kết quả thực hiện</p>
         </div>
         <div className="flex items-center gap-3">
           <div className="flex flex-wrap bg-white border border-border rounded-lg overflow-hidden">

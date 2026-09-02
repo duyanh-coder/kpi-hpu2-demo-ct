@@ -75,7 +75,6 @@ export default function SupportTicketsPage() {
       <div className="flex items-center justify-between">
         <div>
           <h1 className="text-2xl font-heading font-bold text-text-dark">Yêu cầu hỗ trợ</h1>
-          <p className="text-text-light mt-1">Quản lý yêu cầu hỗ trợ kỹ thuật hệ thống KPI (XXI.25)</p>
         </div>
         <button onClick={() => { setEditItem(null); setShowModal(true); }} className="btn-primary text-xs flex items-center gap-1">
           <Plus size={14} /> Thêm mới

@@ -33,9 +33,6 @@ export default function KPIDataPage() {
     <div className="space-y-6">
       <div>
         <h1 className="text-2xl font-heading font-bold text-text-dark">Bộ chỉ tiêu KPI</h1>
-        <p className="text-text-light mt-1">
-          Bộ chỉ tiêu được tổng hợp từ các nhiệm vụ trong Kế hoạch công tác năm học và phân theo cấp Trường, đơn vị, cá nhân.
-        </p>
       </div>
 
       <div className="flex gap-1 border-b border-border overflow-x-auto">

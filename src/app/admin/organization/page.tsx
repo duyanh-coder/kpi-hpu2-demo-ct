@@ -115,7 +115,6 @@ export default function OrganizationPage() {
       <div className="flex items-center justify-between">
         <div>
           <h1 className="text-2xl font-heading font-bold text-text-dark">Cơ cấu tổ chức</h1>
-          <p className="text-text-light mt-1">Quản lý cây tổ chức và đơn vị trực thuộc</p>
         </div>
         <button className="btn-primary flex items-center gap-2">
           <Plus size={16} />

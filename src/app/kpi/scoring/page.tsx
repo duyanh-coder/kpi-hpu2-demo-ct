@@ -158,7 +158,6 @@ export default function ScoringPage() {
       <div className="flex items-center justify-between flex-wrap gap-4">
         <div>
           <h1 className="text-2xl font-heading font-bold text-text-dark">Tính điểm & Xếp loại tổng hợp</h1>
-          <p className="text-text-light mt-1">Tổng hợp điểm, áp dụng hệ số miễn giảm, xếp loại theo ngưỡng (XV.3-XV.5)</p>
         </div>
         <div className="flex gap-2">
           <button onClick={() => { setNormalizeScores({}); setNormalizeReason(''); setShowNormalize(true); }} className="px-4 py-2 bg-orange-600 text-white rounded-lg text-sm flex items-center gap-2 hover:opacity-90"><Sliders size={14} /> Chuẩn hóa</button>

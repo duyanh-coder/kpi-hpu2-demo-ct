@@ -130,7 +130,6 @@ export default function EvaluationDialoguePage() {
           <h1 className="text-2xl font-heading font-bold text-text-dark flex items-center gap-2">
             <MessageSquare size={24} /> Đối thoại đánh giá
           </h1>
-          <p className="text-text-light mt-1">Gửi phản hồi và phản biện kết quả đánh giá (XXI.12)</p>
         </div>
       </div>
 

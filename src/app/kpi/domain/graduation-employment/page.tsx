@@ -10,7 +10,6 @@ export default function GraduationEmploymentPage() {
         <div className="p-2 bg-primary-light rounded-lg"><Briefcase size={24} className="text-primary" /></div>
         <div>
           <h1 className="text-2xl font-heading font-bold text-text-dark">Quản lý KPI tốt nghiệp & việc làm</h1>
-          <p className="text-text-light text-sm">XX.3 — Theo dõi tỉ lệ tốt nghiệp đúng hạn, tỉ lệ có việc làm sau tốt nghiệp</p>
         </div>
       </div>
       <DomainKPIPage config={{

@@ -104,7 +104,6 @@ export default function ArchivePage() {
           <h1 className="text-2xl font-heading font-bold text-text-dark flex items-center gap-2">
             <Archive size={24} /> Lưu trữ hồ sơ KPI
           </h1>
-          <p className="text-text-light mt-1">Đóng gói và tra cứu hồ sơ đánh giá KPI (XXI.21)</p>
         </div>
         <button onClick={() => setShowCreate(true)} className="btn-primary flex items-center gap-2">
           <Package size={16} /> Đóng gói hồ sơ

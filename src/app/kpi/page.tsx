@@ -321,7 +321,6 @@ export default function KPIPage() {
       <div className="flex items-center justify-between flex-wrap gap-4">
         <div>
           <h1 className="text-2xl font-heading font-bold text-text-dark">Chỉ tiêu KPI</h1>
-          <p className="text-text-light mt-1">Hệ thống KPI Trường Đại học Sư phạm Hà Nội 2 - 3 cấp quản trị</p>
         </div>
         <div className="flex items-center gap-2">
           <span className="text-xs font-medium text-text-light">Năm học:</span>

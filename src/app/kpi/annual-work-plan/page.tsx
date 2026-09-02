@@ -25,15 +25,14 @@ export default function AnnualWorkPlanPage() {
   }, [keyword]);
 
   const totalItems = WORK_PLAN.reduce((n, t) => n + t.children.length, 0);
-  const toggle = (code: string) => setOpen(o => ({ ...o, [code]: !o[code] }));
   const isOpen = (code: string) => open[code] !== undefined ? open[code] === true : Number(code) <= 3;
+  const toggle = (code: string) => setOpen(o => ({ ...o, [code]: !isOpen(code) }));
 
   return (
     <div className="space-y-6">
       <div className="flex items-center justify-between flex-wrap gap-4">
         <div>
           <h1 className="text-2xl font-heading font-bold text-text-dark">Kế hoạch công tác</h1>
-          <p className="text-text-light mt-1">Phòng Đào tạo · Tháng 8/2026 · Phân rã nhiệm vụ và giao việc</p>
         </div>
         <button className="btn-primary text-sm flex items-center gap-2"><CalendarDays size={16}/> Lập kế hoạch</button>
       </div>

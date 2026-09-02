@@ -96,7 +96,6 @@ export default function BscPage() {
       <div className="flex items-center justify-between">
         <div>
           <h1 className="text-2xl font-heading font-bold text-text-dark">Quản lý phối cảnh</h1>
-          <p className="text-text-light mt-1">Quản lý phối cảnh (BSC Perspective) và liên kết với mục tiêu chiến lược (XXI.5)</p>
         </div>
       </div>
 

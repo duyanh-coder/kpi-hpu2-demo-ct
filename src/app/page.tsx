@@ -402,9 +402,6 @@ export default function DashboardPage() {
           <h1 className="text-2xl font-heading font-bold text-text-dark">
             Tổng quan Hệ thống KPI
           </h1>
-          <p className="text-text-light mt-1">
-            Trường Đại học Sư phạm Hà Nội 2 — {activeYear?.name || ""}
-          </p>
         </div>
         <div className="flex items-center gap-3">
           <div className="flex bg-white border border-border rounded-lg overflow-hidden">

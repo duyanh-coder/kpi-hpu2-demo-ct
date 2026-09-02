@@ -134,7 +134,6 @@ export default function PersonalDashboardPage() {
       <div className="flex items-center justify-between flex-wrap gap-4">
         <div>
           <h1 className="text-2xl font-heading font-bold text-text-dark">Dashboard cá nhân</h1>
-          <p className="text-text-light mt-1">Tổng quan KPI theo vai trò (XVII.1-XVII.3)</p>
         </div>
         <div className="flex gap-2">
           <a href="/api/reports/export?type=personal-dashboard&format=csv" className="btn-secondary text-sm flex items-center gap-1" download>Xuất báo cáo</a>

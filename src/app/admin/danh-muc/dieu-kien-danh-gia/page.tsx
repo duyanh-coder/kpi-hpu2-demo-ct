@@ -38,7 +38,6 @@ export default function DieuKienDanhGiaPage() {
       <div className="flex items-center justify-between">
         <div>
           <h1 className="text-2xl font-heading font-bold text-text-dark">Danh mục điều kiện đánh giá</h1>
-          <p className="text-text-light mt-1">Các mức xếp loại chất lượng theo điểm số</p>
         </div>
         <button onClick={() => { setEditItem(null); setShowModal(true); }} className="btn-primary text-xs flex items-center gap-1">
           <Plus size={14} /> Thêm mới

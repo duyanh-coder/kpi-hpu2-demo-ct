@@ -227,7 +227,6 @@ export default function MyKPIRegistrationPage() {
       <div className="flex items-center justify-between flex-wrap gap-4">
         <div>
           <h1 className="text-2xl font-heading font-bold text-text-dark">Đăng ký KPI cá nhân</h1>
-          <p className="text-text-light mt-1">Đăng ký, gửi và cam kết KPI cá nhân (IX.1-IX.6)</p>
         </div>
         <div className="flex items-center gap-3">
           {!currentReg && (

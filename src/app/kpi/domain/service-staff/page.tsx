@@ -10,7 +10,6 @@ export default function ServiceStaffPage() {
         <div className="p-2 bg-primary-light rounded-lg"><Hand size={24} className="text-primary" /></div>
         <div>
           <h1 className="text-2xl font-heading font-bold text-text-dark">Quản lý KPI nhân viên phục vụ</h1>
-          <p className="text-text-light text-sm">XX.14 — Quản lý bộ chỉ tiêu KPI cho nhân viên phục vụ, thư viện, hành chính, kỹ thuật</p>
         </div>
       </div>
       <PositionKPIPage config={{

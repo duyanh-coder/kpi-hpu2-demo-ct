@@ -59,7 +59,6 @@ export default function ScheduledReportsPage() {
       <div className="flex items-center justify-between">
         <div>
           <h1 className="text-2xl font-heading font-bold text-text-dark">Báo cáo định kỳ</h1>
-          <p className="text-text-light mt-1">Quản lý lịch gửi báo cáo KPI tự động (XXI.20)</p>
         </div>
         <button onClick={() => { setEditItem(null); setShowModal(true); }} className="btn-primary text-xs flex items-center gap-1">
           <Plus size={14} /> Thêm mới

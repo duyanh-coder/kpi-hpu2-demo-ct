@@ -41,7 +41,6 @@ export default function TrendsPage() {
       <div className="flex items-center justify-between">
         <div>
           <h1 className="text-2xl font-heading font-bold text-text-dark">Xu hướng & Dự báo</h1>
-          <p className="text-text-light mt-1">Phân tích xu hướng thực hiện KPI và dự báo kết quả (XXI.17)</p>
         </div>
       </div>
 

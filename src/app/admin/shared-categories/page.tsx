@@ -194,7 +194,6 @@ export default function SharedCategoriesPage() {
       <div className="flex items-center justify-between">
         <div>
           <h1 className="text-2xl font-heading font-bold text-text-dark">Danh mục dùng chung</h1>
-          <p className="text-text-light mt-1">Quản lý danh mục hệ thống (II.1, II.3, II.4, II.5, II.6, II.7, II.8, II.9, II.10, II.11, II.12)</p>
         </div>
         <button onClick={() => { setEditItem(null); setShowModal(true); }} className="btn-primary text-xs flex items-center gap-1">
           <Plus size={14} /> Thêm mới

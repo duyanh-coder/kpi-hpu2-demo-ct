@@ -10,7 +10,6 @@ export default function SurveyQualityPage() {
         <div className="p-2 bg-primary-light rounded-lg"><ClipboardCheck size={24} className="text-primary" /></div>
         <div>
           <h1 className="text-2xl font-heading font-bold text-text-dark">Quản lý KPI khảo sát & ĐBCL</h1>
-          <p className="text-text-light text-sm">XX.4 — Theo dõi chỉ tiêu khảo sát hài lòng, tự đánh giá chương trình</p>
         </div>
       </div>
       <DomainKPIPage config={{

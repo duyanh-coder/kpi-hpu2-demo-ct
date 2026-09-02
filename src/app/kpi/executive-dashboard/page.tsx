@@ -332,9 +332,6 @@ export default function ExecutiveDashboard() {
       <div className="flex items-center justify-between flex-wrap gap-4 print:flex-col print:items-start">
         <div>
           <h1 className="text-2xl font-heading font-bold text-text-dark">Dashboard Ban Giám hiệu</h1>
-          <p className="text-text-light mt-1 text-sm">
-            Tổng quan KPI toàn trường — {activeCycle ? activeCycle.name : ''} ({activeYear?.name || ''})
-          </p>
         </div>
         <div className="flex items-center gap-2 flex-wrap">
           <span className="text-xs font-medium text-text-light">Năm học:</span>

@@ -50,8 +50,8 @@ export default function EvaluationPage() {
   const achieved = KPI_EVALUATION.filter(t => t.status === 'ĐẠT').length;
   const notAchieved = KPI_EVALUATION.length - achieved;
 
-  const toggle = (code: string) => setOpen(o => ({ ...o, [code]: !o[code] }));
   const isOpen = (code: string) => open[code] !== undefined ? open[code] === true : Number(code) <= 3;
+  const toggle = (code: string) => setOpen(o => ({ ...o, [code]: !isOpen(code) }));
 
   return (
     <div className="space-y-6">

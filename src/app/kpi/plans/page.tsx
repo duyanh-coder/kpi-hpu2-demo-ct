@@ -283,7 +283,6 @@ export default function PlansPage() {
       <div className="flex items-center justify-between flex-wrap gap-4">
         <div>
           <h1 className="text-2xl font-heading font-bold text-text-dark">Kế hoạch KPI</h1>
-          <p className="text-text-light mt-1">Quản lý kế hoạch thực hiện KPI các đơn vị</p>
         </div>
         <div className="flex items-center gap-3">
           <div className="flex flex-wrap bg-white border border-border rounded-lg overflow-hidden">

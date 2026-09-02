@@ -7,7 +7,7 @@ import groupsData from '@/data/kpi-groups.json';
 
 interface DomainConfig {
   title: string;
-  description: string;
+  description?: string;
   keywords: string[];
 }
 
@@ -50,7 +50,7 @@ export default function DomainKPIPage({ config }: { config: DomainConfig }) {
       <div className="flex items-center justify-between">
         <div>
           <h1 className="text-2xl font-heading font-bold text-text-dark">{config.title}</h1>
-          <p className="text-text-light mt-1">{config.description}</p>
+          {config.description && <p className="text-text-light mt-1">{config.description}</p>}
         </div>
         <button onClick={handleSave} disabled={saving}
           className="btn-primary flex items-center gap-1">

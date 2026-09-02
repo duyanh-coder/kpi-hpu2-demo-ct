@@ -142,7 +142,6 @@ export default function KPITemplatesPage() {
       <div className="flex items-center justify-between">
         <div>
           <h1 className="text-2xl font-heading font-bold text-text-dark flex items-center gap-2"><FileText size={24} /> Bộ KPI mẫu</h1>
-          <p className="text-text-light mt-1">Quản lý, duyệt, kích hoạt và khóa bộ KPI mẫu (III.1-III.8)</p>
         </div>
         <div className="flex gap-2">
           <button onClick={() => setShowCreate(true)} className="btn-primary text-xs flex items-center gap-1"><Plus size={14} /> Tạo mới</button>

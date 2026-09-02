@@ -8,7 +8,6 @@ export default function SettingsPage() {
       <div className="flex items-center justify-between">
         <div>
           <h1 className="text-2xl font-heading font-bold text-text-dark">Cài đặt hệ thống</h1>
-          <p className="text-text-light mt-1">Quản lý cấu hình chung</p>
         </div>
       </div>
 

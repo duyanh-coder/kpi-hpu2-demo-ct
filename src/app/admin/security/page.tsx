@@ -76,7 +76,6 @@ export default function SecurityPage() {
       <div className="flex items-center justify-between flex-wrap gap-4">
         <div>
           <h1 className="text-2xl font-heading font-bold text-text-dark">Bảo mật tài khoản</h1>
-          <p className="text-text-light mt-1">Đổi mật khẩu, quản lý phiên đăng nhập, phân quyền (XXI.1-XXI.3)</p>
         </div>
       </div>
 

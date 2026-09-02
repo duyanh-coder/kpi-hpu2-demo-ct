@@ -62,7 +62,6 @@ export default function BackupPage() {
       <div className="flex items-center justify-between flex-wrap gap-4">
         <div>
           <h1 className="text-2xl font-heading font-bold text-text-dark">Sao lưu & Phục hồi dữ liệu</h1>
-          <p className="text-text-light mt-1">Sao lưu toàn bộ dữ liệu hệ thống (I.13)</p>
         </div>
         <button onClick={handleBackup} disabled={creating} className="btn-primary flex items-center gap-2">
           {creating ? <><RefreshCw size={16} className="animate-spin" /> Đang sao lưu...</> : <><Database size={16} /> Tạo bản sao lưu mới</>}

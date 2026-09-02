@@ -64,7 +64,6 @@ export default function AdjustmentPage() {
           <div className="p-2 bg-primary-light rounded-lg"><FileEdit size={24} className="text-primary" /></div>
           <div>
             <h1 className="text-2xl font-heading font-bold text-text-dark">Quản lý đề nghị điều chỉnh kết quả</h1>
-            <p className="text-text-light text-sm">XX.15 — Gửi và theo dõi yêu cầu điều chỉnh điểm KPI</p>
           </div>
         </div>
         <button onClick={() => setShowForm(true)} className="btn-primary flex items-center gap-1">

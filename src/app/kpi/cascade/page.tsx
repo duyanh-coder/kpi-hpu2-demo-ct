@@ -256,7 +256,6 @@ export default function CascadeAssignmentsPage() {
       <div className="flex items-center justify-between flex-wrap gap-4">
         <div>
           <h1 className="text-2xl font-heading font-bold text-text-dark">Phân rã & Giao KPI MBO</h1>
-          <p className="text-text-light mt-1">Cascade KPI từ cấp Trường → Đơn vị → Bộ môn → Cá nhân (VI.1-VI.6)</p>
         </div>
         <button onClick={() => setShowCreate(true)} className="btn-primary flex items-center gap-2">
           <Plus size={16} /> Phân bổ KPI

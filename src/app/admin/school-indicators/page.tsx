@@ -155,7 +155,6 @@ export default function SchoolIndicatorsPage() {
             Chỉ tiêu Trường
             {selectedYearId && <span className="text-lg font-normal text-text-light ml-2">— {years.find(y => y.id === selectedYearId)?.name || ''}</span>}
           </h1>
-          <p className="text-text-light mt-1">Quản lý chỉ tiêu KPI cấp Trường theo năm học</p>
         </div>
         <div className="flex gap-2">
           <button onClick={() => { setCloneFromYear(''); setShowCloneModal(true); }} className="btn-secondary text-xs flex items-center gap-1">

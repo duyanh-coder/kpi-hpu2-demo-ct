@@ -61,7 +61,6 @@ export default function ApiConfigsPage() {
       <div className="flex items-center justify-between">
         <div>
           <h1 className="text-2xl font-heading font-bold text-text-dark">Kết nối tích hợp</h1>
-          <p className="text-text-light mt-1">Quản lý kết nối API với hệ thống bên ngoài (XXI.23)</p>
         </div>
         {activeTab === 'api' && (
           <button onClick={() => { setEditItem(null); setShowModal(true); }} className="btn-primary text-xs flex items-center gap-1">

@@ -283,7 +283,6 @@ export default function DepartmentPlansPage() {
       <div className="flex items-center justify-between flex-wrap gap-4">
         <div>
           <h1 className="text-2xl font-heading font-bold text-text-dark">Kế hoạch KPI Bộ môn</h1>
-          <p className="text-text-light mt-1">Lập kế hoạch và phân công KPI cho giảng viên (VIII.1-VIII.4)</p>
         </div>
         <button onClick={() => setShowCreate(true)} className="btn-primary flex items-center gap-2">
           <Plus size={16} /> Tạo kế hoạch

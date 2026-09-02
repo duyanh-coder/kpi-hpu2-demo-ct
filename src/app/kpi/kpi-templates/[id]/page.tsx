@@ -227,7 +227,6 @@ export default function KPITemplateDetailPage() {
             <h1 className="text-2xl font-heading font-bold text-text-dark flex items-center gap-2">
               <FileText size={24} /> {template.name}
             </h1>
-            <p className="text-text-light mt-1">Chi tiết bộ KPI mẫu</p>
           </div>
         </div>
         <div className="flex gap-2">

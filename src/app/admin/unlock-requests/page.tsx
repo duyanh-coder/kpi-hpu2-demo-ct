@@ -61,7 +61,6 @@ export default function UnlockRequestsPage() {
       <div className="flex items-center justify-between">
         <div>
           <h1 className="text-2xl font-heading font-bold text-text-dark">Yêu cầu mở khóa</h1>
-          <p className="text-text-light mt-1">Quản lý yêu cầu mở khóa dữ liệu (XXI.10)</p>
         </div>
       </div>
 

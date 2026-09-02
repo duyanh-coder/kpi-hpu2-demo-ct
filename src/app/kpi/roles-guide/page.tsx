@@ -203,9 +203,6 @@ export default function RolesGuidePage() {
         <h1 className="text-2xl font-heading font-bold text-text-dark">
           Hướng dẫn theo vai trò
         </h1>
-        <p className="text-text-light mt-1">
-          Mỗi vai trò có nhiệm vụ và quyền hạn riêng. Chọn vai trò của bạn để xem chi tiết.
-        </p>
       </div>
 
       <div className="grid grid-cols-3 gap-4">

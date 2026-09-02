@@ -134,7 +134,6 @@ export default function ImportPage() {
       <div className="flex items-center justify-between flex-wrap gap-4">
         <div>
           <h1 className="text-2xl font-heading font-bold text-text-dark">Import dữ liệu từ Excel/CSV</h1>
-          <p className="text-text-light mt-1">Nhập hàng loạt KPI, tiến độ, minh chứng từ file CSV (XXI.7-XXI.8)</p>
         </div>
       </div>
 

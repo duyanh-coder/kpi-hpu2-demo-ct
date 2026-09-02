@@ -50,7 +50,6 @@ export default function ReportTemplatesPage() {
       <div className="flex items-center justify-between">
         <div>
           <h1 className="text-2xl font-heading font-bold text-text-dark">Biểu mẫu báo cáo</h1>
-          <p className="text-text-light mt-1">Quản lý biểu mẫu báo cáo KPI (II.10)</p>
         </div>
         <button onClick={() => { setEditItem(null); setShowModal(true); }} className="btn-primary text-xs flex items-center gap-1">
           <Plus size={14} /> Thêm mới

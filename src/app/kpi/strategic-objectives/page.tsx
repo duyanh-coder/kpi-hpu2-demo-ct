@@ -136,7 +136,6 @@ export default function StrategicObjectivesPage() {
           <h1 className="text-2xl font-heading font-bold text-text-dark flex items-center gap-2">
             <Compass size={24} /> Mục tiêu chiến lược cấp Trường
           </h1>
-          <p className="text-text-light mt-1">Quản lý mục tiêu chiến lược và liên kết KPI cấp Trường (V.1-V.5)</p>
         </div>
         <button onClick={() => setShowCreate(true)} className="btn-primary text-xs flex items-center gap-1">
           <Plus size={14} /> Thêm mục tiêu

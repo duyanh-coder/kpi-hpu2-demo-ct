@@ -60,7 +60,6 @@ export default function SyncLogsPage() {
       <div className="flex items-center justify-between">
         <div>
           <h1 className="text-2xl font-heading font-bold text-text-dark">Nhật ký đồng bộ</h1>
-          <p className="text-text-light mt-1">Theo dõi lịch sử đồng bộ dữ liệu từ các hệ thống</p>
         </div>
         <button onClick={load} className="btn-primary text-xs flex items-center gap-1">
           <RefreshCw size={14} /> Làm mới

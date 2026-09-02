@@ -10,7 +10,6 @@ export default function TrainingAdmissionPage() {
         <div className="p-2 bg-primary-light rounded-lg"><GraduationCap size={24} className="text-primary" /></div>
         <div>
           <h1 className="text-2xl font-heading font-bold text-text-dark">Quản lý KPI tuyển sinh</h1>
-          <p className="text-text-light text-sm">XX.1 — Theo dõi chỉ tiêu tuyển sinh đại học chính quy</p>
         </div>
       </div>
       <DomainKPIPage config={{

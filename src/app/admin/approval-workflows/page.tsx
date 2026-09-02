@@ -47,7 +47,6 @@ export default function ApprovalWorkflowsPage() {
       <div className="flex items-center justify-between">
         <div>
           <h1 className="text-2xl font-heading font-bold text-text-dark">Cấu hình quy trình phê duyệt động</h1>
-          <p className="text-text-light mt-1">Định nghĩa luồng phê duyệt cho các đối tượng (XXI.4)</p>
         </div>
         <button onClick={() => { setEditWf(null); setShowModal(true); }} className="btn-primary flex items-center gap-2">
           <Plus size={16} /> Thêm quy trình

@@ -10,7 +10,6 @@ export default function LecturerPage() {
         <div className="p-2 bg-primary-light rounded-lg"><UserCheck size={24} className="text-primary" /></div>
         <div>
           <h1 className="text-2xl font-heading font-bold text-text-dark">Quản lý KPI giảng viên</h1>
-          <p className="text-text-light text-sm">XX.11 — Quản lý bộ chỉ tiêu KPI cho giảng viên và giảng viên kiêm nhiệm quản lý</p>
         </div>
       </div>
       <PositionKPIPage config={{

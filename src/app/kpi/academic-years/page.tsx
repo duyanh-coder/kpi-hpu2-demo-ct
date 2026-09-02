@@ -47,7 +47,6 @@ export default function AcademicYearsPage() {
       <div className="flex items-center justify-between">
         <div>
           <h1 className="text-2xl font-heading font-bold text-text-dark">Quản lý năm học</h1>
-          <p className="text-text-light mt-1">Quản lý các năm học trong hệ thống</p>
         </div>
         <button onClick={() => { setEditYear(null); setShowModal(true); }} className="btn-primary text-xs flex items-center gap-1">
           <Plus size={14} /> Thêm năm học

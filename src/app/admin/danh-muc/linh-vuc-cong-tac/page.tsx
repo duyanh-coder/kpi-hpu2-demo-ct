@@ -38,7 +38,6 @@ export default function LinhVucCongTacPage() {
       <div className="flex items-center justify-between">
         <div>
           <h1 className="text-2xl font-heading font-bold text-text-dark">Danh mục Lĩnh vực công tác</h1>
-          <p className="text-text-light mt-1">Các nhóm lĩnh vực hoạt động của đơn vị</p>
         </div>
         <button onClick={() => { setEditItem(null); setShowModal(true); }} className="btn-primary text-xs flex items-center gap-1">
           <Plus size={14} /> Thêm mới

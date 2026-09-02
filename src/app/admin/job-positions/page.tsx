@@ -53,7 +53,6 @@ export default function JobPositionsPage() {
       <div className="flex items-center justify-between">
         <div>
           <h1 className="text-2xl font-heading font-bold text-text-dark">Vị trí việc làm</h1>
-          <p className="text-text-light mt-1">Quản lý vị trí việc làm và nhóm KPI phù hợp</p>
         </div>
         <button onClick={() => { setEditItem(null); setShowModal(true); }} className="btn-primary text-xs flex items-center gap-1">
           <Plus size={14} /> Thêm vị trí

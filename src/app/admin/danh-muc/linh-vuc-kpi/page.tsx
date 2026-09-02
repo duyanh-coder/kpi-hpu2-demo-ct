@@ -46,7 +46,6 @@ export default function LinhVucKpiPage() {
       <div className="flex items-center justify-between">
         <div>
           <h1 className="text-2xl font-heading font-bold text-text-dark">Danh mục Lĩnh vực KPI</h1>
-          <p className="text-text-light mt-1">Phân loại KPI theo lĩnh vực hoạt động</p>
         </div>
         <button onClick={() => { setEditItem(null); setShowModal(true); }} className="btn-primary text-xs flex items-center gap-1">
           <Plus size={14} /> Thêm mới

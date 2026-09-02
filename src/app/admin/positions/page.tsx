@@ -48,7 +48,6 @@ export default function PositionsPage() {
       <div className="flex items-center justify-between">
         <div>
           <h1 className="text-2xl font-heading font-bold text-text-dark">Chức vụ / Chức danh</h1>
-          <p className="text-text-light mt-1">Quản lý danh mục chức vụ, chức danh trong hệ thống</p>
         </div>
         <button onClick={() => { setEditItem(null); setShowModal(true); }} className="btn-primary text-xs flex items-center gap-1">
           <Plus size={14} /> Thêm chức vụ

@@ -146,7 +146,6 @@ export default function IndividualEvaluationPage() {
       <div className="flex items-center justify-between">
         <div>
           <h1 className="text-2xl font-heading font-bold text-text-dark">Đánh giá KPI Cá nhân</h1>
-          <p className="text-text-light mt-1">Tự đánh giá → Trưởng đơn vị → Hội đồng → Khóa kết quả</p>
         </div>
       </div>
 

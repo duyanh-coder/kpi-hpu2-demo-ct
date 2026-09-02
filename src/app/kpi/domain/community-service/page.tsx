@@ -10,7 +10,6 @@ export default function CommunityServicePage() {
         <div className="p-2 bg-primary-light rounded-lg"><Heart size={24} className="text-primary" /></div>
         <div>
           <h1 className="text-2xl font-heading font-bold text-text-dark">Quản lý KPI phục vụ cộng đồng</h1>
-          <p className="text-text-light text-sm">XX.10 — Theo dõi chỉ tiêu hợp tác địa phương, doanh nghiệp, cộng đồng</p>
         </div>
       </div>
       <DomainKPIPage config={{

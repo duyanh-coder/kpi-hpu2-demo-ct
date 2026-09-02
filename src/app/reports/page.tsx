@@ -289,7 +289,6 @@ export default function ReportsPage() {
       <div className="flex items-center justify-between">
         <div>
           <h1 className="text-2xl font-heading font-bold text-text-dark">Báo cáo & Thống kê</h1>
-          <p className="text-text-light mt-1">Xuất báo cáo theo nhiều tiêu chí và định dạng</p>
         </div>
       </div>
 

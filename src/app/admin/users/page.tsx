@@ -100,7 +100,6 @@ export default function UsersPage() {
       <div className="flex items-center justify-between">
         <div>
           <h1 className="text-2xl font-heading font-bold text-text-dark">Quản lý người dùng</h1>
-          <p className="text-text-light mt-1">Quản lý tài khoản và phân quyền</p>
         </div>
         <button onClick={() => setShowCreate(true)} className="btn-primary flex items-center gap-2">
           <Plus size={16} /> Thêm người dùng

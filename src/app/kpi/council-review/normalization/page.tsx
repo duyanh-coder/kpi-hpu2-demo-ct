@@ -125,7 +125,6 @@ export default function NormalizationPage() {
           <h1 className="text-2xl font-heading font-bold text-text-dark flex items-center gap-2">
             <BarChart2 size={24} /> Chuẩn hóa điểm KPI
           </h1>
-          <p className="text-text-light mt-1">Chuẩn hóa điểm đánh giá theo phương pháp thống kê (XIV.2)</p>
         </div>
       </div>
 

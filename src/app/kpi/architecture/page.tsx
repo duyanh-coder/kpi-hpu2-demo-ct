@@ -216,9 +216,6 @@ export default function ArchitecturePage() {
         <h1 className="text-2xl font-heading font-bold text-text-dark">
           Kiến trúc tổng quát Hệ thống KPI
         </h1>
-        <p className="text-text-light mt-1">
-          Trường Đại học Sư phạm Hà Nội 2 — 4 cấp quản trị: Trường → Khoa/Phòng ban → Bộ môn → Cá nhân
-        </p>
       </div>
 
       <div className="card overflow-hidden">

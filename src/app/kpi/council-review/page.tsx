@@ -238,7 +238,6 @@ export default function CouncilReviewPage() {
           <h1 className="text-2xl font-heading font-bold text-text-dark flex items-center gap-2">
             <Award size={24} /> Hội đồng rà soát & Khóa kết quả
           </h1>
-          <p className="text-text-light mt-1">Rà soát, chuẩn hóa điểm, xử lý khiếu nại và khóa kết quả (XIV.1-XIV.5)</p>
         </div>
         {activeTab === 'review' && (
           <button onClick={handleLockAll} className="btn-danger text-xs flex items-center gap-1">
