@@ -3,6 +3,7 @@
 import { useEffect, useMemo, useState } from 'react';
 import { CalendarDays, Send, Search, ChevronRight, ChevronDown } from 'lucide-react';
 import { apiGet } from '@/lib/api';
+import PlanModal from '@/components/forms/plan-form';
 import { WORK_PLAN, type WorkPlanTask, type WorkPlanItem } from '@/data/annual-work-plan';
 
 interface AcademicYear {
@@ -26,6 +27,7 @@ export default function AnnualWorkPlanPage() {
   const [unitFilter, setUnitFilter] = useState('');
   const [academicYears, setAcademicYears] = useState<AcademicYear[]>([]);
   const [orgUnits, setOrgUnits] = useState<{ id: string; name: string; parentId: string | null }[]>([]);
+  const [planOpen, setPlanOpen] = useState(false);
 
   useEffect(() => {
     apiGet<AcademicYear[]>('/api/academic-years').then(setAcademicYears);
@@ -87,7 +89,7 @@ export default function AnnualWorkPlanPage() {
               ))}
             </div>
           </div>
-          <button className="btn-primary text-sm flex items-center gap-2"><CalendarDays size={16}/> Lập kế hoạch</button>
+          <button onClick={() => setPlanOpen(true)} className="btn-primary text-sm flex items-center gap-2"><CalendarDays size={16}/> Lập kế hoạch</button>
         </div>
       </div>
 
@@ -134,6 +136,8 @@ export default function AnnualWorkPlanPage() {
           </table>
         </div>
       </div>
+
+      <PlanModal isOpen={planOpen} onClose={() => setPlanOpen(false)} defaultUnitId={unitFilter} />
     </div>
   );
 }

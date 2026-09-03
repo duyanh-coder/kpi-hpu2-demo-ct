@@ -6,6 +6,7 @@ import Modal from '@/components/ui/Modal';
 import PagedTable from '@/components/ui/PagedTable';
 import { apiGet, apiPost, apiPut, apiDelete } from '@/lib/api';
 import { SchoolCatalogForm, UnitCatalogForm } from '@/components/forms/kpi-catalog-forms';
+import PlanModal from '@/components/forms/plan-form';
 import type { SchoolKPICatalog, KPIGroupCatalog, UnitKPICatalog } from '@/types';
 
 type TabKey = 'school-catalog' | 'unit-catalog';
@@ -32,6 +33,7 @@ export default function KPICatalogsPage() {
   const [catalogGroupFilter, setCatalogGroupFilter] = useState<string | null>(null);
   const [selectedYearId, setSelectedYearId] = useState('');
   const [unitFilter, setUnitFilter] = useState('');
+  const [planOpen, setPlanOpen] = useState(false);
 
   const loadData = useCallback(async () => {
     const [sc, uc, gc, kg, ou, mu, ay] = await Promise.all([
@@ -182,7 +184,7 @@ export default function KPICatalogsPage() {
                 <button onClick={() => { setEditId(null); setShowModal(true); }} className="btn-primary text-sm flex items-center gap-1">
                   <Plus size={15} /> Thêm
                 </button>
-                <button className="btn-primary text-sm flex items-center gap-1" onClick={() => {}}>
+                <button onClick={() => setPlanOpen(true)} className="btn-primary text-sm flex items-center gap-1">
                   <CalendarPlus size={15} /> Lập kế hoạch
                 </button>
               </div>
@@ -254,6 +256,8 @@ export default function KPICatalogsPage() {
         {tab === 'school-catalog' && <SchoolCatalogForm item={editId ? (schoolCatalog.find(s => s.id === editId) || null) : null} groups={groupCatalog} units={measurementUnits} onSubmit={handleSave} onCancel={() => { setShowModal(false); setEditId(null); }} />}
         {tab === 'unit-catalog' && <UnitCatalogForm item={null} orgUnits={orgUnits.filter(o => o.id !== 'u001')} units={measurementUnits} onSubmit={handleSave} onCancel={() => { setShowModal(false); setEditId(null); }} />}
       </Modal>
+
+      <PlanModal isOpen={planOpen} onClose={() => setPlanOpen(false)} defaultUnitId={unitFilter} />
     </div>
   );
 }
