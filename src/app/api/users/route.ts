@@ -1,6 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { readDb, writeDb, generateId } from '@/lib/db';
-
 interface User {
   id: string;
   username: string;
@@ -19,8 +18,11 @@ function stripPassword(user: User): Omit<User, 'password'> {
   return rest;
 }
 
-export async function GET() {
-  const users = readDb<User>('users');
+export async function GET(request: NextRequest) {
+  const { searchParams } = new URL(request.url);
+  const unitId = searchParams.get('unitId');
+  let users = readDb<User>('users');
+  if (unitId) users = users.filter(u => u.unitId === unitId);
   return NextResponse.json(users.map(stripPassword));
 }
 

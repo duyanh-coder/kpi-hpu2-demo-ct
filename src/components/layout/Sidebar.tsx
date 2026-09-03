@@ -10,6 +10,7 @@ import {
   ChevronDown,
   ChevronRight,
   LifeBuoy,
+  ClipboardCheck,
 } from 'lucide-react';
 import { useState } from 'react';
 
@@ -44,8 +45,16 @@ const menuItems: MenuItem[] = [
         ],
       },
       { href: '/admin/kpi-catalogs', label: 'Chỉ tiêu KPI' },
-      { href: '/kpi/annual-work-plan', label: 'Kế hoạch công tác' },
       { href: '/kpi/domain/training-program', label: 'Kế hoạch đào tạo' },
+    ],
+  },
+
+  {
+    href: '/deploy',
+    label: 'Triển khai thực hiện',
+    icon: ClipboardCheck,
+    children: [
+      { href: '/kpi/unit-work-plan', label: 'Kế hoạch đơn vị' },
     ],
   },
 
