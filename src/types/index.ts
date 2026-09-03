@@ -28,7 +28,7 @@ export interface OrganizationalUnit {
   parentId: string | null;
   name: string;
   code: string;
-  type: 'university' | 'faculty' | 'department' | 'center' | 'division';
+  type: 'university' | 'faculty' | 'department' | 'center' | 'division' | 'research';
   managerId: string;
   status: 'active' | 'inactive';
 }

@@ -43,7 +43,7 @@ const menuItems: MenuItem[] = [
           { href: '/kpi/strategic-objectives', label: 'Mục tiêu chiến lược' },
         ],
       },
-      { href: '/admin/kpi-catalogs', label: 'Bộ KPI' },
+      { href: '/admin/kpi-catalogs', label: 'Chỉ tiêu KPI' },
       { href: '/kpi/annual-work-plan', label: 'Kế hoạch công tác' },
       { href: '/kpi/domain/training-program', label: 'Kế hoạch đào tạo' },
     ],
