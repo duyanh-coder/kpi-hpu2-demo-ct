@@ -145,16 +145,21 @@ export default function KPICatalogsPage() {
     <div className="space-y-4">
       <div className="flex items-center justify-between flex-wrap gap-4">
         <h1 className="text-2xl font-heading font-bold text-text-dark">Chỉ tiêu KPI</h1>
-        <div className="flex items-center gap-2">
-          <span className="text-xs font-medium text-text-light">Năm học:</span>
-          <div className="flex flex-wrap bg-white border border-border rounded-lg overflow-hidden">
-            {academicYears.map(ay => (
-              <button key={ay.id} onClick={() => setSelectedYearId(ay.id)}
-                className={`px-4 py-1.5 text-sm font-medium transition-colors ${selectedYearId === ay.id ? 'bg-primary text-white' : 'text-text-dark hover:bg-bg-cream'}`}>
-                {ay.name}
-              </button>
-            ))}
+        <div className="flex items-center gap-3 flex-wrap">
+          <div className="flex items-center gap-2">
+            <span className="text-xs font-medium text-text-light">Năm học:</span>
+            <div className="flex flex-wrap bg-white border border-border rounded-lg overflow-hidden">
+              {academicYears.map(ay => (
+                <button key={ay.id} onClick={() => setSelectedYearId(ay.id)}
+                  className={`px-4 py-1.5 text-sm font-medium transition-colors ${selectedYearId === ay.id ? 'bg-primary text-white' : 'text-text-dark hover:bg-bg-cream'}`}>
+                  {ay.name}
+                </button>
+              ))}
+            </div>
           </div>
+          <button onClick={() => setPlanOpen(true)} className="btn-primary text-sm flex items-center gap-1">
+            <CalendarPlus size={15} /> Lập kế hoạch
+          </button>
         </div>
       </div>
 
@@ -184,9 +189,6 @@ export default function KPICatalogsPage() {
                 <button onClick={() => { setEditId(null); setShowModal(true); }} className="btn-primary text-sm flex items-center gap-1">
                   <Plus size={15} /> Thêm
                 </button>
-                <button onClick={() => setPlanOpen(true)} className="btn-primary text-sm flex items-center gap-1">
-                  <CalendarPlus size={15} /> Lập kế hoạch
-                </button>
               </div>
               <div className="flex items-center gap-2 flex-wrap">
                 <select value={catalogGroupFilter || ''} onChange={e => setCatalogGroupFilter(e.target.value || null)}
@@ -205,9 +207,6 @@ export default function KPICatalogsPage() {
               </select>
               <button onClick={() => { setEditId(null); setShowModal(true); }} className="btn-primary text-sm flex items-center gap-1">
                 <Plus size={15} /> Thêm
-              </button>
-              <button className="btn-primary text-sm flex items-center gap-1" onClick={() => {}}>
-                <CalendarPlus size={15} /> Lập kế hoạch
               </button>
             </div>
           )}
