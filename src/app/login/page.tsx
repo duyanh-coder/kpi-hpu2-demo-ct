@@ -1,7 +1,7 @@
 'use client';
 
-import { Suspense, useState } from 'react';
-import { signIn } from 'next-auth/react';
+import { Suspense, useEffect, useState } from 'react';
+import { signIn, useSession } from 'next-auth/react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { Eye, EyeOff, Loader2, Mail, Shield, Users, CheckCircle, Building, FileText, X } from 'lucide-react';
 import usersData from '@/data/users.json';
@@ -34,6 +34,7 @@ function LoginForm() {
   const searchParams = useSearchParams();
   const callbackUrl = searchParams.get('callbackUrl') || '/';
   const authError = searchParams.get('error');
+  const { data: session } = useSession();
 
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
@@ -50,6 +51,12 @@ function LoginForm() {
   const [forgotLoading, setForgotLoading] = useState(false);
   const [demoLoading, setDemoLoading] = useState('');
 
+  useEffect(() => {
+    if (session?.user) {
+      router.replace('/');
+    }
+  }, [session, router]);
+
   const handleDemoLogin = async (acc: { username: string; label: string }) => {
     const user = (usersData as any[]).find((u) => u.username === acc.username);
     if (!user) return;
@@ -64,7 +71,8 @@ function LoginForm() {
       if (result?.error) {
         setError('Tên đăng nhập hoặc mật khẩu không đúng');
       } else {
-        localStorage.setItem('activeRole', roleKeyByUsername[acc.username] || 'staff');
+        const roleName = roleKeyByUsername[acc.username] || 'staff';
+        localStorage.setItem('activeRole', roleName);
         router.push(callbackUrl);
         router.refresh();
       }
@@ -90,6 +98,10 @@ function LoginForm() {
       if (result?.error) {
         setError('Tên đăng nhập hoặc mật khẩu không đúng');
       } else {
+        const matched = (usersData as any[]).find((u) => u.username === username);
+        if (matched && roleKeyByUsername[matched.username]) {
+          localStorage.setItem('activeRole', roleKeyByUsername[matched.username]);
+        }
         router.push(callbackUrl);
         router.refresh();
       }
@@ -152,7 +164,6 @@ function LoginForm() {
                   onChange={(e) => setPassword(e.target.value)}
                   className="w-full px-4 py-2.5 border border-border rounded-lg text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary pr-10"
                   placeholder="Nhập mật khẩu"
-                  required
                   autoComplete="current-password"
                   disabled={loading}
                 />
@@ -190,8 +201,7 @@ function LoginForm() {
           </div>
 
           <div>
-            <p className="text-sm font-medium text-text-dark mb-2">Demo vai trò</p>
-            <p className="text-xs text-text-light mb-3">Mật khẩu chung cho mọi tài khoản: <span className="font-mono">hpu2@2026</span></p>
+            <p className="text-sm font-medium text-text-dark mb-3">Demo vai trò</p>
             <div className="grid grid-cols-2 gap-2">
               {demoAccounts.map((acc) => (
                 <button

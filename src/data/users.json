@@ -2,7 +2,7 @@
   {
     "id": "u001",
     "username": "admin",
-    "password": "hpu2@2026",
+    "password": "hpu2@",
     "fullName": "Quản trị hệ thống HPU2",
     "email": "admin@hpu2.edu.vn",
     "employeeCode": "HPU2-ADMIN",
@@ -14,7 +14,7 @@
   {
     "id": "u002",
     "username": "lanhdao",
-    "password": "hpu2@2026",
+    "password": "hpu2@",
     "fullName": "Nguyễn Minh Anh",
     "email": "minhanh@hpu2.edu.vn",
     "employeeCode": "HPU2-001",
@@ -26,7 +26,7 @@
   {
     "id": "u003",
     "username": "pdt01",
-    "password": "hpu2@2026",
+    "password": "hpu2@",
     "fullName": "Trần Thu Hà",
     "email": "tranthuha@hpu2.edu.vn",
     "employeeCode": "HPU2-002",
@@ -38,7 +38,7 @@
   {
     "id": "u004",
     "username": "khcn01",
-    "password": "hpu2@2026",
+    "password": "hpu2@",
     "fullName": "Nguyễn Hoàng Nam",
     "email": "hoangnam@hpu2.edu.vn",
     "employeeCode": "HPU2-003",
@@ -50,7 +50,7 @@
   {
     "id": "u005",
     "username": "gvtoan",
-    "password": "hpu2@2026",
+    "password": "hpu2@",
     "fullName": "Lê Thu Trang",
     "email": "lethutrang@hpu2.edu.vn",
     "employeeCode": "HPU2-004",
@@ -62,7 +62,7 @@
   {
     "id": "u006",
     "username": "bgh01",
-    "password": "hpu2@2026",
+    "password": "hpu2@",
     "fullName": "Nguyễn Văn Đức",
     "email": "ducnv@hpu2.edu.vn",
     "employeeCode": "HPU2-005",
@@ -74,7 +74,7 @@
   {
     "id": "u007",
     "username": "hdkpi01",
-    "password": "hpu2@2026",
+    "password": "hpu2@",
     "fullName": "Phạm Thị Lan",
     "email": "lanpt@hpu2.edu.vn",
     "employeeCode": "HPU2-006",
@@ -86,7 +86,7 @@
   {
     "id": "u008",
     "username": "cbkpi01",
-    "password": "hpu2@2026",
+    "password": "hpu2@",
     "fullName": "Đỗ Minh Châu",
     "email": "chaudm@hpu2.edu.vn",
     "employeeCode": "HPU2-007",

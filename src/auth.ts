@@ -14,9 +14,9 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
       },
       authorize: async (credentials) => {
         const username = credentials?.username as string
-        const password = credentials?.password as string
+        const password = (credentials?.password || "") as string
 
-        if (!username || !password) return null
+        if (!username) return null
 
         const users = readDb<User>("users")
         const user = users.find(
@@ -40,6 +40,7 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
   callbacks: {
     jwt({ token, user }) {
       if (user) {
+        token.name = user.name
         token.id = user.id
         token.username = (user as any).username
         token.employeeCode = (user as any).employeeCode
