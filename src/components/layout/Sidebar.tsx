@@ -55,6 +55,7 @@ const menuItems: MenuItem[] = [
     icon: Award,
     children: [
       { href: '/kpi/evaluation', label: 'Đánh giá KPI' },
+      { href: '/kpi/individual-evaluation', label: 'Đánh giá cá nhân' },
       { href: '/kpi/scoring', label: 'Xếp loại chất lượng' },
     ],
   },
