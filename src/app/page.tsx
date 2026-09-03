@@ -42,6 +42,7 @@ import { calcCompletionRate } from "@/lib/kpi";
 import indicatorsData from "@/data/indicators.json";
 import kpiGroupsData from "@/data/kpi-groups.json";
 import unitKPIsData from "@/data/unit-kpis.json";
+import unitsData from "@/data/units.json";
 import academicYears from "@/data/academic-years.json";
 import progressData from "@/data/progress.json";
 
@@ -192,14 +193,21 @@ function AnimatedNumber({ value }: { value: number }) {
 }
 
 export default function DashboardPage() {
-  const [selectedYearId, setSelectedYearId] = useState("ay002");
+  const [selectedYearId, setSelectedYearId] = useState("ay_hpu2_2025_2026");
 
+  // Bản đồ từ id năm học hiển thị (academic-years.json) sang id dữ liệu hiện có
+  // trong indicators.json / unit-kpis.json (vẫn dùng ay001/ay002/ay003).
+  const yearToData: Record<string, string> = {
+    ay_hpu2_2025_2026: "ay002",
+    ay_hpu2_2026_2027: "ay003",
+  };
+  const dataYearId = yearToData[selectedYearId] ?? "ay002";
   const activeYear = academicYears.find((y) => y.id === selectedYearId)!;
   const yearIndicators = indicatorsData.filter(
-    (i) => i.academicYearId === selectedYearId,
+    (i) => i.academicYearId === dataYearId,
   );
   const yearUnitKPIs = unitKPIsData.filter(
-    (u) => u.academicYearId === selectedYearId,
+    (u) => u.academicYearId === dataYearId,
   );
 
   // Dữ liệu progress cũ có thể dùng ID khác với indicator hiện tại.
@@ -328,40 +336,109 @@ export default function DashboardPage() {
     lock: "#607d8b",
   };
 
-  const unitProgressAll = (
-    progressData as Array<{
-      level: string;
-      indicatorName: string;
-      actualValue: number;
-    }>
-  ).filter((p) => p.level === "unit");
+  // --- Heatmap so sánh đơn vị theo lĩnh vực (dùng Danh mục đơn vị HPU2) ---
+  // Cột lĩnh vực dùng chung groupStats (category thực tế trong indicators) để
+  // giá trị ô khớp đúng categoryId của từng KPI đơn vị, đồng bộ với phần còn lại.
+  const heatmapGroups = groupStats.map((g) => ({
+    id: g.id,
+    name: g.name,
+    short: g.short,
+  }));
 
-  const unitPerformance = yearUnitKPIs
-    .map((unit) => {
-      const kpis = unit.kpis || [];
-      const kpiRates = kpis.map((k) => {
-        const rec = unitProgressAll.find((p) => p.indicatorName === k.name);
-        const actual = rec ? rec.actualValue : 0;
-        const target = k.target || 1;
-        const rate = target > 0 ? Math.min((actual / target) * 100, 120) : 0;
-        return { ...k, actual, rate };
+  const typeLabel: Record<string, string> = {
+    department: "Phòng",
+    faculty: "Khoa",
+    research: "Viện",
+    center: "Trung tâm",
+    division: "Đơn vị khác",
+  };
+  const typeOrder = ["department", "faculty", "research", "center", "division"];
+  const norm = (s: string) => s.trim().toLowerCase();
+
+  const unitKpisByNorm: Record<string, any> = {};
+  yearUnitKPIs.forEach((u) => {
+    unitKpisByNorm[norm(u.name)] = u;
+  });
+
+  const indicatorById: Record<string, any> = {};
+  yearIndicators.forEach((i) => {
+    indicatorById[i.id] = i;
+  });
+
+  const heatmapUnitRows = unitsData
+    .filter((u: any) => u.parentId !== null)
+    .map((u: any) => {
+      const matched = unitKpisByNorm[norm(u.name)];
+      const groupRate: Record<string, number | null> = {};
+      heatmapGroups.forEach((g) => {
+        groupRate[g.id] = null;
       });
-      const achieved = kpiRates.filter((k) => k.rate >= 100).length;
-      const totalWeight = kpis.reduce((s, k) => s + (k.weight || 1), 0);
-      const weightedScore = kpiRates.reduce(
-        (s, k) => s + k.rate * (k.weight || 1),
-        0,
-      );
-      const score =
-        totalWeight > 0 ? Math.round(weightedScore / totalWeight) : 0;
-      let grade = "Không đạt";
-      if (score >= 90) grade = "Xuất sắc";
-      else if (score >= 75) grade = "Tốt";
-      else if (score >= 60) grade = "Đạt";
-      else if (score >= 40) grade = "Cần cải thiện";
-      return { name: unit.name, score, grade, kpiCount: kpis.length, achieved };
+      if (matched) {
+        const kpis = matched.kpis || [];
+        const byGroup: Record<string, { actual: number; target: number }[]> = {};
+        kpis.forEach((k: any) => {
+          if (!k.indicatorId) return;
+          const ind = indicatorById[k.indicatorId];
+          if (!ind) return;
+          const actual = progressById[ind.id] ?? progressByName[ind.name] ?? 0;
+          const target = ind.targetValue ?? k.target ?? 0;
+          if (target <= 0) return;
+          (byGroup[ind.categoryId] ??= []).push({ actual, target });
+        });
+        heatmapGroups.forEach((g) => {
+          const items = byGroup[g.id] || [];
+          if (items.length === 0) return;
+          const total = items.reduce((s, i) => s + i.target, 0);
+          groupRate[g.id] = Math.round(
+            (items.reduce((s, i) => s + Math.min((i.actual / i.target) * 100, 120) * i.target, 0) / total),
+          );
+        });
+      }
+      return {
+        id: u.id,
+        name: u.name,
+        type: u.type,
+        typeLabel: typeLabel[u.type] || "Khác",
+        groupRate,
+      };
     })
-    .sort((a, b) => b.score - a.score);
+    .sort((a: any, b: any) => {
+      const i = typeOrder.indexOf(a.type);
+      const j = typeOrder.indexOf(b.type);
+      return (i < 0 ? 99 : i) - (j < 0 ? 99 : j);
+    });
+
+  const gradeForScore = (score: number) => {
+    if (score >= 90) return "Xuất sắc";
+    if (score >= 75) return "Tốt";
+    if (score >= 60) return "Đạt";
+    if (score >= 40) return "Cần cải thiện";
+    return "Không đạt";
+  };
+
+  const unitRanking = heatmapUnitRows
+    .map((unit: any) => {
+      const rates = Object.values(unit.groupRate).filter(
+        (v): v is number => v !== null,
+      ) as number[];
+      const score =
+        rates.length > 0
+          ? Math.round(rates.reduce((s, v) => s + v, 0) / rates.length)
+          : null;
+      return {
+        id: unit.id,
+        name: unit.name,
+        typeLabel: unit.typeLabel,
+        score,
+        grade: score === null ? "Chưa có dữ liệu" : gradeForScore(score),
+      };
+    })
+    .sort((a: any, b: any) => {
+      if (a.score === null && b.score === null) return 0;
+      if (a.score === null) return 1;
+      if (b.score === null) return -1;
+      return b.score - a.score;
+    });
 
   const completionStatus = (rate: number) => {
     if (rate >= 100)
@@ -742,9 +819,9 @@ export default function DashboardPage() {
           </div>
           <div className="p-4 flex-1 min-h-0" style={{ overflowY: "auto" }}>
             <div className="space-y-3">
-              {unitPerformance.map((unit, idx) => (
+              {unitRanking.map((unit, idx) => (
                 <div
-                  key={unit.name}
+                  key={unit.id}
                   className="flex items-center gap-3 p-2 rounded-lg hover:bg-bg-cream"
                 >
                   <span
@@ -764,31 +841,52 @@ export default function DashboardPage() {
                       >
                         {unit.name}
                       </a>
-                      <span
-                        className="text-sm font-bold shrink-0 ml-2"
-                        style={{ color: gradeColors[unit.grade] }}
-                      >
-                        {unit.score}
-                      </span>
+                      {unit.score !== null && (
+                        <span
+                          className="text-sm font-bold shrink-0 ml-2"
+                          style={{
+                            color:
+                              unit.grade === "Chưa có dữ liệu"
+                                ? "#9ca3af"
+                                : gradeColors[unit.grade],
+                          }}
+                        >
+                          {unit.score}
+                        </span>
+                      )}
                     </div>
                     <div className="flex items-center gap-2 mt-1">
                       <div className="progress-bar flex-1">
                         <div
                           className="progress-fill"
                           style={{
-                            width: `${unit.score}%`,
-                            backgroundColor: gradeColors[unit.grade],
+                            width:
+                              unit.score === null ? "0%" : `${unit.score}%`,
+                            backgroundColor:
+                              unit.grade === "Chưa có dữ liệu"
+                                ? "#e5e7eb"
+                                : gradeColors[unit.grade],
                           }}
                         />
                       </div>
                       <span
                         className="text-xs shrink-0"
-                        style={{ color: gradeColors[unit.grade] }}
+                        style={{
+                          color:
+                            unit.grade === "Chưa có dữ liệu"
+                              ? "#9ca3af"
+                              : gradeColors[unit.grade],
+                        }}
                       >
                         {unit.grade}
                       </span>
                     </div>
                   </div>
+                  {unit.score === null && (
+                    <span className="text-xs text-text-light ml-1">
+                      Chưa có dữ liệu
+                    </span>
+                  )}
                 </div>
               ))}
             </div>
@@ -925,10 +1023,11 @@ export default function DashboardPage() {
             <thead>
               <tr className="border-b">
                 <th className="text-left py-2 px-3 font-medium">Đơn vị</th>
-                {groupStats.map((g) => (
+                {heatmapGroups.map((g) => (
                   <th
                     key={g.id}
                     className="text-center py-2 px-3 font-medium text-xs"
+                    title={g.name}
                   >
                     {g.short}
                   </th>
@@ -936,89 +1035,58 @@ export default function DashboardPage() {
                 <th className="text-center py-2 px-3 font-medium">TB</th>
               </tr>
             </thead>
-            {/* <tbody>
-              {unitPerformance.slice(0, 8).map((unit, idx) => (
-                <tr key={idx} className="border-b">
-                  <td className="py-2 px-3 font-medium text-xs">{unit.name}</td>
-                  {groupStats.map(g => {
-                    const unitItems = (unitKPIsData as any[]).find((u: any) => u.name === unit.name);
-                    const groupKpis = unitItems?.kpis?.filter((k: any) => {
-                      const ind = (indicatorsData as any[]).find((i: any) => i.id === k.indicatorId);
-                      return ind?.categoryId === g.id;
-                    }) || [];
-                    const avg = groupKpis.length > 0 ? Math.round(groupKpis.reduce((s: number, k: any) => s + Math.min(((k.target || 1) > 0 ? ((progressLookup[k.name] ?? 0) / k.target) * 100 : 0), 120), 0) / groupKpis.length) : 0;
-                    const bg = avg >= 100 ? 'bg-green-100 text-green-700' : avg >= 80 ? 'bg-yellow-100 text-yellow-700' : avg > 0 ? 'bg-red-100 text-red-600' : 'bg-gray-50 text-gray-400';
-                    return <td key={g.id} className={`text-center py-2 px-3 text-xs font-medium ${bg}`}>{groupKpis.length > 0 ? `${avg}%` : '-'}</td>;
-                  })}
-                  <td className={`text-center py-2 px-3 text-xs font-bold ${unit.score >= 80 ? 'text-green-600' : unit.score >= 60 ? 'text-yellow-600' : 'text-red-600'}`}>{unit.score}</td>
-                </tr>
-              ))}
-            </tbody> */}
             <tbody>
-              {unitPerformance.slice(0, 8).map((unit, idx) => (
-                <tr key={idx} className="border-b">
-                  <td className="py-2 px-3 font-medium text-xs">{unit.name}</td>
-
-                  {groupStats.map((g) => {
-                    const unitItems = (unitKPIsData as any[]).find(
-                      (u: any) => u.name === unit.name,
-                    );
-
-                    const groupKPIs =
-                      unitItems?.kpis?.filter((k: any) => {
-                        const indicator = (indicatorsData as any[]).find(
-                          (i: any) => i.id === k.indicatorId,
-                        );
-
-                        return indicator?.categoryId === g.id;
-                      }) ?? [];
-
-                    const avg =
-                      groupKPIs.length > 0
-                        ? Math.round(
-                            groupKPIs.reduce((sum: number, k: any) => {
-                              const progress = progressByName[k.name] ?? 0;
-                              const target = k.target || 1;
-
-                              return (
-                                sum + Math.min((progress / target) * 100, 120)
-                              );
-                            }, 0) / groupKPIs.length,
-                          )
-                        : 0;
-
-                    const bg =
-                      avg >= 100
-                        ? "bg-green-100 text-green-700"
-                        : avg >= 80
-                          ? "bg-yellow-100 text-yellow-700"
-                          : avg > 0
-                            ? "bg-red-100 text-red-600"
-                            : "bg-gray-50 text-gray-400";
-
-                    return (
-                      <td
-                        key={g.id}
-                        className={`text-center py-2 px-3 text-xs font-medium ${bg}`}
-                      >
-                        {groupKPIs.length > 0 ? `${avg}%` : "–"}
-                      </td>
-                    );
-                  })}
-
-                  <td
-                    className={`text-center py-2 px-3 text-xs font-bold ${
-                      unit.score >= 80
-                        ? "text-green-600"
-                        : unit.score >= 60
-                          ? "text-yellow-600"
-                          : "text-red-600"
-                    }`}
-                  >
-                    {unit.score}
-                  </td>
-                </tr>
-              ))}
+              {heatmapUnitRows.map((unit) => {
+                const rates = Object.values(unit.groupRate).filter(
+                  (v): v is number => v !== null,
+                ) as number[];
+                const avg =
+                  rates.length > 0
+                    ? Math.round(rates.reduce((s, v) => s + v, 0) / rates.length)
+                    : null;
+                return (
+                  <tr key={unit.id} className="border-b">
+                    <td className="py-2 px-3">
+                      <span className="font-medium text-xs">{unit.name}</span>
+                      <span className="ml-2 text-[10px] text-text-light">
+                        {unit.typeLabel}
+                      </span>
+                    </td>
+                    {heatmapGroups.map((g) => {
+                      const v = unit.groupRate[g.id];
+                      const bg =
+                        v === null
+                          ? "bg-gray-50 text-gray-400"
+                          : v >= 100
+                            ? "bg-green-100 text-green-700"
+                            : v >= 80
+                              ? "bg-yellow-100 text-yellow-700"
+                              : "bg-red-100 text-red-600";
+                      return (
+                        <td
+                          key={g.id}
+                          className={`text-center py-2 px-3 text-xs font-medium ${bg}`}
+                        >
+                          {v === null ? "–" : `${v}%`}
+                        </td>
+                      );
+                    })}
+                    <td
+                      className={`text-center py-2 px-3 text-xs font-bold ${
+                        avg === null
+                          ? "text-gray-400"
+                          : avg >= 80
+                            ? "text-green-600"
+                            : avg >= 60
+                              ? "text-yellow-600"
+                              : "text-red-600"
+                      }`}
+                    >
+                      {avg === null ? "–" : `${avg}%`}
+                    </td>
+                  </tr>
+                );
+              })}
             </tbody>
           </table>
         </div>
