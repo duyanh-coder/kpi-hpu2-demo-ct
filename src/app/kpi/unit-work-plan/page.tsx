@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useMemo, useState } from 'react';
-import { Send, Search, ChevronRight, ChevronDown, ClipboardList, ClipboardCheck, Eye, RefreshCw, Save } from 'lucide-react';
+import { Send, Search, ChevronRight, ChevronDown, ClipboardList, ClipboardCheck, Eye, RefreshCw, Save, Star } from 'lucide-react';
 import { apiGet, apiPut } from '@/lib/api';
 import AssignTaskModal from '@/components/forms/AssignTaskModal';
 import Modal from '@/components/ui/Modal';
@@ -29,6 +29,7 @@ export default function UnitWorkPlanPage() {
   const [assignTask, setAssignTask] = useState<KHCTTask | null>(null);
   const [reportJob, setReportJob] = useState<UnitWorkTask | null>(null);
   const [detailTask, setDetailTask] = useState<KHCTTask | null>(null);
+  const [reviewJob, setReviewJob] = useState<UnitWorkTask | null>(null);
 
   const load = () => {
     apiGet<KHCTTask[]>('/api/khct').then(setTasks);
@@ -130,7 +131,8 @@ export default function UnitWorkPlanPage() {
                 const rowOpen = isOpen(task.id);
                 return (
                   <TaskGroup key={task.id} task={task} jobs={jobs} open={rowOpen} onToggle={() => toggle(task.id)}
-                  onAssign={() => setAssignTask(task)} onReport={setReportJob} onDetail={() => setDetailTask(task)} />
+                  onAssign={() => setAssignTask(task)} onReport={setReportJob} onDetail={() => setDetailTask(task)}
+                  onReview={setReviewJob} />
                 );
               })}
               {filtered.length === 0 && (
@@ -149,11 +151,14 @@ export default function UnitWorkPlanPage() {
       <TaskDetailModal task={detailTask} jobs={detailTask ? workByTask[detailTask.id] || [] : []}
         isOpen={!!detailTask} onClose={() => setDetailTask(null)}
         onSaved={() => { load(); }} onReport={setReportJob} />
+
+      <ReviewJobModal job={reviewJob} isOpen={!!reviewJob} onClose={() => setReviewJob(null)}
+        onSaved={() => { load(); setReviewJob(null); }} />
     </div>
   );
 }
 
-function TaskGroup({ task, jobs, open, onToggle, onAssign, onReport, onDetail }: {
+function TaskGroup({ task, jobs, open, onToggle, onAssign, onReport, onDetail, onReview }: {
   task: KHCTTask;
   jobs: UnitWorkTask[];
   open: boolean;
@@ -161,6 +166,7 @@ function TaskGroup({ task, jobs, open, onToggle, onAssign, onReport, onDetail }:
   onAssign: () => void;
   onReport: (job: UnitWorkTask) => void;
   onDetail: () => void;
+  onReview: (job: UnitWorkTask) => void;
 }) {
   const kpiCodes = task.kpiCodes.split(';').map(c => c.trim()).filter(Boolean).filter(c => c !== '—');
   const doneCount = jobs.filter(j => j.status === 'done').length;
@@ -224,9 +230,14 @@ function TaskGroup({ task, jobs, open, onToggle, onAssign, onReport, onDetail }:
                   <div className="w-[7%] shrink-0 px-3 py-1 text-sm">{job.dueDate}</div>
                   <div className="w-[9%] shrink-0 px-3 py-1">
                     <span className={`badge ${statusMeta[job.status].cls}`}>{statusMeta[job.status].label}</span>
-                    <button onClick={e => { e.stopPropagation(); onReport(job); }} className="btn-secondary text-[10px] mt-1 flex items-center gap-1">
-                      <ClipboardCheck size={12}/> Báo cáo
-                    </button>
+                    <div className="flex flex-wrap gap-1 mt-1">
+                      <button onClick={e => { e.stopPropagation(); onReview(job); }} className="btn-secondary text-[10px] flex items-center gap-1">
+                        <Star size={11}/> Đánh giá
+                      </button>
+                      <button onClick={e => { e.stopPropagation(); onReport(job); }} className="btn-secondary text-[10px] flex items-center gap-1">
+                        <ClipboardCheck size={11}/> Báo cáo
+                      </button>
+                    </div>
                   </div>
                 </div>
               ))}
@@ -460,6 +471,71 @@ function TaskDetailModal({ task, jobs, isOpen, onClose, onSaved, onReport }: {
             </button>
           </div>
         </div>
+      )}
+    </Modal>
+  );
+}
+
+function ReviewJobModal({ job, isOpen, onClose, onSaved }: {
+  job: UnitWorkTask | null;
+  isOpen: boolean;
+  onClose: () => void;
+  onSaved: () => void;
+}) {
+  const [score, setScore] = useState('');
+  const [reviewNote, setReviewNote] = useState('');
+  const [saving, setSaving] = useState(false);
+
+  useEffect(() => {
+    if (isOpen && job) {
+      setScore(job.score != null ? String(job.score) : '');
+      setReviewNote(job.reviewNote || '');
+    }
+  }, [isOpen, job?.id]);
+
+  const handle = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!job) return;
+    setSaving(true);
+    await apiPut(`/api/unit-work-plans/${job.id}`, {
+      score: score !== '' ? parseInt(score, 10) : undefined,
+      reviewNote,
+    });
+    setSaving(false);
+    onSaved?.();
+  };
+
+  return (
+    <Modal isOpen={isOpen} onClose={onClose} title="Đánh giá công việc" maxWidth="max-w-lg">
+      {job && (
+        <form onSubmit={handle} className="space-y-4">
+          <div className="p-3 bg-bg-cream rounded-lg">
+            <p className="text-sm font-semibold text-text-dark">{job.title}</p>
+            <p className="text-xs text-text-light mt-1">Người thực hiện: <span className="font-medium text-text-dark">{job.primaryUserName}</span></p>
+            {job.result && <p className="text-xs text-accent-green mt-1">Kết quả đã báo cáo: {job.result}</p>}
+          </div>
+          <div>
+            <label className="block text-sm font-medium mb-1">Điểm đánh giá (0-4)</label>
+            <div className="flex flex-wrap gap-1.5">
+              {scoreOptions.map(p => (
+                <button key={p} type="button" onClick={() => setScore(String(p))}
+                  className={`text-sm px-3 py-1.5 rounded-lg border transition ${score === String(p) ? 'bg-primary text-white border-primary' : 'text-text-dark border-border hover:border-primary'}`}>
+                  {p}
+                </button>
+              ))}
+            </div>
+          </div>
+          <div>
+            <label className="block text-sm font-medium mb-1">Nhận xét</label>
+            <textarea rows={3} value={reviewNote} onChange={e => setReviewNote(e.target.value)}
+              className="w-full px-3 py-2 rounded-lg border border-border text-sm focus:outline-none focus:border-primary resize-y"
+              placeholder="Nhập nhận xét của đơn vị (nếu có)" />
+          </div>
+          <div className="flex justify-end gap-2 pt-4 border-t">
+            <button type="button" onClick={onClose} className="btn-secondary">Hủy</button>
+            <button type="submit" disabled={saving} className="btn-primary">{saving ? 'Đang lưu...' : 'Lưu đánh giá'}</button>
+          </div>
+        </form>
       )}
     </Modal>
   );
