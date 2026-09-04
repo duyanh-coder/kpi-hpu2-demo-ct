@@ -663,6 +663,7 @@ export interface UnitWorkTask {
   result?: string;
   resultSource?: 'manual' | 'sync';
   syncInfo?: { sourceId: string; sourceName: string; syncedAt: string };
+  reportNote?: string;
   dueDate: string;
   note: string;
   status: 'assigned' | 'in_progress' | 'done';

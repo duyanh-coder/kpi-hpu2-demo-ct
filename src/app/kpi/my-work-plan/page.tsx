@@ -211,6 +211,7 @@ function ReportModal({ job, isOpen, onClose, onSaved }: {
   const [evidences, setEvidences] = useState<WorkEvidence[]>([]);
   const [uploading, setUploading] = useState(false);
   const [mode, setMode] = useState<'manual' | 'sync'>('manual');
+  const [reportNote, setReportNote] = useState('');
 
   const loadEvidences = async (taskId: string) => {
     const list = await apiGet<WorkEvidence[]>(`/api/evidences?unitWorkPlanId=${taskId}`);
@@ -224,6 +225,7 @@ function ReportModal({ job, isOpen, onClose, onSaved }: {
       setSaving(false);
       setSelectedSource('');
       setMode(job.resultSource === 'sync' ? 'sync' : 'manual');
+      setReportNote(job.reportNote || '');
       loadEvidences(job.id);
       apiGet<SoftwareSource[]>('/api/software-catalog')
         .then(d => setSources(d.filter(s => s.status !== 'inactive')))
@@ -235,7 +237,7 @@ function ReportModal({ job, isOpen, onClose, onSaved }: {
     e.preventDefault();
     if (!job) return;
     setSaving(true);
-    await apiPut(`/api/unit-work-plans/${job.id}`, { result, status, resultSource: mode });
+    await apiPut(`/api/unit-work-plans/${job.id}`, { result, status, resultSource: mode, reportNote });
     setSaving(false);
     onSaved?.();
   };
@@ -248,7 +250,6 @@ function ReportModal({ job, isOpen, onClose, onSaved }: {
     setStatus(res.task.status);
     setMode('sync');
     setSyncing(false);
-    onSaved?.();
   };
 
   const handleFile = async (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -289,7 +290,7 @@ function ReportModal({ job, isOpen, onClose, onSaved }: {
           </div>
 
           <div className="border-t pt-4">
-            <p className="text-sm font-semibold text-text-dark mb-2">1. Cập nhật kết quả</p>
+            <p className="text-sm font-semibold text-text-dark mb-2">Cập nhật kết quả</p>
             <div className="flex flex-wrap gap-2 mb-3">
               <button type="button" onClick={() => setMode('manual')}
                 className={`text-xs px-3 py-1.5 rounded-full border transition ${mode === 'manual' ? 'bg-primary text-white border-primary' : 'text-text-dark border-border hover:border-primary'}`}>
@@ -329,7 +330,7 @@ function ReportModal({ job, isOpen, onClose, onSaved }: {
                 )}
               </div>
             ) : (
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <div className="space-y-3">
                 <div>
                   <label className="block text-sm font-medium mb-1">Kết quả thực hiện</label>
                   <input value={result} onChange={e => setResult(e.target.value)} disabled={syncing}
@@ -346,11 +347,17 @@ function ReportModal({ job, isOpen, onClose, onSaved }: {
                 </div>
               </div>
             )}
+            <div className="mt-3">
+              <label className="block text-sm font-medium mb-1">Ghi chú báo cáo</label>
+              <textarea value={reportNote} onChange={e => setReportNote(e.target.value)} rows={3}
+                className="w-full px-3 py-2 rounded-lg border border-border text-sm focus:outline-none focus:border-primary resize-y"
+                placeholder="Nhập ghi chú báo cáo (nếu có)" />
+            </div>
           </div>
 
           <div className="border-t pt-4">
             <div className="flex items-center justify-between mb-2">
-              <p className="text-sm font-semibold text-text-dark">3. Minh chứng</p>
+              <p className="text-sm font-semibold text-text-dark">File đính kèm</p>
               <label className="btn-secondary text-xs flex items-center gap-1 cursor-pointer disabled:opacity-60">
                 <UploadCloud size={13}/>
                 {uploading ? 'Đang tải...' : 'Tải lên file'}
