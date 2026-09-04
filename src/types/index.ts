@@ -664,6 +664,7 @@ export interface UnitWorkTask {
   resultSource?: 'manual' | 'sync';
   syncInfo?: { sourceId: string; sourceName: string; syncedAt: string };
   reportNote?: string;
+  progress?: number;
   dueDate: string;
   note: string;
   status: 'assigned' | 'in_progress' | 'done';

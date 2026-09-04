@@ -28,14 +28,15 @@ export async function POST(request: NextRequest) {
   const now = new Date();
   const records = Math.floor(Math.random() * 80) + 20;
   const iso = now.toISOString();
-  const result = buildSyncedResult(tasks[idx].chiTieu, source.name, records);
+  const synced = buildSyncedResult(tasks[idx].chiTieu, source.name, records);
 
   tasks[idx] = {
     ...tasks[idx],
-    result,
+    result: synced.text,
     resultSource: 'sync',
     syncInfo: { sourceId: source.id, sourceName: source.name, syncedAt: iso },
     status: 'in_progress',
+    progress: synced.progress,
     updatedAt: iso,
   };
   writeDb('unit-work-plans', tasks);
@@ -61,18 +62,18 @@ export async function POST(request: NextRequest) {
   return NextResponse.json({ task: tasks[idx], syncedRecords: records, sourceName: source.name });
 }
 
-function buildSyncedResult(raw: string | undefined, sourceName: string, records: number): string {
+function buildSyncedResult(raw: string | undefined, sourceName: string, records: number): { text: string; progress: number } {
   const chiTieu = (raw || '').trim();
   if (chiTieu.includes('%')) {
     const pct = Math.floor(Math.random() * 40) + 60;
-    return `${pct}%`;
+    return { text: `${pct}%`, progress: pct };
   }
   const m = chiTieu.match(/^(\d+)\s*(.*)$/);
   if (m) {
     const target = parseInt(m[1], 10);
     const unit = m[2].trim();
     const value = Math.max(1, Math.round(target * (0.4 + Math.random() * 0.5)));
-    return unit ? `${value} ${unit}` : `${value}`;
+    return { text: unit ? `${value} ${unit}` : `${value}`, progress: 70 };
   }
-  return `Đồng bộ ${records} bản ghi từ ${sourceName}`;
+  return { text: `Đồng bộ ${records} bản ghi từ ${sourceName}`, progress: 70 };
 }

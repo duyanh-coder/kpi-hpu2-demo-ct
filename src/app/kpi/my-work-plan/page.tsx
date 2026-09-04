@@ -48,6 +48,13 @@ function progressColor(pct: number): string {
   return '#9e9e9e';
 }
 
+/** Ưu tiên: done > progress nhập tay > fallback theo trạng thái. */
+function getProgress(task: UnitWorkTask): number {
+  if (task.status === 'done') return 100;
+  if (task.progress != null) return task.progress;
+  return progressByStatus[task.status];
+}
+
 export default function MyWorkPlanPage() {
   const [tasks, setTasks] = useState<UnitWorkTask[]>([]);
   const [loading, setLoading] = useState(true);
@@ -138,7 +145,7 @@ export default function MyWorkPlanPage() {
             </thead>
             <tbody>
               {filtered.map(task => {
-                const pct = progressByStatus[task.status];
+                const pct = getProgress(task);
                 const overdue = isOverdue(task);
                 return (
                   <tr key={task.id} className="align-top">
@@ -212,6 +219,7 @@ function ReportModal({ job, isOpen, onClose, onSaved }: {
   const [uploading, setUploading] = useState(false);
   const [mode, setMode] = useState<'manual' | 'sync'>('manual');
   const [reportNote, setReportNote] = useState('');
+  const [progressInput, setProgressInput] = useState('');
 
   const loadEvidences = async (taskId: string) => {
     const list = await apiGet<WorkEvidence[]>(`/api/evidences?unitWorkPlanId=${taskId}`);
@@ -226,6 +234,7 @@ function ReportModal({ job, isOpen, onClose, onSaved }: {
       setSelectedSource('');
       setMode(job.resultSource === 'sync' ? 'sync' : 'manual');
       setReportNote(job.reportNote || '');
+      setProgressInput(job.progress != null ? String(job.progress) : '');
       loadEvidences(job.id);
       apiGet<SoftwareSource[]>('/api/software-catalog')
         .then(d => setSources(d.filter(s => s.status !== 'inactive')))
@@ -237,7 +246,10 @@ function ReportModal({ job, isOpen, onClose, onSaved }: {
     e.preventDefault();
     if (!job) return;
     setSaving(true);
-    await apiPut(`/api/unit-work-plans/${job.id}`, { result, status, resultSource: mode, reportNote });
+    const parsed = parseInt(progressInput, 10);
+    const progress = status === 'done' ? 100
+      : (isNaN(parsed) ? undefined : Math.min(100, Math.max(0, parsed)));
+    await apiPut(`/api/unit-work-plans/${job.id}`, { result, status, resultSource: mode, reportNote, progress });
     setSaving(false);
     onSaved?.();
   };
@@ -249,6 +261,7 @@ function ReportModal({ job, isOpen, onClose, onSaved }: {
     setResult(res.task.result || '');
     setStatus(res.task.status);
     setMode('sync');
+    setProgressInput(res.task.progress != null ? String(res.task.progress) : '');
     setSyncing(false);
   };
 
@@ -337,13 +350,22 @@ function ReportModal({ job, isOpen, onClose, onSaved }: {
                     className="w-full px-3 py-2 rounded-lg border border-border text-sm focus:outline-none focus:border-primary disabled:bg-bg-cream"
                     placeholder="VD: 100% | 80/80 | Đã hoàn thành" />
                 </div>
-                <div>
-                  <label className="block text-sm font-medium mb-1">Trạng thái</label>
-                  <select value={status} onChange={e => setStatus(e.target.value as UnitWorkTask['status'])}
-                    className="w-full px-3 py-2 rounded-lg border border-border text-sm focus:outline-none focus:border-primary">
-                    <option value="in_progress">Đang thực hiện</option>
-                    <option value="done">Hoàn thành</option>
-                  </select>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  <div>
+                    <label className="block text-sm font-medium mb-1">Trạng thái</label>
+                    <select value={status} onChange={e => setStatus(e.target.value as UnitWorkTask['status'])}
+                      className="w-full px-3 py-2 rounded-lg border border-border text-sm focus:outline-none focus:border-primary">
+                      <option value="in_progress">Đang thực hiện</option>
+                      <option value="done">Hoàn thành</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium mb-1">Tiến độ %</label>
+                    <input type="number" min={0} max={100} value={progressInput}
+                      onChange={e => setProgressInput(e.target.value)} disabled={syncing}
+                      className="w-full px-3 py-2 rounded-lg border border-border text-sm focus:outline-none focus:border-primary disabled:bg-bg-cream"
+                      placeholder="VD: 85" />
+                  </div>
                 </div>
               </div>
             )}
