@@ -220,25 +220,26 @@ function TaskGroup({ task, jobs, open, onToggle, onAssign, onDetail, onReview }:
               {jobs.length > 0 && (
                 <>
                   <div className="flex w-full items-center bg-bg-cream/40 border-b border-border px-3 py-1 pl-8">
-                    <div className="w-[26%] shrink-0 text-xs font-semibold text-text-light">Công việc</div>
-                    <div className="w-[12%] shrink-0 text-xs font-semibold text-text-light">Chỉ tiêu</div>
-                    <div className="w-[12%] shrink-0 text-xs font-semibold text-text-light">Tiến độ</div>
-                    <div className="w-[17%] shrink-0 text-xs font-semibold text-text-light">Kết quả</div>
-                    <div className="w-[11%] shrink-0 text-xs font-semibold text-text-light">Thời hạn</div>
-                    <div className="w-[11%] shrink-0 text-xs font-semibold text-text-light">Trạng thái</div>
+                    <div className="w-[21%] shrink-0 text-xs font-semibold text-text-light">Công việc</div>
+                    <div className="w-[10%] shrink-0 text-xs font-semibold text-text-light">Chỉ tiêu</div>
+                    <div className="w-[10%] shrink-0 text-xs font-semibold text-text-light">Tiến độ</div>
+                    <div className="w-[14%] shrink-0 text-xs font-semibold text-text-light">Kết quả</div>
+                    <div className="w-[9%] shrink-0 text-xs font-semibold text-text-light">Thời hạn</div>
+                    <div className="w-[10%] shrink-0 text-xs font-semibold text-text-light">Trạng thái</div>
+                    <div className="w-[15%] shrink-0 text-xs font-semibold text-text-light">Nhận xét quản lý</div>
                     <div className="w-[11%] shrink-0 text-xs font-semibold text-text-light">Đánh giá</div>
                   </div>
                   {jobs.map((job, i) => {
                     const pct = getProgress(job);
                     const overdue = isOverdue(job);
                     return (
-                      <div key={job.id} className={`flex w-full items-center border-b border-border px-3 pl-8 ${i === jobs.length - 1 ? 'border-b-2 border-border' : ''}`}>
-                        <div className="w-[26%] shrink-0 py-1">
+                      <div key={job.id} className={`flex w-full items-start border-b border-border px-3 pl-8 ${i === jobs.length - 1 ? 'border-b-2 border-border' : ''}`}>
+                        <div className="w-[21%] shrink-0 py-1">
                           <p className="text-sm text-text-dark leading-snug">{job.title}</p>
                           <p className="text-[11px] text-primary font-medium mt-0.5">{job.primaryUserName}</p>
                         </div>
-                        <div className="w-[12%] shrink-0 py-1 text-xs font-medium text-accent-green">{job.chiTieu || '—'}</div>
-                        <div className="w-[12%] shrink-0 py-1">
+                        <div className="w-[10%] shrink-0 py-1 text-xs font-medium text-accent-green">{job.chiTieu || '—'}</div>
+                        <div className="w-[10%] shrink-0 py-1">
                           <div className="flex items-center gap-1">
                             <div className="progress-bar">
                               <div className="progress-fill" style={{ width: `${pct}%`, backgroundColor: progressColor(pct) }} />
@@ -246,20 +247,22 @@ function TaskGroup({ task, jobs, open, onToggle, onAssign, onDetail, onReview }:
                             <span className="text-[11px] font-mono font-bold">{pct}%</span>
                           </div>
                         </div>
-                        <div className="w-[17%] shrink-0 py-1 text-xs">
+                        <div className="w-[14%] shrink-0 py-1 text-xs">
                           {job.result ? <span className="text-accent-green">Kết quả: {job.result}</span> : <span className="text-text-light">—</span>}
                         </div>
-                        <div className="w-[11%] shrink-0 py-1 text-sm">
+                        <div className="w-[9%] shrink-0 py-1 text-sm">
                           {job.dueDate}
                           {overdue && <span className="block text-[10px] text-accent-red font-semibold">Trễ</span>}
                         </div>
-                        <div className="w-[11%] shrink-0 py-1">
+                        <div className="w-[10%] shrink-0 py-1">
                           <span className={`badge ${statusMeta[job.status].cls}`}>{statusMeta[job.status].label}</span>
+                        </div>
+                        <div className="w-[15%] shrink-0 py-1 pr-2">
+                          <p className="text-xs text-text-dark break-words leading-snug">{job.reviewNote || <span className="text-text-light">—</span>}</p>
                         </div>
                         <div className="w-[11%] shrink-0 py-1">
                           <div className="flex flex-col gap-1">
-                            <span className={`text-xs font-semibold ${job.score != null ? 'text-text-dark' : 'text-text-light'}`}
-                              title={job.reviewNote || undefined}>
+                            <span className={`text-xs font-semibold ${job.score != null ? 'text-text-dark' : 'text-text-light'}`}>
                               {job.score != null ? `${job.score}/4` : '—'}
                             </span>
                             <button onClick={e => { e.stopPropagation(); onReview(job); }} className="btn-secondary text-[10px] flex items-center gap-1">
