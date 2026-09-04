@@ -240,6 +240,9 @@ export interface KHCTTask {
   chiTieu?: string;
   deadline: string;
   softwareId?: string;
+  taskResult?: string;
+  taskStatus?: 'not_started' | 'in_progress' | 'done';
+  taskReviewNote?: string;
   status: 'active' | 'inactive';
 }
 
@@ -665,6 +668,8 @@ export interface UnitWorkTask {
   syncInfo?: { sourceId: string; sourceName: string; syncedAt: string };
   reportNote?: string;
   progress?: number;
+  score?: number;
+  reviewNote?: string;
   dueDate: string;
   note: string;
   status: 'assigned' | 'in_progress' | 'done';
