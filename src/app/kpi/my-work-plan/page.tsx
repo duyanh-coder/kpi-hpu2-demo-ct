@@ -1,10 +1,22 @@
 'use client';
 
 import { useState, useEffect, useMemo } from 'react';
-import { Send, ClipboardCheck, AlertTriangle, CheckCircle, Save } from 'lucide-react';
-import { apiGet, apiPut } from '@/lib/api';
+import { Send, ClipboardCheck, AlertTriangle, CheckCircle, Save, RefreshCw, Paperclip, Trash2, UploadCloud } from 'lucide-react';
+import { apiGet, apiPut, apiPost, apiDelete } from '@/lib/api';
 import Modal from '@/components/ui/Modal';
 import type { UnitWorkTask } from '@/types';
+
+interface SoftwareSource { id: string; name: string; description?: string; status?: string; }
+interface WorkEvidence {
+  id: string;
+  unitWorkPlanId?: string;
+  evidenceType: 'file' | 'url' | 'system_log' | 'survey' | 'email';
+  fileName?: string;
+  fileUrl?: string;
+  externalUrl?: string;
+  submittedAt: string;
+  submittedBy: string;
+}
 
 const statusMeta: Record<UnitWorkTask['status'], { label: string; cls: string }> = {
   assigned: { label: 'Đã giao', cls: 'badge-info' },
@@ -182,12 +194,27 @@ function ReportModal({ job, isOpen, onClose, onSaved }: {
   const [result, setResult] = useState('');
   const [status, setStatus] = useState<UnitWorkTask['status']>('in_progress');
   const [saving, setSaving] = useState(false);
+  const [sources, setSources] = useState<SoftwareSource[]>([]);
+  const [selectedSource, setSelectedSource] = useState('');
+  const [syncing, setSyncing] = useState(false);
+  const [evidences, setEvidences] = useState<WorkEvidence[]>([]);
+  const [uploading, setUploading] = useState(false);
+
+  const loadEvidences = async (taskId: string) => {
+    const list = await apiGet<WorkEvidence[]>(`/api/evidences?unitWorkPlanId=${taskId}`);
+    setEvidences(list);
+  };
 
   useEffect(() => {
     if (isOpen && job) {
       setResult(job.result || '');
       setStatus(job.status && job.status !== 'done' ? job.status : 'done');
       setSaving(false);
+      setSelectedSource('');
+      loadEvidences(job.id);
+      apiGet<SoftwareSource[]>('/api/software-catalog')
+        .then(d => setSources(d.filter(s => s.status !== 'inactive')))
+        .catch(() => setSources([]));
     }
   }, [isOpen, job?.id]);
 
@@ -200,8 +227,43 @@ function ReportModal({ job, isOpen, onClose, onSaved }: {
     onSaved?.();
   };
 
+  const handleSync = async () => {
+    if (!job || !selectedSource) return;
+    setSyncing(true);
+    const res = await apiPost<{ task: UnitWorkTask; syncedRecords: number; sourceName: string }>('/api/unit-work-plans/sync', { taskId: job.id, sourceId: selectedSource });
+    setResult(res.task.result || '');
+    setStatus(res.task.status);
+    setSyncing(false);
+    onSaved?.();
+  };
+
+  const handleFile = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    e.target.value = '';
+    if (!file || !job) return;
+    setUploading(true);
+    try {
+      const base64 = await fileToBase64(file);
+      const up = await apiPost<{ url: string; fileName: string }>('/api/unit-work-plans/upload', {
+        taskId: job.id, fileName: file.name, fileData: base64,
+      });
+      await apiPost('/api/evidences', {
+        unitWorkPlanId: job.id, evidenceType: 'file',
+        fileName: up.fileName, fileUrl: up.url, submittedBy: job.primaryUserName,
+      });
+      await loadEvidences(job.id);
+    } finally {
+      setUploading(false);
+    }
+  };
+
+  const handleDeleteEvidence = async (id: string) => {
+    await apiDelete(`/api/evidences/${id}`);
+    if (job) await loadEvidences(job.id);
+  };
+
   return (
-    <Modal isOpen={isOpen} onClose={onClose} title="Báo cáo công việc" maxWidth="max-w-lg">
+    <Modal isOpen={isOpen} onClose={onClose} title="Báo cáo công việc" maxWidth="max-w-2xl">
       {job && (
         <form onSubmit={handle} className="space-y-4">
           <div className="p-3 bg-bg-cream rounded-lg">
@@ -211,20 +273,76 @@ function ReportModal({ job, isOpen, onClose, onSaved }: {
             {job.dueDate && <p className="text-xs text-text-light mt-1">Hạn hoàn thành: {job.dueDate}</p>}
             {job.note && <p className="text-xs text-text-light mt-1">Ghi chú: {job.note}</p>}
           </div>
-          <div>
-            <label className="block text-sm font-medium mb-1">Kết quả thực hiện</label>
-            <input value={result} onChange={e => setResult(e.target.value)}
-              className="w-full px-3 py-2 rounded-lg border border-border text-sm focus:outline-none focus:border-primary"
-              placeholder="VD: 100% | 80/80 | Đã hoàn thành" />
+
+          <div className="border-t pt-4">
+            <p className="text-sm font-semibold text-text-dark mb-2">1. Cập nhật kết quả</p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <div>
+                <label className="block text-sm font-medium mb-1">Kết quả thực hiện</label>
+                <input value={result} onChange={e => setResult(e.target.value)}
+                  className="w-full px-3 py-2 rounded-lg border border-border text-sm focus:outline-none focus:border-primary"
+                  placeholder="VD: 100% | 80/80 | Đã hoàn thành" />
+              </div>
+              <div>
+                <label className="block text-sm font-medium mb-1">Trạng thái</label>
+                <select value={status} onChange={e => setStatus(e.target.value as UnitWorkTask['status'])}
+                  className="w-full px-3 py-2 rounded-lg border border-border text-sm focus:outline-none focus:border-primary">
+                  <option value="in_progress">Đang thực hiện</option>
+                  <option value="done">Hoàn thành</option>
+                </select>
+              </div>
+            </div>
           </div>
-          <div>
-            <label className="block text-sm font-medium mb-1">Trạng thái</label>
-            <select value={status} onChange={e => setStatus(e.target.value as UnitWorkTask['status'])}
-              className="w-full px-3 py-2 rounded-lg border border-border text-sm focus:outline-none focus:border-primary">
-              <option value="in_progress">Đang thực hiện</option>
-              <option value="done">Hoàn thành</option>
-            </select>
+
+          <div className="border-t pt-4">
+            <p className="text-sm font-semibold text-text-dark mb-2">2. Đồng bộ dữ liệu từ phần mềm</p>
+            <div className="flex flex-wrap items-end gap-2">
+              <div className="flex-1 min-w-[200px]">
+                <label className="block text-sm font-medium mb-1">Nguồn dữ liệu</label>
+                <select value={selectedSource} onChange={e => setSelectedSource(e.target.value)}
+                  className="w-full px-3 py-2 rounded-lg border border-border text-sm focus:outline-none focus:border-primary">
+                  <option value="">-- Chọn nguồn --</option>
+                  {sources.map(s => <option key={s.id} value={s.id}>{s.name}</option>)}
+                </select>
+              </div>
+              <button type="button" onClick={handleSync} disabled={!selectedSource || syncing}
+                className="btn-secondary text-sm flex items-center gap-1">
+                <RefreshCw size={14}/> {syncing ? 'Đang đồng bộ...' : 'Đồng bộ'}
+              </button>
+            </div>
+            <p className="text-[11px] text-text-light mt-1">Là dữ liệu mô phỏng minh họa.</p>
           </div>
+
+          <div className="border-t pt-4">
+            <div className="flex items-center justify-between mb-2">
+              <p className="text-sm font-semibold text-text-dark">3. Minh chứng</p>
+              <label className="btn-secondary text-xs flex items-center gap-1 cursor-pointer disabled:opacity-60">
+                <UploadCloud size={13}/>
+                {uploading ? 'Đang tải...' : 'Tải lên file'}
+                <input type="file" className="hidden" onChange={handleFile} disabled={uploading} />
+              </label>
+            </div>
+            {evidences.length === 0 ? (
+              <p className="text-xs text-text-light">Chưa có minh chứng.</p>
+            ) : (
+              <ul className="space-y-1.5">
+                {evidences.map(ev => (
+                  <li key={ev.id} className="flex items-center gap-2 text-sm text-text-dark bg-bg-cream rounded-lg px-3 py-2">
+                    <Paperclip size={13} className="text-primary shrink-0"/>
+                    {ev.fileUrl ? (
+                      <a href={ev.fileUrl} target="_blank" rel="noreferrer" className="flex-1 min-w-0 truncate text-primary hover:underline">{ev.fileName || ev.fileUrl}</a>
+                    ) : (
+                      <span className="flex-1 min-w-0 truncate">{ev.fileName || ev.externalUrl || ev.id}</span>
+                    )}
+                    <button type="button" onClick={() => handleDeleteEvidence(ev.id)} className="text-accent-red hover:opacity-70" title="Xóa minh chứng">
+                      <Trash2 size={14}/>
+                    </button>
+                  </li>
+                ))}
+              </ul>
+            )}
+          </div>
+
           <div className="flex justify-end gap-2 pt-4 border-t">
             <button type="button" onClick={onClose} className="btn-secondary">Hủy</button>
             <button type="submit" disabled={saving} className="btn-primary flex items-center gap-1">
@@ -235,4 +353,16 @@ function ReportModal({ job, isOpen, onClose, onSaved }: {
       )}
     </Modal>
   );
+}
+
+function fileToBase64(file: File): Promise<string> {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.onload = () => {
+      const result = reader.result as string;
+      resolve(result.split(',')[1] || '');
+    };
+    reader.onerror = () => reject(new Error('Không đọc được file'));
+    reader.readAsDataURL(file);
+  });
 }
