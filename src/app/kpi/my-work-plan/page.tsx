@@ -361,10 +361,13 @@ function ReportModal({ job, isOpen, onClose, onSaved }: {
                   </div>
                   <div>
                     <label className="block text-sm font-medium mb-1">Tiến độ %</label>
-                    <input type="number" min={0} max={100} value={progressInput}
-                      onChange={e => setProgressInput(e.target.value)} disabled={syncing}
-                      className="w-full px-3 py-2 rounded-lg border border-border text-sm focus:outline-none focus:border-primary disabled:bg-bg-cream"
-                      placeholder="VD: 85" />
+                    <select value={progressInput} onChange={e => setProgressInput(e.target.value)} disabled={syncing}
+                      className="w-full px-3 py-2 rounded-lg border border-border text-sm focus:outline-none focus:border-primary disabled:bg-bg-cream">
+                      <option value="">-- Chọn --</option>
+                      {[10, 25, 50, 75, 90, 100].map(p => (
+                        <option key={p} value={p}>{p}%</option>
+                      ))}
+                    </select>
                   </div>
                 </div>
               </div>
