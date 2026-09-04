@@ -260,8 +260,8 @@ function TaskGroup({ task, jobs, open, onToggle, onAssign, onDetail, onReview }:
                             : <span className="block text-[10px] text-accent-green mt-0.5">Trong hạn</span>}
                         </div>
                         <div className="w-[16%] shrink-0 py-1 pr-2">
-                          <p className={`text-xs font-semibold ${job.score != null ? 'text-text-dark' : 'text-text-light'}`}>
-                            {job.score != null ? `${job.score}/4` : '—'}
+                          <p className={`text-xs font-semibold ${job.assessment ? 'text-text-dark' : 'text-text-light'}`}>
+                            {job.assessment || '—'}
                           </p>
                           <p className="text-xs text-text-dark break-words leading-snug mt-0.5">{job.reviewNote || ''}</p>
                         </div>
@@ -340,7 +340,7 @@ function ReportModal({ job, isOpen, onClose, onSaved }: {
   );
 }
 
-const scoreOptions = [0, 1, 2, 3, 4];
+const assessmentOptions = ['Chưa đạt', 'Đạt', 'Tốt', 'Rất tốt'];
 
 function TaskDetailModal({ task, jobs, isOpen, onClose, onSaved, onReport }: {
   task: KHCTTask | null;
@@ -350,7 +350,7 @@ function TaskDetailModal({ task, jobs, isOpen, onClose, onSaved, onReport }: {
   onSaved: () => void;
   onReport: (job: UnitWorkTask) => void;
 }) {
-  const [scores, setScores] = useState<Record<string, string>>({});
+  const [assessments, setAssessments] = useState<Record<string, string>>({});
   const [notes, setNotes] = useState<Record<string, string>>({});
   const [taskResult, setTaskResult] = useState('');
   const [taskStatus, setTaskStatus] = useState<'not_started' | 'in_progress' | 'done'>('not_started');
@@ -362,8 +362,8 @@ function TaskDetailModal({ task, jobs, isOpen, onClose, onSaved, onReport }: {
     if (isOpen && task) {
       const sc: Record<string, string> = {};
       const nt: Record<string, string> = {};
-      jobs.forEach(j => { sc[j.id] = j.score != null ? String(j.score) : ''; nt[j.id] = j.reviewNote || ''; });
-      setScores(sc);
+      jobs.forEach(j => { sc[j.id] = j.assessment || ''; nt[j.id] = j.reviewNote || ''; });
+      setAssessments(sc);
       setNotes(nt);
       setTaskResult(task.taskResult || '');
       setTaskStatus(task.taskStatus || 'not_started');
@@ -375,7 +375,7 @@ function TaskDetailModal({ task, jobs, isOpen, onClose, onSaved, onReport }: {
   const saveJob = async (job: UnitWorkTask) => {
     setSavingJob(job.id);
     await apiPut(`/api/unit-work-plans/${job.id}`, {
-      score: scores[job.id] !== '' ? parseInt(scores[job.id], 10) : undefined,
+      assessment: assessments[job.id] || undefined,
       reviewNote: notes[job.id] || '',
     });
     setSavingJob('');
@@ -387,10 +387,12 @@ function TaskDetailModal({ task, jobs, isOpen, onClose, onSaved, onReport }: {
     const total = jobs.length;
     const done = jobs.filter(j => j.status === 'done').length;
     const status = total > 0 && done === total ? 'done' : (jobs.some(j => j.status !== 'assigned') ? 'in_progress' : 'not_started');
-    const scored = jobs.map(j => parseFloat(scores[j.id])).filter(n => !isNaN(n));
-    const avg = scored.length > 0 ? (scored.reduce((a, b) => a + b, 0) / scored.length).toFixed(1) : null;
+    const scored = jobs.map(j => assessments[j.id]).filter(Boolean);
+    const tagCount = scored.length;
+    const bestRank = scored.length > 0 ? Math.max(...scored.map(a => assessmentOptions.indexOf(a))) : -1;
+    const best = bestRank >= 0 ? assessmentOptions[bestRank] : null;
     setTaskStatus(status);
-    setTaskResult(`${done}/${total} công việc hoàn thành` + (avg ? `; điểm trung bình: ${avg}` : ''));
+    setTaskResult(`${done}/${total} công việc hoàn thành` + (best ? `; ${tagCount} công việc được đánh giá, cao nhất: ${best}` : ''));
   };
 
   const saveTask = async () => {
@@ -428,7 +430,7 @@ function TaskDetailModal({ task, jobs, isOpen, onClose, onSaved, onReport }: {
                       <th className="w-[12%]">Người thực hiện</th>
                       <th className="w-[10%]">Kết quả</th>
                       <th className="w-[8%]">Trạng thái</th>
-                      <th className="w-[12%]">Điểm (0-4)</th>
+                      <th className="w-[12%]">Đánh giá</th>
                       <th className="w-[24%]">Nhận xét</th>
                       <th className="w-[10%]">Thao tác</th>
                     </tr>
@@ -441,10 +443,10 @@ function TaskDetailModal({ task, jobs, isOpen, onClose, onSaved, onReport }: {
                         <td className="text-xs text-text-light">{job.result || '—'}</td>
                         <td><span className={`badge ${statusMeta[job.status].cls}`}>{statusMeta[job.status].label}</span></td>
                         <td>
-                          <select value={scores[job.id] ?? ''} onChange={e => setScores(s => ({ ...s, [job.id]: e.target.value }))}
+                          <select value={assessments[job.id] ?? ''} onChange={e => setAssessments(a => ({ ...a, [job.id]: e.target.value }))}
                             className="w-full px-2 py-1.5 rounded-lg border border-border text-sm focus:outline-none focus:border-primary">
                             <option value="">--</option>
-                            {scoreOptions.map(p => <option key={p} value={p}>{p}</option>)}
+                            {assessmentOptions.map(a => <option key={a} value={a}>{a}</option>)}
                           </select>
                         </td>
                         <td>
@@ -516,13 +518,13 @@ function ReviewJobModal({ job, isOpen, onClose, onSaved }: {
   onClose: () => void;
   onSaved: () => void;
 }) {
-  const [score, setScore] = useState('');
+  const [assessment, setAssessment] = useState('');
   const [reviewNote, setReviewNote] = useState('');
   const [saving, setSaving] = useState(false);
 
   useEffect(() => {
     if (isOpen && job) {
-      setScore(job.score != null ? String(job.score) : '');
+      setAssessment(job.assessment || '');
       setReviewNote(job.reviewNote || '');
     }
   }, [isOpen, job?.id]);
@@ -532,7 +534,7 @@ function ReviewJobModal({ job, isOpen, onClose, onSaved }: {
     if (!job) return;
     setSaving(true);
     await apiPut(`/api/unit-work-plans/${job.id}`, {
-      score: score !== '' ? parseInt(score, 10) : undefined,
+      assessment: assessment || undefined,
       reviewNote,
     });
     setSaving(false);
@@ -549,12 +551,12 @@ function ReviewJobModal({ job, isOpen, onClose, onSaved }: {
             {job.result && <p className="text-xs text-accent-green mt-1">Kết quả đã báo cáo: {job.result}</p>}
           </div>
           <div>
-            <label className="block text-sm font-medium mb-1">Điểm đánh giá (0-4)</label>
+            <label className="block text-sm font-medium mb-1">Đánh giá</label>
             <div className="flex flex-wrap gap-1.5">
-              {scoreOptions.map(p => (
-                <button key={p} type="button" onClick={() => setScore(String(p))}
-                  className={`text-sm px-3 py-1.5 rounded-lg border transition ${score === String(p) ? 'bg-primary text-white border-primary' : 'text-text-dark border-border hover:border-primary'}`}>
-                  {p}
+              {assessmentOptions.map(a => (
+                <button key={a} type="button" onClick={() => setAssessment(a)}
+                  className={`text-sm px-3 py-1.5 rounded-lg border transition ${assessment === a ? 'bg-primary text-white border-primary' : 'text-text-dark border-border hover:border-primary'}`}>
+                  {a}
                 </button>
               ))}
             </div>

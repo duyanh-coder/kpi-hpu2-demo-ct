@@ -668,7 +668,7 @@ export interface UnitWorkTask {
   syncInfo?: { sourceId: string; sourceName: string; syncedAt: string };
   reportNote?: string;
   progress?: number;
-  score?: number;
+  assessment?: string;
   reviewNote?: string;
   dueDate: string;
   note: string;
