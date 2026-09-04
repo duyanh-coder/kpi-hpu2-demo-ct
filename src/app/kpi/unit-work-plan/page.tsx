@@ -131,7 +131,7 @@ export default function UnitWorkPlanPage() {
                 const rowOpen = isOpen(task.id);
                 return (
                   <TaskGroup key={task.id} task={task} jobs={jobs} open={rowOpen} onToggle={() => toggle(task.id)}
-                  onAssign={() => setAssignTask(task)} onReport={setReportJob} onDetail={() => setDetailTask(task)}
+                  onAssign={() => setAssignTask(task)} onDetail={() => setDetailTask(task)}
                   onReview={setReviewJob} />
                 );
               })}
@@ -158,13 +158,12 @@ export default function UnitWorkPlanPage() {
   );
 }
 
-function TaskGroup({ task, jobs, open, onToggle, onAssign, onReport, onDetail, onReview }: {
+function TaskGroup({ task, jobs, open, onToggle, onAssign, onDetail, onReview }: {
   task: KHCTTask;
   jobs: UnitWorkTask[];
   open: boolean;
   onToggle: () => void;
   onAssign: () => void;
-  onReport: (job: UnitWorkTask) => void;
   onDetail: () => void;
   onReview: (job: UnitWorkTask) => void;
 }) {
@@ -233,9 +232,6 @@ function TaskGroup({ task, jobs, open, onToggle, onAssign, onReport, onDetail, o
                     <div className="flex flex-wrap gap-1 mt-1">
                       <button onClick={e => { e.stopPropagation(); onReview(job); }} className="btn-secondary text-[10px] flex items-center gap-1">
                         <Star size={11}/> Đánh giá
-                      </button>
-                      <button onClick={e => { e.stopPropagation(); onReport(job); }} className="btn-secondary text-[10px] flex items-center gap-1">
-                        <ClipboardCheck size={11}/> Báo cáo
                       </button>
                     </div>
                   </div>
