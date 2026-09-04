@@ -27,10 +27,17 @@ export async function POST(request: NextRequest) {
 
   const now = new Date();
   const records = Math.floor(Math.random() * 80) + 20;
-  const timeStr = now.toLocaleString('vi-VN');
-  const result = `Đồng bộ ${records} bản ghi từ ${source.name} lúc ${timeStr}`;
+  const iso = now.toISOString();
+  const result = buildSyncedResult(tasks[idx].chiTieu, source.name, records);
 
-  tasks[idx] = { ...tasks[idx], result, status: 'in_progress', updatedAt: now.toISOString() };
+  tasks[idx] = {
+    ...tasks[idx],
+    result,
+    resultSource: 'sync',
+    syncInfo: { sourceId: source.id, sourceName: source.name, syncedAt: iso },
+    status: 'in_progress',
+    updatedAt: iso,
+  };
   writeDb('unit-work-plans', tasks);
 
   const logs = readDb<SyncLog>('sync-logs');
@@ -40,8 +47,8 @@ export async function POST(request: NextRequest) {
     systemType: 'other',
     syncType: 'manual',
     status: 'success',
-    startedAt: now.toISOString(),
-    completedAt: now.toISOString(),
+    startedAt: iso,
+    completedAt: iso,
     recordsTotal: records,
     recordsSuccess: records,
     recordsFailed: 0,
@@ -52,4 +59,20 @@ export async function POST(request: NextRequest) {
   writeDb('sync-logs', logs);
 
   return NextResponse.json({ task: tasks[idx], syncedRecords: records, sourceName: source.name });
+}
+
+function buildSyncedResult(raw: string | undefined, sourceName: string, records: number): string {
+  const chiTieu = (raw || '').trim();
+  if (chiTieu.includes('%')) {
+    const pct = Math.floor(Math.random() * 40) + 60;
+    return `${pct}%`;
+  }
+  const m = chiTieu.match(/^(\d+)\s*(.*)$/);
+  if (m) {
+    const target = parseInt(m[1], 10);
+    const unit = m[2].trim();
+    const value = Math.max(1, Math.round(target * (0.4 + Math.random() * 0.5)));
+    return unit ? `${value} ${unit}` : `${value}`;
+  }
+  return `Đồng bộ ${records} bản ghi từ ${sourceName}`;
 }

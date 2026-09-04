@@ -160,7 +160,18 @@ export default function MyWorkPlanPage() {
                         <span className="text-xs font-mono font-bold">{pct}%</span>
                       </div>
                     </td>
-                    <td className="text-sm text-text-dark">{task.result || <span className="text-text-light">—</span>}</td>
+                    <td>
+                      {task.result ? (
+                        <div className="flex items-center gap-1.5">
+                          {task.resultSource === 'sync' && (
+                            <span title={task.syncInfo ? `Đồng bộ từ ${task.syncInfo.sourceName} lúc ${task.syncInfo.syncedAt}` : 'Dữ liệu đồng bộ'}>
+                              <RefreshCw size={13} className="text-primary shrink-0" />
+                            </span>
+                          )}
+                          <span className="text-sm text-text-dark">{task.result}</span>
+                        </div>
+                      ) : <span className="text-text-light text-sm">—</span>}
+                    </td>
                     <td><span className={`badge ${statusMeta[task.status].cls}`}>{statusMeta[task.status].label}</span></td>
                     <td>
                       <button onClick={() => setReportJob(task)} className="btn-secondary text-xs flex items-center gap-1">
@@ -199,6 +210,7 @@ function ReportModal({ job, isOpen, onClose, onSaved }: {
   const [syncing, setSyncing] = useState(false);
   const [evidences, setEvidences] = useState<WorkEvidence[]>([]);
   const [uploading, setUploading] = useState(false);
+  const [mode, setMode] = useState<'manual' | 'sync'>('manual');
 
   const loadEvidences = async (taskId: string) => {
     const list = await apiGet<WorkEvidence[]>(`/api/evidences?unitWorkPlanId=${taskId}`);
@@ -211,6 +223,7 @@ function ReportModal({ job, isOpen, onClose, onSaved }: {
       setStatus(job.status && job.status !== 'done' ? job.status : 'done');
       setSaving(false);
       setSelectedSource('');
+      setMode(job.resultSource === 'sync' ? 'sync' : 'manual');
       loadEvidences(job.id);
       apiGet<SoftwareSource[]>('/api/software-catalog')
         .then(d => setSources(d.filter(s => s.status !== 'inactive')))
@@ -222,7 +235,7 @@ function ReportModal({ job, isOpen, onClose, onSaved }: {
     e.preventDefault();
     if (!job) return;
     setSaving(true);
-    await apiPut(`/api/unit-work-plans/${job.id}`, { result, status });
+    await apiPut(`/api/unit-work-plans/${job.id}`, { result, status, resultSource: mode });
     setSaving(false);
     onSaved?.();
   };
@@ -233,6 +246,7 @@ function ReportModal({ job, isOpen, onClose, onSaved }: {
     const res = await apiPost<{ task: UnitWorkTask; syncedRecords: number; sourceName: string }>('/api/unit-work-plans/sync', { taskId: job.id, sourceId: selectedSource });
     setResult(res.task.result || '');
     setStatus(res.task.status);
+    setMode('sync');
     setSyncing(false);
     onSaved?.();
   };
@@ -276,41 +290,62 @@ function ReportModal({ job, isOpen, onClose, onSaved }: {
 
           <div className="border-t pt-4">
             <p className="text-sm font-semibold text-text-dark mb-2">1. Cập nhật kết quả</p>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-              <div>
-                <label className="block text-sm font-medium mb-1">Kết quả thực hiện</label>
-                <input value={result} onChange={e => setResult(e.target.value)}
-                  className="w-full px-3 py-2 rounded-lg border border-border text-sm focus:outline-none focus:border-primary"
-                  placeholder="VD: 100% | 80/80 | Đã hoàn thành" />
-              </div>
-              <div>
-                <label className="block text-sm font-medium mb-1">Trạng thái</label>
-                <select value={status} onChange={e => setStatus(e.target.value as UnitWorkTask['status'])}
-                  className="w-full px-3 py-2 rounded-lg border border-border text-sm focus:outline-none focus:border-primary">
-                  <option value="in_progress">Đang thực hiện</option>
-                  <option value="done">Hoàn thành</option>
-                </select>
-              </div>
-            </div>
-          </div>
-
-          <div className="border-t pt-4">
-            <p className="text-sm font-semibold text-text-dark mb-2">2. Đồng bộ dữ liệu từ phần mềm</p>
-            <div className="flex flex-wrap items-end gap-2">
-              <div className="flex-1 min-w-[200px]">
-                <label className="block text-sm font-medium mb-1">Nguồn dữ liệu</label>
-                <select value={selectedSource} onChange={e => setSelectedSource(e.target.value)}
-                  className="w-full px-3 py-2 rounded-lg border border-border text-sm focus:outline-none focus:border-primary">
-                  <option value="">-- Chọn nguồn --</option>
-                  {sources.map(s => <option key={s.id} value={s.id}>{s.name}</option>)}
-                </select>
-              </div>
-              <button type="button" onClick={handleSync} disabled={!selectedSource || syncing}
-                className="btn-secondary text-sm flex items-center gap-1">
-                <RefreshCw size={14}/> {syncing ? 'Đang đồng bộ...' : 'Đồng bộ'}
+            <div className="flex flex-wrap gap-2 mb-3">
+              <button type="button" onClick={() => setMode('manual')}
+                className={`text-xs px-3 py-1.5 rounded-full border transition ${mode === 'manual' ? 'bg-primary text-white border-primary' : 'text-text-dark border-border hover:border-primary'}`}>
+                Nhập kết quả thủ công
+              </button>
+              <button type="button" onClick={() => setMode('sync')}
+                className={`text-xs px-3 py-1.5 rounded-full border transition ${mode === 'sync' ? 'bg-primary text-white border-primary' : 'text-text-dark border-border hover:border-primary'}`}>
+                <RefreshCw size={12} className="inline mr-1"/>Đồng bộ từ phần mềm
               </button>
             </div>
-            <p className="text-[11px] text-text-light mt-1">Là dữ liệu mô phỏng minh họa.</p>
+
+            {mode === 'sync' ? (
+              <div className="space-y-2">
+                <div className="flex flex-wrap items-end gap-2">
+                  <div className="flex-1 min-w-[200px]">
+                    <label className="block text-sm font-medium mb-1">Nguồn dữ liệu</label>
+                    <select value={selectedSource} onChange={e => setSelectedSource(e.target.value)}
+                      className="w-full px-3 py-2 rounded-lg border border-border text-sm focus:outline-none focus:border-primary">
+                      <option value="">-- Chọn nguồn --</option>
+                      {sources.map(s => <option key={s.id} value={s.id}>{s.name}</option>)}
+                    </select>
+                  </div>
+                  <button type="button" onClick={handleSync} disabled={!selectedSource || syncing}
+                    className="btn-secondary text-sm flex items-center gap-1">
+                    <RefreshCw size={14}/> {syncing ? 'Đang đồng bộ...' : 'Đồng bộ'}
+                  </button>
+                </div>
+                <p className="text-[11px] text-text-light">Là dữ liệu mô phỏng minh họa. Kết quả được hệ thống sinh tương đương chỉ tiêu, không sửa tay.</p>
+                {result && (
+                  <div className="p-3 bg-bg-cream rounded-lg">
+                    <div className="flex items-center gap-1.5 text-sm font-medium text-text-dark">
+                      <RefreshCw size={14} className="text-primary"/>
+                      Kết quả: {result}
+                      {job.syncInfo && <span className="text-[11px] font-normal text-text-light ml-auto truncate">Đồng bộ từ {job.syncInfo.sourceName}</span>}
+                    </div>
+                  </div>
+                )}
+              </div>
+            ) : (
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <div>
+                  <label className="block text-sm font-medium mb-1">Kết quả thực hiện</label>
+                  <input value={result} onChange={e => setResult(e.target.value)} disabled={syncing}
+                    className="w-full px-3 py-2 rounded-lg border border-border text-sm focus:outline-none focus:border-primary disabled:bg-bg-cream"
+                    placeholder="VD: 100% | 80/80 | Đã hoàn thành" />
+                </div>
+                <div>
+                  <label className="block text-sm font-medium mb-1">Trạng thái</label>
+                  <select value={status} onChange={e => setStatus(e.target.value as UnitWorkTask['status'])}
+                    className="w-full px-3 py-2 rounded-lg border border-border text-sm focus:outline-none focus:border-primary">
+                    <option value="in_progress">Đang thực hiện</option>
+                    <option value="done">Hoàn thành</option>
+                  </select>
+                </div>
+              </div>
+            )}
           </div>
 
           <div className="border-t pt-4">
