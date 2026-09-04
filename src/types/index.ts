@@ -237,6 +237,7 @@ export interface KHCTTask {
   coordinatingUnits: string;
   kpiCodes: string;
   deliverable: string;
+  chiTieu?: string;
   deadline: string;
   status: 'active' | 'inactive';
 }
@@ -657,6 +658,8 @@ export interface UnitWorkTask {
   title: string;
   primaryUserId: string;
   primaryUserName: string;
+  chiTieu?: string;
+  result?: string;
   dueDate: string;
   note: string;
   status: 'assigned' | 'in_progress' | 'done';

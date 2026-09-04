@@ -1,9 +1,10 @@
 'use client';
 
 import { useEffect, useMemo, useState } from 'react';
-import { Send, Search, ChevronRight, ChevronDown, ClipboardList } from 'lucide-react';
-import { apiGet } from '@/lib/api';
+import { Send, Search, ChevronRight, ChevronDown, ClipboardList, ClipboardCheck } from 'lucide-react';
+import { apiGet, apiPut } from '@/lib/api';
 import AssignTaskModal from '@/components/forms/AssignTaskModal';
+import Modal from '@/components/ui/Modal';
 import type { KHCTTask, UnitWorkTask } from '@/types';
 
 interface OrgUnit {
@@ -26,6 +27,7 @@ export default function UnitWorkPlanPage() {
   const [keyword, setKeyword] = useState('');
   const [open, setOpen] = useState<Record<string, boolean>>({});
   const [assignTask, setAssignTask] = useState<KHCTTask | null>(null);
+  const [reportJob, setReportJob] = useState<UnitWorkTask | null>(null);
 
   const load = () => {
     apiGet<KHCTTask[]>('/api/khct').then(setTasks);
@@ -111,13 +113,14 @@ export default function UnitWorkPlanPage() {
           <table className="table table-fixed min-w-[1100px]">
             <thead>
               <tr>
-                <th className="w-[6%]">STT</th>
-                <th className="w-[28%]">Nhiệm vụ</th>
-                <th className="w-[12%]">Chủ trì</th>
-                <th className="w-[12%]">Phối hợp</th>
-                <th className="w-[9%]">Mã KPI</th>
-                <th className="w-[16%]">Sản phẩm/KQ</th>
-                <th className="w-[8%]">Thời hạn</th>
+                <th className="w-[5%]">STT</th>
+                <th className="w-[24%]">Nhiệm vụ</th>
+                <th className="w-[10%]">Chủ trì</th>
+                <th className="w-[10%]">Phối hợp</th>
+                <th className="w-[8%]">Mã KPI</th>
+                <th className="w-[13%]">Chỉ tiêu</th>
+                <th className="w-[14%]">Sản phẩm/KQ</th>
+                <th className="w-[7%]">Thời hạn</th>
                 <th className="w-[9%]">Thao tác</th>
               </tr>
             </thead>
@@ -127,11 +130,11 @@ export default function UnitWorkPlanPage() {
                 const rowOpen = isOpen(task.id);
                 return (
                   <TaskGroup key={task.id} task={task} jobs={jobs} open={rowOpen} onToggle={() => toggle(task.id)}
-                    onAssign={() => setAssignTask(task)} />
+                    onAssign={() => setAssignTask(task)} onReport={setReportJob} />
                 );
               })}
               {filtered.length === 0 && (
-                <tr><td colSpan={8} className="text-center text-text-light text-sm py-8">Không có nhiệm vụ</td></tr>
+                <tr><td colSpan={9} className="text-center text-text-light text-sm py-8">Không có nhiệm vụ</td></tr>
               )}
             </tbody>
           </table>
@@ -140,18 +143,22 @@ export default function UnitWorkPlanPage() {
 
       <AssignTaskModal task={assignTask} orgUnits={orgUnits} isOpen={!!assignTask} onClose={() => setAssignTask(null)}
         onAssigned={() => { load(); setAssignTask(null); }} />
+
+      <ReportModal job={reportJob} isOpen={!!reportJob} onClose={() => setReportJob(null)} onSaved={() => { load(); setReportJob(null); }} />
     </div>
   );
 }
 
-function TaskGroup({ task, jobs, open, onToggle, onAssign }: {
+function TaskGroup({ task, jobs, open, onToggle, onAssign, onReport }: {
   task: KHCTTask;
   jobs: UnitWorkTask[];
   open: boolean;
   onToggle: () => void;
   onAssign: () => void;
+  onReport: (job: UnitWorkTask) => void;
 }) {
   const kpiCodes = task.kpiCodes.split(';').map(c => c.trim()).filter(Boolean).filter(c => c !== '—');
+  const doneCount = jobs.filter(j => j.status === 'done').length;
   return (
     <>
       <tr className="bg-bg-cream/60 cursor-pointer hover:bg-bg-cream align-top" onClick={onToggle}>
@@ -169,32 +176,40 @@ function TaskGroup({ task, jobs, open, onToggle, onAssign }: {
             ? <span className="font-mono font-bold text-primary">{kpiCodes.join('; ')}</span>
             : <span className="font-medium text-accent-yellow">Riêng</span>}
         </td>
+        <td className="text-xs font-medium text-accent-green break-words">{task.chiTieu || '—'}</td>
         <td className="text-text-light text-sm">{task.deliverable}</td>
         <td className="text-sm">{task.deadline}</td>
         <td>
+          {jobs.length > 0 && <div className="text-[10px] text-text-light">{doneCount}/{jobs.length} CV</div>}
           <button onClick={e => { e.stopPropagation(); onAssign(); }} className="btn-primary text-xs flex items-center gap-1">
             <Send size={13}/> Phân giao
           </button>
         </td>
       </tr>
       <tr className="m-0 border-0">
-        <td colSpan={8} className="m-0 border-0 p-0" style={{ overflow: 'hidden' }}>
+        <td colSpan={9} className="m-0 border-0 p-0" style={{ overflow: 'hidden' }}>
           <div style={{ display: 'grid', gridTemplateRows: open ? '1fr' : '0fr', transition: 'grid-template-rows 0.3s ease' }}>
             <div style={{ overflow: 'hidden' }}>
               {jobs.length === 0 && (
                 <div className="px-4 py-2 text-xs text-text-light border-b border-border">Chưa phân giao công việc</div>
               )}
               {jobs.map((job, i) => (
-                <div key={job.id} className={`flex w-full border-b border-border ${i === jobs.length - 1 ? 'border-b-2 border-border' : ''}`}>
-                  <div className="w-[6%] shrink-0 px-3 py-1" />
-                  <div className="w-[28%] shrink-0 px-3 py-1 pl-4 text-sm text-text-dark">{job.title}</div>
-                  <div className="w-[12%] shrink-0 px-3 py-1 text-sm font-medium text-primary">{job.primaryUserName}</div>
-                  <div className="w-[12%] shrink-0 px-3 py-1" />
-                  <div className="w-[9%] shrink-0 px-3 py-1" />
-                  <div className="w-[16%] shrink-0 px-3 py-1 text-text-light text-xs">{job.note}</div>
-                  <div className="w-[8%] shrink-0 px-3 py-1 text-sm">{job.dueDate}</div>
+                <div key={job.id} className={`flex w-full items-center border-b border-border ${i === jobs.length - 1 ? 'border-b-2 border-border' : ''}`}>
+                  <div className="w-[5%] shrink-0 px-3 py-1" />
+                  <div className="w-[24%] shrink-0 px-3 py-1 pl-4 text-sm text-text-dark">{job.title}</div>
+                  <div className="w-[10%] shrink-0 px-3 py-1 text-sm font-medium text-primary">{job.primaryUserName}</div>
+                  <div className="w-[10%] shrink-0 px-3 py-1" />
+                  <div className="w-[8%] shrink-0 px-3 py-1" />
+                  <div className="w-[13%] shrink-0 px-3 py-1 text-xs font-medium text-accent-green">{job.chiTieu || '—'}</div>
+                  <div className="w-[14%] shrink-0 px-3 py-1 text-text-light text-xs">
+                    {job.result ? <span className="text-accent-green">Kết quả: {job.result}</span> : <span>—</span>}
+                  </div>
+                  <div className="w-[7%] shrink-0 px-3 py-1 text-sm">{job.dueDate}</div>
                   <div className="w-[9%] shrink-0 px-3 py-1">
                     <span className={`badge ${statusMeta[job.status].cls}`}>{statusMeta[job.status].label}</span>
+                    <button onClick={e => { e.stopPropagation(); onReport(job); }} className="btn-secondary text-[10px] mt-1 flex items-center gap-1">
+                      <ClipboardCheck size={12}/> Báo cáo
+                    </button>
                   </div>
                 </div>
               ))}
@@ -203,5 +218,62 @@ function TaskGroup({ task, jobs, open, onToggle, onAssign }: {
         </td>
       </tr>
     </>
+  );
+}
+
+function ReportModal({ job, isOpen, onClose, onSaved }: {
+  job: UnitWorkTask | null;
+  isOpen: boolean;
+  onClose: () => void;
+  onSaved: () => void;
+}) {
+  const [result, setResult] = useState('');
+  const [status, setStatus] = useState<UnitWorkTask['status']>('in_progress');
+  const [saving, setSaving] = useState(false);
+
+  useEffect(() => {
+    if (isOpen && job) {
+      setResult(job.result || '');
+      setStatus(job.status && job.status !== 'done' ? job.status : 'done');
+      setSaving(false);
+    }
+  }, [isOpen, job?.id]);
+
+  const handle = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!job) return;
+    setSaving(true);
+    await apiPut(`/api/unit-work-plans/${job.id}`, { result, status });
+    setSaving(false);
+    onSaved?.();
+  };
+
+  return (
+    <Modal isOpen={isOpen} onClose={onClose} title="Báo cáo công việc" maxWidth="max-w-lg">
+      {job && (
+        <form onSubmit={handle} className="space-y-4">
+          <div className="p-3 bg-bg-cream rounded-lg">
+            <p className="text-sm font-semibold text-text-dark">{job.title}</p>
+            <p className="text-xs text-text-light mt-1">Người phụ trách: <span className="font-medium text-text-dark">{job.primaryUserName}</span></p>
+            {job.chiTieu && <p className="text-xs text-accent-green mt-1">Chỉ tiêu: {job.chiTieu}</p>}
+          </div>
+          <div>
+            <label className="block text-sm font-medium mb-1">Kết quả thực hiện</label>
+            <input value={result} onChange={e => setResult(e.target.value)} className="w-full px-3 py-2 rounded-lg border border-border text-sm focus:outline-none focus:border-primary" placeholder="VD: 100% | 80/80 | Đã hoàn thành" />
+          </div>
+          <div>
+            <label className="block text-sm font-medium mb-1">Trạng thái</label>
+            <select value={status} onChange={e => setStatus(e.target.value as UnitWorkTask['status'])} className="w-full px-3 py-2 rounded-lg border border-border text-sm focus:outline-none focus:border-primary">
+              <option value="in_progress">Đang thực hiện</option>
+              <option value="done">Hoàn thành</option>
+            </select>
+          </div>
+          <div className="flex justify-end gap-2 pt-4 border-t">
+            <button type="button" onClick={onClose} className="btn-secondary">Hủy</button>
+            <button type="submit" disabled={saving} className="btn-primary">{saving ? 'Đang lưu...' : 'Lưu báo cáo'}</button>
+          </div>
+        </form>
+      )}
+    </Modal>
   );
 }

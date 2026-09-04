@@ -28,6 +28,8 @@ export async function POST(request: NextRequest) {
     title: body.title,
     primaryUserId: body.primaryUserId,
     primaryUserName: body.primaryUserName || '',
+    chiTieu: body.chiTieu || '',
+    result: body.result || '',
     dueDate: body.dueDate || '',
     note: body.note || '',
     status: 'assigned',

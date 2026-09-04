@@ -25,6 +25,7 @@ export async function POST(request: NextRequest) {
     coordinatingUnits: body.coordinatingUnits || '',
     kpiCodes: body.kpiCodes || '',
     deliverable: body.deliverable || '',
+    chiTieu: body.chiTieu || '',
     deadline: body.deadline || '',
     status: 'active',
   };

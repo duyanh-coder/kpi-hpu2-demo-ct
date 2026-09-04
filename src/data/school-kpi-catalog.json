@@ -26,7 +26,7 @@
     "status": "active",
     "unitId": "mu001",
     "target": "≥80%",
-    "cycle": "Năm học",
+    "cycle": "Học kỳ",
     "strategicObjectiveId": "so004"
   },
   {
@@ -39,8 +39,8 @@
     "requiredEvidence": true,
     "maxScore": 10,
     "status": "active",
-    "unitId": "mu001",
-    "target": "≥80%",
+    "unitId": "mu004",
+    "target": "≥2",
     "cycle": "Năm học",
     "strategicObjectiveId": "so004"
   },
@@ -56,7 +56,7 @@
     "status": "active",
     "unitId": "mu001",
     "target": "≥80%",
-    "cycle": "Năm học",
+    "cycle": "Học kỳ",
     "strategicObjectiveId": "so004"
   },
   {
@@ -71,7 +71,7 @@
     "status": "active",
     "unitId": "mu001",
     "target": "≥80%",
-    "cycle": "Năm học",
+    "cycle": "Học kỳ",
     "strategicObjectiveId": "so004"
   },
   {
@@ -86,7 +86,7 @@
     "status": "active",
     "unitId": "mu001",
     "target": "≥90%",
-    "cycle": "Năm học",
+    "cycle": "Học kỳ",
     "strategicObjectiveId": "so004"
   },
   {
@@ -101,7 +101,7 @@
     "status": "active",
     "unitId": "mu001",
     "target": "100%",
-    "cycle": "Năm học",
+    "cycle": "Học kỳ",
     "strategicObjectiveId": "so004"
   },
   {
@@ -894,8 +894,8 @@
     "requiredEvidence": true,
     "maxScore": 10,
     "status": "active",
-    "unitId": "mu001",
-    "target": "≥02",
+    "unitId": "mu013",
+    "target": "100%",
     "cycle": "Năm học",
     "strategicObjectiveId": "so002"
   },
@@ -1527,21 +1527,6 @@
     "unitId": "mu001",
     "target": "100%",
     "cycle": "Năm học",
-    "strategicObjectiveId": "so004"
-  },
-  {
-    "id": "HPU2-KPI-mtlgo7mfb35ymipke3n",
-    "code": "s",
-    "name": "ấ",
-    "categoryId": "grp_quan_tri",
-    "formula": "",
-    "unitId": "mu001",
-    "direction": "higher_better",
-    "requiredEvidence": true,
-    "maxScore": 10,
-    "target": "ss",
-    "cycle": "Năm học",
-    "status": "active",
     "strategicObjectiveId": "so004"
   }
 ]

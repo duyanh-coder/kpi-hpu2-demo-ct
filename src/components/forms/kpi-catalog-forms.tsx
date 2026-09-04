@@ -28,6 +28,7 @@ export function KhctForm({ item, fields, orgUnits, schoolCatalog, kpiGroups, onS
   const [selectedKpiCodes, setSelectedKpiCodes] = useState<string[]>(item?.kpiCodes && item.kpiCodes !== '—' && item.kpiCodes.trim() ? item.kpiCodes.split(';').map(s => s.trim()).filter(Boolean) : []);
   const [kpiMode, setKpiMode] = useState<'phan-bo' | 'rieng'>(item?.kpiCodes && item.kpiCodes !== '—' && item.kpiCodes.trim() ? 'phan-bo' : 'rieng');
   const [deliverable, setDeliverable] = useState(item?.deliverable || '');
+  const [chiTieu, setChiTieu] = useState(item?.chiTieu || '');
   const [deadline, setDeadline] = useState(item?.deadline || '');
 
   const toggleKpiCode = (code: string) => {
@@ -36,7 +37,7 @@ export function KhctForm({ item, fields, orgUnits, schoolCatalog, kpiGroups, onS
 
   const handle = (e: React.FormEvent) => {
     e.preventDefault();
-    onSubmit({ month, field: fieldValue, taskName, responsibleUnit, coordinatingUnits, kpiCodes: kpiMode === 'rieng' ? '' : selectedKpiCodes.join('; '), deliverable, deadline });
+    onSubmit({ month, field: fieldValue, taskName, responsibleUnit, coordinatingUnits, kpiCodes: kpiMode === 'rieng' ? '' : selectedKpiCodes.join('; '), deliverable, chiTieu, deadline });
   };
 
   const leafUnits = orgUnits.filter(u => u.parentId !== null);
@@ -109,11 +110,13 @@ export function KhctForm({ item, fields, orgUnits, schoolCatalog, kpiGroups, onS
       {kpiMode === 'phan-bo' && selectedKpiCodes.length > 0 && <p className="text-xs text-text-light mt-1">Đã chọn {selectedKpiCodes.length} chỉ tiêu: {selectedKpiCodes.join('; ')}</p>}
     </div>
     <div className="grid grid-cols-2 gap-4">
+      <div><label className="block text-sm font-medium mb-1">Chỉ tiêu đo lường</label>
+        <input value={chiTieu} onChange={e => setChiTieu(e.target.value)} className={inputCSS} placeholder="VD: 100% | ≥80% | ≥20" /></div>
       <div><label className="block text-sm font-medium mb-1">Thời gian hoàn thành</label>
         <input value={deadline} onChange={e => setDeadline(e.target.value)} className={inputCSS} placeholder="VD: 8/2026" /></div>
-      <div><label className="block text-sm font-medium mb-1">Sản phẩm / Kết quả</label>
-        <textarea value={deliverable} onChange={e => setDeliverable(e.target.value)} rows={2} className={inputCSS} /></div>
     </div>
+    <div><label className="block text-sm font-medium mb-1">Sản phẩm / Kết quả</label>
+      <textarea value={deliverable} onChange={e => setDeliverable(e.target.value)} rows={2} className={inputCSS} /></div>
     <div className="flex justify-end gap-2 pt-4 border-t">
       <button type="button" onClick={onCancel} className="btn-secondary">Hủy</button>
       <button type="submit" className="btn-primary">{item ? 'Cập nhật' : 'Thêm mới'}</button>

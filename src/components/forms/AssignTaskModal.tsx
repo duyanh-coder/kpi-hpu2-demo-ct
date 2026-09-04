@@ -39,6 +39,7 @@ export default function AssignTaskModal({
   const [users, setUsers] = useState<OrgUser[]>([]);
   const [title, setTitle] = useState('');
   const [primaryUserId, setPrimaryUserId] = useState('');
+  const [chiTieu, setChiTieu] = useState('');
   const [dueDate, setDueDate] = useState('');
   const [note, setNote] = useState('');
   const [saving, setSaving] = useState(false);
@@ -47,6 +48,7 @@ export default function AssignTaskModal({
     if (isOpen && task) {
       setTitle('');
       setPrimaryUserId('');
+      setChiTieu(task.chiTieu || '');
       setDueDate('');
       setNote('');
       setSaving(false);
@@ -74,6 +76,7 @@ export default function AssignTaskModal({
       title,
       primaryUserId,
       primaryUserName: user?.fullName || '',
+      chiTieu,
       dueDate,
       note,
     });
@@ -93,6 +96,11 @@ export default function AssignTaskModal({
           <div>
             <label className="block text-sm font-medium mb-1">Tên công việc *</label>
             <input value={title} onChange={e => setTitle(e.target.value)} required className={fieldCls} placeholder="VD: Rà soát danh sách sinh viên diện cảnh báo" />
+          </div>
+          <div>
+            <label className="block text-sm font-medium mb-1">Chỉ tiêu đo lường</label>
+            <input value={chiTieu} onChange={e => setChiTieu(e.target.value)} className={fieldCls} placeholder="VD: 100% | ≥80% | ≥20" />
+            <p className="text-xs text-text-light mt-1">Kế thừa từ KPI trường/nhiệm vụ, có thể chỉnh sửa.</p>
           </div>
           <div>
             <label className="block text-sm font-medium mb-1">Người phụ trách chính *</label>

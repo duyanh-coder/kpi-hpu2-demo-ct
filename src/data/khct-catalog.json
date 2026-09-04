@@ -10,7 +10,8 @@
     "kpiCodes": "ĐMST01",
     "deliverable": "Báo cáo rà soát chuẩn đầu ra; danh mục CTĐT cần cập nhật",
     "deadline": "8/2026",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "100%"
   },
   {
     "id": "khct_1788439859427_8135",
@@ -23,7 +24,8 @@
     "kpiCodes": "ĐMST01; ĐT01",
     "deliverable": "Danh mục đề cương học phần được rà soát, cập nhật; báo cáo tổng hợp cấp Trường",
     "deadline": "8/2026",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "ĐMST01: ≥02; ĐT01: 100%"
   },
   {
     "id": "khct_1788439859428_8710",
@@ -36,7 +38,8 @@
     "kpiCodes": "ĐBCL07; ĐT02",
     "deliverable": "Danh mục học phần có triển khai LMS/học liệu số; tối thiểu 60% học phần HK1 có không gian LMS",
     "deadline": "8/2026",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "ĐBCL07: 100%; ĐT02: 100%"
   },
   {
     "id": "khct_1788439859429_3542",
@@ -49,7 +52,8 @@
     "kpiCodes": "NN04; ĐBCL08; ĐBCL09; ĐT02",
     "deliverable": "Ít nhất 01 lớp tập huấn cấp Trường; tối thiểu 70% giảng viên tham gia hoặc được tiếp cận tài liệu",
     "deadline": "8/2026",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "NN04: ≥30%; ĐBCL08: 100%; ĐBCL09: ≥80%; ĐT02: 100%"
   },
   {
     "id": "khct_1788439859430_2265",
@@ -62,7 +66,8 @@
     "kpiCodes": "HT02; ĐMST01",
     "deliverable": "100% khoa có kế hoạch tích hợp nội dung CĐS, ĐMST trong hoạt động chuyên môn",
     "deadline": "9/2026",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "HT02: ≥20; ĐMST01: ≥02"
   },
   {
     "id": "khct_1788439859432_7592",
@@ -75,7 +80,8 @@
     "kpiCodes": "ĐT05",
     "deliverable": "Lớp tập huấn; báo cáo tỷ lệ giảng viên áp dụng phương pháp mới",
     "deadline": "",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "ĐT05: ≥70%"
   },
   {
     "id": "khct_1788439859433_8683",
@@ -88,7 +94,8 @@
     "kpiCodes": "TS02",
     "deliverable": "Hoàn thành tiếp nhận sinh viên K52 nhập học",
     "deadline": "8/2026",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "TS02: ≥75%"
   },
   {
     "id": "khct_1788439859435_2263",
@@ -101,7 +108,8 @@
     "kpiCodes": "TS07",
     "deliverable": "Danh sách NCS K16 đợt 2 trúng tuyển",
     "deadline": "8/2026",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "TS07: ≥10%/năm"
   },
   {
     "id": "khct_1788439859437_9446",
@@ -114,7 +122,8 @@
     "kpiCodes": "TS02; TS07",
     "deliverable": "Hoàn thành tiếp nhận NCS K16 đợt 2 nhập học",
     "deadline": "8/2026",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "TS02: ≥75%; TS07: ≥10%/năm"
   },
   {
     "id": "khct_1788439859438_3624",
@@ -127,7 +136,8 @@
     "kpiCodes": "TS01; TS07",
     "deliverable": "Thông báo tuyển sinh được ban hành và công bố",
     "deadline": "8/2026",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "TS01: 100%; TS07: ≥10%/năm"
   },
   {
     "id": "khct_1788439859440_4473",
@@ -166,7 +176,8 @@
     "kpiCodes": "ĐT03",
     "deliverable": "Quyết định công nhận tốt nghiệp đợt tháng 8",
     "deadline": "8/2026",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "ĐT03: ≥90%"
   },
   {
     "id": "khct_1788439859445_2381",
@@ -179,7 +190,8 @@
     "kpiCodes": "ĐT03",
     "deliverable": "Quyết định công nhận tốt nghiệp cao học đợt tháng 8",
     "deadline": "8/2026",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "ĐT03: ≥90%"
   },
   {
     "id": "khct_1788439859446_3001",
@@ -192,7 +204,8 @@
     "kpiCodes": "HT02",
     "deliverable": "Kế hoạch kiến tập, TTSP, TTCN được ban hành",
     "deadline": "8/2026",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "HT02: ≥20"
   },
   {
     "id": "khct_1788439859448_8297",
@@ -205,7 +218,8 @@
     "kpiCodes": "ĐT02",
     "deliverable": "Bảng tổng hợp kết quả học tập HK2 năm học 2025-2026",
     "deadline": "8/2026",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "ĐT02: 100%"
   },
   {
     "id": "khct_1788439859449_9181",
@@ -283,7 +297,8 @@
     "kpiCodes": "TS01; TS05; TS07",
     "deliverable": "Kế hoạch truyền thông; số hồ sơ đăng ký tuyển sinh",
     "deadline": "8/2026",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "TS01: 100%; TS05: ≥10; TS07: ≥10%/năm"
   },
   {
     "id": "khct_1788439859461_6141",
@@ -322,7 +337,8 @@
     "kpiCodes": "HT02; KH01; ĐMST05",
     "deliverable": "Văn bản định hướng nhiệm vụ KHCN năm học 2026-2027; danh mục hướng nghiên cứu ưu tiên",
     "deadline": "9/2026",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "HT02: ≥20; KH01: ≥10%/năm; ĐMST05: ≥02"
   },
   {
     "id": "khct_1788439859464_5214",
@@ -348,7 +364,8 @@
     "kpiCodes": "KH07; ĐMST05",
     "deliverable": "Báo cáo rà soát; danh sách nhóm nghiên cứu đề xuất; tối thiểu 01-02 nhóm theo hướng EdTech/AI giáo dục",
     "deadline": "9/2026",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "KH07: ≥5; ĐMST05: ≥02"
   },
   {
     "id": "khct_1788439859469_2528",
@@ -361,7 +378,8 @@
     "kpiCodes": "KH07; KH08; ĐMST05",
     "deliverable": "Quyết định thành lập nhóm NC mũi nhọn; quy chế hoạt động nhóm",
     "deadline": "9/2026",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "KH07: ≥5; KH08: 100%; ĐMST05: ≥02"
   },
   {
     "id": "khct_1788439859471_3158",
@@ -374,7 +392,8 @@
     "kpiCodes": "KH06",
     "deliverable": "Tạp chí được xuất bản đúng kỳ",
     "deadline": "8/2026",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "KH06: 100%"
   },
   {
     "id": "khct_1788439859473_8836",
@@ -387,7 +406,8 @@
     "kpiCodes": "KH06",
     "deliverable": "Danh mục học phần đăng ký biên soạn giáo trình năm 2026",
     "deadline": "8/2026",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "KH06: 100%"
   },
   {
     "id": "khct_1788439859475_4778",
@@ -400,7 +420,8 @@
     "kpiCodes": "KH02",
     "deliverable": "Quyết định phê duyệt giờ NCKH năm học 2025-2026",
     "deadline": "8/2026",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "KH02: ≥0,3"
   },
   {
     "id": "khct_1788439859476_4120",
@@ -413,7 +434,8 @@
     "kpiCodes": "KH01; KH03",
     "deliverable": "Kế hoạch hỗ trợ công bố quốc tế được ban hành",
     "deadline": "8/2026",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "KH01: ≥10%/năm; KH03: ≥3"
   },
   {
     "id": "khct_1788439859477_4158",
@@ -426,7 +448,8 @@
     "kpiCodes": "QTH06",
     "deliverable": "Danh sách SV tham gia trao đổi; hồ sơ hoàn chỉnh",
     "deadline": "9/2026",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "QTH06: ≥50"
   },
   {
     "id": "khct_1788439859478_3616",
@@ -439,7 +462,8 @@
     "kpiCodes": "KH01; KH02; KH07; QTH05",
     "deliverable": "Biên bản tọa đàm; danh sách tham dự",
     "deadline": "8/2026",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "KH01: ≥10%/năm; KH02: ≥0,3; KH07: ≥5; QTH05: ≥15"
   },
   {
     "id": "khct_1788439859480_8356",
@@ -452,7 +476,8 @@
     "kpiCodes": "QTH03",
     "deliverable": "Biên bản làm việc; kế hoạch giảng dạy của chuyên gia",
     "deadline": "8/2026",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "QTH03: ≥30%"
   },
   {
     "id": "khct_1788439859482_4309",
@@ -465,7 +490,8 @@
     "kpiCodes": "QT01",
     "deliverable": "Kế hoạch triển khai KPI cấp đơn vị năm học 2026-2027 được ban hành",
     "deadline": "9/2026",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "QT01: 100%"
   },
   {
     "id": "khct_1788439859484_7845",
@@ -477,8 +503,9 @@
     "coordinatingUnits": "các đơn vị",
     "kpiCodes": "QT04",
     "deliverable": "Tài liệu hướng dẫn “6 rõ”; danh sách lãnh đạo tham dự tập huấn",
-    "deadline": "Tháng 9/2026",
-    "status": "active"
+    "deadline": "9/2026",
+    "status": "active",
+    "chiTieu": "QT04: ≥80%"
   },
   {
     "id": "khct_1788439859486_5401",
@@ -491,7 +518,8 @@
     "kpiCodes": "QT06",
     "deliverable": "Mẫu Nhật ký công việc phát sinh ban hành; báo cáo tỷ lệ nhiệm vụ đột xuất đạt yêu cầu mỗi học kỳ",
     "deadline": "Ban hành mẫu tháng 9/2026; tổng hợp cuối mỗi học kỳ",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "QT06: ≥90%"
   },
   {
     "id": "khct_1788439859487_5078",
@@ -530,7 +558,8 @@
     "kpiCodes": "QT02",
     "deliverable": "Văn bản hướng dẫn được ban hành và triển khai đến 100% đơn vị thí điểm",
     "deadline": "8/2026",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "QT02: ≥80%"
   },
   {
     "id": "khct_1788439859493_9875",
@@ -543,7 +572,8 @@
     "kpiCodes": "QT01; QT04; QT05",
     "deliverable": "Kế hoạch triển khai Quyết định 2371/QĐ-TTg được ban hành; hướng dẫn lồng ghép nhiệm vụ 2371 vào kế hoạch đơn vị",
     "deadline": "8/2026",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "QT01: 100%; QT04: ≥80%; QT05: ≥80%"
   },
   {
     "id": "khct_1788439859495_5441",
@@ -556,7 +586,8 @@
     "kpiCodes": "QT08",
     "deliverable": "Danh mục văn bản nội bộ cần rà soát/ban hành trong năm học, kèm phân công đơn vị chủ trì và tiến độ từng văn bản",
     "deadline": "9/2026",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "QT08: 100%"
   },
   {
     "id": "khct_1788439859496_8623",
@@ -569,7 +600,8 @@
     "kpiCodes": "TĐ03",
     "deliverable": "Quyết định công nhận sáng kiến cấp cơ sở được ban hành",
     "deadline": "Trước 30/8/2026",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "TĐ03: ≥20"
   },
   {
     "id": "khct_1788439859498_7609",
@@ -582,7 +614,8 @@
     "kpiCodes": "TĐ02",
     "deliverable": "Hồ sơ đề nghị khen thưởng trình Bộ GD&ĐT",
     "deadline": "Trước 30/8/2026",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "TĐ02: ≥10"
   },
   {
     "id": "khct_1788439859500_9526",
@@ -595,7 +628,8 @@
     "kpiCodes": "CCHC02",
     "deliverable": "Hệ thống vận hành; danh sách tài khoản chữ ký số đã cấp; tổ chức tập huấn",
     "deadline": "Học kỳ 1",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "CCHC02: 100%"
   },
   {
     "id": "khct_1788439859501_1848",
@@ -608,7 +642,8 @@
     "kpiCodes": "CCHC04",
     "deliverable": "Chức năng cảnh báo quá hạn vận hành; báo cáo tỷ lệ đúng hạn",
     "deadline": "Xây dựng Học kỳ 1, duy trì cả năm học",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "CCHC04: 100%"
   },
   {
     "id": "khct_1788439859503_1118",
@@ -621,7 +656,8 @@
     "kpiCodes": "CCHC07",
     "deliverable": "Báo cáo đánh giá nội bộ; Quyết định ban hành áp dụng toàn Trường",
     "deadline": "Cả năm học",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "CCHC07: 100%"
   },
   {
     "id": "khct_1788439859505_7384",
@@ -634,7 +670,8 @@
     "kpiCodes": "CCHC08",
     "deliverable": "Kế hoạch phát động; Quyết định công nhận ≥03 sáng kiến",
     "deadline": "Phát động tháng 9/2026, công nhận Học kỳ 2",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "CCHC08: ≥10"
   },
   {
     "id": "khct_1788439859506_7557",
@@ -660,7 +697,8 @@
     "kpiCodes": "CĐS01; KH02; TC04; TC05",
     "deliverable": "Báo cáo rà soát; danh mục quy trình tài chính ưu tiên số hóa",
     "deadline": "8/2026",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "CĐS01: ≥80%; KH02: ≥0,3"
   },
   {
     "id": "khct_1788439859510_4294",
@@ -673,7 +711,8 @@
     "kpiCodes": "CSVC01; TS02",
     "deliverable": "Cơ sở dữ liệu, các biểu mẫu để sinh viên K52 thực hiện nộp học phí, tiền ở nội trú, bảo hiểm… trên phần mềm QLĐT khi nhập học, vật chất sẵn sàng phục vụ năm học mới",
     "deadline": "8/2026",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "TS02: ≥75%"
   },
   {
     "id": "khct_1788439859512_1889",
@@ -686,7 +725,8 @@
     "kpiCodes": "CSVC02; CĐS01; CĐS08; ĐT02",
     "deliverable": "Báo cáo hiện trạng hạ tầng số; danh mục điểm nghẽn cần xử lý",
     "deadline": "8/2026",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "CĐS01: ≥80%; CĐS08: 100%; ĐT02: 100%"
   },
   {
     "id": "khct_1788439859513_6029",
@@ -699,7 +739,8 @@
     "kpiCodes": "CSVC02; CĐS01; ĐMST05; ĐT02",
     "deliverable": "Danh mục dự án/đề xuất đầu tư hạ tầng số giai đoạn 2027-2030",
     "deadline": "9/2026",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "CĐS01: ≥80%; ĐMST05: ≥02; ĐT02: 100%"
   },
   {
     "id": "khct_1788439859514_5339",
@@ -894,7 +935,8 @@
     "kpiCodes": "TS01",
     "deliverable": "Số sinh viên K52 được hỗ trợ tư vấn",
     "deadline": "8/2026",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "TS01: 100%"
   },
   {
     "id": "khct_1788439859538_8280",
@@ -907,7 +949,8 @@
     "kpiCodes": "CĐS01",
     "deliverable": "Lộ trình số hóa quy trình; danh mục 30-40% quy trình ưu tiên",
     "deadline": "8/2026",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "CĐS01: ≥80%"
   },
   {
     "id": "khct_1788439859540_8221",
@@ -920,7 +963,8 @@
     "kpiCodes": "CĐS06",
     "deliverable": "Khung quản trị dữ liệu được ban hành; danh mục dữ liệu dùng chung phiên bản 1.0",
     "deadline": "9/2026",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "CĐS06: ≥80%"
   },
   {
     "id": "khct_1788439859541_3572",
@@ -933,7 +977,8 @@
     "kpiCodes": "ĐT02",
     "deliverable": "Hoàn thành số hoá, đưa vào vận hành thử",
     "deadline": "8/2026",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "ĐT02: 100%"
   },
   {
     "id": "khct_1788439859543_2065",
@@ -946,7 +991,8 @@
     "kpiCodes": "CĐS06; ĐT01",
     "deliverable": "Dự thảo đề cương Quy chế quản trị dữ liệu; danh mục dữ liệu dùng chung",
     "deadline": "8/2026",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "CĐS06: ≥80%; ĐT01: 100%"
   },
   {
     "id": "khct_1788439859544_8454",
@@ -959,7 +1005,8 @@
     "kpiCodes": "ĐT02",
     "deliverable": "Ban hành Kế hoạch tổng thể về SX học liệu số năm học 2026-2027",
     "deadline": "8/2026",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "ĐT02: 100%"
   },
   {
     "id": "khct_1788439859546_2481",
@@ -972,7 +1019,8 @@
     "kpiCodes": "ĐT02; BD12",
     "deliverable": "6 bài giảng số phục vụ sinh viên đầu khóa",
     "deadline": "8/2026",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "ĐT02: 100%; BD12: ≥3"
   },
   {
     "id": "khct_1788439859548_9949",
@@ -998,7 +1046,8 @@
     "kpiCodes": "QTH01; CCHC05; CĐS05",
     "deliverable": "Chuyên mục/tin bài song ngữ về Đề án 2371; nội dung truyền thông được số hóa, lưu trữ và cập nhật định kỳ",
     "deadline": "8/2026",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "QTH01: Có; CCHC05: 100%; CĐS05: ≥4"
   },
   {
     "id": "khct_1788439859550_2870",
@@ -1011,7 +1060,8 @@
     "kpiCodes": "TS01; TS05",
     "deliverable": "Số bài truyền thông; lượt tiếp cận",
     "deadline": "8/2026",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "TS01: 100%; TS05: ≥10"
   },
   {
     "id": "khct_1788439859552_3775",
@@ -1024,7 +1074,8 @@
     "kpiCodes": "TS01; TS05; TS07",
     "deliverable": "Số bài truyền thông; số hồ sơ đăng ký",
     "deadline": "8-9/2026",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "TS01: 100%; TS05: ≥10; TS07: ≥10%/năm"
   },
   {
     "id": "khct_1788439859553_6753",
@@ -1050,7 +1101,8 @@
     "kpiCodes": "ĐBCL05",
     "deliverable": "Kế hoạch tổ chức thi chuẩn ngoại ngữ; báo cáo tỷ lệ đạt chuẩn",
     "deadline": "Cả năm học",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "ĐBCL05: ≥85%"
   },
   {
     "id": "khct_1788439859556_8662",
@@ -1063,7 +1115,8 @@
     "kpiCodes": "ĐBCL09",
     "deliverable": "Hoàn thành tổ chức thi học kỳ phụ",
     "deadline": "8/2026",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "ĐBCL09: ≥80%"
   },
   {
     "id": "khct_1788439859557_5640",
@@ -1076,7 +1129,8 @@
     "kpiCodes": "ĐBCL06; ĐBCL07",
     "deliverable": "Kế hoạch số hóa ngân hàng đề; danh mục học phần ưu tiên",
     "deadline": "8/2026",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "ĐBCL06: 100%; ĐBCL07: 100%"
   },
   {
     "id": "khct_1788439859558_7791",
@@ -1089,7 +1143,8 @@
     "kpiCodes": "ĐBCL02",
     "deliverable": "Kế hoạch phát triển kho minh chứng số được ban hành",
     "deadline": "8/2026",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "ĐBCL02: 100%"
   },
   {
     "id": "khct_1788439859560_6664",
@@ -1102,7 +1157,8 @@
     "kpiCodes": "ĐBCL07",
     "deliverable": "100% học phần theo đăng ký của đơn vị đào tạo hoàn thành bổ sung, điều chỉnh ngân hàng đề",
     "deadline": "11/2026",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "ĐBCL07: 100%"
   },
   {
     "id": "khct_1788439859561_6848",
@@ -1115,7 +1171,8 @@
     "kpiCodes": "TS01; ĐBCL07",
     "deliverable": "Bộ ngân hàng đề nguồn phục vụ kì thi độc lập tuyển sinh đại học chính quy năm 2027",
     "deadline": "11/2026",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "TS01: 100%; ĐBCL07: 100%"
   },
   {
     "id": "khct_1788439859562_1613",
@@ -1258,7 +1315,8 @@
     "kpiCodes": "ĐBCL11",
     "deliverable": "Đề xuất gửi Ban Giám hiệu",
     "deadline": "8/2026",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "ĐBCL11: ≥2"
   },
   {
     "id": "khct_1788439859578_1887",
@@ -1297,7 +1355,8 @@
     "kpiCodes": "ĐT03",
     "deliverable": "Quyết định công nhận tốt nghiệp đợt tháng 9",
     "deadline": "9/2026",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "ĐT03: ≥90%"
   },
   {
     "id": "khct_1788439859582_1171",
@@ -1310,7 +1369,8 @@
     "kpiCodes": "ĐT03",
     "deliverable": "Quyết định công nhận tốt nghiệp cao học đợt tháng 9",
     "deadline": "9/2026",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "ĐT03: ≥90%"
   },
   {
     "id": "khct_1788439859584_7825",
@@ -1336,7 +1396,8 @@
     "kpiCodes": "ĐT01",
     "deliverable": "Danh mục đề cương KLTN K49 được duyệt",
     "deadline": "9/2026",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "ĐT01: 100%"
   },
   {
     "id": "khct_1788439859586_6862",
@@ -1362,7 +1423,8 @@
     "kpiCodes": "ĐT02",
     "deliverable": "Báo cáo tỷ lệ học phần trên LMS lần 1; danh sách đơn vị cần bổ sung",
     "deadline": "9/2026",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "ĐT02: 100%"
   },
   {
     "id": "khct_1788439859590_2971",
@@ -1375,7 +1437,8 @@
     "kpiCodes": "HT02",
     "deliverable": "Kế hoạch TTSP đợt 1 K50 được ban hành",
     "deadline": "9/2026",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "HT02: ≥20"
   },
   {
     "id": "khct_1788439859592_5388",
@@ -1388,7 +1451,8 @@
     "kpiCodes": "HT02",
     "deliverable": "Kế hoạch kiến tập HK1 K51 được ban hành",
     "deadline": "9/2026",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "HT02: ≥20"
   },
   {
     "id": "khct_1788439859593_6912",
@@ -1401,7 +1465,8 @@
     "kpiCodes": "HT02",
     "deliverable": "Danh sách trưởng/ phó đoàn TTSP được tuyển chọn và tập huấn",
     "deadline": "9/2026",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "HT02: ≥20"
   },
   {
     "id": "khct_1788439859594_3860",
@@ -1414,7 +1479,8 @@
     "kpiCodes": "HT02",
     "deliverable": "Lễ khai giảng được tổ chức đúng ngày 05/9/2026",
     "deadline": "05/9/2026",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "HT02: ≥20"
   },
   {
     "id": "khct_1788439859595_7500",
@@ -1427,7 +1493,8 @@
     "kpiCodes": "HT02",
     "deliverable": "Hoàn thành tập huấn; tài liệu và danh sách tham dự",
     "deadline": "9/2026",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "HT02: ≥20"
   },
   {
     "id": "khct_1788439859597_5399",
@@ -1518,7 +1585,8 @@
     "kpiCodes": "HT02",
     "deliverable": "Hoàn thành tập huấn; tài liệu và danh sách tham dự",
     "deadline": "9/2026",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "HT02: ≥20"
   },
   {
     "id": "khct_1788439859608_9269",
@@ -1531,7 +1599,8 @@
     "kpiCodes": "HT02",
     "deliverable": "Biên bản tọa đàm; số SV tham dự",
     "deadline": "9/2026",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "HT02: ≥20"
   },
   {
     "id": "khct_1788439859610_9533",
@@ -1609,7 +1678,8 @@
     "kpiCodes": "ĐT07",
     "deliverable": "Danh sách SV tham gia chương trình liên kết",
     "deadline": "9/2026",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "ĐT07: ≥3"
   },
   {
     "id": "khct_1788439859619_3486",
@@ -1700,7 +1770,8 @@
     "kpiCodes": "ĐT04",
     "deliverable": "Số liệu sinh viên thực tập đúng ngành; báo cáo tỷ lệ việc làm đúng ngành",
     "deadline": "Cả năm học",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "ĐT04: ≥80%"
   },
   {
     "id": "khct_1788439859629_2392",
@@ -1713,7 +1784,8 @@
     "kpiCodes": "ĐT08",
     "deliverable": "Báo cáo rà soát nguyên nhân; kế hoạch hỗ trợ sinh viên chậm tiến độ",
     "deadline": "Học kỳ 1",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "ĐT08: ≥80%"
   },
   {
     "id": "khct_1788439859630_8431",
@@ -1726,7 +1798,8 @@
     "kpiCodes": "HT03",
     "deliverable": "Đạt tối thiểu 10 Sở; Biên bản hợp tác với các Sở GD&ĐT; báo cáo hoạt động phối hợp",
     "deadline": "Cả năm học",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "HT03: ≥15"
   },
   {
     "id": "khct_1788439859632_4298",
@@ -1739,7 +1812,8 @@
     "kpiCodes": "ĐMST04",
     "deliverable": "Kế hoạch cuộc thi; tối thiểu 30 ý tưởng/sản phẩm tham gia",
     "deadline": "9/2026",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "ĐMST04: ≥02"
   },
   {
     "id": "khct_1788439859633_4496",
@@ -1752,7 +1826,8 @@
     "kpiCodes": "HT02",
     "deliverable": "Danh mục định hướng đề tài; thông báo triển khai tới sinh viên",
     "deadline": "9/2026",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "HT02: ≥20"
   },
   {
     "id": "khct_1788439859634_5610",
@@ -1765,7 +1840,8 @@
     "kpiCodes": "ĐT01; ĐT07; QTH01",
     "deliverable": "Dự thảo Đề án/CTĐT Sư phạm Toán dạy bằng tiếng Anh; danh mục nội dung cần hoàn thiện trước tuyển sinh 2027",
     "deadline": "3/2027",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "ĐT01: 100%; ĐT07: ≥3; QTH01: Có"
   },
   {
     "id": "khct_1788439859636_8109",
@@ -1778,7 +1854,8 @@
     "kpiCodes": "KH01; NN04; QTH05",
     "deliverable": "Tối thiểu 01 seminar cấp Trường; danh sách người tham dự",
     "deadline": "9/2026",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "KH01: ≥10%/năm; NN04: ≥30%; QTH05: ≥15"
   },
   {
     "id": "khct_1788439859638_6246",
@@ -1791,7 +1868,8 @@
     "kpiCodes": "QTH06",
     "deliverable": "Hoàn thành tiếp đón; kế hoạchthựctậpđượctriểnkhai",
     "deadline": "10/2026",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "QTH06: ≥50"
   },
   {
     "id": "khct_1788439859640_1542",
@@ -1817,7 +1895,8 @@
     "kpiCodes": "QTH06",
     "deliverable": "Danh sách SV tham gia trao đổi; hồ sơ hoàn chỉnh",
     "deadline": "9/2026",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "QTH06: ≥50"
   },
   {
     "id": "khct_1788439859643_2521",
@@ -1856,7 +1935,8 @@
     "kpiCodes": "KH02",
     "deliverable": "Hội thảo được tổ chức; kỷ yếu/tài liệu hội thảo",
     "deadline": "9/2026",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "KH02: ≥0,3"
   },
   {
     "id": "khct_1788439859647_7907",
@@ -1882,7 +1962,8 @@
     "kpiCodes": "KH02",
     "deliverable": "Hội thảo được tổ chức; kỷ yếu/tài liệu hội thảo",
     "deadline": "9/2026",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "KH02: ≥0,3"
   },
   {
     "id": "khct_1788439859651_3636",
@@ -1895,7 +1976,8 @@
     "kpiCodes": "KH02",
     "deliverable": "Hội thảo được tổ chức; kỷ yếu/tài liệu hội thảo",
     "deadline": "9/2026",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "KH02: ≥0,3"
   },
   {
     "id": "khct_1788439859653_6985",
@@ -1908,7 +1990,8 @@
     "kpiCodes": "KH02",
     "deliverable": "Hội thảo được tổ chức; kỷ yếu/tài liệu hội thảo",
     "deadline": "9/2026",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "KH02: ≥0,3"
   },
   {
     "id": "khct_1788439859654_2819",
@@ -1947,7 +2030,8 @@
     "kpiCodes": "QTH03; ĐT05; KH02",
     "deliverable": "Thông báo số 1 được ban hành và gửi đến các đơn vị",
     "deadline": "10/2026",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "QTH03: ≥30%; ĐT05: ≥70%; KH02: ≥0,3"
   },
   {
     "id": "khct_1788439859658_3187",
@@ -1960,7 +2044,8 @@
     "kpiCodes": "QTH02",
     "deliverable": "Biên bản làm việc với đối tác; Đề án phát triển chương trình quốc tế hóa",
     "deadline": "Cả năm học",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "QTH02: ≥2"
   },
   {
     "id": "khct_1788439859659_3912",
@@ -1973,7 +2058,8 @@
     "kpiCodes": "QTH04",
     "deliverable": "Danh mục thỏa thuận cần xử lý; các thỏa thuận đã ký kết/gia hạn",
     "deadline": "Cả năm học",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "QTH04: ≥10"
   },
   {
     "id": "khct_1788439859660_5941",
@@ -1986,7 +2072,8 @@
     "kpiCodes": "KH05",
     "deliverable": "Danh mục dịch vụ KHCN; hợp đồng dịch vụ; báo cáo doanh thu KHCN",
     "deadline": "Cả năm học",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "KH05: ≥5%"
   },
   {
     "id": "khct_1788439859662_2283",
@@ -1999,7 +2086,8 @@
     "kpiCodes": "ĐMST02",
     "deliverable": "Hệ thống theo dõi dự án khởi nghiệp; báo cáo tốc độ tăng trưởng cuối năm học",
     "deadline": "Cả năm học",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "ĐMST02: ≥02"
   },
   {
     "id": "khct_1788439859663_1220",
@@ -2012,7 +2100,8 @@
     "kpiCodes": "ĐMST03",
     "deliverable": "Báo cáo đánh giá tiềm năng; hồ sơ thành lập doanh nghiệp (nếu có)",
     "deadline": "Cả năm học",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "ĐMST03: ≥02"
   },
   {
     "id": "khct_1788439859665_5008",
@@ -2025,7 +2114,8 @@
     "kpiCodes": "QTH07",
     "deliverable": "Cơ sở dữ liệu đối tác quốc tế; báo cáo số công bố đồng tác giả quốc tế",
     "deadline": "Cả năm học",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "QTH07: ≥15"
   },
   {
     "id": "khct_1788439859666_7799",
@@ -2038,7 +2128,8 @@
     "kpiCodes": "KH10",
     "deliverable": "Danh mục đề tài đến hạn; báo cáo tỷ lệ đề tài nghiệm thu đúng hạn",
     "deadline": "9/2026",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "KH10: ≥95%"
   },
   {
     "id": "khct_1788439859667_5213",
@@ -2051,7 +2142,8 @@
     "kpiCodes": "KH09",
     "deliverable": "Hệ thống vận hành; báo cáo tỷ lệ đề tài được quản trị trên hệ thống",
     "deadline": "Xây dựng Học kỳ 1, vận hành Học kỳ 2",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "KH09: 100%"
   },
   {
     "id": "khct_1788439859668_9572",
@@ -2064,7 +2156,8 @@
     "kpiCodes": "QT01",
     "deliverable": "Danh sách 15/các đơn vị có KHHĐ được phê duyệt",
     "deadline": "Trước 15/9/2026",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "QT01: 100%"
   },
   {
     "id": "khct_1788439859669_4729",
@@ -2129,7 +2222,8 @@
     "kpiCodes": "QT07",
     "deliverable": "Cơ chế/sổ theo dõi kết luận, chỉ đạo được ban hành",
     "deadline": "9/2026",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "QT07: 100%"
   },
   {
     "id": "khct_1788439859675_9809",
@@ -2142,7 +2236,8 @@
     "kpiCodes": "TĐ03",
     "deliverable": "Quyết định công nhận sáng kiến, giải pháp",
     "deadline": "Cả năm học",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "TĐ03: ≥20"
   },
   {
     "id": "khct_1788439859676_8511",
@@ -2155,7 +2250,8 @@
     "kpiCodes": "NN01",
     "deliverable": "Báo cáo rà soát đội ngũ; chính sách hỗ trợ; kế hoạch tuyển dụng",
     "deadline": "Cả năm học",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "NN01: 100%"
   },
   {
     "id": "khct_1788439859677_5460",
@@ -2168,7 +2264,8 @@
     "kpiCodes": "TS01; TS02; TS07",
     "deliverable": "CSVC sẵn sàng phục vụ nhập học K52 và tuyển sinh trình độ Thạc sĩ",
     "deadline": "9/2026",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "TS01: 100%; TS02: ≥75%; TS07: ≥10%/năm"
   },
   {
     "id": "khct_1788439859680_5264",
@@ -2181,7 +2278,8 @@
     "kpiCodes": "HT04",
     "deliverable": "Danh mục hợp đồng/chương trình đang triển khai; biên bản nghiệm thu sản phẩm",
     "deadline": "Cả năm học",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "HT04: ≥20"
   },
   {
     "id": "khct_1788439859682_9941",
@@ -2207,7 +2305,8 @@
     "kpiCodes": "CSVC02; CĐS01; CĐS08; ĐT02",
     "deliverable": "Dự thảo dự toán ngân sách năm 2027",
     "deadline": "9/2026",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "CĐS01: ≥80%; CĐS08: 100%; ĐT02: 100%"
   },
   {
     "id": "khct_1788439859684_9118",
@@ -2259,7 +2358,8 @@
     "kpiCodes": "TS01; TS07",
     "deliverable": "CSVC phòng thi sẵn sàng phục vụ tuyển sinh ThS đợt 2",
     "deadline": "9/2026",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "TS01: 100%; TS07: ≥10%/năm"
   },
   {
     "id": "khct_1788439859689_5121",
@@ -2272,7 +2372,8 @@
     "kpiCodes": "TS02",
     "deliverable": "CSVC khu KTX sẵn sàng đón K52",
     "deadline": "9/2026",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "TS02: ≥75%"
   },
   {
     "id": "khct_1788439859690_1748",
@@ -2337,7 +2438,8 @@
     "kpiCodes": "CĐS01",
     "deliverable": "Danh mục ưu tiên đầu tư hạ tầng số giai đoạn 2026-2030",
     "deadline": "9/2026",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "CĐS01: ≥80%"
   },
   {
     "id": "khct_1788439859698_3400",
@@ -2350,7 +2452,8 @@
     "kpiCodes": "TS02",
     "deliverable": "Hoàn thành tiếp đón SV K52 nhập học",
     "deadline": "9/2026",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "TS02: ≥75%"
   },
   {
     "id": "khct_1788439859700_1982",
@@ -2389,7 +2492,8 @@
     "kpiCodes": "ĐMST04; BD05; QTH03",
     "deliverable": "Kế hoạch hoạt động English Speaking Day/English Zones học kỳ I; danh sách đơn vị, câu lạc bộ, sinh viên tham gia",
     "deadline": "9/2026",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "ĐMST04: ≥02; BD05: ≥50; QTH03: ≥30%"
   },
   {
     "id": "khct_1788439859704_2263",
@@ -2467,7 +2571,8 @@
     "kpiCodes": "CĐS11",
     "deliverable": "Cơ sở dữ liệu ban đầu sinh viên K52",
     "deadline": "9/2026",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "CĐS11: 100%"
   },
   {
     "id": "khct_1788439859714_2551",
@@ -2740,7 +2845,8 @@
     "kpiCodes": "CĐS04",
     "deliverable": "Danh mục dữ liệu; báo cáo tỷ lệ cập nhật đúng hạn",
     "deadline": "Xây dựng Học kỳ 1, duy trì cả năm học",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "CĐS04: ≥80%"
   },
   {
     "id": "khct_1788439859745_8940",
@@ -2753,7 +2859,8 @@
     "kpiCodes": "CĐS03",
     "deliverable": "Báo cáo tỷ lệ đơn vị sử dụng hệ thống theo dõi KPI",
     "deadline": "Cả năm học",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "CĐS03: ≥80%"
   },
   {
     "id": "khct_1788439859746_9628",
@@ -2766,7 +2873,8 @@
     "kpiCodes": "CĐS01",
     "deliverable": "Báo cáo tiến độ số hóa quy trình lần 1; tỷ lệ đạt so với mục tiêu 30-40%",
     "deadline": "9/2026",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "CĐS01: ≥80%"
   },
   {
     "id": "khct_1788439859747_7491",
@@ -2779,7 +2887,8 @@
     "kpiCodes": "BD02",
     "deliverable": "Module tự học trực tuyến; báo cáo tỷ lệ phổ cập kỹ năng số",
     "deadline": "Cả năm học",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "BD02: 100%"
   },
   {
     "id": "khct_1788439859749_1808",
@@ -2792,7 +2901,8 @@
     "kpiCodes": "BD04",
     "deliverable": "Kế hoạch phối hợp cộng đồng; báo cáo số lượt người được tập huấn",
     "deadline": "Cả năm học",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "BD04: ≥3000"
   },
   {
     "id": "khct_1788439859750_4593",
@@ -2805,7 +2915,8 @@
     "kpiCodes": "BD06",
     "deliverable": "Kế hoạch tổ chức hoạt động; báo cáo số hoạt động đã tổ chức",
     "deadline": "Đầu mỗi học kỳ",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "BD06: ≥20"
   },
   {
     "id": "khct_1788439859752_9018",
@@ -2818,7 +2929,8 @@
     "kpiCodes": "BD07",
     "deliverable": "Biên bản hợp tác; báo cáo số đơn vị phối hợp",
     "deadline": "Cả năm học",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "BD07: ≥10"
   },
   {
     "id": "khct_1788439859753_9933",
@@ -2831,7 +2943,8 @@
     "kpiCodes": "BD08",
     "deliverable": "Danh sách tình nguyện viên số; báo cáo số sinh viên tham gia",
     "deadline": "Tuyển chọn Học kỳ 1, triển khai cả năm học",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "BD08: ≥100"
   },
   {
     "id": "khct_1788439859755_3993",
@@ -2857,7 +2970,8 @@
     "kpiCodes": "ĐT02",
     "deliverable": "Vận hành ổn định trên hệ thống LMS cùa Trường",
     "deadline": "9/2026",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "ĐT02: 100%"
   },
   {
     "id": "khct_1788439859758_1392",
@@ -2870,7 +2984,8 @@
     "kpiCodes": "ĐT02",
     "deliverable": "Hoàn thành số hoá và đưa vào sử dụng bài giảng số 1 và 2; quay hình giảng viên, thu âm bài giảng số 3 và 4",
     "deadline": "9/2026",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "ĐT02: 100%"
   },
   {
     "id": "khct_1788439859760_9878",
@@ -2883,7 +2998,8 @@
     "kpiCodes": "BD09",
     "deliverable": "Kế hoạch số hóa; báo cáo tỷ lệ tài liệu nội sinh được số hóa",
     "deadline": "Học kỳ 1",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "BD09: 100%"
   },
   {
     "id": "khct_1788439859762_5694",
@@ -2896,7 +3012,8 @@
     "kpiCodes": "BD10",
     "deliverable": "Đề án phát triển học liệu số được phê duyệt, ban hành",
     "deadline": "Học kỳ 1 xây dựng, Học kỳ 2 ban hành",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "BD10: 100%"
   },
   {
     "id": "khct_1788439859764_1851",
@@ -2909,7 +3026,8 @@
     "kpiCodes": "BD11",
     "deliverable": "Tối thiểu 3 học phần e-learning được thẩm định, đưa vào sử dụng",
     "deadline": "Cả năm học",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "BD11: ≥50"
   },
   {
     "id": "khct_1788439859766_8592",
@@ -2922,7 +3040,8 @@
     "kpiCodes": "BD13",
     "deliverable": "Tối thiểu 3 bài giảng MOOC được xây dựng, vận hành thí điểm",
     "deadline": "Cả năm học",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "BD13: ≥3"
   },
   {
     "id": "khct_1788439859767_8841",
@@ -2961,7 +3080,8 @@
     "kpiCodes": "ĐBCL06",
     "deliverable": "Kết quả đánh giá năng lực ngoại ngữ chuẩn đầu ra đợt tháng 9",
     "deadline": "9/2026",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "ĐBCL06: 100%"
   },
   {
     "id": "khct_1788439859771_7237",
@@ -2974,7 +3094,8 @@
     "kpiCodes": "ĐBCL03",
     "deliverable": "Báo cáo khảo sát yêu cầu; kế hoạch chuẩn bị hồ sơ kiểm định quốc tế",
     "deadline": "Cả năm học",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "ĐBCL03: ≥1"
   },
   {
     "id": "khct_1788439859773_6074",
@@ -2987,7 +3108,8 @@
     "kpiCodes": "ĐBCL04",
     "deliverable": "Bộ công cụ đánh giá năng lực số; danh sách sinh viên đạt chuẩn",
     "deadline": "Trước đợt xét tốt nghiệp chính",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "ĐBCL04: 100%"
   },
   {
     "id": "khct_1788439859774_1941",
@@ -3000,7 +3122,8 @@
     "kpiCodes": "QTH01",
     "deliverable": "Báo cáo đối chiếu tiêu chí xếp hạng; Quyết định thành lập tổ công tác",
     "deadline": "Cả năm học",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "QTH01: Có"
   },
   {
     "id": "khct_1788439859776_3010",
@@ -3013,7 +3136,8 @@
     "kpiCodes": "ĐBCL05",
     "deliverable": "Kế hoạch tổ chức thi chuẩn ngoại ngữ; báo cáo tỷ lệ đạt chuẩn",
     "deadline": "Cả năm học",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "ĐBCL05: ≥85%"
   },
   {
     "id": "khct_1788439859777_1015",
@@ -3026,7 +3150,8 @@
     "kpiCodes": "ĐT06",
     "deliverable": "Bộ dữ liệu khảo sát năng lực số và ngoại ngữ đầu vào K52",
     "deadline": "9/2026",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "ĐT06: ≥90%"
   },
   {
     "id": "khct_1788439859778_3257",
@@ -3039,7 +3164,8 @@
     "kpiCodes": "TS02; ĐT06",
     "deliverable": "Báo cáo khảo sát tân sinh viên K52",
     "deadline": "9/2026",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "TS02: ≥75%; ĐT06: ≥90%"
   },
   {
     "id": "khct_1788439859779_8612",
@@ -3078,7 +3204,8 @@
     "kpiCodes": "ĐBCL02",
     "deliverable": "Báo cáo tự đánh giá chất lượng các CTĐT trình độ đại học: Sư phạm Toán học, Sư phạm Ngữ văn, Sư phạm Tiếng Anh, Giáo dục Tiểu học",
     "deadline": "12/2026",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "ĐBCL02: 100%"
   },
   {
     "id": "khct_1788439859783_5818",
@@ -3143,7 +3270,8 @@
     "kpiCodes": "TS02",
     "deliverable": "Số SV K52 được hỗ trợ trong tuần nhập học",
     "deadline": "10/2026",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "TS02: ≥75%"
   },
   {
     "id": "khct_1788439859790_6099",
@@ -3325,7 +3453,8 @@
     "kpiCodes": "ĐBCL08; ĐT02",
     "deliverable": "Bộ tiêu chí bổ sung; 100% hội thi NVSP cấp khoa áp dụng tiêu chí mới",
     "deadline": "10/2026",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "ĐBCL08: 100%; ĐT02: 100%"
   },
   {
     "id": "khct_1788439859810_9972",
@@ -3338,7 +3467,8 @@
     "kpiCodes": "HT02",
     "deliverable": "Tối thiểu 01 đợt tập huấn; tài liệu hướng dẫn TTSP số",
     "deadline": "10/2026",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "HT02: ≥20"
   },
   {
     "id": "khct_1788439859812_6021",
@@ -3351,7 +3481,8 @@
     "kpiCodes": "ĐT02",
     "deliverable": "Danh sách học phần thí điểm; báo cáo kết quả thí điểm",
     "deadline": "10/2026",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "ĐT02: 100%"
   },
   {
     "id": "khct_1788439859813_9262",
@@ -3364,7 +3495,8 @@
     "kpiCodes": "TS07",
     "deliverable": "Danh sách học viên K30 đợt 2 trúng tuyển",
     "deadline": "10/2026",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "TS07: ≥10%/năm"
   },
   {
     "id": "khct_1788439859814_4608",
@@ -3429,7 +3561,8 @@
     "kpiCodes": "ĐT03",
     "deliverable": "Quyết định công nhận tốt nghiệp đợt tháng 10",
     "deadline": "10/2026",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "ĐT03: ≥90%"
   },
   {
     "id": "khct_1788439859823_6525",
@@ -3468,7 +3601,8 @@
     "kpiCodes": "KH01; KH07; QTH05",
     "deliverable": "01 tọa đàm; danh sách nhóm/ý tưởng nghiên cứu liên ngành",
     "deadline": "10/2026",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "KH01: ≥10%/năm; KH07: ≥5; QTH05: ≥15"
   },
   {
     "id": "khct_1788439859828_4987",
@@ -3481,7 +3615,8 @@
     "kpiCodes": "HT01; HT02",
     "deliverable": "Danh mục sản phẩm có tiềm năng chuyển giao",
     "deadline": "10/2026",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "HT01: ≥30; HT02: ≥20"
   },
   {
     "id": "khct_1788439859830_9830",
@@ -3507,7 +3642,8 @@
     "kpiCodes": "KH06",
     "deliverable": "Tạp chí được xuất bản đúng kỳ",
     "deadline": "10/2026",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "KH06: 100%"
   },
   {
     "id": "khct_1788439859832_3873",
@@ -3533,7 +3669,8 @@
     "kpiCodes": "KH02",
     "deliverable": "Hội thảo/hội nghị được tổ chức; kỷ yếu hoặc tài liệu hội thảo",
     "deadline": "10/2026",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "KH02: ≥0,3"
   },
   {
     "id": "khct_1788439859835_9243",
@@ -3546,7 +3683,8 @@
     "kpiCodes": "KH01; KH07; QTH05",
     "deliverable": "Biên bản tọa đàm; danh sách tham dự",
     "deadline": "10/2026",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "KH01: ≥10%/năm; KH07: ≥5; QTH05: ≥15"
   },
   {
     "id": "khct_1788439859836_9156",
@@ -3611,7 +3749,8 @@
     "kpiCodes": "QT05",
     "deliverable": "Module vận hành; 100% đơn vị được tập huấn sử dụng",
     "deadline": "Tháng 10/2026",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "QT05: ≥80%"
   },
   {
     "id": "khct_1788439859843_1713",
@@ -3624,7 +3763,8 @@
     "kpiCodes": "NN02",
     "deliverable": "Báo cáo đánh giá năng lực số; báo cáo tỷ lệ giảng viên đạt mức Thành thạo",
     "deadline": "Đánh giá Học kỳ 1, bồi dưỡng Học kỳ 2",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "NN02: ≥70%"
   },
   {
     "id": "khct_1788439859844_4296",
@@ -3637,7 +3777,8 @@
     "kpiCodes": "CCHC05",
     "deliverable": "Kế hoạch số hóa lưu trữ; kho lưu trữ điện tử vận hành",
     "deadline": "Học kỳ 1 xây dựng, Học kỳ 2 triển khai",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "CCHC05: 100%"
   },
   {
     "id": "khct_1788439859846_6676",
@@ -3650,7 +3791,8 @@
     "kpiCodes": "CCHC06",
     "deliverable": "Báo cáo kết quả khảo sát mức độ hài lòng",
     "deadline": "Cuối Học kỳ 1 và Học kỳ 2",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "CCHC06: ≥90%"
   },
   {
     "id": "khct_1788439859847_6851",
@@ -3715,7 +3857,8 @@
     "kpiCodes": "HT02",
     "deliverable": "Bộ hồ sơ gửi các đoàn TTSP, TTCN",
     "deadline": "10/2026",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "HT02: ≥20"
   },
   {
     "id": "khct_1788439859854_3070",
@@ -3741,7 +3884,8 @@
     "kpiCodes": "CĐS08",
     "deliverable": "Kế hoạch an toàn thông tin; báo cáo kiểm tra ban đầu",
     "deadline": "10/2026",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "CĐS08: 100%"
   },
   {
     "id": "khct_1788439859857_1252",
@@ -3780,7 +3924,8 @@
     "kpiCodes": "ĐMST01; ĐMST04",
     "deliverable": "01 ngày hội; số lượng ý tưởng/sản phẩm tham gia",
     "deadline": "10/2026",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "ĐMST01: ≥02; ĐMST04: ≥02"
   },
   {
     "id": "khct_1788439859862_6063",
@@ -3923,7 +4068,8 @@
     "kpiCodes": "CĐS02",
     "deliverable": "Báo cáo baseline thời gian xử lý; báo cáo so sánh trước/sau",
     "deadline": "Baseline Học kỳ 1, đo lại Học kỳ 2",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "CĐS02: ≥30%"
   },
   {
     "id": "khct_1788439859879_8905",
@@ -3936,7 +4082,8 @@
     "kpiCodes": "CĐS09",
     "deliverable": "Báo cáo tự đánh giá; báo cáo kết quả tự đánh giá cuối năm học",
     "deadline": "Tự đánh giá Học kỳ 1, khắc phục Học kỳ 2",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "CĐS09: 100%"
   },
   {
     "id": "khct_1788439859881_1922",
@@ -3949,7 +4096,8 @@
     "kpiCodes": "ĐT02",
     "deliverable": "Hoàn thành số hoá và đưa vào sử dụng bài giảng số 3 và 4; quay hình giảng viên, thu âm bài giảng số 5 và 6",
     "deadline": "10/2026",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "ĐT02: 100%"
   },
   {
     "id": "khct_1788439859882_7046",
@@ -3988,7 +4136,8 @@
     "kpiCodes": "ĐBCL06",
     "deliverable": "Hướng dẫn ma trận đề thi; mẫu biểu áp dụng thống nhất",
     "deadline": "10/2026",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "ĐBCL06: 100%"
   },
   {
     "id": "khct_1788439859888_4565",
@@ -4001,7 +4150,8 @@
     "kpiCodes": "ĐT06",
     "deliverable": "Quy trình khảo sát trực tuyến; bộ câu hỏi khảo sát chuẩn",
     "deadline": "10/2026",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "ĐT06: ≥90%"
   },
   {
     "id": "khct_1788439859889_2162",
@@ -4014,7 +4164,8 @@
     "kpiCodes": "ĐT03; ĐT06",
     "deliverable": "Báo cáo kết quả phản hồi từ sinh viên tốt nghiệp đại học (hình thức chính quy) về tình hình việc làm và CTĐT",
     "deadline": "12/2026",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "ĐT03: ≥90%; ĐT06: ≥90%"
   },
   {
     "id": "khct_1788439859890_3713",
@@ -4066,7 +4217,8 @@
     "kpiCodes": "TS01; ĐBCL09",
     "deliverable": "Biên bản kiểm tra bài thi học kỳ 2 năm học 2025-2026 với các đơn vị đào tạo",
     "deadline": "10/2026",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "TS01: 100%; ĐBCL09: ≥80%"
   },
   {
     "id": "khct_1788439859896_7580",
@@ -4079,7 +4231,8 @@
     "kpiCodes": "ĐBCL09",
     "deliverable": "Biên bản kiểm tra bài thi học kỳ 2 năm học 2025-2026 với các đơn vị đào tạo",
     "deadline": "10/2026",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "ĐBCL09: ≥80%"
   },
   {
     "id": "khct_1788439859897_4071",
@@ -4118,7 +4271,8 @@
     "kpiCodes": "ĐT02",
     "deliverable": "Tối thiểu 30 sản phẩm tham gia; danh mục sản phẩm tiêu biểu",
     "deadline": "11/2026",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "ĐT02: 100%"
   },
   {
     "id": "khct_1788439859901_2123",
@@ -4170,7 +4324,8 @@
     "kpiCodes": "TS07",
     "deliverable": "Danh sách NCS K16 đợt 3 trúng tuyển",
     "deadline": "11/2026",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "TS07: ≥10%/năm"
   },
   {
     "id": "khct_1788439859907_3587",
@@ -4183,7 +4338,8 @@
     "kpiCodes": "TS02",
     "deliverable": "Hoàn thành tiếp nhận học viên K30 đợt 2 nhập học",
     "deadline": "11/2026",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "TS02: ≥75%"
   },
   {
     "id": "khct_1788439859909_1513",
@@ -4196,7 +4352,8 @@
     "kpiCodes": "HT02",
     "deliverable": "Báo cáo kiểm tra công tác TTSP K50 đợt 1",
     "deadline": "11/2026",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "HT02: ≥20"
   },
   {
     "id": "khct_1788439859910_7940",
@@ -4235,7 +4392,8 @@
     "kpiCodes": "TS04",
     "deliverable": "Quy trình số hóa; biên bản đối soát dữ liệu sau mỗi đợt xét tuyển",
     "deadline": "Học kỳ 1",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "TS04: 100%"
   },
   {
     "id": "khct_1788439859914_5115",
@@ -4261,7 +4419,8 @@
     "kpiCodes": "HT02",
     "deliverable": "Hoàn thành kiểm tra giữa kỳ đúng lịch",
     "deadline": "11/2026",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "HT02: ≥20"
   },
   {
     "id": "khct_1788439859918_5915",
@@ -4287,7 +4446,8 @@
     "kpiCodes": "KH02",
     "deliverable": "01 tọa đàm/hội thảo; báo cáo tổng hợp",
     "deadline": "11/2026",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "KH02: ≥0,3"
   },
   {
     "id": "khct_1788439859921_6976",
@@ -4300,7 +4460,8 @@
     "kpiCodes": "ĐBCL08",
     "deliverable": "Tối thiểu 01 chuyên gia; 01 chuyên đề học thuật",
     "deadline": "11/2026",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "ĐBCL08: 100%"
   },
   {
     "id": "khct_1788439859923_8189",
@@ -4313,7 +4474,8 @@
     "kpiCodes": "BD05; HT02; ĐT02",
     "deliverable": "Danh mục sản phẩm chuyển giao tiềm năng",
     "deadline": "11/2026",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "BD05: ≥50; HT02: ≥20; ĐT02: 100%"
   },
   {
     "id": "khct_1788439859924_6672",
@@ -4326,7 +4488,8 @@
     "kpiCodes": "KH03; ĐMST05; ĐT02",
     "deliverable": "01-02 hồ sơ đăng ký SHTT được nộp; biên nhận tiếp nhận hồ sơ",
     "deadline": "11/2026",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "KH03: ≥3; ĐMST05: ≥02; ĐT02: 100%"
   },
   {
     "id": "khct_1788439859926_3427",
@@ -4339,7 +4502,8 @@
     "kpiCodes": "KH06",
     "deliverable": "Tạp chí được xuất bản đúng kỳ",
     "deadline": "11/2026",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "KH06: 100%"
   },
   {
     "id": "khct_1788439859927_9427",
@@ -4378,7 +4542,8 @@
     "kpiCodes": "HT02; KH02",
     "deliverable": "Hội thảo/hội nghị được tổ chức; kỷ yếu hoặc tài liệu hội thảo",
     "deadline": "11/2026",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "HT02: ≥20; KH02: ≥0,3"
   },
   {
     "id": "khct_1788439859932_9048",
@@ -4391,7 +4556,8 @@
     "kpiCodes": "KH01",
     "deliverable": "Số bài báo đủ điều kiện được xác định; kinh phí thưởng được thực hiện theo quy chế",
     "deadline": "11/2026",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "KH01: ≥10%/năm"
   },
   {
     "id": "khct_1788439859934_9541",
@@ -4417,7 +4583,8 @@
     "kpiCodes": "KH02",
     "deliverable": "Hội thảo/hội nghị được tổ chức; kỷ yếu hoặc tài liệu hội thảo",
     "deadline": "11/2026",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "KH02: ≥0,3"
   },
   {
     "id": "khct_1788439859937_9524",
@@ -4430,7 +4597,8 @@
     "kpiCodes": "KH02; ĐMST01",
     "deliverable": "Hội thảo/hội nghị được tổ chức; kỷ yếu hoặc tài liệu hội thảo",
     "deadline": "11/2026",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "KH02: ≥0,3; ĐMST01: ≥02"
   },
   {
     "id": "khct_1788439859939_9859",
@@ -4443,7 +4611,8 @@
     "kpiCodes": "KH02",
     "deliverable": "Hội thảo/hội nghị được tổ chức; kỷ yếu hoặc tài liệu hội thảo",
     "deadline": "11/2026",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "KH02: ≥0,3"
   },
   {
     "id": "khct_1788439859940_3537",
@@ -4469,7 +4638,8 @@
     "kpiCodes": "QT02",
     "deliverable": "Báo cáo KPI quý đầu năm học",
     "deadline": "11/2026",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "QT02: ≥80%"
   },
   {
     "id": "khct_1788439859943_2821",
@@ -4495,7 +4665,8 @@
     "kpiCodes": "TĐ02",
     "deliverable": "Quyết định khen thưởng năm 2026 được ban hành",
     "deadline": "11/2026",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "TĐ02: ≥10"
   },
   {
     "id": "khct_1788439859947_8152",
@@ -4521,7 +4692,8 @@
     "kpiCodes": "CCHC01",
     "deliverable": "Danh mục TTHC đơn giản hóa; đăng tải công khai trên website Trường",
     "deadline": "Học kỳ 1 (hoàn thành trước 31/12/202 6)",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "CCHC01: 100%"
   },
   {
     "id": "khct_1788439859950_2874",
@@ -4534,7 +4706,8 @@
     "kpiCodes": "CCHC03",
     "deliverable": "Danh mục dịch vụ; cổng dịch vụ vận hành thí điểm",
     "deadline": "Học kỳ 1–2",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "CCHC03: 90%"
   },
   {
     "id": "khct_1788439859951_9427",
@@ -4612,7 +4785,8 @@
     "kpiCodes": "ĐMST04",
     "deliverable": "Triển lãm sản phẩm; danh mục sản phẩm tiêu biểu",
     "deadline": "11/2026",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "ĐMST04: ≥02"
   },
   {
     "id": "khct_1788439859960_9236",
@@ -4625,7 +4799,8 @@
     "kpiCodes": "ĐMST01",
     "deliverable": "Cuộc thi được tổ chức; số ý tưởng tham gia; danh sách giải thưởng",
     "deadline": "11/2026",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "ĐMST01: ≥02"
   },
   {
     "id": "khct_1788439859961_2460",
@@ -4677,7 +4852,8 @@
     "kpiCodes": "NN04; ĐT02",
     "deliverable": "Báo cáo thống kê tích lũy GV tập huấn AI/học liệu số; tỷ lệ đạt so với mục tiêu 70-80%",
     "deadline": "11/2026",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "NN04: ≥30%; ĐT02: 100%"
   },
   {
     "id": "khct_1788439859967_5359",
@@ -4690,7 +4866,8 @@
     "kpiCodes": "CĐS05; TS01",
     "deliverable": "Dashboard thử nghiệm vận hành; báo cáo đánh giá kết quả thử nghiệm",
     "deadline": "11/2026",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "CĐS05: ≥4; TS01: 100%"
   },
   {
     "id": "khct_1788439859969_3414",
@@ -4703,7 +4880,8 @@
     "kpiCodes": "CĐS07",
     "deliverable": "Hệ thống SSO vận hành; báo cáo tỷ lệ cấp phát và sử dụng tài khoản",
     "deadline": "Học kỳ 1",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "CĐS07: 100%"
   },
   {
     "id": "khct_1788439859970_9245",
@@ -4716,7 +4894,8 @@
     "kpiCodes": "BD01",
     "deliverable": "Chương trình bồi dưỡng; danh sách CB-GV-VC-NLĐ tham gia",
     "deadline": "Học kỳ 1–2",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "BD01: 100%"
   },
   {
     "id": "khct_1788439859972_1592",
@@ -4729,7 +4908,8 @@
     "kpiCodes": "BD03",
     "deliverable": "Danh sách đội ngũ nòng cốt; chứng nhận Master Trainers",
     "deadline": "Học kỳ 1",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "BD03: ≥100"
   },
   {
     "id": "khct_1788439859973_6260",
@@ -4742,7 +4922,8 @@
     "kpiCodes": "ĐT02",
     "deliverable": "Hoàn thành số hoá và đưa vào sử dụng bài giảng số 5 và 6",
     "deadline": "11/2026",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "ĐT02: 100%"
   },
   {
     "id": "khct_1788439859975_4904",
@@ -4768,7 +4949,8 @@
     "kpiCodes": "ĐBCL06",
     "deliverable": "",
     "deadline": "11/2026",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "ĐBCL06: 100%"
   },
   {
     "id": "khct_1788439859978_8236",
@@ -4781,7 +4963,8 @@
     "kpiCodes": "ĐT06",
     "deliverable": "Báo cáo kết quả phản hồi từ sinh viên đại học (hình thức chính quy) về chất lượng giảng dạy của giảng viên (học kì 1).",
     "deadline": "01/2027",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "ĐT06: ≥90%"
   },
   {
     "id": "khct_1788439859979_7329",
@@ -4794,7 +4977,8 @@
     "kpiCodes": "HT02; TS01; ĐBCL07",
     "deliverable": "Bộ ngân hàng đề nguồn phục vụ tuyển sinh lớp 6, lớp 10 T. THCS và THPTSP năm 2027",
     "deadline": "3/2027",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "HT02: ≥20; TS01: 100%; ĐBCL07: 100%"
   },
   {
     "id": "khct_1788439859981_7414",
@@ -4807,7 +4991,8 @@
     "kpiCodes": "ĐBCL01",
     "deliverable": "Báo cáo tự đánh giá; kế hoạch cải tiến",
     "deadline": "Học kỳ 2",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "ĐBCL01: 100%"
   },
   {
     "id": "khct_1788439859982_6039",
@@ -4820,7 +5005,8 @@
     "kpiCodes": "ĐBCL10",
     "deliverable": "Chương trình tập huấn; danh sách giảng viên tham gia (≥60%)",
     "deadline": "Học kỳ 1–2",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "ĐBCL10: 100%"
   },
   {
     "id": "khct_1788439859985_4495",
@@ -4911,7 +5097,8 @@
     "kpiCodes": "ĐT06",
     "deliverable": "Báo cáo kiểm tra; kiến nghị xử lý/cải tiến",
     "deadline": "11/2026",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "ĐT06: ≥90%"
   },
   {
     "id": "khct_1788439859996_9666",
@@ -4924,7 +5111,8 @@
     "kpiCodes": "ĐBCL09",
     "deliverable": "Báo cáo kiểm tra bài thi HK2 năm học 2025-2026",
     "deadline": "11/2026",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "ĐBCL09: ≥80%"
   },
   {
     "id": "khct_1788439859997_1194",
@@ -4937,7 +5125,8 @@
     "kpiCodes": "HT02",
     "deliverable": "Báo cáo kiểm tra công tác TTSP K50 đợt 1",
     "deadline": "11/2026",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "HT02: ≥20"
   },
   {
     "id": "khct_1788439859999_3513",
@@ -4976,7 +5165,8 @@
     "kpiCodes": "ĐT02; ĐT06",
     "deliverable": "Báo cáo sơ kết LMS học kỳ I",
     "deadline": "12/2026",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "ĐT02: 100%; ĐT06: ≥90%"
   },
   {
     "id": "khct_1788439860003_5864",
@@ -4989,7 +5179,8 @@
     "kpiCodes": "ĐT02",
     "deliverable": "Báo cáo tỷ lệ LMS học kỳ I; xác nhận đạt/chưa đạt mục tiêu 60-65%",
     "deadline": "12/2026",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "ĐT02: 100%"
   },
   {
     "id": "khct_1788439860005_5547",
@@ -5002,7 +5193,8 @@
     "kpiCodes": "CĐS11; ĐT02",
     "deliverable": "Danh sách SV cần hỗ trợ; báo cáo cảnh báo sớm",
     "deadline": "12/2026",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "CĐS11: 100%; ĐT02: 100%"
   },
   {
     "id": "khct_1788439860007_7375",
@@ -5015,7 +5207,8 @@
     "kpiCodes": "ĐT06",
     "deliverable": "Biên bản họp chuyên môn; kế hoạch cải tiến học kỳ II",
     "deadline": "12/2026",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "ĐT06: ≥90%"
   },
   {
     "id": "khct_1788439860008_8422",
@@ -5028,7 +5221,8 @@
     "kpiCodes": "TS07",
     "deliverable": "Biên bản báo cáo tiến độ NCS; danh sách NCS đạt yêu cầu",
     "deadline": "12/2026",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "TS07: ≥10%/năm"
   },
   {
     "id": "khct_1788439860009_1284",
@@ -5041,7 +5235,8 @@
     "kpiCodes": "ĐT01",
     "deliverable": "Số đề cương LV/ĐA K29 được thông qua",
     "deadline": "12/2026",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "ĐT01: 100%"
   },
   {
     "id": "khct_1788439860011_4990",
@@ -5054,7 +5249,8 @@
     "kpiCodes": "ĐBCL09",
     "deliverable": "Hoàn thành tổ chức thi HK1 đúng lịch; không để xảy ra sai sót",
     "deadline": "12/2026",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "ĐBCL09: ≥80%"
   },
   {
     "id": "khct_1788439860012_7072",
@@ -5067,7 +5263,8 @@
     "kpiCodes": "ĐBCL09",
     "deliverable": "Hoàn thành tổ chức thi HK1 cao học đúng lịch",
     "deadline": "12/2026",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "ĐBCL09: ≥80%"
   },
   {
     "id": "khct_1788439860014_8349",
@@ -5080,7 +5277,8 @@
     "kpiCodes": "HT02",
     "deliverable": "Báo cáo tổng kết TTSP, Kiến tập đợt 1",
     "deadline": "12/2026",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "HT02: ≥20"
   },
   {
     "id": "khct_1788439860016_7067",
@@ -5093,7 +5291,8 @@
     "kpiCodes": "ĐT06",
     "deliverable": "Báo cáo phân tích khảo sát học kỳ I",
     "deadline": "01/2026",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "ĐT06: ≥90%"
   },
   {
     "id": "khct_1788439860017_2302",
@@ -5106,7 +5305,8 @@
     "kpiCodes": "HT02; ĐBCL09",
     "deliverable": "Hoàn thành tổ chức thi HK1 đúng lịch",
     "deadline": "12/2026",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "HT02: ≥20; ĐBCL09: ≥80%"
   },
   {
     "id": "khct_1788439860018_5660",
@@ -5145,7 +5345,8 @@
     "kpiCodes": "KH07",
     "deliverable": "Báo cáo sơ kết KHCN học kỳ I",
     "deadline": "12/2026",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "KH07: ≥5"
   },
   {
     "id": "khct_1788439860023_4938",
@@ -5158,7 +5359,8 @@
     "kpiCodes": "KH01",
     "deliverable": "Báo cáo thống kê công bố quốc tế học kỳ I; tỷ lệ tăng trưởng so với cùng kỳ",
     "deadline": "12/2026",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "KH01: ≥10%/năm"
   },
   {
     "id": "khct_1788439860024_6689",
@@ -5171,7 +5373,8 @@
     "kpiCodes": "KH04; ĐMST04",
     "deliverable": "Danh mục sản phẩm/sáng kiến tiềm năng",
     "deadline": "12/2026",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "KH04: ≥60%; ĐMST04: ≥02"
   },
   {
     "id": "khct_1788439860025_4322",
@@ -5184,7 +5387,8 @@
     "kpiCodes": "KH03; ĐMST05; ĐT02",
     "deliverable": "Kế hoạch SHTT năm 2027; danh mục hồ sơ dự kiến",
     "deadline": "12/2026",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "KH03: ≥3; ĐMST05: ≥02; ĐT02: 100%"
   },
   {
     "id": "khct_1788439860026_1289",
@@ -5197,7 +5401,8 @@
     "kpiCodes": "KH06",
     "deliverable": "Tạp chí được xuất bản đúng kỳ",
     "deadline": "12/2026",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "KH06: 100%"
   },
   {
     "id": "khct_1788439860028_5484",
@@ -5249,7 +5454,8 @@
     "kpiCodes": "KH02",
     "deliverable": "Hội thảo/hội nghị được tổ chức; kỷ yếu hoặc tài liệu hội thảo",
     "deadline": "12/2026",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "KH02: ≥0,3"
   },
   {
     "id": "khct_1788439860036_9361",
@@ -5288,7 +5494,8 @@
     "kpiCodes": "KH01; KH07; QTH05",
     "deliverable": "Biên bản tọa đàm; danh sách tham dự",
     "deadline": "12/2026",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "KH01: ≥10%/năm; KH07: ≥5; QTH05: ≥15"
   },
   {
     "id": "khct_1788439860040_9609",
@@ -5301,7 +5508,8 @@
     "kpiCodes": "KH02",
     "deliverable": "Hội thảo/hội nghị được tổ chức; kỷ yếu hoặc tài liệu hội thảo",
     "deadline": "12/2026",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "KH02: ≥0,3"
   },
   {
     "id": "khct_1788439860042_8411",
@@ -5314,7 +5522,8 @@
     "kpiCodes": "QT02",
     "deliverable": "Báo cáo KPI học kỳ I",
     "deadline": "12/2026",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "QT02: ≥80%"
   },
   {
     "id": "khct_1788439860043_7806",
@@ -5327,7 +5536,8 @@
     "kpiCodes": "QT03",
     "deliverable": "Kế hoạch giao ban; Thông báo kết luận giao ban",
     "deadline": "Tháng 12/2026",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "QT03: ≥2"
   },
   {
     "id": "khct_1788439860045_1052",
@@ -5366,7 +5576,8 @@
     "kpiCodes": "NN03",
     "deliverable": "Cơ sở dữ liệu nhân sự được cập nhật",
     "deadline": "12/2026",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "NN03: 100%"
   },
   {
     "id": "khct_1788439860049_6015",
@@ -5392,7 +5603,8 @@
     "kpiCodes": "ĐT02",
     "deliverable": "Báo cáo rà soát chi; đề xuất bổ sung phân bổ năm 2027",
     "deadline": "12/2026",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "ĐT02: 100%"
   },
   {
     "id": "khct_1788439860053_5051",
@@ -5470,7 +5682,8 @@
     "kpiCodes": "ĐBCL09",
     "deliverable": "Tài liệu hỗ trợ ôn tập/kỹ năng thi; kênh hỗ trợ trực tuyến",
     "deadline": "12/2026",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "ĐBCL09: ≥80%"
   },
   {
     "id": "khct_1788439860061_5415",
@@ -5509,7 +5722,8 @@
     "kpiCodes": "ĐBCL09; ĐT03; ĐT06",
     "deliverable": "Hệ thống CSDL cựu SV và nhà tuyển dụng phiên bản 1.0; quy trình khảo sát việc làm trực tuyến",
     "deadline": "12/2026",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "ĐBCL09: ≥80%; ĐT03: ≥90%; ĐT06: ≥90%"
   },
   {
     "id": "khct_1788439860065_3050",
@@ -5535,7 +5749,8 @@
     "kpiCodes": "CSVC01; CĐS01",
     "deliverable": "Biên bản bảo trì; báo cáo bảo mật lần 2",
     "deadline": "12/2026",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "CĐS01: ≥80%"
   },
   {
     "id": "khct_1788439860068_1476",
@@ -5561,7 +5776,8 @@
     "kpiCodes": "ĐBCL02",
     "deliverable": "Kho minh chứng số bước đầu; danh mục minh chứng chuẩn hóa",
     "deadline": "12/2026",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "ĐBCL02: 100%"
   },
   {
     "id": "khct_1788439860071_8397",
@@ -5574,7 +5790,8 @@
     "kpiCodes": "ĐBCL02",
     "deliverable": "Dữ liệu bảo đảm chất lượng được cập nhật lên Phần mềm Quản lý hệ thống bảo đảm và kiểm định chất lượng giáo dục đại học của Bộ GD&ĐT",
     "deadline": "12/2026",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "ĐBCL02: 100%"
   },
   {
     "id": "khct_1788439860073_5023",
@@ -5587,7 +5804,8 @@
     "kpiCodes": "ĐBCL02",
     "deliverable": "Báo cáo kết quả kiểm định chất lượng và kế hoạch cải tiến, nâng cao chất lượng đối với các CTĐT thạc sĩ",
     "deadline": "12/2026",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "ĐBCL02: 100%"
   },
   {
     "id": "khct_1788439860074_9934",
@@ -5613,7 +5831,8 @@
     "kpiCodes": "ĐBCL02",
     "deliverable": "Báo cáo kết quả kiểm định chất lượng và kế hoạch cải tiến, nâng cao chất lượng đối với các CTĐT đại học",
     "deadline": "12/2026",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "ĐBCL02: 100%"
   },
   {
     "id": "khct_1788439860077_6702",
@@ -5639,7 +5858,8 @@
     "kpiCodes": "ĐT06",
     "deliverable": "Báo cáo kết quả phản hồi từ học viên thạc sĩ về chất lượng giảng dạy của giảng viên (học kì 2).",
     "deadline": "3/2027",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "ĐT06: ≥90%"
   },
   {
     "id": "khct_1788439860079_9253",
@@ -5704,7 +5924,8 @@
     "kpiCodes": "ĐBCL08; ĐBCL11",
     "deliverable": "Báo cáo kiểm tra; kiến nghị điều chỉnh",
     "deadline": "12/2026",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "ĐBCL08: 100%; ĐBCL11: ≥2"
   },
   {
     "id": "khct_1788439860086_5608",
@@ -5717,7 +5938,8 @@
     "kpiCodes": "ĐBCL09",
     "deliverable": "Báo cáo kiểm tra, giám sát thi HK1 năm học 2026-2027",
     "deadline": "12/2026",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "ĐBCL09: ≥80%"
   },
   {
     "id": "khct_1788439860088_1731",
@@ -5769,7 +5991,8 @@
     "kpiCodes": "CĐS11",
     "deliverable": "Báo cáo cảnh báo học tập; danh sách SV cần hỗ trợ",
     "deadline": "01/2027",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "CĐS11: 100%"
   },
   {
     "id": "khct_1788439860094_5523",
@@ -5782,7 +6005,8 @@
     "kpiCodes": "ĐT06",
     "deliverable": "Kế hoạch tư vấn; danh sách SV được tư vấn",
     "deadline": "01/2027",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "ĐT06: ≥90%"
   },
   {
     "id": "khct_1788439860095_9511",
@@ -5795,7 +6019,8 @@
     "kpiCodes": "ĐT01",
     "deliverable": "100% học phần học kỳ II có thông tin tối thiểu trên hệ thống",
     "deadline": "01/2027",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "ĐT01: 100%"
   },
   {
     "id": "khct_1788439860096_7674",
@@ -5808,7 +6033,8 @@
     "kpiCodes": "ĐT02",
     "deliverable": "Bảng tổng hợp kết quả học tập HK1 năm học 2026-2027",
     "deadline": "01/2027",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "ĐT02: 100%"
   },
   {
     "id": "khct_1788439860098_9602",
@@ -5821,7 +6047,8 @@
     "kpiCodes": "TS01; TS07",
     "deliverable": "Thông báo tuyển sinh NCS K17 đợt 1 được ban hành và công bố",
     "deadline": "01/2027",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "TS01: 100%; TS07: ≥10%/năm"
   },
   {
     "id": "khct_1788439860099_9332",
@@ -5834,7 +6061,8 @@
     "kpiCodes": "TS01; TS07",
     "deliverable": "Thông báo tuyển sinh ThS K31 đợt 1 được ban hành và công bố",
     "deadline": "01/2027",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "TS01: 100%; TS07: ≥10%/năm"
   },
   {
     "id": "khct_1788439860100_1307",
@@ -5899,7 +6127,8 @@
     "kpiCodes": "KH07",
     "deliverable": "Báo cáo tiến độ KHCN",
     "deadline": "01/2027",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "KH07: ≥5"
   },
   {
     "id": "khct_1788439860108_2674",
@@ -5912,7 +6141,8 @@
     "kpiCodes": "KH07",
     "deliverable": "Danh mục sản phẩm cần hoàn thiện; kế hoạch hỗ trợ",
     "deadline": "01/2027",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "KH07: ≥5"
   },
   {
     "id": "khct_1788439860110_9305",
@@ -5925,7 +6155,8 @@
     "kpiCodes": "QTH03",
     "deliverable": "Chương trình Tết cho LHS và chuyên gia nước ngoài được tổ chức",
     "deadline": "01/2027",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "QTH03: ≥30%"
   },
   {
     "id": "khct_1788439860111_8030",
@@ -5964,7 +6195,8 @@
     "kpiCodes": "KH02",
     "deliverable": "Hội thảo/hội nghị được tổ chức; kỷ yếu hoặc tài liệu hội thảo",
     "deadline": "001/2027",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "KH02: ≥0,3"
   },
   {
     "id": "khct_1788439860115_8168",
@@ -5977,7 +6209,8 @@
     "kpiCodes": "KH02",
     "deliverable": "Hội thảo/hội nghị được tổ chức; kỷ yếu hoặc tài liệu hội thảo",
     "deadline": "01/2027",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "KH02: ≥0,3"
   },
   {
     "id": "khct_1788439860117_2817",
@@ -6003,7 +6236,8 @@
     "kpiCodes": "CĐS06; CĐS08; NN03; ĐT02",
     "deliverable": "Danh sách nhu cầu bồi dưỡng năng lực số",
     "deadline": "01/2027",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "CĐS06: ≥80%; CĐS08: 100%; NN03: 100%; ĐT02: 100%"
   },
   {
     "id": "khct_1788439860120_4909",
@@ -6029,7 +6263,8 @@
     "kpiCodes": "QT07",
     "deliverable": "Báo cáo tỷ lệ thực hiện đúng hạn kết luận, chỉ đạo",
     "deadline": "Cuối mỗi học kỳ",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "QT07: 100%"
   },
   {
     "id": "khct_1788439860123_9454",
@@ -6107,7 +6342,8 @@
     "kpiCodes": "CĐS01",
     "deliverable": "Báo cáo kiểm tra, bảo trì hệ thống",
     "deadline": "01/2027",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "CĐS01: ≥80%"
   },
   {
     "id": "khct_1788439860132_5106",
@@ -6185,7 +6421,8 @@
     "kpiCodes": "CĐS11",
     "deliverable": "Thông báo cảnh báo; kế hoạch hỗ trợ cải thiện",
     "deadline": "01/2027",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "CĐS11: 100%"
   },
   {
     "id": "khct_1788439860141_8195",
@@ -6263,7 +6500,8 @@
     "kpiCodes": "ĐBCL06; ĐBCL07",
     "deliverable": "Báo cáo đánh giá khảo thí học kỳ I",
     "deadline": "01/2027",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "ĐBCL06: 100%; ĐBCL07: 100%"
   },
   {
     "id": "khct_1788439860149_2569",
@@ -6289,7 +6527,8 @@
     "kpiCodes": "ĐBCL06",
     "deliverable": "",
     "deadline": "01/2027",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "ĐBCL06: 100%"
   },
   {
     "id": "khct_1788439860151_1978",
@@ -6302,7 +6541,8 @@
     "kpiCodes": "ĐBCL09",
     "deliverable": "",
     "deadline": "01/2027",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "ĐBCL09: ≥80%"
   },
   {
     "id": "khct_1788439860154_6414",
@@ -6354,7 +6594,8 @@
     "kpiCodes": "ĐBCL08; ĐBCL11",
     "deliverable": "Báo cáo rút kinh nghiệm; kiến nghị điều chỉnh quy định",
     "deadline": "01/2027",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "ĐBCL08: 100%; ĐBCL11: ≥2"
   },
   {
     "id": "khct_1788439860160_8398",
@@ -6367,7 +6608,8 @@
     "kpiCodes": "ĐBCL09",
     "deliverable": "Báo cáo kiểm tra, giám sát thi HK1 cao học",
     "deadline": "01/2027",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "ĐBCL09: ≥80%"
   },
   {
     "id": "khct_1788439860162_5382",
@@ -6445,7 +6687,8 @@
     "kpiCodes": "NN04; ĐBCL08",
     "deliverable": "01 đợt tập huấn; tài liệu hướng dẫn",
     "deadline": "02/2027",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "NN04: ≥30%; ĐBCL08: 100%"
   },
   {
     "id": "khct_1788439860172_7827",
@@ -6458,7 +6701,8 @@
     "kpiCodes": "ĐBCL07; ĐT02",
     "deliverable": "Danh mục học liệu số được cập nhật",
     "deadline": "02/2027",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "ĐBCL07: 100%; ĐT02: 100%"
   },
   {
     "id": "khct_1788439860173_2397",
@@ -6471,7 +6715,8 @@
     "kpiCodes": "BD05; HT02; ĐT02",
     "deliverable": "100% SV TTSP có yêu cầu sản phẩm dạy học số",
     "deadline": "02/2027",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "BD05: ≥50; HT02: ≥20; ĐT02: 100%"
   },
   {
     "id": "khct_1788439860175_1878",
@@ -6484,7 +6729,8 @@
     "kpiCodes": "HT02",
     "deliverable": "Kế hoạch TTSP đợt 2 K49 được triển khai; số đoàn TTSP",
     "deadline": "02/2027",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "HT02: ≥20"
   },
   {
     "id": "khct_1788439860176_1356",
@@ -6497,7 +6743,8 @@
     "kpiCodes": "ĐT03",
     "deliverable": "Quyết định công nhận tốt nghiệp đợt tháng 02/2027",
     "deadline": "02/2027",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "ĐT03: ≥90%"
   },
   {
     "id": "khct_1788439860177_1414",
@@ -6523,7 +6770,8 @@
     "kpiCodes": "HT02",
     "deliverable": "Báo cáo kiểm tra công tác TTSP K49 đợt 2",
     "deadline": "02-4/2027",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "HT02: ≥20"
   },
   {
     "id": "khct_1788439860180_7072",
@@ -6536,7 +6784,8 @@
     "kpiCodes": "TS06",
     "deliverable": "Công cụ khảo sát vận hành; báo cáo mức độ hài lòng",
     "deadline": "Học kỳ 2",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "TS06: ≥90%"
   },
   {
     "id": "khct_1788439860181_3959",
@@ -6549,7 +6798,8 @@
     "kpiCodes": "ĐT07",
     "deliverable": "Hồ sơ chương trình đào tạo mới; Quyết định mở ngành/liên kết",
     "deadline": "Học kỳ 2",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "ĐT07: ≥3"
   },
   {
     "id": "khct_1788439860183_9734",
@@ -6575,7 +6825,8 @@
     "kpiCodes": "ĐT01",
     "deliverable": "01-02 buổi tập huấn; tài liệu hướng dẫn NCKH sinh viên",
     "deadline": "02/2027",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "ĐT01: 100%"
   },
   {
     "id": "khct_1788439860186_5515",
@@ -6588,7 +6839,8 @@
     "kpiCodes": "QTH06",
     "deliverable": "Bản tin/cơ sở dữ liệu cơ hội quốc tế",
     "deadline": "02/2027",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "QTH06: ≥50"
   },
   {
     "id": "khct_1788439860187_1034",
@@ -6601,7 +6853,8 @@
     "kpiCodes": "KH06",
     "deliverable": "Tạp chí được xuất bản đúng kỳ",
     "deadline": "02/2027",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "KH06: 100%"
   },
   {
     "id": "khct_1788439860189_3471",
@@ -6679,7 +6932,8 @@
     "kpiCodes": "KH01; KH07; QTH05",
     "deliverable": "Biên bản tọa đàm; danh sách tham dự",
     "deadline": "02/2027",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "KH01: ≥10%/năm; KH07: ≥5; QTH05: ≥15"
   },
   {
     "id": "khct_1788439860196_2902",
@@ -6692,7 +6946,8 @@
     "kpiCodes": "ĐMST06",
     "deliverable": "Danh sách mô hình tiềm năng; báo cáo triển khai thí điểm (≥02 mô hình)",
     "deadline": "Học kỳ 2",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "ĐMST06: ≥02"
   },
   {
     "id": "khct_1788439860197_9217",
@@ -6705,7 +6960,8 @@
     "kpiCodes": "HT05",
     "deliverable": "Đề xuất mô hình hệ sinh thái hợp tác; báo cáo triển khai, đánh giá mô hình",
     "deadline": "Học kỳ 2",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "HT05: ≥3"
   },
   {
     "id": "khct_1788439860199_8947",
@@ -6718,7 +6974,8 @@
     "kpiCodes": "NN04",
     "deliverable": "Kế hoạch bồi dưỡng; danh sách học viên",
     "deadline": "02/2027",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "NN04: ≥30%"
   },
   {
     "id": "khct_1788439860200_4035",
@@ -6731,7 +6988,8 @@
     "kpiCodes": "CĐS03",
     "deliverable": "Bảng theo dõi KPI cập nhật",
     "deadline": "02/2027",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "CĐS03: ≥80%"
   },
   {
     "id": "khct_1788439860202_6413",
@@ -6770,7 +7028,8 @@
     "kpiCodes": "TĐ01",
     "deliverable": "Bộ tiêu chí đánh giá mô hình; Quyết định công nhận, nhân rộng mô hình",
     "deadline": "Học kỳ 2",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "TĐ01: ≥5"
   },
   {
     "id": "khct_1788439860206_3163",
@@ -6783,7 +7042,8 @@
     "kpiCodes": "ĐT02",
     "deliverable": "Phương án kinh phí được phê duyệt",
     "deadline": "02/2027",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "ĐT02: 100%"
   },
   {
     "id": "khct_1788439860207_1932",
@@ -6809,7 +7069,8 @@
     "kpiCodes": "HT02",
     "deliverable": "Bộ hồ sơ gửi các đoàn TTSP, TTCN",
     "deadline": "02/2027",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "HT02: ≥20"
   },
   {
     "id": "khct_1788439860210_5794",
@@ -6913,7 +7174,8 @@
     "kpiCodes": "CĐS06; KH08",
     "deliverable": "Báo cáo tiến độ; dự thảo văn bản",
     "deadline": "02/2027",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "CĐS06: ≥80%; KH08: 100%"
   },
   {
     "id": "khct_1788439860221_3787",
@@ -6926,7 +7188,8 @@
     "kpiCodes": "CĐS10",
     "deliverable": "Báo cáo tỷ lệ học phần được khai thác Learning Analytics",
     "deadline": "Học kỳ 2",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "CĐS10: 100%"
   },
   {
     "id": "khct_1788439860223_5233",
@@ -6978,7 +7241,8 @@
     "kpiCodes": "ĐBCL07",
     "deliverable": "100% học phần theo đăng ký của đơn vị đào tạo hoàn thành bổ sung, điều chỉnh ngân hàng đề",
     "deadline": "4/2027",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "ĐBCL07: 100%"
   },
   {
     "id": "khct_1788439860228_2944",
@@ -6991,7 +7255,8 @@
     "kpiCodes": "ĐBCL06",
     "deliverable": "Báo cáo đánh giá chất lượng đào tạo đại học dựa trên phản hồi của nhà sử dụng lao động về mức độ đạt chuẩn đầu ra CTĐT",
     "deadline": "4/2027",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "ĐBCL06: 100%"
   },
   {
     "id": "khct_1788439860229_2125",
@@ -7043,7 +7308,8 @@
     "kpiCodes": "CĐS10; ĐT02",
     "deliverable": "Báo cáo dữ liệu giữa kỳ; danh sách SV cần hỗ trợ",
     "deadline": "3/2027",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "CĐS10: 100%; ĐT02: 100%"
   },
   {
     "id": "khct_1788439860235_1813",
@@ -7069,7 +7335,8 @@
     "kpiCodes": "HT02; ĐT02",
     "deliverable": "Báo cáo đánh giá bước đầu TTSP",
     "deadline": "3/2027",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "HT02: ≥20; ĐT02: 100%"
   },
   {
     "id": "khct_1788439860239_1255",
@@ -7082,7 +7349,8 @@
     "kpiCodes": "TS07",
     "deliverable": "Danh sách NCS K17 đợt 1 trúng tuyển",
     "deadline": "3/2027",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "TS07: ≥10%/năm"
   },
   {
     "id": "khct_1788439860241_9613",
@@ -7095,7 +7363,8 @@
     "kpiCodes": "TS07",
     "deliverable": "Danh sách học viên K31 đợt 1 trúng tuyển",
     "deadline": "3/2027",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "TS07: ≥10%/năm"
   },
   {
     "id": "khct_1788439860242_4870",
@@ -7199,7 +7468,8 @@
     "kpiCodes": "KH02",
     "deliverable": "100% khoa có hoạt động NCKH SV phù hợp",
     "deadline": "3/2027",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "KH02: ≥0,3"
   },
   {
     "id": "khct_1788439860254_8311",
@@ -7212,7 +7482,8 @@
     "kpiCodes": "ĐMST01; ĐMST04",
     "deliverable": "01 diễn đàn; danh mục ý tưởng/sản phẩm",
     "deadline": "3/2027",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "ĐMST01: ≥02; ĐMST04: ≥02"
   },
   {
     "id": "khct_1788439860255_4855",
@@ -7225,7 +7496,8 @@
     "kpiCodes": "KH06",
     "deliverable": "Tạp chí được xuất bản đúng kỳ",
     "deadline": "3/2027",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "KH06: 100%"
   },
   {
     "id": "khct_1788439860257_2995",
@@ -7251,7 +7523,8 @@
     "kpiCodes": "KH02",
     "deliverable": "Hội thảo được tổ chức; kỷ yếu hội thảo",
     "deadline": "3/2027",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "KH02: ≥0,3"
   },
   {
     "id": "khct_1788439860259_6589",
@@ -7290,7 +7563,8 @@
     "kpiCodes": "KH02",
     "deliverable": "Hội thảo/hội nghị được tổ chức; kỷ yếu hoặc tài liệu hội thảo",
     "deadline": "3/2027",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "KH02: ≥0,3"
   },
   {
     "id": "khct_1788439860265_9032",
@@ -7316,7 +7590,8 @@
     "kpiCodes": "KH02",
     "deliverable": "Hội thảo/hội nghị được tổ chức; kỷ yếu hoặc tài liệu hội thảo",
     "deadline": "3/2027",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "KH02: ≥0,3"
   },
   {
     "id": "khct_1788439860268_3102",
@@ -7342,7 +7617,8 @@
     "kpiCodes": "KH02",
     "deliverable": "Hội thảo/hội nghị được tổ chức; kỷ yếu hoặc tài liệu hội thảo",
     "deadline": "3/2027",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "KH02: ≥0,3"
   },
   {
     "id": "khct_1788439860271_2968",
@@ -7355,7 +7631,8 @@
     "kpiCodes": "KH02",
     "deliverable": "Hội thảo/hội nghị được tổ chức; kỷ yếu hoặc tài liệu hội thảo",
     "deadline": "3/2027",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "KH02: ≥0,3"
   },
   {
     "id": "khct_1788439860273_9824",
@@ -7368,7 +7645,8 @@
     "kpiCodes": "QT02",
     "deliverable": "Báo cáo KPI quý I/2027",
     "deadline": "3/2027",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "QT02: ≥80%"
   },
   {
     "id": "khct_1788439860274_5512",
@@ -7420,7 +7698,8 @@
     "kpiCodes": "CSVC02; CĐS01",
     "deliverable": "Điều kiện CSVC được bảo đảm",
     "deadline": "3/2027",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "CĐS01: ≥80%"
   },
   {
     "id": "khct_1788439860280_5122",
@@ -7459,7 +7738,8 @@
     "kpiCodes": "TS07",
     "deliverable": "Lễ kỷ niệm được tổ chức; số đoàn viên, SV tham gia",
     "deadline": "26/3/2027",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "TS07: ≥10%/năm"
   },
   {
     "id": "khct_1788439860285_2088",
@@ -7485,7 +7765,8 @@
     "kpiCodes": "CĐS01",
     "deliverable": "Báo cáo tiến độ số hóa giữa năm học; tỷ lệ quy trình đã số hóa; kế hoạch điều chỉnh",
     "deadline": "3/2027",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "CĐS01: ≥80%"
   },
   {
     "id": "khct_1788439860287_8151",
@@ -7498,7 +7779,8 @@
     "kpiCodes": "CĐS05",
     "deliverable": "Báo cáo đánh giá Dashboard giữa kỳ; danh mục điều chỉnh",
     "deadline": "3/2027",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "CĐS05: ≥4"
   },
   {
     "id": "khct_1788439860288_9949",
@@ -7524,7 +7806,8 @@
     "kpiCodes": "TS07",
     "deliverable": "Hội thao được tổ chức; số đoàn viên, SV tham gia",
     "deadline": "3/2027",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "TS07: ≥10%/năm"
   },
   {
     "id": "khct_1788439860291_4061",
@@ -7550,7 +7833,8 @@
     "kpiCodes": "HT02",
     "deliverable": "Tối thiểu 03 đội hình tình nguyện số",
     "deadline": "3/2027",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "HT02: ≥20"
   },
   {
     "id": "khct_1788439860295_5972",
@@ -7563,7 +7847,8 @@
     "kpiCodes": "ĐBCL02",
     "deliverable": "Báo cáo kiểm tra",
     "deadline": "3/2027",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "ĐBCL02: 100%"
   },
   {
     "id": "khct_1788439860296_4630",
@@ -7628,7 +7913,8 @@
     "kpiCodes": "HT02; ĐT02",
     "deliverable": "Báo cáo tổng kết TTSP theo tiêu chí mới",
     "deadline": "4/2027",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "HT02: ≥20; ĐT02: 100%"
   },
   {
     "id": "khct_1788439860303_9606",
@@ -7641,7 +7927,8 @@
     "kpiCodes": "HT02; ĐT06",
     "deliverable": "Báo cáo khảo sát cơ sở thực tập",
     "deadline": "4/2027",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "HT02: ≥20; ĐT06: ≥90%"
   },
   {
     "id": "khct_1788439860304_5464",
@@ -7654,7 +7941,8 @@
     "kpiCodes": "ĐBCL06; ĐT03; ĐT06",
     "deliverable": "Bộ dữ liệu SV năm cuối; báo cáo chuẩn đầu ra",
     "deadline": "4/2027",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "ĐBCL06: 100%; ĐT03: ≥90%; ĐT06: ≥90%"
   },
   {
     "id": "khct_1788439860305_6724",
@@ -7667,7 +7955,8 @@
     "kpiCodes": "TS02; TS07",
     "deliverable": "Hoàn thành tiếp nhận NCS K17 đợt 1 nhập học",
     "deadline": "4/2027",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "TS02: ≥75%; TS07: ≥10%/năm"
   },
   {
     "id": "khct_1788439860306_2572",
@@ -7680,7 +7969,8 @@
     "kpiCodes": "TS02",
     "deliverable": "Hoàn thành tiếp nhận học viên K31 đợt 1 nhập học",
     "deadline": "4/2027",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "TS02: ≥75%"
   },
   {
     "id": "khct_1788439860308_6535",
@@ -7706,7 +7996,8 @@
     "kpiCodes": "HT02",
     "deliverable": "Báo cáo tổng kết Kiến tập, TTCN năm học 2026-2027",
     "deadline": "4/2027",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "HT02: ≥20"
   },
   {
     "id": "khct_1788439860310_2131",
@@ -7732,7 +8023,8 @@
     "kpiCodes": "HT02",
     "deliverable": "Kế hoạch tổ chức HĐGD; Triển khai HĐ trong thực tế",
     "deadline": "4/2027",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "HT02: ≥20"
   },
   {
     "id": "khct_1788439860313_4642",
@@ -7745,7 +8037,8 @@
     "kpiCodes": "HT02",
     "deliverable": "Kế hoạch tổ chức HĐGD; Triển khai HĐ trong thực tế",
     "deadline": "4/2027",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "HT02: ≥20"
   },
   {
     "id": "khct_1788439860314_7129",
@@ -7758,7 +8051,8 @@
     "kpiCodes": "TS07",
     "deliverable": "",
     "deadline": "4/2027",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "TS07: ≥10%/năm"
   },
   {
     "id": "khct_1788439860315_1824",
@@ -7771,7 +8065,8 @@
     "kpiCodes": "HT02",
     "deliverable": "Báo cáo kiểm tra TTSP",
     "deadline": "4/2027",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "HT02: ≥20"
   },
   {
     "id": "khct_1788439860317_4272",
@@ -7784,7 +8079,8 @@
     "kpiCodes": "HT02",
     "deliverable": "Báo cáo kiểm tra TTSP K49 đợt 2 giai đoạn kết thúc",
     "deadline": "4/2027",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "HT02: ≥20"
   },
   {
     "id": "khct_1788439860318_3071",
@@ -7810,7 +8106,8 @@
     "kpiCodes": "KH02; KH07; ĐMST01",
     "deliverable": "Danh sách công trình được lựa chọn",
     "deadline": "4/2027",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "KH02: ≥0,3; KH07: ≥5; ĐMST01: ≥02"
   },
   {
     "id": "khct_1788439860320_1067",
@@ -7823,7 +8120,8 @@
     "kpiCodes": "HT01; HT02; KH07",
     "deliverable": "01 diễn đàn kết nối; biên bản/ý tưởng hợp tác",
     "deadline": "4/2027",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "HT01: ≥30; HT02: ≥20; KH07: ≥5"
   },
   {
     "id": "khct_1788439860321_3643",
@@ -7836,7 +8134,8 @@
     "kpiCodes": "KH06",
     "deliverable": "Tạp chí được xuất bản đúng kỳ",
     "deadline": "4/2027",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "KH06: 100%"
   },
   {
     "id": "khct_1788439860322_1024",
@@ -7849,7 +8148,8 @@
     "kpiCodes": "KH01",
     "deliverable": "Số bài báo được thưởng; kinh phí thưởng được chi trả",
     "deadline": "4/2027",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "KH01: ≥10%/năm"
   },
   {
     "id": "khct_1788439860324_4048",
@@ -7914,7 +8214,8 @@
     "kpiCodes": "KH02",
     "deliverable": "Hội thảo được tổ chức; danh mục báo cáo/sản",
     "deadline": "4/2027",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "KH02: ≥0,3"
   },
   {
     "id": "khct_1788439860331_3633",
@@ -7927,7 +8228,8 @@
     "kpiCodes": "HT02; KH02",
     "deliverable": "Hội thảo/hội nghị được tổ chức; kỷ yếu hoặc tài liệu hội thảo",
     "deadline": "4/2027",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "HT02: ≥20; KH02: ≥0,3"
   },
   {
     "id": "khct_1788439860332_5241",
@@ -7940,7 +8242,8 @@
     "kpiCodes": "KH02",
     "deliverable": "Hội thảo/hội nghị được tổ chức; kỷ yếu hoặc tài liệu hội thảo",
     "deadline": "4/2027",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "KH02: ≥0,3"
   },
   {
     "id": "khct_1788439860334_6876",
@@ -7966,7 +8269,8 @@
     "kpiCodes": "KH02",
     "deliverable": "Hội thảo/hội nghị được tổ chức; kỷ yếu hoặc tài liệu hội thảo",
     "deadline": "4/2027",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "KH02: ≥0,3"
   },
   {
     "id": "khct_1788439860337_1681",
@@ -8005,7 +8309,8 @@
     "kpiCodes": "KH02; QTH05",
     "deliverable": "Hội thảo/hội nghị được tổ chức; kỷ yếu hoặc tài liệu hội thảo",
     "deadline": "4/2027",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "KH02: ≥0,3; QTH05: ≥15"
   },
   {
     "id": "khct_1788439860342_8743",
@@ -8057,7 +8362,8 @@
     "kpiCodes": "QTH03; ĐT05; KH02",
     "deliverable": "Hội thảo/hội nghị được tổ chức; kỷ yếu hoặc tài liệu hội thảo",
     "deadline": "4/2027",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "QTH03: ≥30%; ĐT05: ≥70%; KH02: ≥0,3"
   },
   {
     "id": "khct_1788439860348_2043",
@@ -8070,7 +8376,8 @@
     "kpiCodes": "KH02; QTH05",
     "deliverable": "Hội thảo/hội nghị được tổ chức; kỷ yếu hoặc tài liệu hội thảo",
     "deadline": "4/2027",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "KH02: ≥0,3; QTH05: ≥15"
   },
   {
     "id": "khct_1788439860350_2644",
@@ -8096,7 +8403,8 @@
     "kpiCodes": "TĐ02; ĐMST04",
     "deliverable": "Danh sách đề xuất khen thưởng",
     "deadline": "4/2027",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "TĐ02: ≥10; ĐMST04: ≥02"
   },
   {
     "id": "khct_1788439860354_5558",
@@ -8135,7 +8443,8 @@
     "kpiCodes": "ĐBCL09",
     "deliverable": "Điều kiện tổ chức được bảo đảm",
     "deadline": "4/2027",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "ĐBCL09: ≥80%"
   },
   {
     "id": "khct_1788439860359_6916",
@@ -8148,7 +8457,8 @@
     "kpiCodes": "CSVC01; ĐBCL09",
     "deliverable": "Biên bản nghiệm thu; hạng mục hoàn thành trước kỳ thi HK2",
     "deadline": "4/2027",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "ĐBCL09: ≥80%"
   },
   {
     "id": "khct_1788439860360_7800",
@@ -8161,7 +8471,8 @@
     "kpiCodes": "ĐT03",
     "deliverable": "Chương trình hỗ trợ; mẫu hồ sơ năng lực điện tử",
     "deadline": "4/2027",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "ĐT03: ≥90%"
   },
   {
     "id": "khct_1788439860362_5648",
@@ -8174,7 +8485,8 @@
     "kpiCodes": "ĐMST04",
     "deliverable": "Danh mục sản phẩm SV được giới thiệu",
     "deadline": "4/2027",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "ĐMST04: ≥02"
   },
   {
     "id": "khct_1788439860363_9489",
@@ -8226,7 +8538,8 @@
     "kpiCodes": "ĐBCL06",
     "deliverable": "",
     "deadline": "4/2027",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "ĐBCL06: 100%"
   },
   {
     "id": "khct_1788439860369_2279",
@@ -8265,7 +8578,8 @@
     "kpiCodes": "ĐT06",
     "deliverable": "Báo cáo kết quả phản hồi từ sinh viên sắp tốt nghiệp về chương trình đào tạo (K49)",
     "deadline": "5/2027",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "ĐT06: ≥90%"
   },
   {
     "id": "khct_1788439860374_5375",
@@ -8317,7 +8631,8 @@
     "kpiCodes": "ĐBCL09",
     "deliverable": "Báo cáo kiểm tra bài thi HK1 năm học 2026-2027",
     "deadline": "4/2027",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "ĐBCL09: ≥80%"
   },
   {
     "id": "khct_1788439860379_4654",
@@ -8343,7 +8658,8 @@
     "kpiCodes": "TS01",
     "deliverable": "Báo cáo Hiệu trưởng kết quả kiểm tra",
     "deadline": "4/2027",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "TS01: 100%"
   },
   {
     "id": "khct_1788439860382_7974",
@@ -8395,7 +8711,8 @@
     "kpiCodes": "ĐBCL06; ĐMST01",
     "deliverable": "Báo cáo đánh giá chuẩn đầu ra",
     "deadline": "5/2027",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "ĐBCL06: 100%; ĐMST01: ≥02"
   },
   {
     "id": "khct_1788439860388_7570",
@@ -8408,7 +8725,8 @@
     "kpiCodes": "ĐT03",
     "deliverable": "Báo cáo rà soát kết quả đào tạo",
     "deadline": "5/2027",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "ĐT03: ≥90%"
   },
   {
     "id": "khct_1788439860389_9129",
@@ -8421,7 +8739,8 @@
     "kpiCodes": "ĐBCL02",
     "deliverable": "Kho minh chứng số sản phẩm SV",
     "deadline": "5/2027",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "ĐBCL02: 100%"
   },
   {
     "id": "khct_1788439860391_7195",
@@ -8434,7 +8753,8 @@
     "kpiCodes": "ĐBCL09",
     "deliverable": "Hoàn thành tổ chức thi HK2 đúng lịch; không để xảy ra sai sót",
     "deadline": "5/2027",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "ĐBCL09: ≥80%"
   },
   {
     "id": "khct_1788439860392_3428",
@@ -8447,7 +8767,8 @@
     "kpiCodes": "ĐBCL09",
     "deliverable": "Hoàn thành tổ chức thi HK2 cao học đúng lịch",
     "deadline": "5/2027",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "ĐBCL09: ≥80%"
   },
   {
     "id": "khct_1788439860394_6223",
@@ -8460,7 +8781,8 @@
     "kpiCodes": "ĐT03",
     "deliverable": "Quyết định công nhận tốt nghiệp đợt tháng 5/2027",
     "deadline": "5/2027",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "ĐT03: ≥90%"
   },
   {
     "id": "khct_1788439860396_1813",
@@ -8473,7 +8795,8 @@
     "kpiCodes": "TS07",
     "deliverable": "Danh sách học viên K31 đợt 2 trúng tuyển",
     "deadline": "5/2027",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "TS07: ≥10%/năm"
   },
   {
     "id": "khct_1788439860397_4388",
@@ -8486,7 +8809,8 @@
     "kpiCodes": "TS07",
     "deliverable": "Danh sách NCS K17 đợt 2 trúng tuyển",
     "deadline": "5/2027",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "TS07: ≥10%/năm"
   },
   {
     "id": "khct_1788439860398_4469",
@@ -8499,7 +8823,8 @@
     "kpiCodes": "HT02; ĐBCL09",
     "deliverable": "Hoàn thành tổ chức thi HK2 đúng lịch",
     "deadline": "5/2027",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "HT02: ≥20; ĐBCL09: ≥80%"
   },
   {
     "id": "khct_1788439860399_2656",
@@ -8538,7 +8863,8 @@
     "kpiCodes": "TS01",
     "deliverable": "Thông báo tuyển sinh; các QĐ thành lập các HĐ tuyển sinh; Kết quả tuyển sinh",
     "deadline": "7/2027",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "TS01: 100%"
   },
   {
     "id": "khct_1788439860404_6306",
@@ -8564,7 +8890,8 @@
     "kpiCodes": "KH01; KH07; QTH05",
     "deliverable": "Báo cáo KHCN&HTQT năm học",
     "deadline": "5/2027",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "KH01: ≥10%/năm; KH07: ≥5; QTH05: ≥15"
   },
   {
     "id": "khct_1788439860406_4910",
@@ -8577,7 +8904,8 @@
     "kpiCodes": "KH01",
     "deliverable": "Báo cáo tổng kết công bố quốc tế cả năm; tỷ lệ tăng trưởng so với năm trước",
     "deadline": "5/2027",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "KH01: ≥10%/năm"
   },
   {
     "id": "khct_1788439860407_3814",
@@ -8603,7 +8931,8 @@
     "kpiCodes": "KH06",
     "deliverable": "Tạp chí được xuất bản đúng kỳ",
     "deadline": "5/2027",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "KH06: 100%"
   },
   {
     "id": "khct_1788439860410_9828",
@@ -8668,7 +8997,8 @@
     "kpiCodes": "KH02",
     "deliverable": "Hội thảo được tổ chức; danh mục báo cáo/sản phẩm của sinh viên và tài liệu hội thảo",
     "deadline": "5/2027",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "KH02: ≥0,3"
   },
   {
     "id": "khct_1788439860416_3255",
@@ -8707,7 +9037,8 @@
     "kpiCodes": "KH02",
     "deliverable": "Hội thảo/hội nghị được tổ chức; kỷ yếu hoặc tài liệu hội thảo",
     "deadline": "5/2027",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "KH02: ≥0,3"
   },
   {
     "id": "khct_1788439860420_8881",
@@ -8720,7 +9051,8 @@
     "kpiCodes": "KH02",
     "deliverable": "Olympic và hội thảo được tổ chức; danh mục công trình, kết quả tham gia",
     "deadline": "5/2027",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "KH02: ≥0,3"
   },
   {
     "id": "khct_1788439860421_4308",
@@ -8733,7 +9065,8 @@
     "kpiCodes": "KH02",
     "deliverable": "Hội thảo/hội nghị được tổ chức; kỷ yếu hoặc tài liệu hội thảo",
     "deadline": "5/2027",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "KH02: ≥0,3"
   },
   {
     "id": "khct_1788439860422_1254",
@@ -8759,7 +9092,8 @@
     "kpiCodes": "KH02",
     "deliverable": "Hội thảo/hội nghị được tổ chức; kỷ yếu hoặc tài liệu hội thảo",
     "deadline": "5/2027",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "KH02: ≥0,3"
   },
   {
     "id": "khct_1788439860425_7326",
@@ -8772,7 +9106,8 @@
     "kpiCodes": "KH02",
     "deliverable": "Hội thảo/hội nghị được tổ chức; kỷ yếu hoặc tài liệu hội thảo",
     "deadline": "5/2027",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "KH02: ≥0,3"
   },
   {
     "id": "khct_1788439860426_1202",
@@ -8785,7 +9120,8 @@
     "kpiCodes": "KH02",
     "deliverable": "Hội thảo/hội nghị được tổ chức; kỷ yếu hoặc tài liệu hội thảo",
     "deadline": "5/2027",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "KH02: ≥0,3"
   },
   {
     "id": "khct_1788439860428_4316",
@@ -8811,7 +9147,8 @@
     "kpiCodes": "TĐ02; TĐ04",
     "deliverable": "Cơ sở dữ liệu KPI năm học",
     "deadline": "5/2027",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "TĐ02: ≥10; TĐ04: 100%"
   },
   {
     "id": "khct_1788439860431_9816",
@@ -8850,7 +9187,8 @@
     "kpiCodes": "QT01",
     "deliverable": "KHCT, KHĐT năm học 2027 - 2028 được ban hành",
     "deadline": "8/2027",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "QT01: 100%"
   },
   {
     "id": "khct_1788439860435_8495",
@@ -8876,7 +9214,8 @@
     "kpiCodes": "CSVC02; CĐS01",
     "deliverable": "Báo cáo sử dụng CSVC, thiết bị, hạ tầng số",
     "deadline": "5/2027",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "CĐS01: ≥80%"
   },
   {
     "id": "khct_1788439860439_2111",
@@ -8889,7 +9228,8 @@
     "kpiCodes": "CSVC02; CĐS01; CĐS08",
     "deliverable": "Kế hoạch bảo trì, nâng cấp hè",
     "deadline": "5/2027",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "CĐS01: ≥80%; CĐS08: 100%"
   },
   {
     "id": "khct_1788439860440_3464",
@@ -8980,7 +9320,8 @@
     "kpiCodes": "ĐT02",
     "deliverable": "Báo cáo tổng kết tỷ lệ LMS cả năm học; xác nhận đạt mục tiêu 60-65%",
     "deadline": "5/2027",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "ĐT02: 100%"
   },
   {
     "id": "khct_1788439860450_6510",
@@ -8993,7 +9334,8 @@
     "kpiCodes": "NN04; ĐT02",
     "deliverable": "Báo cáo tổng kết tỷ lệ GV tập huấn AI/học liệu số; xác nhận đạt mục tiêu 70-80%",
     "deadline": "5/2027",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "NN04: ≥30%; ĐT02: 100%"
   },
   {
     "id": "khct_1788439860452_2555",
@@ -9032,7 +9374,8 @@
     "kpiCodes": "ĐBCL09",
     "deliverable": "",
     "deadline": "6/2027",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "ĐBCL09: ≥80%"
   },
   {
     "id": "khct_1788439860456_7077",
@@ -9058,7 +9401,8 @@
     "kpiCodes": "ĐBCL06",
     "deliverable": "Báo cáo đánh giá mức độ đạt chuẩn đầu ra CTĐT của sinh viên K49",
     "deadline": "5/2027",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "ĐBCL06: 100%"
   },
   {
     "id": "khct_1788439860459_6135",
@@ -9071,7 +9415,8 @@
     "kpiCodes": "ĐT06",
     "deliverable": "Báo cáo kết quả phản hồi từ sinh viên đại học (hình thức chính quy) về chất lượng giảng dạy của giảng viên (học kì 2).",
     "deadline": "7/2027",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "ĐT06: ≥90%"
   },
   {
     "id": "khct_1788439860460_1889",
@@ -9123,7 +9468,8 @@
     "kpiCodes": "ĐT03",
     "deliverable": "Báo cáo kiểm tra",
     "deadline": "5/2027",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "ĐT03: ≥90%"
   },
   {
     "id": "khct_1788439860466_3506",
@@ -9162,7 +9508,8 @@
     "kpiCodes": "ĐBCL09",
     "deliverable": "Biên bản kiểm tra bài thi ký với Trưởng các đơn vị đào tạo; Báo cáo Hiệu trưởng kết quả kiểm tra",
     "deadline": "5/2027",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "ĐBCL09: ≥80%"
   },
   {
     "id": "khct_1788439860470_8184",
@@ -9175,7 +9522,8 @@
     "kpiCodes": "ĐBCL09",
     "deliverable": "Báo cáo Hiệu trưởng theo tuần và báo cáo đột xuất nếu có bất thường",
     "deadline": "5/2027",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "ĐBCL09: ≥80%"
   },
   {
     "id": "khct_1788439860472_8603",
@@ -9201,7 +9549,8 @@
     "kpiCodes": "CĐS11; TS01; ĐT03; ĐT06",
     "deliverable": "Báo cáo tổng kết đào tạo dựa trên dữ liệu",
     "deadline": "6/2027",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "CĐS11: 100%; TS01: 100%; ĐT03: ≥90%; ĐT06: ≥90%"
   },
   {
     "id": "khct_1788439860475_7208",
@@ -9214,7 +9563,8 @@
     "kpiCodes": "ĐT01; ĐT02",
     "deliverable": "Danh mục CTĐT/học phần cần cập nhật",
     "deadline": "6/2027",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "ĐT01: 100%; ĐT02: 100%"
   },
   {
     "id": "khct_1788439860477_5875",
@@ -9227,7 +9577,8 @@
     "kpiCodes": "ĐBCL07; ĐT02",
     "deliverable": "Danh mục học phần ưu tiên",
     "deadline": "6/2027",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "ĐBCL07: 100%; ĐT02: 100%"
   },
   {
     "id": "khct_1788439860478_4472",
@@ -9240,7 +9591,8 @@
     "kpiCodes": "TS02; TS07",
     "deliverable": "Hoàn thành tiếp nhận NCS K17 đợt 2 nhập học",
     "deadline": "6/2027",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "TS02: ≥75%; TS07: ≥10%/năm"
   },
   {
     "id": "khct_1788439860480_1269",
@@ -9253,7 +9605,8 @@
     "kpiCodes": "TS02",
     "deliverable": "Hoàn thành tiếp nhận học viên K31 đợt 2 nhập học",
     "deadline": "6/2027",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "TS02: ≥75%"
   },
   {
     "id": "khct_1788439860481_1796",
@@ -9279,7 +9632,8 @@
     "kpiCodes": "TS01; TS05",
     "deliverable": "Đề án tuyển sinh năm 2027 được hoàn thiện và trình duyệt",
     "deadline": "6/2027",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "TS01: 100%; TS05: ≥10"
   },
   {
     "id": "khct_1788439860484_9605",
@@ -9305,7 +9659,8 @@
     "kpiCodes": "ĐT08",
     "deliverable": "Báo cáo tỷ lệ sinh viên tốt nghiệp đúng hạn theo khóa",
     "deadline": "Cuối năm học",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "ĐT08: ≥80%"
   },
   {
     "id": "khct_1788439860487_9200",
@@ -9331,7 +9686,8 @@
     "kpiCodes": "KH04; KH07; QTH06",
     "deliverable": "Báo cáo đánh giá KHCN&HTQT",
     "deadline": "6/2027",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "KH04: ≥60%; KH07: ≥5; QTH06: ≥50"
   },
   {
     "id": "khct_1788439860490_3781",
@@ -9344,7 +9700,8 @@
     "kpiCodes": "KH07",
     "deliverable": "Kế hoạch KHCN trọng điểm năm học mới",
     "deadline": "6/2027",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "KH07: ≥5"
   },
   {
     "id": "khct_1788439860491_5136",
@@ -9357,7 +9714,8 @@
     "kpiCodes": "KH03; ĐMST05; ĐT02",
     "deliverable": "Biên nhận tiếp nhận hồ sơ SHTT; số hồ sơ đã nộp trong năm học",
     "deadline": "6/2027",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "KH03: ≥3; ĐMST05: ≥02; ĐT02: 100%"
   },
   {
     "id": "khct_1788439860492_8655",
@@ -9370,7 +9728,8 @@
     "kpiCodes": "KH06",
     "deliverable": "Tạp chí được xuất bản đúng kỳ",
     "deadline": "6/2027",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "KH06: 100%"
   },
   {
     "id": "khct_1788439860493_7507",
@@ -9435,7 +9794,8 @@
     "kpiCodes": "KH02",
     "deliverable": "Hội thảo/hội nghị được tổ chức; kỷ yếu hoặc tài liệu hội thảo",
     "deadline": "6/2027",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "KH02: ≥0,3"
   },
   {
     "id": "khct_1788439860501_5941",
@@ -9448,7 +9808,8 @@
     "kpiCodes": "KH01; KH07; QTH05",
     "deliverable": "Biên bản tọa đàm; danh sách tham dự",
     "deadline": "6/2027",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "KH01: ≥10%/năm; KH07: ≥5; QTH05: ≥15"
   },
   {
     "id": "khct_1788439860502_8200",
@@ -9461,7 +9822,8 @@
     "kpiCodes": "TĐ02; TĐ04",
     "deliverable": "Báo cáo đánh giá KPI năm học",
     "deadline": "6/2027",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "TĐ02: ≥10; TĐ04: 100%"
   },
   {
     "id": "khct_1788439860504_1918",
@@ -9487,7 +9849,8 @@
     "kpiCodes": "QT08",
     "deliverable": "Báo cáo tổng hợp tỷ lệ hoàn thành hệ thống văn bản nội bộ",
     "deadline": "6/2027",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "QT08: 100%"
   },
   {
     "id": "khct_1788439860507_3783",
@@ -9526,7 +9889,8 @@
     "kpiCodes": "CSVC02; CĐS01; ĐBCL09; ĐT02",
     "deliverable": "Báo cáo đánh giá hạ tầng số",
     "deadline": "6/2027",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "CĐS01: ≥80%; ĐBCL09: ≥80%; ĐT02: 100%"
   },
   {
     "id": "khct_1788439860512_8157",
@@ -9539,7 +9903,8 @@
     "kpiCodes": "CĐS01",
     "deliverable": "Kế hoạch đầu tư hạ tầng số",
     "deadline": "6/2027",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "CĐS01: ≥80%"
   },
   {
     "id": "khct_1788439860513_9152",
@@ -9552,7 +9917,8 @@
     "kpiCodes": "CĐS01",
     "deliverable": "Kế hoạch bảo trì hè được triển khai; tiến độ đạt yêu cầu",
     "deadline": "6/2027",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "CĐS01: ≥80%"
   },
   {
     "id": "khct_1788439860515_7697",
@@ -9578,7 +9944,8 @@
     "kpiCodes": "CĐS11",
     "deliverable": "Báo cáo đánh giá hệ thống hỗ trợ người học",
     "deadline": "6/2027",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "CĐS11: 100%"
   },
   {
     "id": "khct_1788439860518_2532",
@@ -9591,7 +9958,8 @@
     "kpiCodes": "ĐT03; ĐT04",
     "deliverable": "Báo cáo việc làm SV tốt nghiệp năm 2027; dữ liệu cập nhật vào hệ thống CSDL cựu SV",
     "deadline": "6/2027",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "ĐT03: ≥90%; ĐT04: ≥80%"
   },
   {
     "id": "khct_1788439860520_6881",
@@ -9630,7 +9998,8 @@
     "kpiCodes": "CĐS05",
     "deliverable": "Báo cáo tổng kết 12 KPI năm học; tỷ lệ đạt/vượt/chưa đạt từng chỉ tiêu",
     "deadline": "6/2027",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "CĐS05: ≥4"
   },
   {
     "id": "khct_1788439860524_8081",
@@ -9643,7 +10012,8 @@
     "kpiCodes": "CSVC01; CĐS01",
     "deliverable": "Biên bản bảo trì; báo cáo bảo mật cuối năm học",
     "deadline": "6/2027",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "CĐS01: ≥80%"
   },
   {
     "id": "khct_1788439860525_7800",
@@ -9669,7 +10039,8 @@
     "kpiCodes": "ĐBCL09",
     "deliverable": "",
     "deadline": "6, 7/2027",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "ĐBCL09: ≥80%"
   },
   {
     "id": "khct_1788439860527_7761",
@@ -9682,7 +10053,8 @@
     "kpiCodes": "HT02",
     "deliverable": "Báo cáo tổng hợp khảo sát các bên liên quan",
     "deadline": "6/2027",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "HT02: ≥20"
   },
   {
     "id": "khct_1788439860528_8191",
@@ -9695,7 +10067,8 @@
     "kpiCodes": "ĐBCL02",
     "deliverable": "Báo cáo cải tiến chất lượng năm học",
     "deadline": "6/2027",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "ĐBCL02: 100%"
   },
   {
     "id": "khct_1788439860529_5661",
@@ -9708,7 +10081,8 @@
     "kpiCodes": "ĐBCL07",
     "deliverable": "100% học phần theo đăng ký của đơn vị đào tạo hoàn thành bổ sung, điều chỉnh ngân hàng đề",
     "deadline": "7/2027",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "ĐBCL07: 100%"
   },
   {
     "id": "khct_1788439860530_9599",
@@ -9734,7 +10108,8 @@
     "kpiCodes": "ĐT06",
     "deliverable": "Báo cáo kết quả phản hồi từ học viên thạc sĩ về chất lượng giảng dạy của giảng viên (học kì 2).",
     "deadline": "8/2027",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "ĐT06: ≥90%"
   },
   {
     "id": "khct_1788439860534_2539",
@@ -9786,7 +10161,8 @@
     "kpiCodes": "HT02; ĐBCL09",
     "deliverable": "Danh sách các đoàn thanh tra, kiểm tra giám sát thi THPT năm 2027 theo yêu cầu của Bộ GD&ĐT.",
     "deadline": "6/2027",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "HT02: ≥20; ĐBCL09: ≥80%"
   },
   {
     "id": "khct_1788439860539_9793",
@@ -9812,7 +10188,8 @@
     "kpiCodes": "ĐBCL09",
     "deliverable": "Báo cáo kiểm tra bài thi HK2 năm học 2026-2027",
     "deadline": "6/2027",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "ĐBCL09: ≥80%"
   },
   {
     "id": "khct_1788439860542_3553",
@@ -9851,7 +10228,8 @@
     "kpiCodes": "ĐBCL07; ĐT01; ĐT02",
     "deliverable": "Bộ dữ liệu học phần/đề cương/học liệu cập nhật",
     "deadline": "7/2027",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "ĐBCL07: 100%; ĐT01: 100%; ĐT02: 100%"
   },
   {
     "id": "khct_1788439860546_9186",
@@ -9864,7 +10242,8 @@
     "kpiCodes": "ĐT02",
     "deliverable": "Bộ tài liệu/video hướng dẫn tân sinh viên",
     "deadline": "7/2027",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "ĐT02: 100%"
   },
   {
     "id": "khct_1788439860547_7986",
@@ -9877,7 +10256,8 @@
     "kpiCodes": "HT02",
     "deliverable": "Kế hoạch thực hành, thực tập năm học mới",
     "deadline": "7/2027",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "HT02: ≥20"
   },
   {
     "id": "khct_1788439860549_5885",
@@ -9890,7 +10270,8 @@
     "kpiCodes": "TS01",
     "deliverable": "Hoàn thành xét tuyển đợt 1; danh sách thí sinh trúng tuyển",
     "deadline": "7/2027",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "TS01: 100%"
   },
   {
     "id": "khct_1788439860550_4611",
@@ -9903,7 +10284,8 @@
     "kpiCodes": "TS01; TS07",
     "deliverable": "Thông báo tuyển sinh ThS K32 đợt 1 được ban hành và công bố",
     "deadline": "7/2027",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "TS01: 100%; TS07: ≥10%/năm"
   },
   {
     "id": "khct_1788439860551_4863",
@@ -9916,7 +10298,8 @@
     "kpiCodes": "TS01; TS07",
     "deliverable": "Thông báo tuyển sinh NCS K18 đợt 1 được ban hành và công bố",
     "deadline": "7/2027",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "TS01: 100%; TS07: ≥10%/năm"
   },
   {
     "id": "khct_1788439860552_8686",
@@ -9942,7 +10325,8 @@
     "kpiCodes": "KH04; KH07; ĐT02",
     "deliverable": "Cơ sở dữ liệu KHCN&HTQT được cập nhật",
     "deadline": "7/2027",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "KH04: ≥60%; KH07: ≥5; ĐT02: 100%"
   },
   {
     "id": "khct_1788439860555_2039",
@@ -9955,7 +10339,8 @@
     "kpiCodes": "HT02; ĐMST05",
     "deliverable": "Danh mục nhiệm vụ đặt hàng nghiên cứu năm học mới",
     "deadline": "7/2027",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "HT02: ≥20; ĐMST05: ≥02"
   },
   {
     "id": "khct_1788439860556_6407",
@@ -9968,7 +10353,8 @@
     "kpiCodes": "QTH06",
     "deliverable": "Hoàn thành hồ sơ và chương trình trao đổi; báo cáo kết quả học tập của sinh viên",
     "deadline": "7/2027",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "QTH06: ≥50"
   },
   {
     "id": "khct_1788439860557_6989",
@@ -10020,7 +10406,8 @@
     "kpiCodes": "TĐ02",
     "deliverable": "Kế hoạch thi đua, khen thưởng năm học mới",
     "deadline": "7/2027",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "TĐ02: ≥10"
   },
   {
     "id": "khct_1788439860562_4300",
@@ -10085,7 +10472,8 @@
     "kpiCodes": "CSVC02; CĐS01",
     "deliverable": "Báo cáo hoàn thành bảo trì, nâng cấp",
     "deadline": "7/2027",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "CĐS01: ≥80%"
   },
   {
     "id": "khct_1788439860569_1051",
@@ -10098,7 +10486,8 @@
     "kpiCodes": "CĐS08",
     "deliverable": "Báo cáo kiểm tra an toàn thông tin",
     "deadline": "7/2027",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "CĐS08: 100%"
   },
   {
     "id": "khct_1788439860570_4296",
@@ -10124,7 +10513,8 @@
     "kpiCodes": "TS02; ĐT02",
     "deliverable": "Cổng/thư mục thông tin hỗ trợ tân sinh viên",
     "deadline": "7/2027",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "TS02: ≥75%; ĐT02: 100%"
   },
   {
     "id": "khct_1788439860573_2466",
@@ -10137,7 +10527,8 @@
     "kpiCodes": "CĐS08",
     "deliverable": "Kế hoạch Tuần sinh hoạt công dân - sinh viên",
     "deadline": "7/2027",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "CĐS08: 100%"
   },
   {
     "id": "khct_1788439860574_5704",
@@ -10176,7 +10567,8 @@
     "kpiCodes": "TS01; TS03; TS05",
     "deliverable": "Chiến dịch tuyển sinh số; dữ liệu tương tác/tư vấn",
     "deadline": "7/2027",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "TS01: 100%; TS03: 100%; TS05: ≥10"
   },
   {
     "id": "khct_1788439860577_4531",
@@ -10189,7 +10581,8 @@
     "kpiCodes": "TS01; TS03; TS05",
     "deliverable": "Chiến dịch tuyển sinh số; dữ liệu tương tác/tư vấn",
     "deadline": "7/2027",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "TS01: 100%; TS03: 100%; TS05: ≥10"
   },
   {
     "id": "khct_1788439860579_5263",
@@ -10202,7 +10595,8 @@
     "kpiCodes": "TS01; TS05",
     "deliverable": "Báo cáo phân tích dữ liệu tuyển sinh",
     "deadline": "7/2027",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "TS01: 100%; TS05: ≥10"
   },
   {
     "id": "khct_1788439860580_6928",
@@ -10228,7 +10622,8 @@
     "kpiCodes": "ĐBCL02",
     "deliverable": "Kho minh chứng số được cập nhật",
     "deadline": "7/2027",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "ĐBCL02: 100%"
   },
   {
     "id": "khct_1788439860584_6177",
@@ -10241,7 +10636,8 @@
     "kpiCodes": "ĐBCL07; ĐBCL08; ĐBCL11",
     "deliverable": "Báo cáo rà soát; kiến nghị cập nhật quy định",
     "deadline": "7/2027",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "ĐBCL07: 100%; ĐBCL08: 100%; ĐBCL11: ≥2"
   },
   {
     "id": "khct_1788439860586_2568",
@@ -10306,7 +10702,8 @@
     "kpiCodes": "CĐS08",
     "deliverable": "Báo cáo kiểm tra chuẩn bị năm học mới",
     "deadline": "7/2027",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "CĐS08: 100%"
   },
   {
     "id": "khct_1788439860592_4570",
@@ -10319,6 +10716,7 @@
     "kpiCodes": "TS01",
     "deliverable": "Báo cáo kiểm tra, giám sát tuyển sinh năm 2027",
     "deadline": "7/2027",
-    "status": "active"
+    "status": "active",
+    "chiTieu": "TS01: 100%"
   }
 ]

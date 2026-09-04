@@ -198,9 +198,9 @@ export default function KPICatalogsPage() {
 
   const khctColumns = [
     { key: 'order', label: 'Mã NV', width: 'w-[5%]', render: (t: KHCTTask) => <span className="text-xs font-mono text-center">{t.order}</span> },
-    { key: 'field', label: 'Lĩnh vực', width: 'w-[10%]', render: (t: KHCTTask) => <span className="text-xs text-text-light whitespace-nowrap">{t.field}</span> },
-    { key: 'taskName', label: 'Nhiệm vụ', width: 'w-[22%]', render: (t: KHCTTask) => <span className="font-medium break-words text-sm">{t.taskName}</span> },
-    { key: 'responsibleUnit', label: 'Đơn vị chủ trì', width: 'w-[12%]', render: (t: KHCTTask) => {
+    { key: 'field', label: 'Lĩnh vực', width: 'w-[9%]', render: (t: KHCTTask) => <span className="text-xs text-text-light whitespace-nowrap">{t.field}</span> },
+    { key: 'taskName', label: 'Nhiệm vụ', width: 'w-[20%]', render: (t: KHCTTask) => <span className="font-medium break-words text-sm">{t.taskName}</span> },
+    { key: 'responsibleUnit', label: 'Đơn vị chủ trì', width: 'w-[11%]', render: (t: KHCTTask) => {
       const unit = findOrgUnit(t.responsibleUnit);
       return unit ? (
         <button onClick={() => setUnitInfoModal({ unit })} className="text-xs text-primary hover:underline cursor-pointer text-left">
@@ -208,8 +208,8 @@ export default function KPICatalogsPage() {
         </button>
       ) : <span className="text-xs">{t.responsibleUnit}</span>;
     } },
-    { key: 'coordinatingUnits', label: 'Đơn vị phối hợp', width: 'w-[12%]', render: (t: KHCTTask) => <span className="text-xs text-text-light">{t.coordinatingUnits}</span> },
-    { key: 'kpiCodes', label: 'Mã KPI', width: 'w-[10%]', render: (t: KHCTTask) => {
+    { key: 'coordinatingUnits', label: 'Đơn vị phối hợp', width: 'w-[11%]', render: (t: KHCTTask) => <span className="text-xs text-text-light">{t.coordinatingUnits}</span> },
+    { key: 'kpiCodes', label: 'Mã KPI', width: 'w-[9%]', render: (t: KHCTTask) => {
       const codes = t.kpiCodes.split(';').map(c => c.trim()).filter(Boolean).filter(c => c !== '—');
       if (codes.length === 0) return <span className="text-xs font-medium text-accent-yellow">Riêng</span>;
       return (
@@ -223,7 +223,8 @@ export default function KPICatalogsPage() {
         </div>
       );
     } },
-    { key: 'deliverable', label: 'Sản phẩm / Kết quả', width: 'w-[18%]', render: (t: KHCTTask) => <span className="text-xs break-words">{t.deliverable}</span> },
+    { key: 'chiTieu', label: 'Chỉ tiêu', width: 'w-[11%]', render: (t: KHCTTask) => t.chiTieu ? <span className="text-xs font-medium text-accent-green break-words">{t.chiTieu}</span> : <span className="text-xs text-text-light">—</span> },
+    { key: 'deliverable', label: 'Sản phẩm / Kết quả', width: 'w-[15%]', render: (t: KHCTTask) => <span className="text-xs break-words">{t.deliverable}</span> },
     { key: 'deadline', label: 'Thời gian', width: 'w-[7%]', render: (t: KHCTTask) => <span className="text-xs font-medium">{t.deadline}</span> },
     { key: 'actions', label: 'Thao tác', width: 'w-[4%]', render: (t: KHCTTask) => (
       <div className="flex justify-center gap-1">
