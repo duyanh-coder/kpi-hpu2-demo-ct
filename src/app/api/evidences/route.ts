@@ -3,7 +3,8 @@ import { readDb, writeDb, generateId } from '@/lib/db';
 
 interface EvidenceRecord {
   id: string;
-  planItemId: string;
+  planItemId?: string;
+  unitWorkPlanId?: string;
   evidenceType: 'file' | 'url' | 'system_log' | 'survey' | 'email';
   fileName?: string;
   fileUrl?: string;
@@ -16,8 +17,14 @@ interface EvidenceRecord {
   submittedBy: string;
 }
 
-export async function GET() {
-  return NextResponse.json(readDb<EvidenceRecord>('evidences'));
+export async function GET(request: NextRequest) {
+  const { searchParams } = new URL(request.url);
+  const unitWorkPlanId = searchParams.get('unitWorkPlanId');
+  const planItemId = searchParams.get('planItemId');
+  let items = readDb<EvidenceRecord>('evidences');
+  if (unitWorkPlanId) items = items.filter(e => e.unitWorkPlanId === unitWorkPlanId);
+  if (planItemId) items = items.filter(e => e.planItemId === planItemId);
+  return NextResponse.json(items);
 }
 
 export async function POST(request: NextRequest) {
@@ -27,6 +34,7 @@ export async function POST(request: NextRequest) {
   const newEvidence: EvidenceRecord = {
     id: `EV${generateId()}`,
     planItemId: body.planItemId,
+    unitWorkPlanId: body.unitWorkPlanId,
     evidenceType: body.evidenceType,
     fileName: body.fileName,
     fileUrl: body.fileUrl,

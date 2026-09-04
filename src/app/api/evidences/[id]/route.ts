@@ -3,7 +3,8 @@ import { readDb, writeDb } from '@/lib/db';
 
 interface EvidenceRecord {
   id: string;
-  planItemId: string;
+  planItemId?: string;
+  unitWorkPlanId?: string;
   evidenceType: 'file' | 'url' | 'system_log' | 'survey' | 'email';
   fileName?: string;
   fileUrl?: string;

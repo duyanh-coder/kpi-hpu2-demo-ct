@@ -225,7 +225,26 @@ export interface IndividualPlan {
   approvedAt?: string;
   createdAt: string;
   updatedAt: string;
-  items: IndividualPlanItem[];
+  items?: IndividualPlanItem[];
+}
+
+export interface KHCTTask {
+  id: string;
+  month: string;
+  field: string;
+  order: number;
+  taskName: string;
+  responsibleUnit: string;
+  coordinatingUnits: string;
+  kpiCodes: string;
+  deliverable: string;
+  chiTieu?: string;
+  deadline: string;
+  softwareId?: string;
+  taskResult?: string;
+  taskStatus?: 'not_started' | 'in_progress' | 'done';
+  taskReviewNote?: string;
+  status: 'active' | 'inactive';
 }
 
 // ====== NEW TYPES FOR MISSING USE CASES ======
@@ -567,6 +586,7 @@ export interface SchoolKPICatalog {
   code: string;
   name: string;
   categoryId: string;
+  strategicObjectiveId?: string;
   formula: string;
   unitId: string;
   direction: 'higher_better' | 'lower_better';
@@ -630,6 +650,30 @@ export interface KPICascadeAssignment {
   assignerId: string;
   assignedAt?: string;
   acceptedAt?: string;
+  createdAt: string;
+  updatedAt: string;
+}
+
+export interface UnitWorkTask {
+  id: string;
+  khctTaskId: string;
+  taskName: string;
+  unitId: string;
+  unitName: string;
+  title: string;
+  primaryUserId: string;
+  primaryUserName: string;
+  chiTieu?: string;
+  result?: string;
+  resultSource?: 'manual' | 'sync';
+  syncInfo?: { sourceId: string; sourceName: string; syncedAt: string };
+  reportNote?: string;
+  progress?: number;
+  assessment?: string;
+  reviewNote?: string;
+  dueDate: string;
+  note: string;
+  status: 'assigned' | 'in_progress' | 'done';
   createdAt: string;
   updatedAt: string;
 }
