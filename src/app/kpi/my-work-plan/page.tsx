@@ -3,6 +3,7 @@
 import { useState, useEffect, useMemo } from 'react';
 import { Send, ClipboardCheck, AlertTriangle, CheckCircle, Save, RefreshCw, Paperclip, Trash2, UploadCloud } from 'lucide-react';
 import { apiGet, apiPut, apiPost, apiDelete } from '@/lib/api';
+import { getProgress, progressColor, isOverdue } from '@/lib/workProgress';
 import Modal from '@/components/ui/Modal';
 import type { UnitWorkTask } from '@/types';
 
@@ -24,36 +25,7 @@ const statusMeta: Record<UnitWorkTask['status'], { label: string; cls: string }>
   done: { label: 'Hoàn thành', cls: 'badge-success' },
 };
 
-const progressByStatus: Record<UnitWorkTask['status'], number> = {
-  assigned: 10,
-  in_progress: 70,
-  done: 100,
-};
-
 const statusOrder: Array<UnitWorkTask['status'] | 'all'> = ['all', 'assigned', 'in_progress', 'done'];
-
-function parseDueDate(value: string): Date {
-  const [d, m, y] = value.split('/').map(Number);
-  return new Date(y, m - 1, d);
-}
-
-function isOverdue(task: UnitWorkTask): boolean {
-  if (task.status === 'done' || !task.dueDate) return false;
-  return parseDueDate(task.dueDate).getTime() < new Date().setHours(0, 0, 0, 0);
-}
-
-function progressColor(pct: number): string {
-  if (pct >= 80) return '#4caf50';
-  if (pct >= 40) return '#ffc107';
-  return '#9e9e9e';
-}
-
-/** Ưu tiên: done > progress nhập tay > fallback theo trạng thái. */
-function getProgress(task: UnitWorkTask): number {
-  if (task.status === 'done') return 100;
-  if (task.progress != null) return task.progress;
-  return progressByStatus[task.status];
-}
 
 export default function MyWorkPlanPage() {
   const [tasks, setTasks] = useState<UnitWorkTask[]>([]);
