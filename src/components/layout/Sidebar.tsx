@@ -12,14 +12,13 @@ import {
   LifeBuoy,
   ClipboardCheck,
 } from 'lucide-react';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 interface MenuChild {
   href: string;
   label: string;
   children?: MenuChild[];
   hidden?: boolean;
-  roles?: string[];
 }
 
 interface MenuItem {
@@ -27,7 +26,6 @@ interface MenuItem {
   label: string;
   icon: typeof Home;
   children?: MenuChild[];
-  roles?: string[];
 }
 
 const menuItems: MenuItem[] = [
@@ -42,13 +40,13 @@ const menuItems: MenuItem[] = [
         href: '/target/objectives',
         label: 'Mục tiêu',
         children: [
-          { href: '/admin/bsc', label: 'Quản lý phối cảnh', roles: ['admin', 'board', 'council'] },
-          { href: '/kpi/strategic-objectives', label: 'Mục tiêu chiến lược', roles: ['admin', 'board', 'council'] },
+          { href: '/admin/bsc', label: 'Quản lý phối cảnh' },
+          { href: '/kpi/strategic-objectives', label: 'Mục tiêu chiến lược' },
         ],
       },
-      { href: '/admin/kpi-catalogs', label: 'Chỉ tiêu KPI', roles: ['admin', 'board', 'council', 'unit_manager', 'kpi_staff'] },
-      { href: '/kpi/annual-work-plan', label: 'Kế hoạch công tác', roles: ['admin', 'board', 'council', 'unit_manager', 'kpi_staff'] },
-      { href: '/kpi/domain/training-program', label: 'Kế hoạch đào tạo', roles: ['admin', 'board', 'council', 'unit_manager', 'kpi_staff'] },
+      { href: '/admin/kpi-catalogs', label: 'Chỉ tiêu KPI' },
+      { href: '/admin/ke-hoach-cong-tac', label: 'Kế hoạch công tác' },
+      { href: '/kpi/domain/training-program', label: 'Kế hoạch đào tạo' },
     ],
   },
 
@@ -58,6 +56,7 @@ const menuItems: MenuItem[] = [
     icon: ClipboardCheck,
     children: [
       { href: '/kpi/unit-work-plan', label: 'Kế hoạch đơn vị' },
+      { href: '/kpi/my-work-plan', label: 'Kế hoạch cá nhân' },
     ],
   },
 
@@ -66,9 +65,8 @@ const menuItems: MenuItem[] = [
     label: 'Đánh giá chất lượng',
     icon: Award,
     children: [
-      { href: '/kpi/evaluation', label: 'Đánh giá KPI', roles: ['admin', 'board', 'council', 'unit_manager', 'kpi_staff'] },
-      { href: '/kpi/individual-evaluation', label: 'Đánh giá cá nhân' },
-      { href: '/kpi/scoring', label: 'Xếp loại chất lượng', roles: ['admin', 'board', 'council', 'unit_manager'] },
+      { href: '/kpi/evaluation', label: 'Đánh giá KPI' },
+      { href: '/kpi/scoring', label: 'Xếp loại chất lượng' },
     ],
   },
 
@@ -76,20 +74,19 @@ const menuItems: MenuItem[] = [
     href: '/admin',
     label: 'Quản trị',
     icon: Settings,
-    roles: ['admin', 'board', 'council'],
     children: [
-      { href: '/admin/settings', label: 'Cấu hình hệ thống', roles: ['admin', 'board', 'council'] },
+      { href: '/admin/settings', label: 'Cấu hình hệ thống' },
       {
         href: '/admin/danh-muc',
         label: 'Danh mục',
-        roles: ['admin', 'board', 'council'],
         children: [
-          { href: '/admin/danh-muc/don-vi-tinh', label: 'Danh mục đơn vị tính', roles: ['admin', 'board', 'council'] },
-          { href: '/kpi/cycles', label: 'Danh mục chu kỳ', roles: ['admin', 'board', 'council'] },
-          { href: '/admin/danh-muc/dieu-kien-danh-gia', label: 'Danh mục điều kiện đánh giá', roles: ['admin', 'board', 'council'] },
-          { href: '/admin/danh-muc/linh-vuc-kpi', label: 'Danh mục Lĩnh vực KPI', roles: ['admin', 'board', 'council'] },
-          { href: '/admin/danh-muc/linh-vuc-cong-tac', label: 'Danh mục Lĩnh vực công tác', roles: ['admin', 'board', 'council'] },
-          { href: '/admin/danh-muc/don-vi', label: 'Danh mục đơn vị', roles: ['admin', 'board', 'council'] },
+          { href: '/admin/danh-muc/don-vi-tinh', label: 'Danh mục đơn vị tính' },
+          { href: '/kpi/cycles', label: 'Danh mục chu kỳ' },
+          { href: '/admin/danh-muc/dieu-kien-danh-gia', label: 'Danh mục điều kiện đánh giá' },
+          { href: '/admin/danh-muc/linh-vuc-kpi', label: 'Danh mục Lĩnh vực KPI' },
+          { href: '/admin/danh-muc/linh-vuc-cong-tac', label: 'Danh mục Lĩnh vực công tác' },
+          { href: '/admin/danh-muc/don-vi', label: 'Danh mục đơn vị' },
+          { href: '/admin/danh-muc/nguon-du-lieu', label: 'Danh mục nguồn dữ liệu' },
         ],
       },
     ],
@@ -144,32 +141,6 @@ export default function Sidebar({ isOpen, onClose }: { isOpen: boolean; onClose:
   const toggleSub = (href: string) => {
     setExpandedSub(prev => prev.includes(href) ? prev.filter(h => h !== href) : [...prev, href]);
   };
-
-  const [role, setRole] = useState('');
-  useEffect(() => {
-    const update = () => setRole(localStorage.getItem('activeRole') || '');
-    update();
-    window.addEventListener('roleChange', update);
-    return () => window.removeEventListener('roleChange', update);
-  }, []);
-
-  const canSee = (roles?: string[]) => !roles || roles.length === 0 || roles.includes(role);
-
-  const filterChildren = (children: MenuChild[]): MenuChild[] => {
-    return children
-      .filter(c => canSee(c.roles))
-      .map(c => {
-        if (c.children && c.children.length > 0) {
-          return { ...c, children: filterChildren(c.children) };
-        }
-        return c;
-      })
-      .filter(c => !c.children || c.children.length > 0);
-  };
-
-  const visibleMenu: MenuItem[] = menuItems
-    .filter(item => canSee(item.roles))
-    .map(item => (item.children ? { ...item, children: filterChildren(item.children) } : item));
 
   const isActive = (href: string) => pathname === href || pathname.startsWith(href + '/');
 
@@ -238,7 +209,7 @@ export default function Sidebar({ isOpen, onClose }: { isOpen: boolean; onClose:
       </div>
 
       <nav className="min-h-0 flex-1 overflow-y-auto overscroll-contain p-2">
-        {visibleMenu.map((item) => {
+        {menuItems.map((item) => {
           const Icon = item.icon;
           const hasChildren = item.children && item.children.length > 0;
           const isExpanded = expandedGroups.includes(item.href);

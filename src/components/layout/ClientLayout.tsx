@@ -22,7 +22,7 @@ export default function ClientLayout({ children }: { children: React.ReactNode }
       <Sidebar isOpen={sidebarOpen} onClose={() => setSidebarOpen(false)} />
       <div className="flex-1 flex flex-col min-w-0 min-h-screen lg:ml-64">
         <Header onToggleSidebar={() => setSidebarOpen(!sidebarOpen)} />
-        <main className="flex-1 bg-bg-cream px-4 sm:px-6 pb-4 sm:pb-6 pt-20">
+        <main className="flex-1 bg-bg-cream p-4 sm:p-6">
           {children}
         </main>
       </div>

@@ -225,7 +225,6 @@ export interface IndividualPlan {
   approvedAt?: string;
   createdAt: string;
   updatedAt: string;
-  items?: IndividualPlanItem[];
 }
 
 export interface KHCTTask {

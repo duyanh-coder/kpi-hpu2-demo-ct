@@ -256,13 +256,10 @@ export default function DashboardPage() {
 
   const overallRate =
     totalWeight > 0
-      ? Math.min(
-          100,
-          indicatorRates.reduce(
-            (s, i) => s + Math.min(i.rawRate, 120) * i.weight,
-            0,
-          ) / totalWeight,
-        )
+      ? indicatorRates.reduce(
+          (s, i) => s + Math.min(i.rawRate, 120) * i.weight,
+          0,
+        ) / totalWeight
       : 0;
 
   // Lĩnh vực được lấy trực tiếp từ các KPI đang hiển thị.

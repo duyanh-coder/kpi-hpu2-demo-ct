@@ -9,6 +9,9 @@ export default auth((req) => {
   if (pathname.startsWith("/api/auth")) return
 
   if (pathname === "/login") {
+    if (req.auth) {
+      return Response.redirect(new URL("/", req.nextUrl.origin))
+    }
     return
   }
 

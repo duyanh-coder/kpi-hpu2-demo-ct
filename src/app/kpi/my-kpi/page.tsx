@@ -82,7 +82,7 @@ export default function MyKPIPage() {
       );
       const active = sorted[0];
       setMyPlan(active || null);
-      setItems(active ? active.items ?? [] : []);
+      setItems(active ? active.items : []);
     }).catch(() => {});
   }, [session, selectedCycleId]);
 
