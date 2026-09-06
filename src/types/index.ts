@@ -244,6 +244,8 @@ export interface KHCTTask {
   taskResult?: string;
   taskStatus?: 'not_started' | 'in_progress' | 'done';
   taskReviewNote?: string;
+  resultSource?: 'manual' | 'sync';
+  syncInfo?: { sourceId: string; sourceName: string; syncedAt: string };
   status: 'active' | 'inactive';
 }
 
@@ -564,6 +566,7 @@ export interface JobPosition {
   code: string;
   description: string;
   kpiGroupId: string;
+  kpiTemplateId?: string;
   approvalLevel: string;
   status: 'active' | 'inactive';
 }
@@ -663,6 +666,10 @@ export interface UnitWorkTask {
   title: string;
   primaryUserId: string;
   primaryUserName: string;
+  templateId?: string;
+  templateItemId?: string;
+  criterionCode?: string;
+  month?: string;
   chiTieu?: string;
   result?: string;
   resultSource?: 'manual' | 'sync';
@@ -676,4 +683,106 @@ export interface UnitWorkTask {
   status: 'assigned' | 'in_progress' | 'done';
   createdAt: string;
   updatedAt: string;
+}
+
+export interface IndividualTemplateAssignment {
+  id: string;
+  userId: string;
+  academicYearId: string;
+  kpiTemplateId: string;
+  status: 'active' | 'inactive';
+  assignedAt: string;
+  updatedAt: string;
+}
+
+export interface ProductivityCriterionRow {
+  templateItemId: string;
+  criterionCode: string;
+  criterionName: string;
+  target: string;
+  unit: string;
+  weight: number;
+  completedTasks: number;
+  totalTasks: number;
+  resultPct: number;
+  hasEvidence: boolean;
+  score: number;
+}
+
+export interface LaborProductivity {
+  id: string;
+  userId: string;
+  userName: string;
+  unitId: string;
+  unitName: string;
+  academicYearId: string;
+  month: string;
+  templateId: string;
+  templateName: string;
+  status: 'draft' | 'self_reviewed' | 'manager_reviewed' | 'council_reviewed' | 'locked';
+  criterionRows: ProductivityCriterionRow[];
+  totalScore: number;
+  grade: 'A' | 'B' | 'C';
+  selfNote?: string;
+  managerNote?: string;
+  managerGrade?: 'A' | 'B' | 'C' | '';
+  managerScore?: number;
+  councilNote?: string;
+  councilGrade?: 'A' | 'B' | 'C' | '';
+  councilScore?: number;
+  councilReviewedAt?: string;
+  councilReviewedBy?: string;
+  submittedAt?: string;
+  reviewedAt?: string;
+  lockedAt?: string;
+  createdAt: string;
+  updatedAt: string;
+}
+
+export interface UnitWorkReportSubTask {
+  title: string;
+  chiTieu: string;
+  result: string;
+  status: string;
+  assessment: string;
+  dueDate: string;
+}
+
+export interface UnitWorkReportRow {
+  khctTaskId: string;
+  taskName: string;
+  responsibleUnit: string;
+  coordinatingUnits: string;
+  kpiCodes: string;
+  chiTieu: string;
+  deliverable: string;
+  deadline: string;
+  status: 'done' | 'in_progress' | 'not_started';
+  statusLabel: string;
+  taskResult: string;
+  taskReviewNote?: string;
+  resultSource?: 'manual' | 'sync';
+  syncInfo?: { sourceId: string; sourceName: string; syncedAt: string };
+  evidenceNames?: string[];
+  doneSub: number;
+  totalSub: number;
+  subTasks?: UnitWorkReportSubTask[];
+}
+
+export interface UnitWorkReport {
+  id: string;
+  month: string;
+  unitFilterName: string;
+  unitIds: string[];
+  createdAt: string;
+  rows: UnitWorkReportRow[];
+  summary: {
+    totalTasks: number;
+    doneTasks: number;
+    inProgressTasks: number;
+    notStartedTasks: number;
+    totalSub: number;
+    doneSub: number;
+    completionRate: number;
+  };
 }

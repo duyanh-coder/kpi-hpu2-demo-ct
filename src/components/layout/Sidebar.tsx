@@ -11,6 +11,7 @@ import {
   ChevronRight,
   LifeBuoy,
   ClipboardCheck,
+  LayoutDashboard,
 } from 'lucide-react';
 import { useState } from 'react';
 
@@ -30,6 +31,16 @@ interface MenuItem {
 
 const menuItems: MenuItem[] = [
   { href: '/', label: 'Trang chủ', icon: Home },
+
+  {
+    href: '/kpi/unit-dashboard',
+    label: 'Dashboard',
+    icon: LayoutDashboard,
+    children: [
+      { href: '/kpi/personal-dashboard', label: 'Dashboard cá nhân' },
+      { href: '/kpi/unit-dashboard', label: 'Dashboard đơn vị' },
+    ],
+  },
 
   {
     href: '/target',
@@ -67,6 +78,9 @@ const menuItems: MenuItem[] = [
     children: [
       { href: '/kpi/evaluation', label: 'Đánh giá KPI' },
       { href: '/kpi/scoring', label: 'Xếp loại chất lượng' },
+      { href: '/kpi/labor-productivity', label: 'Năng suất lao động hàng tháng' },
+      { href: '/quality/unit-work-report', label: 'Báo cáo kết quả nhiệm vụ' },
+      { href: '/quality/kpi-indicator-report', label: 'Báo cáo chỉ tiêu KPI' },
     ],
   },
 
@@ -84,6 +98,9 @@ const menuItems: MenuItem[] = [
           { href: '/kpi/cycles', label: 'Danh mục chu kỳ' },
           { href: '/admin/danh-muc/dieu-kien-danh-gia', label: 'Danh mục điều kiện đánh giá' },
           { href: '/admin/danh-muc/linh-vuc-kpi', label: 'Danh mục Lĩnh vực KPI' },
+          { href: '/admin/job-positions', label: 'Vị trí việc làm' },
+          { href: '/kpi/kpi-templates', label: 'Danh mục Bộ KPI mẫu' },
+          { href: '/admin/individual-template-assignments', label: 'Gán Bộ KPI mẫu cá nhân' },
           { href: '/admin/danh-muc/linh-vuc-cong-tac', label: 'Danh mục Lĩnh vực công tác' },
           { href: '/admin/danh-muc/don-vi', label: 'Danh mục đơn vị' },
           { href: '/admin/danh-muc/nguon-du-lieu', label: 'Danh mục nguồn dữ liệu' },
